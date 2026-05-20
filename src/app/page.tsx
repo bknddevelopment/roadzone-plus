@@ -79,12 +79,12 @@ export default function HomePage() {
           <div className="relative animate-fade">
             <div className="card overflow-hidden bg-panel p-4 sm:p-6">
               <Image
-                src="/visuals/roadside-scene.svg"
+                src="/visuals/hero-roadside.jpg"
                 alt="Roadside assistance vehicle helping a stranded driver at night"
-                width={980}
-                height={740}
+                width={1200}
+                height={800}
                 priority
-                className="aspect-[1.18/1] w-full rounded-md object-cover"
+                className="aspect-[3/2] w-full rounded-md object-cover"
               />
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-md border border-white/10 bg-black/36 p-4">
@@ -228,11 +228,11 @@ export default function HomePage() {
 
           <div className="card bg-road-black p-4 sm:p-6">
             <Image
-              src="/visuals/coverage-map.svg"
+              src="/visuals/coverage-aerial.jpg"
               alt="RoadZone Plus Central Florida service area map"
-              width={900}
-              height={650}
-              className="w-full rounded-md"
+              width={1200}
+              height={800}
+              className="aspect-[3/2] w-full rounded-md object-cover"
             />
             <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3">
               {areas.slice(0, 9).map((area) => (
