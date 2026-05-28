@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 import {
   AlertTriangle,
   CheckCircle2,
+  Info,
   MapPin,
   PhoneCall,
+  Route,
   ShieldCheck,
   TimerReset,
 } from "lucide-react";
@@ -186,6 +188,80 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {service.process && service.process.length > 0 ? (
+        <section className="section bg-road-black">
+          <div className="container">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Route aria-hidden="true" size={16} />
+                How it works
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                How {service.shortName.toLowerCase()} works.
+              </h2>
+              {service.intro ? (
+                <p className="mt-5 text-base leading-8 text-white/66">{service.intro}</p>
+              ) : null}
+            </div>
+
+            <ol className="mt-8 grid gap-4 sm:grid-cols-2">
+              {service.process.map((item, index) => (
+                <li key={item.step} className="card-solid flex gap-4 p-6">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-road-red text-base font-black text-white">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-black text-white">{item.step}</h3>
+                    <p className="mt-2 text-sm leading-6 text-white/66">{item.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      ) : null}
+
+      {(service.details && service.details.length > 0) ||
+      (service.safetyTips && service.safetyTips.length > 0) ? (
+        <section className="section bg-asphalt">
+          <div className="container grid gap-8 lg:grid-cols-2">
+            {service.details && service.details.length > 0 ? (
+              <div className="card-solid p-6">
+                <div className="flex items-center gap-3">
+                  <Info aria-hidden="true" className="text-route-green" size={24} />
+                  <h2 className="text-3xl font-black text-white">Good to know</h2>
+                </div>
+                <div className="mt-6 grid gap-4">
+                  {service.details.map((item) => (
+                    <div key={item.heading} className="rounded-md bg-white/6 p-4">
+                      <h3 className="text-base font-black text-white">{item.heading}</h3>
+                      <p className="mt-2 text-sm leading-6 text-white/70">{item.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            {service.safetyTips && service.safetyTips.length > 0 ? (
+              <div className="card-solid p-6">
+                <div className="flex items-center gap-3">
+                  <ShieldCheck aria-hidden="true" className="text-safety-yellow" size={24} />
+                  <h2 className="text-3xl font-black text-white">While you wait</h2>
+                </div>
+                <div className="mt-6 grid gap-3">
+                  {service.safetyTips.map((tip) => (
+                    <div key={tip} className="flex gap-3 rounded-md bg-white/6 p-4">
+                      <ShieldCheck aria-hidden="true" className="mt-0.5 shrink-0 text-safety-yellow" size={18} />
+                      <p className="text-sm leading-6 text-white/70">{tip}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       <section className="section border-y border-white/10 bg-panel">
         <div className="container">

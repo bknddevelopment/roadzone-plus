@@ -35,6 +35,10 @@ export type Service = {
   includes: string[];
   signs: string[];
   faqs: Array<{ question: string; answer: string }>;
+  intro?: string;
+  process?: Array<{ step: string; detail: string }>;
+  details?: Array<{ heading: string; body: string }>;
+  safetyTips?: string[];
 };
 
 export const services: Service[] = [
@@ -124,20 +128,75 @@ export const services: Service[] = [
     includes: [
       "Emergency fuel delivery",
       "Location confirmation before dispatch",
+      "Fuel added directly to your tank",
       "Help restarting after refuel",
+      "Guidance to the nearest gas station",
       "24/7 roadside response",
     ],
     signs: [
       "Fuel gauge is empty",
       "Vehicle stalls after low-fuel warning",
       "You are stranded away from a gas station",
+      "Fuel dropped faster than expected in heavy traffic",
       "Tourist or commuter route changed and fuel ran out",
+    ],
+    intro:
+      "Running out of fuel can happen to anyone: a longer commute than expected, a faulty gauge, heavy traffic, or an unfamiliar route with no station in sight. RoadZone Plus brings fuel directly to your vehicle so you can get back on the road and reach a gas station, instead of leaving your car on the shoulder or walking along a busy roadway.",
+    process: [
+      {
+        step: "Call and confirm your location",
+        detail:
+          "Call RoadZone Plus and share your exact location and what you are driving so the team can prepare the right response.",
+      },
+      {
+        step: "Stay safe while help is arranged",
+        detail:
+          "Keep your vehicle in a safe spot with hazard lights on. The dispatcher confirms the details before a technician heads your way.",
+      },
+      {
+        step: "Fuel is delivered to your vehicle",
+        detail:
+          "A technician brings fuel to your location and adds it to your tank so the engine has what it needs to start.",
+      },
+      {
+        step: "Get moving and fill up",
+        detail:
+          "Once the vehicle starts, you can drive to a nearby gas station and top off the tank completely.",
+      },
+    ],
+    details: [
+      {
+        heading: "What we fuel",
+        body:
+          "RoadZone Plus focuses on gasoline-powered passenger vehicles. If you drive a diesel vehicle, mention it when you call so the team can confirm the right help before heading out.",
+      },
+      {
+        heading: "Who uses fuel delivery",
+        body:
+          "Daily commuters, rideshare and delivery drivers, tourists exploring Central Florida, and anyone caught between stations can call when the tank runs dry.",
+      },
+    ],
+    safetyTips: [
+      "Pull as far off the road as safely possible and turn on your hazard lights.",
+      "Stay buckled and remain inside the vehicle if you are stopped on a highway shoulder.",
+      "Keep your phone reachable so the technician can confirm your location.",
+      "Note nearby landmarks, exit numbers, or mile markers to share when you call.",
     ],
     faqs: [
       {
         question: "How much fuel do you bring?",
         answer:
           "RoadZone Plus brings enough fuel to help get you moving again and reach a nearby gas station safely.",
+      },
+      {
+        question: "Do I need to be with my vehicle for fuel delivery?",
+        answer:
+          "Plan to be with or near your vehicle so the technician can confirm the right car, add fuel safely, and help you get started.",
+      },
+      {
+        question: "What information should I have ready when I call?",
+        answer:
+          "Share your exact location, the year, make, model, and color of your vehicle, and whether it uses gasoline or diesel so RoadZone Plus can respond accurately.",
       },
       {
         question: "Can you deliver fuel late at night?",
