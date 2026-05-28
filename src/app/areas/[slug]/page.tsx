@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CheckCircle2, MapPin, PhoneCall, Route } from "lucide-react";
 import { areas, getArea, services, site } from "@/data/site";
+import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -20,11 +21,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
+  const title = `Roadside Assistance in ${area.name}, FL`;
+  const description = `RoadZone Plus provides 24/7 roadside assistance in ${area.name}, FL, including jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.`;
+
   return {
-    title: `Roadside Assistance in ${area.name}, FL`,
-    description: `RoadZone Plus provides 24/7 roadside assistance in ${area.name}, FL, including jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.`,
+    title,
+    description,
     alternates: {
       canonical: `/areas/${area.slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/areas/${area.slug}`,
+    },
+    twitter: {
+      title,
+      description,
     },
   };
 }
@@ -37,8 +50,42 @@ export default async function AreaPage({ params }: PageProps) {
     notFound();
   }
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Service Areas", path: "/areas" },
+    { name: `${area.name}, FL`, path: `/areas/${area.slug}` },
+  ]);
+
+  const areaServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${absoluteUrl(`/areas/${area.slug}`)}#roadside-assistance`,
+    name: `Roadside Assistance in ${area.name}, FL`,
+    serviceType: "Roadside assistance",
+    description: `RoadZone Plus provides 24/7 roadside assistance in ${area.name}, FL — jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.`,
+    url: absoluteUrl(`/areas/${area.slug}`),
+    provider: {
+      "@id": businessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: `${area.name}, FL`,
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: area.county,
+      },
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([breadcrumbs, areaServiceSchema]),
+        }}
+      />
+
       <section className="section border-b border-white/10 bg-road-black">
         <div className="container grid gap-10 lg:grid-cols-[0.95fr_0.65fr] lg:items-center">
           <div>

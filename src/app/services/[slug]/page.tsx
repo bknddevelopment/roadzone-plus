@@ -10,6 +10,12 @@ import {
   TimerReset,
 } from "lucide-react";
 import { areas, getService, services, site } from "@/data/site";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  businessId,
+  cityAreaSchema,
+} from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -27,11 +33,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
+  const title = `${service.name} in Orlando, FL`;
+  const description = `${service.summary} Call ${site.phoneDisplay} for 24/7 roadside assistance.`;
+
   return {
-    title: `${service.name} in Orlando, FL`,
-    description: `${service.summary} Call ${site.phoneDisplay} for 24/7 roadside assistance.`,
+    title,
+    description,
     alternates: {
       canonical: `/services/${service.slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/services/${service.slug}`,
+    },
+    twitter: {
+      title,
+      description,
     },
   };
 }
@@ -60,22 +78,38 @@ export default async function ServicePage({ params }: PageProps) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${absoluteUrl(`/services/${service.slug}`)}#service`,
     name: service.name,
+    serviceType: service.name,
     description: service.summary,
+    url: absoluteUrl(`/services/${service.slug}`),
     provider: {
-      "@type": "AutomotiveBusiness",
-      name: site.name,
-      telephone: site.phoneDisplay,
-      url: site.url,
+      "@id": businessId,
     },
-    areaServed: areas.map((area) => `${area.name}, FL`),
+    areaServed: cityAreaSchema(areas),
+    availableChannel: {
+      "@type": "ServiceChannel",
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: site.phoneE164,
+        contactType: "customer service",
+      },
+    },
   };
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: service.name, path: `/services/${service.slug}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, serviceSchema]) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([faqSchema, serviceSchema, breadcrumbs]),
+        }}
       />
 
       <section className="section border-b border-white/10 bg-road-black">

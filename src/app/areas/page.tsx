@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, PhoneCall, Route, ShieldCheck } from "lucide-react";
 import { areas, counties, services, site } from "@/data/site";
+import { absoluteUrl, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Roadside Assistance Service Areas in Central Florida",
@@ -10,11 +11,39 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/areas",
   },
+  openGraph: {
+    title: "Roadside Assistance Service Areas in Central Florida",
+    description:
+      "RoadZone Plus serves Orlando, Ocoee, Pine Hills, Apopka, Altamonte Springs, Kissimmee, Celebration, Lake Buena Vista, Clermont, Winter Garden, Oviedo, Sanford, and nearby areas.",
+    url: "/areas",
+  },
 };
 
 export default function AreasPage() {
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "RoadZone Plus Central Florida service areas",
+    itemListElement: areas.map((area, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: `${area.name}, FL`,
+      url: absoluteUrl(`/areas/${area.slug}`),
+    })),
+  };
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Service Areas", path: "/areas" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([itemListSchema, breadcrumbs]) }}
+      />
+
       <section className="section border-b border-white/10 bg-road-black">
         <div className="container">
           <div className="max-w-3xl">

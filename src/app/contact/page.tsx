@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Clock3, MapPin, PhoneCall, ShieldCheck } from "lucide-react";
 import { areas, services, site } from "@/data/site";
+import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact RoadZone Plus",
@@ -10,11 +11,38 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/contact",
   },
+  openGraph: {
+    title: "Contact RoadZone Plus",
+    description:
+      "Call RoadZone Plus at (407) 222-2739 for 24/7 roadside assistance in Orlando and Central Florida.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": `${absoluteUrl("/contact")}#contact`,
+    url: absoluteUrl("/contact"),
+    name: "Contact RoadZone Plus",
+    about: {
+      "@id": businessId,
+    },
+  };
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Contact", path: "/contact" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([contactPageSchema, breadcrumbs]) }}
+      />
+
       <section className="section border-b border-white/10 bg-road-black">
         <div className="container grid gap-10 lg:grid-cols-[0.9fr_0.7fr] lg:items-start">
           <div>

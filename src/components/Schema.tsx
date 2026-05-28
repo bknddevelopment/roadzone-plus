@@ -1,22 +1,22 @@
 import { areas, services, site } from "@/data/site";
+import { businessId, cityAreaSchema, websiteId } from "@/lib/seo";
 
 export function Schema() {
-  const serviceArea = areas.map((area) => ({
-    "@type": "City",
-    name: `${area.name}, FL`,
-    containedInPlace: area.county,
-  }));
+  const serviceArea = cityAreaSchema(areas);
 
   const schema = [
     {
       "@context": "https://schema.org",
-      "@type": "AutomotiveBusiness",
-      "@id": `${site.url}/#business`,
+      "@type": ["AutomotiveBusiness", "LocalBusiness"],
+      "@id": businessId,
       name: site.name,
       url: site.url,
-      telephone: site.phoneDisplay,
+      telephone: site.phoneE164,
       slogan: site.tagline,
+      description: site.description,
       image: `${site.url}/brand/roadzone-plus-logo.png`,
+      logo: `${site.url}/brand/roadzone-plus-logo.png`,
+      priceRange: "$$",
       address: {
         "@type": "PostalAddress",
         streetAddress: site.address.street,
@@ -30,6 +30,14 @@ export function Schema() {
         latitude: site.coordinates.latitude,
         longitude: site.coordinates.longitude,
       },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: site.phoneE164,
+        contactType: "customer service",
+        areaServed: "Central Florida",
+        availableLanguage: "English",
+      },
+      openingHours: "Mo-Su 00:00-23:59",
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
@@ -47,12 +55,16 @@ export function Schema() {
         },
       ],
       areaServed: serviceArea,
+      knowsAbout: services.map((service) => service.name),
       makesOffer: services.map((service) => ({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
           name: service.name,
           description: service.summary,
+          provider: {
+            "@id": businessId,
+          },
           areaServed: serviceArea,
         },
       })),
@@ -60,11 +72,12 @@ export function Schema() {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "@id": `${site.url}/#website`,
+      "@id": websiteId,
       name: site.name,
       url: site.url,
+      description: site.description,
       publisher: {
-        "@id": `${site.url}/#business`,
+        "@id": businessId,
       },
     },
   ];

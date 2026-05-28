@@ -10,6 +10,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { services, site } from "@/data/site";
+import { absoluteUrl, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Roadside Assistance Services in Orlando, FL",
@@ -17,6 +18,12 @@ export const metadata: Metadata = {
     "See RoadZone Plus roadside assistance services: jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.",
   alternates: {
     canonical: "/services",
+  },
+  openGraph: {
+    title: "Roadside Assistance Services in Orlando, FL",
+    description:
+      "See RoadZone Plus roadside assistance services: jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.",
+    url: "/services",
   },
 };
 
@@ -31,8 +38,30 @@ const serviceIcons = {
 };
 
 export default function ServicesPage() {
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "RoadZone Plus roadside assistance services",
+    itemListElement: services.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: service.name,
+      url: absoluteUrl(`/services/${service.slug}`),
+    })),
+  };
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([itemListSchema, breadcrumbs]) }}
+      />
+
       <section className="section border-b border-white/10 bg-road-black">
         <div className="container">
           <div className="max-w-3xl">

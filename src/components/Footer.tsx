@@ -24,10 +24,13 @@ export function Footer() {
                 <Clock3 aria-hidden="true" size={17} />
                 {site.hours}
               </span>
-              <span className="inline-flex items-center gap-2">
-                <MapPin aria-hidden="true" size={17} />
-                Orlando, FL and surrounding counties
-              </span>
+              <address className="inline-flex items-start gap-2 not-italic">
+                <MapPin aria-hidden="true" size={17} className="mt-0.5 shrink-0" />
+                <span>
+                  {site.address.street}, {site.address.city}, {site.address.state}{" "}
+                  {site.address.zip}
+                </span>
+              </address>
             </div>
           </div>
 

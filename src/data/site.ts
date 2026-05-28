@@ -5,7 +5,10 @@ export const site = {
   domain: "roadzoneplus.com",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://roadzoneplus.com",
   phoneDisplay: "(407) 222-2739",
+  phoneE164: "+14072222739",
   phoneHref: "tel:+14072222739",
+  description:
+    "24/7 roadside assistance in Orlando and Central Florida for jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.",
   address: {
     street: "7337 Habbersham Dr",
     city: "Orlando",
@@ -387,6 +390,13 @@ export const primaryKeywords = [
   "wheel lock removal Orlando FL",
   "24 hour roadside assistance Orlando",
 ];
+
+export const seoFocus = {
+  primarySurface: "Organic local-service search",
+  mapPackStatus: "Deferred until a Google Business Profile exists",
+  launchFocus:
+    "Indexable service pages, indexable service-area pages, accurate NAP, structured data, and click-to-call conversion.",
+};
 
 export function getService(slug: string) {
   return services.find((service) => service.slug === slug);

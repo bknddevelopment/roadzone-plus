@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileCallBar } from "@/components/MobileCallBar";
 import { Schema } from "@/components/Schema";
-import { site } from "@/data/site";
+import { primaryKeywords, site } from "@/data/site";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -28,15 +28,30 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "RoadZone Plus provides 24/7 roadside assistance in Orlando and Central Florida, including jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.",
+    site.description,
   applicationName: site.name,
+  keywords: primaryKeywords,
+  authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
+  category: "Roadside Assistance",
   alternates: {
     canonical: "/",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: `${site.name} | 24/7 Roadside Assistance in Orlando, FL`,
-    description:
-      "Fast roadside help for jumpstarts, tire changes, fuel delivery, lockouts, wheel lock removal, battery replacement, and smart keys.",
+    description: site.description,
     url: site.url,
     siteName: site.name,
     images: [
@@ -49,6 +64,12 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} | 24/7 Roadside Assistance in Orlando, FL`,
+    description: site.description,
+    images: ["/brand/roadzone-plus-logo.png"],
   },
   icons: {
     icon: [
