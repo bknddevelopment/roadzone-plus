@@ -21,6 +21,8 @@
 - Services and areas hub pages include ItemList and Breadcrumb JSON-LD.
 - Contact page includes ContactPage and Breadcrumb JSON-LD.
 - Phone CTAs are visible and clickable across the main conversion paths.
+- Google Search Console URL-prefix property `https://roadzoneplus.com/` is verified by HTML file.
+- `https://roadzoneplus.com/sitemap.xml` is submitted in GSC and returned Success with 24 discovered URLs.
 
 ## Deferred Because There Is No GBP Yet
 
@@ -31,8 +33,7 @@
 
 ## Next SEO Follow-Ups
 
-1. Add the domain to Google Search Console and submit `https://roadzoneplus.com/sitemap.xml`.
-2. Install GA4 or another call/conversion tracking layer before paid or SEO reporting starts.
-3. Create and verify the Google Business Profile when the owner is ready.
-4. After GSC starts collecting data, decide the first content expansion from real impressions and calls, not generic city/service cloning.
-5. Keep compliance tight: do not claim pricing, arrival times, ratings, certifications, or review counts unless the business can prove them.
+1. Install GA4 or another call/conversion tracking layer before paid or SEO reporting starts.
+2. Create and verify the Google Business Profile when the owner is ready.
+3. After GSC starts collecting data, decide the first content expansion from real impressions and calls, not generic city/service cloning.
+4. Keep compliance tight: do not claim pricing, arrival times, ratings, certifications, or review counts unless the business can prove them.
