@@ -16,7 +16,7 @@ export function Schema() {
       url: site.url,
       telephone: site.phoneDisplay,
       slogan: site.tagline,
-      image: `${site.url}/brand/roadzone-plus-logo.svg`,
+      image: `${site.url}/brand/roadzone-plus-logo.png`,
       address: {
         "@type": "PostalAddress",
         streetAddress: site.address.street,

@@ -39,11 +39,24 @@ export const metadata: Metadata = {
       "Fast roadside help for jumpstarts, tire changes, fuel delivery, lockouts, wheel lock removal, battery replacement, and smart keys.",
     url: site.url,
     siteName: site.name,
+    images: [
+      {
+        url: "/brand/roadzone-plus-logo.png",
+        width: 1575,
+        height: 430,
+        alt: `${site.name} logo`,
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
