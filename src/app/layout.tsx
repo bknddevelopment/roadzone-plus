@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { LeadTracking } from "@/components/LeadTracking";
 import { MobileCallBar } from "@/components/MobileCallBar";
 import { Schema } from "@/components/Schema";
 import { primaryKeywords, site } from "@/data/site";
@@ -89,6 +90,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${dmSans.variable}`}>
       <body>
+        <LeadTracking />
         <Schema />
         <Header />
         <main>{children}</main>
