@@ -23,7 +23,7 @@
 - Phone CTAs are visible and clickable across the main conversion paths.
 - Google Search Console URL-prefix property `https://roadzoneplus.com/` is verified by HTML file.
 - `https://roadzoneplus.com/sitemap.xml` is submitted in GSC and returned Success with 24 discovered URLs.
-- Phone CTA clicks are instrumented as `phone_call_click` and will send to GA4 when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is configured.
+- Phone CTA clicks are instrumented as `phone_call_click` and send to GA4 measurement ID `G-WWP2B3GQTF`.
 
 ## Deferred Because There Is No GBP Yet
 
@@ -34,7 +34,7 @@
 
 ## Next SEO Follow-Ups
 
-1. Create/connect the GA4 property and set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel.
+1. Confirm `phone_call_click` appears in GA4 realtime/events and mark it as a lead/key event once visible.
 2. Create and verify the Google Business Profile when the owner is ready.
 3. After GSC starts collecting data, decide the first content expansion from real impressions and calls, not generic city/service cloning.
 4. Keep compliance tight: do not claim pricing, arrival times, ratings, certifications, or review counts unless the business can prove them.
