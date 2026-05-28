@@ -194,7 +194,7 @@ export default function HomePage() {
               Coverage
             </div>
             <h2 className="mt-5 text-4xl font-black leading-tight text-white sm:text-5xl">
-              Orlando first, Central Florida around it.
+              Orlando first, Central Florida & around it.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
               RoadZone Plus is based in Orlando and serves drivers across Orange,
