@@ -3,7 +3,7 @@ export const site = {
   shortName: "RZ+",
   tagline: "Keeping You Moving 24/7.",
   domain: "roadzoneplus.com",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://roadzone-plus.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://roadzoneplus.com",
   phoneDisplay: "(407) 222-2739",
   phoneHref: "tel:+14072222739",
   address: {
