@@ -528,6 +528,53 @@ export const services: Service[] = [
       "Battery is swollen, corroded, or old",
       "Vehicle starts then dies again later",
     ],
+    intro:
+      "When a battery is too far gone for a jumpstart to hold, replacement is the real fix. Central Florida heat is hard on batteries, so many drivers find theirs failing after just a few summers. RoadZone Plus helps drivers dealing with repeated no-starts and failing batteries, so a dead battery does not strand you again next week.",
+    process: [
+      {
+        step: "Call and describe the battery problem",
+        detail:
+          "Tell us what is happening, such as repeated jumps, a warning light, or a battery that will not hold a charge, along with your year, make, and model.",
+      },
+      {
+        step: "Battery condition check",
+        detail:
+          "The technician looks at the battery and the situation to confirm whether replacement is the right call.",
+      },
+      {
+        step: "Replacement support on-site",
+        detail:
+          "Where it can be done on-site, the technician helps with installing a replacement battery so you can get moving.",
+      },
+      {
+        step: "Back on the road",
+        detail:
+          "With a healthy battery in place, you are not facing another dead-battery morning.",
+      },
+    ],
+    details: [
+      {
+        heading: "Why Florida heat kills batteries",
+        body:
+          "Heat speeds up the chemical wear inside a battery far more than cold does. In Central Florida's long hot season, batteries often last fewer years than the label suggests, and they tend to fail suddenly rather than warn you.",
+      },
+      {
+        heading: "Hybrids and electric vehicles",
+        body:
+          "Hybrids and EVs use a 12-volt battery for their electronics, and it wears out like any other. If your hybrid or EV keeps failing to start, the 12-volt battery may need attention. Share your make and model when you call.",
+      },
+      {
+        heading: "Jumpstart first, or replace?",
+        body:
+          "A first-time dead battery is usually a jumpstart. Repeated failures, a swollen or corroded battery, or a battery several years old in Florida heat point toward replacement.",
+      },
+    ],
+    safetyTips: [
+      "If the car keeps dying, avoid parking somewhere you could get stranded overnight.",
+      "Note how old the battery is if you know; age plus heat is the usual culprit.",
+      "Have your year, make, and model ready when you call.",
+      "Turn off lights and accessories to avoid draining a weak battery further.",
+    ],
     faqs: [
       {
         question: "Should I ask for a jumpstart or battery replacement?",
@@ -538,6 +585,16 @@ export const services: Service[] = [
         question: "Do you help at night?",
         answer:
           "Yes. RoadZone Plus is a 24/7 roadside assistance company.",
+      },
+      {
+        question: "How long do car batteries last in Florida?",
+        answer:
+          "Heat shortens battery life, so many Central Florida drivers see batteries fail sooner than the typical three-to-five-year range. If yours is a few years old and struggling, do not wait for it to die completely.",
+      },
+      {
+        question: "Do you help with hybrid and EV batteries?",
+        answer:
+          "RoadZone Plus helps with the 12-volt battery that hybrids and EVs use for their electronics and startup. Share your year, make, and model so the team can confirm the right help before heading out.",
       },
     ],
   },
@@ -564,6 +621,53 @@ export const services: Service[] = [
       "Push-to-start vehicle will not detect key",
       "New key needs programming",
     ],
+    intro:
+      "Modern cars rely on smart keys and key fobs to unlock and start, and when one stops working it can leave you stuck. RoadZone Plus supports smart key and key fob issues for compatible vehicles, helping drivers who cannot get in or get started because of a key problem.",
+    process: [
+      {
+        step: "Call with your key situation and vehicle",
+        detail:
+          "Describe what the key is doing and share your year, make, and model so the team can confirm compatibility.",
+      },
+      {
+        step: "Review the smart key issue",
+        detail:
+          "The technician checks whether the problem is a dead fob battery, a key that needs programming, or another access issue.",
+      },
+      {
+        step: "Programming or troubleshooting support",
+        detail:
+          "For compatible vehicles and keys, the technician helps with programming or troubleshooting so the key works again.",
+      },
+      {
+        step: "Back in and running",
+        detail:
+          "Once the key is sorted, you can unlock and start your vehicle and get on your way.",
+      },
+    ],
+    details: [
+      {
+        heading: "Compatibility depends on the vehicle",
+        body:
+          "Smart key programming varies a lot between makes, models, and key types. Calling with your exact vehicle details lets RoadZone Plus confirm what is possible before heading out.",
+      },
+      {
+        heading: "Sometimes it is just the fob battery",
+        body:
+          "A key fob that suddenly stops working often just needs a fresh battery. Mention this when you call so the simplest fix is checked first.",
+      },
+      {
+        heading: "Lockout vs. key programming",
+        body:
+          "If you are simply locked out, auto lockout assistance may be faster. Key programming is for when the key itself is not recognized or needs to be set up.",
+      },
+    ],
+    safetyTips: [
+      "Keep any spare keys handy; a working spare can be the fastest solution.",
+      "Have your year, make, and model ready when you call.",
+      "If you are stranded somewhere unsafe, move to a secure, well-lit spot.",
+      "Note whether the fob recently got wet or was dropped; it helps diagnose the issue.",
+    ],
     faqs: [
       {
         question: "Can every smart key be programmed roadside?",
@@ -574,6 +678,16 @@ export const services: Service[] = [
         question: "Is smart key programming available 24/7?",
         answer:
           "Call RoadZone Plus anytime. Availability can depend on vehicle compatibility and the exact key issue.",
+      },
+      {
+        question: "My key fob suddenly stopped working. What now?",
+        answer:
+          "Often the fob battery has died. Call with your vehicle details and we will help you check the simplest fixes first before anything more involved.",
+      },
+      {
+        question: "Can you make a brand-new key if mine is lost?",
+        answer:
+          "It depends on the vehicle and key type. Cutting and programming a new key can require specialty equipment, and we will tell you honestly whether RoadZone Plus can help or a dealer or locksmith is the better route.",
       },
     ],
   },
