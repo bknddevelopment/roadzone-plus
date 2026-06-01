@@ -745,6 +745,12 @@ export type Area = {
   emphasis: string;
   intro: string;
   coverage: string[];
+  /** Optional title override (used to differentiate the Orlando hub-city page from the homepage). */
+  metaTitle?: string;
+  /** Optional H1 override (defaults to "Roadside assistance in {name}, FL."). */
+  heading?: string;
+  /** Flags resort-corridor cities so they link to the theme-park guide. */
+  nearParks?: boolean;
 };
 
 export const areas: Area[] = [
@@ -753,8 +759,10 @@ export const areas: Area[] = [
     name: "Orlando",
     county: "Orange County",
     emphasis: "home base response for drivers across the city",
+    metaTitle: "Orlando Roadside Assistance by Neighborhood, FL",
+    heading: "Roadside assistance across Orlando's neighborhoods.",
     intro:
-      "Orlando is home base for RoadZone Plus, so drivers across the city can reach us for dead batteries, flat tires, lockouts, and empty tanks. From downtown and the tourist districts to the neighborhoods along I-4 and SR 408, help can be sent to wherever you are stuck.",
+      "Orlando is home base for RoadZone Plus, so drivers in every part of the city can reach us — from downtown and College Park to Pine Hills, Conway, MetroWest, and the tourist districts. Whether it is a dead battery, a flat tire, a lockout, or an empty tank, help can be sent to your exact neighborhood, parking lot, or stretch of I-4 or SR 408.",
     coverage: [
       "Interstate 4 (I-4)",
       "SR 408 East-West Expressway",
@@ -843,6 +851,7 @@ export const areas: Area[] = [
     name: "Kissimmee",
     county: "Osceola County",
     emphasis: "fast service for residents, tourists, and resort-area drivers",
+    nearParks: true,
     intro:
       "Kissimmee runs along the US 192 tourist corridor near Walt Disney World, mixing residents, resort visitors, and rideshare drivers. RoadZone Plus helps locals and travelers stranded along the highways, hotels, and routes around Lake Tohopekaliga.",
     coverage: [
@@ -858,6 +867,7 @@ export const areas: Area[] = [
     name: "Celebration",
     county: "Osceola County",
     emphasis: "roadside assistance near resort corridors and local neighborhoods",
+    nearParks: true,
     intro:
       "Celebration is a master-planned community next to Walt Disney World, just off US 192 and World Drive. RoadZone Plus serves residents and the many visitors staying nearby when a flat tire, lockout, or empty tank interrupts the trip.",
     coverage: [
@@ -873,6 +883,7 @@ export const areas: Area[] = [
     name: "Lake Buena Vista",
     county: "Orange County",
     emphasis: "tourist-area roadside support near hotels and attractions",
+    nearParks: true,
     intro:
       "Lake Buena Vista is the heart of the Disney resort area, home to Disney Springs and dozens of hotels right off I-4. RoadZone Plus helps tourists in rental cars and locals alike when they are locked out, out of gas, or stuck with a dead battery near the parks.",
     coverage: [

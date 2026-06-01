@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const title = `Roadside Assistance in ${area.name}, FL`;
+  const title = area.metaTitle ?? `Roadside Assistance in ${area.name}, FL`;
   const description = area.intro;
 
   return {
@@ -94,7 +94,7 @@ export default async function AreaPage({ params }: PageProps) {
               {area.county}
             </div>
             <h1 className="mt-5 text-5xl font-black leading-tight text-white sm:text-6xl">
-              Roadside assistance in {area.name}, FL.
+              {area.heading ?? `Roadside assistance in ${area.name}, FL.`}
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
               {area.intro}
@@ -160,6 +160,24 @@ export default async function AreaPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {area.nearParks ? (
+        <section className="border-y border-white/10 bg-panel py-8">
+          <div className="container flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <div className="flex items-start gap-3">
+              <MapPin aria-hidden="true" className="mt-1 shrink-0 text-road-red" size={20} />
+              <p className="max-w-2xl text-base leading-7 text-white/76">
+                Visiting the parks or stuck in a rental car near Walt Disney World or
+                Universal Orlando? See our dedicated{" "}
+                <span className="font-black text-white">theme park roadside help</span> page.
+              </p>
+            </div>
+            <Link href="/theme-park-roadside-assistance" className="btn btn-secondary shrink-0">
+              Theme park roadside help
+            </Link>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section border-t border-white/10 bg-road-black">
         <div className="container">
