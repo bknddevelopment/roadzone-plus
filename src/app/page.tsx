@@ -13,6 +13,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { areas, counties, services, site } from "@/data/site";
+import { absoluteUrl, businessId } from "@/lib/seo";
 
 const serviceIcons = {
   jumpstart: BatteryCharging,
@@ -26,9 +27,113 @@ const serviceIcons = {
 
 const priorityServices = services.filter((service) => service.priority);
 
+const neighborhoods = [
+  "Downtown Orlando",
+  "Pine Hills",
+  "Conway",
+  "Hunters Creek",
+  "Dr. Phillips",
+  "Lake Nona",
+  "Horizon West",
+  "Windermere",
+  "MetroWest",
+  "Baldwin Park",
+  "College Park",
+  "Azalea Park",
+  "Union Park",
+  "Belle Isle",
+  "Meadow Woods",
+  "Southchase",
+  "Sky Lake",
+  "Waterford Lakes",
+];
+
+const homeFaqs = [
+  {
+    question: "What roadside assistance services does RoadZone Plus offer in Orlando?",
+    answer:
+      "RoadZone Plus provides 24/7 roadside assistance in Orlando and Central Florida, including jumpstarts, flat tire changes, emergency fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.",
+  },
+  {
+    question: "Is RoadZone Plus available 24 hours a day?",
+    answer:
+      "Yes. RoadZone Plus operates 24 hours a day, seven days a week, including nights, weekends, and holidays. One call connects you with roadside help any time.",
+  },
+  {
+    question: "How quickly can you reach me?",
+    answer:
+      "We dispatch as soon as you call. Share your exact location and the nearest cross street, exit, or landmark so the technician can reach you as directly as possible.",
+  },
+  {
+    question: "Do I need a membership to use RoadZone Plus?",
+    answer:
+      "No. There is no membership and no app to download. Call the number, describe what is wrong, and a roadside technician is dispatched to you.",
+  },
+  {
+    question: "What areas around Orlando do you cover?",
+    answer:
+      "RoadZone Plus serves Orlando and surrounding Central Florida, including Ocoee, Pine Hills, Apopka, Altamonte Springs, the University area, Kissimmee, Celebration, Lake Buena Vista, Clermont, Winter Garden, Oviedo, and Sanford, plus the roads in between along I-4 and SR 408.",
+  },
+  {
+    question: "Do you help with hybrids and electric vehicles?",
+    answer:
+      "Yes. Hybrids and EVs use a 12-volt battery for their electronics that can die like any other, and a standard jumpstart is usually the fix. Share your year, make, and model when you call.",
+  },
+  {
+    question: "Can you help tourists locked out of a rental car near the theme parks?",
+    answer:
+      "Yes. RoadZone Plus serves the resort corridor near Walt Disney World and Universal Orlando, including Lake Buena Vista, Kissimmee, and Celebration, and helps visitors in rental cars with lockouts, fuel, jumpstarts, and flat tires.",
+  },
+  {
+    question: "How do I get roadside help right now?",
+    answer:
+      `Call ${site.phoneDisplay}. Tell the dispatcher your location and what happened, and a technician is sent your way.`,
+  },
+  {
+    question: "What information should I have ready when I call?",
+    answer:
+      "Have your exact location (an address, cross street, exit number, hotel, or nearby landmark), the year, make, model, and color of your vehicle, and a short description of what is wrong. That lets the dispatcher send the right help to the right place the first time.",
+  },
+  {
+    question: "Is there a membership fee or annual cost to use RoadZone Plus?",
+    answer:
+      "No annual fee and no club to join. Costs depend on the service you need and where you are, so RoadZone Plus confirms the details with you on the call instead of charging a recurring membership like a roadside club.",
+  },
+];
+
 export default function HomePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: homeFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${absoluteUrl("/")}#roadside-assistance`,
+    name: "Roadside Assistance in Orlando, FL",
+    serviceType: "Roadside assistance",
+    description:
+      "24/7 roadside assistance in Orlando and Central Florida: jumpstarts, tire changes, emergency fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.",
+    url: absoluteUrl("/"),
+    provider: { "@id": businessId },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([faqSchema, serviceSchema]) }}
+      />
+
       <section className="relative overflow-hidden border-b border-white/10 bg-road-black">
         <div className="absolute inset-0 opacity-35">
           <div className="h-full w-full bg-[radial-gradient(circle_at_70%_25%,rgba(240,34,34,0.34),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.08)_0,transparent_28%)]" />
@@ -138,6 +243,56 @@ export default function HomePage() {
 
       <section className="section bg-road-black">
         <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <ShieldCheck aria-hidden="true" size={16} />
+              Orlando&apos;s 24/7 roadside team
+            </div>
+            <h2 className="mt-5 text-4xl font-black leading-tight text-white sm:text-5xl">
+              Local roadside assistance in Orlando, any hour.
+            </h2>
+            <div className="mt-6 grid gap-5 text-base leading-8 text-white/68">
+              <p>
+                When your car quits in Orlando, you do not have time to compare
+                memberships or wait on hold. RoadZone Plus is a local, call-first roadside
+                assistance service built for exactly that moment. One call to{" "}
+                {site.phoneDisplay} puts a technician on the way to your driveway, your
+                hotel, a parking lot, or the shoulder of I-4 — any hour of the day or
+                night.
+              </p>
+              <p>
+                Central Florida is hard on cars. Summer heat kills batteries early, hot
+                pavement and long commutes wear tires down, and unfamiliar routes leave
+                visitors stranded between gas stations. RoadZone Plus handles the most
+                common roadside problems on-site: jumpstarts for dead batteries,
+                spare-tire installation for flats, emergency fuel delivery when the tank
+                runs dry, lockout help when keys are stuck inside, and wheel lock removal
+                when a missing key blocks a tire change.
+              </p>
+              <p>
+                There is no app to download and no membership to buy. You call, describe
+                what happened and where you are, and a technician is dispatched with the
+                right equipment. From downtown Orlando and the University area to
+                Kissimmee, Winter Garden, Sanford, and the resort corridor near the theme
+                parks, help is one call away — including for the 12-volt batteries in
+                hybrids and electric vehicles, smart key problems, and locking lug nuts
+                that basic operators skip.
+              </p>
+              <p>
+                Roadside trouble does not keep business hours, and neither does RoadZone
+                Plus. Whether it is a commuter battery that died in a downtown garage, a
+                flat on the way to the airport, a rental car locked tight at a resort, or
+                an empty tank on a dark stretch of highway, the response is the same: call,
+                tell us where you are, and a technician heads your way with the equipment
+                to get you moving again.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-road-black">
+        <div className="container">
           <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
             <div>
               <div className="eyebrow">
@@ -211,6 +366,20 @@ export default function HomePage() {
                   className="rounded-md border border-white/12 bg-black/25 px-3 py-2 text-sm font-bold text-white/72"
                 >
                   {county}
+                </span>
+              ))}
+            </div>
+
+            <p className="mt-7 text-sm font-black uppercase tracking-wide text-white/48">
+              Neighborhoods we reach
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {neighborhoods.map((spot) => (
+                <span
+                  key={spot}
+                  className="rounded-md bg-white/6 px-3 py-1.5 text-xs font-semibold text-white/64"
+                >
+                  {spot}
                 </span>
               ))}
             </div>
@@ -329,6 +498,33 @@ export default function HomePage() {
               <div key={item.title} className="card-solid p-6">
                 <h3 className="text-xl font-black text-white">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-white/62">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-road-black">
+        <div className="container grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <div className="eyebrow">
+              <ShieldCheck aria-hidden="true" size={16} />
+              FAQ
+            </div>
+            <h2 className="mt-5 text-4xl font-black leading-tight text-white sm:text-5xl">
+              Orlando roadside assistance questions.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              Straight answers about how RoadZone Plus helps drivers across Orlando and
+              Central Florida — availability, coverage, and how to get help fast.
+            </p>
+          </div>
+
+          <div className="grid gap-4">
+            {homeFaqs.map((faq) => (
+              <div key={faq.question} className="card-solid p-6">
+                <h3 className="text-lg font-black text-white">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/66">{faq.answer}</p>
               </div>
             ))}
           </div>

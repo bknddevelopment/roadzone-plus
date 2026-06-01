@@ -66,7 +66,7 @@ export const services: Service[] = [
       "Battery died after lights or accessories were left on",
     ],
     intro:
-      "A dead battery is one of the most common reasons drivers in Orlando end up stranded, and Central Florida heat makes it worse. High temperatures speed up the wear inside a battery, so one that seemed fine in winter can fail on a hot summer morning. RoadZone Plus brings a jumpstart to wherever your car is parked, day or night, so you are not left waiting in a driveway, a parking lot, or on the shoulder.",
+      "A dead battery is the single most common reason drivers in Orlando end up stranded, and Central Florida's climate makes it worse. Heat is harder on a car battery than cold — it speeds up the wear inside, so a battery that started fine all winter can fail without warning on a hot summer morning. Add stop-and-go traffic, short trips, and cars that sit during long workdays or days at the parks, and dead-battery calls climb fast across the Orlando area. RoadZone Plus brings a jumpstart directly to wherever your car is parked — a driveway, a workplace, a hotel, a store parking lot, or the shoulder of the road — 24 hours a day, including nights, weekends, and holidays. One call gets a technician with jump equipment on the way, with no membership and no app required.",
     process: [
       {
         step: "Call and describe what happened",
@@ -105,6 +105,31 @@ export const services: Service[] = [
         body:
           "If this is the first time the battery has died, a jumpstart usually gets you going. If it keeps happening, ask about battery replacement so you are not stuck again next week.",
       },
+      {
+        heading: "What to expect when you call",
+        body:
+          "When you call RoadZone Plus, share your location and what the car is doing. The dispatcher confirms your vehicle and sends a technician with jump equipment ready to go. There is no app to download and no membership to join, just a direct call and a real person on the way to get you started. Keep your phone reachable so the technician can confirm exactly where you are parked, especially in a large lot, a parking garage, or along a busy road where the right entrance matters.",
+      },
+      {
+        heading: "Why dead batteries are so common in Orlando",
+        body:
+          "Stop-and-go traffic on I-4 and SR 408, short trips around town, and months of Central Florida heat all shorten battery life. Many drivers get a no-start after the car sits during a long workday, an airport trip, or a few days at the parks. If your engine has been cranking slowly, treat it as an early warning rather than waiting for the battery to quit completely.",
+      },
+      {
+        heading: "Trucks, vans, and RVs",
+        body:
+          "Larger vehicles use bigger batteries that can need heavier-duty equipment to boost safely. If you drive a pickup, work van, or RV, mention it when you call so the technician arrives with the right gear for your vehicle instead of making a second trip.",
+      },
+      {
+        heading: "Signs it is the battery and not something else",
+        body:
+          "A slow or clicking start, dim or flickering dashboard lights, and a car that died after sitting all point to the battery. If the engine cranks normally but will not catch, the cause may be fuel, the starter, or something else entirely. The technician can help you tell the difference on-site so you are not left guessing about what to fix next.",
+      },
+      {
+        heading: "Keeping a battery alive in Florida heat",
+        body:
+          "If your battery is more than three years old, have it checked before the worst of summer. Avoid leaving lights or accessories on, drive long enough to recharge after short trips, and do not ignore a slow start — in Central Florida heat, a weak battery usually fails sooner than you expect, often at the least convenient time.",
+      },
     ],
     safetyTips: [
       "Turn off the headlights, radio, and air conditioning before the technician arrives.",
@@ -132,6 +157,26 @@ export const services: Service[] = [
         question: "Do you jumpstart hybrids and electric vehicles?",
         answer:
           "Yes. Hybrids and EVs rely on a 12-volt battery for their electronics, and that battery can die like any other. A jumpstart is the normal fix. Share your year, make, and model when you call.",
+      },
+      {
+        question: "How fast can you get to me for a jumpstart?",
+        answer:
+          "RoadZone Plus dispatches 24/7 as soon as you call. Share your exact location and the nearest cross street, exit, or landmark so the technician can reach you as directly as possible.",
+      },
+      {
+        question: "Do you jumpstart trucks, vans, or RVs?",
+        answer:
+          "Yes. Larger vehicles can need heavier-duty equipment, so tell us the vehicle type when you call and the technician will arrive prepared for a bigger battery.",
+      },
+      {
+        question: "My dashboard lights come on but the car will not start. Is that the battery?",
+        answer:
+          "Often, yes. A weak or clicking start with working dashboard lights usually points to the battery. Call RoadZone Plus and the technician can boost it and help you confirm whether the battery, alternator, or something else is the cause.",
+      },
+      {
+        question: "Can a jumpstart hurt my car's electronics?",
+        answer:
+          "Done correctly, no. RoadZone Plus technicians connect the cables in the proper order and polarity to protect your vehicle's electronics. That is safer than a rushed jump with mismatched cables in a parking lot.",
       },
     ],
   },

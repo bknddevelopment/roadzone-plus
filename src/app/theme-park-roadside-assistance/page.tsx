@@ -88,6 +88,23 @@ const faqs = [
     answer:
       "Yes. RoadZone Plus operates 24 hours a day, seven days a week, including nights, weekends, and holidays.",
   },
+  {
+    question: "How much does roadside help near the parks cost?",
+    answer:
+      "Costs vary by the service you need and where you are, so RoadZone Plus confirms the details with you on the call rather than quoting a flat rate online. There is no membership required to get help.",
+  },
+  {
+    question: "What if I am not sure exactly where I am near the parks?",
+    answer:
+      "Share whatever you can: the hotel name, a park or attraction, the parking lot, an exit number, or a nearby landmark. The dispatcher can work from that to direct the technician to you.",
+  },
+];
+
+const waitingTips = [
+  "Pull as far off the road as you safely can and turn on your hazard lights.",
+  "Note the nearest hotel, attraction, exit, or mile marker to share when you call.",
+  "Stay buckled inside the vehicle if you are stopped on a busy shoulder or ramp.",
+  "Keep your phone reachable so the technician can confirm your exact spot.",
 ];
 
 export default function ThemeParkRoadsidePage() {
@@ -280,6 +297,33 @@ export default function ThemeParkRoadsidePage() {
                   See details
                 </span>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-road-black">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <ShieldCheck aria-hidden="true" size={16} />
+              While you wait
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Staying safe while help is on the way.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              Park roads, resort exits, and I-4 ramps stay busy. A few simple steps keep
+              you safe until the technician arrives.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {waitingTips.map((tip) => (
+              <div key={tip} className="flex gap-3 rounded-md bg-white/6 p-4">
+                <ShieldCheck aria-hidden="true" className="mt-0.5 shrink-0 text-safety-yellow" size={18} />
+                <p className="text-sm leading-6 text-white/70">{tip}</p>
+              </div>
             ))}
           </div>
         </div>
