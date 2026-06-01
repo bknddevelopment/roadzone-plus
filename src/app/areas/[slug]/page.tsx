@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `Roadside Assistance in ${area.name}, FL`;
-  const description = `RoadZone Plus provides 24/7 roadside assistance in ${area.name}, FL, including jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.`;
+  const description = area.intro;
 
   return {
     title,
@@ -97,9 +97,7 @@ export default async function AreaPage({ params }: PageProps) {
               Roadside assistance in {area.name}, FL.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
-              RoadZone Plus provides 24/7 roadside assistance in {area.name} for
-              jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock
-              removal, battery replacement, and smart key programming.
+              {area.intro}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={site.phoneHref} className="btn btn-primary">
@@ -159,6 +157,36 @@ export default async function AreaPage({ params }: PageProps) {
                 </Link>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section border-t border-white/10 bg-road-black">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <Route aria-hidden="true" size={16} />
+              Local coverage
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Roads and areas we cover in {area.name}.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              RoadZone Plus focuses on {area.emphasis}. Call from anywhere in{" "}
+              {area.county} and share the nearest road, intersection, or landmark so
+              help can reach you faster.
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-2">
+            {area.coverage.map((spot) => (
+              <span
+                key={spot}
+                className="rounded-md border border-white/12 bg-black/25 px-3 py-2 text-sm font-bold text-white/72"
+              >
+                {spot}
+              </span>
+            ))}
           </div>
         </div>
       </section>

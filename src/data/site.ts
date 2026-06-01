@@ -584,6 +584,8 @@ export type Area = {
   name: string;
   county: string;
   emphasis: string;
+  intro: string;
+  coverage: string[];
 };
 
 export const areas: Area[] = [
@@ -592,78 +594,195 @@ export const areas: Area[] = [
     name: "Orlando",
     county: "Orange County",
     emphasis: "home base response for drivers across the city",
+    intro:
+      "Orlando is home base for RoadZone Plus, so drivers across the city can reach us for dead batteries, flat tires, lockouts, and empty tanks. From downtown and the tourist districts to the neighborhoods along I-4 and SR 408, help can be sent to wherever you are stuck.",
+    coverage: [
+      "Interstate 4 (I-4)",
+      "SR 408 East-West Expressway",
+      "Downtown Orlando",
+      "International Drive area",
+      "Orange Blossom Trail (US 17-92)",
+    ],
   },
   {
     slug: "ocoee",
     name: "Ocoee",
     county: "Orange County",
     emphasis: "west-side roadside assistance near homes, schools, and shopping centers",
+    intro:
+      "Ocoee sits on Orlando's west side near SR 429 and Florida's Turnpike, where commuters and families are often caught out by a dead battery or flat on the way to work or school. RoadZone Plus brings roadside help to homes, shopping centers, and the roads around West Oaks.",
+    coverage: [
+      "SR 429 (Western Beltway)",
+      "Florida's Turnpike",
+      "West Colonial Drive (SR 50)",
+      "Clarke Road",
+      "West Oaks Mall area",
+    ],
   },
   {
     slug: "pine-hills",
     name: "Pine Hills",
     county: "Orange County",
     emphasis: "local help around residential roads and commuter routes",
+    intro:
+      "Pine Hills is a busy residential community just west of downtown Orlando, with heavy daily traffic along Silver Star Road and Pine Hills Road. RoadZone Plus helps drivers stuck on these commuter routes and in the surrounding neighborhoods.",
+    coverage: [
+      "Silver Star Road",
+      "Pine Hills Road",
+      "West Colonial Drive (SR 50)",
+      "Hiawassee Road",
+      "Near SR 408",
+    ],
   },
   {
     slug: "apopka",
     name: "Apopka",
     county: "Orange County",
     emphasis: "24/7 help for north Orange County drivers",
+    intro:
+      "Apopka anchors northwest Orange County along US 441 and the Wekiva Parkway (SR 429), in an area known as the Indoor Foliage Capital of the World. RoadZone Plus covers these spread-out routes where help can be hard to find when a battery dies or a tire goes flat.",
+    coverage: [
+      "US 441 (Orange Blossom Trail)",
+      "SR 429 Wekiva Parkway",
+      "SR 436",
+      "Rock Springs Road",
+      "Downtown Apopka",
+    ],
   },
   {
     slug: "altamonte-springs",
     name: "Altamonte Springs",
     county: "Seminole County",
     emphasis: "roadside support near I-4, shopping areas, and neighborhoods",
+    intro:
+      "Altamonte Springs is a shopping and commuter hub in Seminole County wrapped around I-4 and SR 436. RoadZone Plus serves the busy roads near Altamonte Mall and Cranes Roost, plus the surrounding neighborhoods, day or night.",
+    coverage: [
+      "Interstate 4 (I-4)",
+      "SR 436 (Semoran Boulevard)",
+      "Altamonte Mall area",
+      "Cranes Roost Park",
+      "SR 434",
+    ],
   },
   {
     slug: "university",
     name: "University",
     county: "Orange County",
     emphasis: "help for students, commuters, and nearby apartment communities",
+    intro:
+      "The University area centers on the University of Central Florida (UCF), with students, commuters, and apartment communities packed along Alafaya Trail and University Boulevard. RoadZone Plus is ready for the dead batteries and lockouts common around campus and Research Park.",
+    coverage: [
+      "University of Central Florida (UCF)",
+      "Alafaya Trail (SR 434)",
+      "University Boulevard",
+      "Research Park",
+      "East Colonial Drive (SR 50)",
+    ],
   },
   {
     slug: "kissimmee",
     name: "Kissimmee",
     county: "Osceola County",
     emphasis: "fast service for residents, tourists, and resort-area drivers",
+    intro:
+      "Kissimmee runs along the US 192 tourist corridor near Walt Disney World, mixing residents, resort visitors, and rideshare drivers. RoadZone Plus helps locals and travelers stranded along the highways, hotels, and routes around Lake Tohopekaliga.",
+    coverage: [
+      "US 192 (Irlo Bronson Memorial Hwy)",
+      "Florida's Turnpike",
+      "John Young Parkway",
+      "Near Walt Disney World",
+      "Downtown Kissimmee",
+    ],
   },
   {
     slug: "celebration",
     name: "Celebration",
     county: "Osceola County",
     emphasis: "roadside assistance near resort corridors and local neighborhoods",
+    intro:
+      "Celebration is a master-planned community next to Walt Disney World, just off US 192 and World Drive. RoadZone Plus serves residents and the many visitors staying nearby when a flat tire, lockout, or empty tank interrupts the trip.",
+    coverage: [
+      "US 192",
+      "World Drive",
+      "Celebration Avenue",
+      "Near Walt Disney World",
+      "I-4 access",
+    ],
   },
   {
     slug: "lake-buena-vista",
     name: "Lake Buena Vista",
     county: "Orange County",
     emphasis: "tourist-area roadside support near hotels and attractions",
+    intro:
+      "Lake Buena Vista is the heart of the Disney resort area, home to Disney Springs and dozens of hotels right off I-4. RoadZone Plus helps tourists in rental cars and locals alike when they are locked out, out of gas, or stuck with a dead battery near the parks.",
+    coverage: [
+      "Interstate 4 (I-4)",
+      "Disney Springs",
+      "Apopka-Vineland Road",
+      "Hotel Plaza Boulevard",
+      "Near the Disney parks",
+    ],
   },
   {
     slug: "clermont",
     name: "Clermont",
     county: "Lake County",
     emphasis: "west Central Florida roadside help for local and commuter drivers",
+    intro:
+      "Clermont sits west of Orlando in Lake County along US 27 and near Florida's Turnpike, known for its rolling hills and the historic Citrus Tower. RoadZone Plus reaches commuters and local drivers across these longer routes where a breakdown can leave you far from help.",
+    coverage: [
+      "US 27",
+      "Florida's Turnpike",
+      "SR 50 (Colonial Drive)",
+      "Citrus Tower area",
+      "Downtown Clermont",
+    ],
   },
   {
     slug: "winter-garden",
     name: "Winter Garden",
     county: "Orange County",
     emphasis: "roadside service across growing west Orange communities",
+    intro:
+      "Winter Garden blends a historic downtown on Plant Street with fast-growing communities near SR 429 and Winter Garden Village. RoadZone Plus serves the West Orange Trail area and the commuter roads where drivers get caught by flats and dead batteries.",
+    coverage: [
+      "SR 429 (Western Beltway)",
+      "Plant Street / Historic Downtown",
+      "West Orange Trail",
+      "Winter Garden Village",
+      "SR 50 (Colonial Drive)",
+    ],
   },
   {
     slug: "oviedo",
     name: "Oviedo",
     county: "Seminole County",
     emphasis: "help for drivers around neighborhoods, campuses, and local roads",
+    intro:
+      "Oviedo is a Seminole County community near UCF, built around Oviedo on the Park and the roads along Red Bug Lake Road and SR 417. RoadZone Plus helps students, families, and commuters stranded on these neighborhood and campus routes.",
+    coverage: [
+      "SR 417 (Central Florida GreeneWay)",
+      "Red Bug Lake Road",
+      "Mitchell Hammock Road",
+      "Oviedo on the Park",
+      "Near UCF",
+    ],
   },
   {
     slug: "sanford",
     name: "Sanford",
     county: "Seminole County",
     emphasis: "north metro roadside assistance near major commuter routes",
+    intro:
+      "Sanford sits on the shores of Lake Monroe in north Seminole County, anchored by a historic downtown and Orlando Sanford International Airport. RoadZone Plus covers the commuter routes along I-4 and SR 417 where north-metro drivers need roadside help.",
+    coverage: [
+      "Interstate 4 (I-4)",
+      "SR 417 (GreeneWay)",
+      "Orlando Sanford International Airport",
+      "Lake Monroe / Downtown Sanford",
+      "US 17-92",
+    ],
   },
 ];
 
