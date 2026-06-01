@@ -65,6 +65,53 @@ export const services: Service[] = [
       "Vehicle sat unused for several days",
       "Battery died after lights or accessories were left on",
     ],
+    intro:
+      "A dead battery is one of the most common reasons drivers in Orlando end up stranded, and Central Florida heat makes it worse. High temperatures speed up the wear inside a battery, so one that seemed fine in winter can fail on a hot summer morning. RoadZone Plus brings a jumpstart to wherever your car is parked, day or night, so you are not left waiting in a driveway, a parking lot, or on the shoulder.",
+    process: [
+      {
+        step: "Call and describe what happened",
+        detail:
+          "Call RoadZone Plus, share your exact location, and tell us what the car is doing: a clicking sound, dim lights, or no response at all.",
+      },
+      {
+        step: "Stay safe while help is on the way",
+        detail:
+          "Park as safely as you can, switch off the lights and accessories, and keep your phone nearby so the technician can reach you.",
+      },
+      {
+        step: "On-site battery boost",
+        detail:
+          "The technician connects the cables safely and boosts your battery so the engine can turn over again.",
+      },
+      {
+        step: "Decide the next step",
+        detail:
+          "Once you are running, we help you understand whether a recharge from driving is enough or whether the battery may need replacing soon.",
+      },
+    ],
+    details: [
+      {
+        heading: "Does this work on hybrids and electric vehicles?",
+        body:
+          "Yes, in most cases. Hybrids and EVs still use a regular 12-volt battery to power the electronics and wake the car up. When that 12-volt battery dies, the vehicle often will not start even if the main drive battery is charged, and a standard jumpstart is exactly what it needs. Mention your year, make, and model when you call so the technician arrives ready.",
+      },
+      {
+        heading: "Why batteries die faster in Florida",
+        body:
+          "Heat is harder on a car battery than cold. Central Florida's long, hot season speeds up the wear inside the battery, so dead-battery calls climb in the summer months. If your car has been slow to start, do not wait for it to fail completely.",
+      },
+      {
+        heading: "Jumpstart or battery replacement?",
+        body:
+          "If this is the first time the battery has died, a jumpstart usually gets you going. If it keeps happening, ask about battery replacement so you are not stuck again next week.",
+      },
+    ],
+    safetyTips: [
+      "Turn off the headlights, radio, and air conditioning before the technician arrives.",
+      "In a parking lot, stay with the vehicle so the technician can find it quickly.",
+      "On a roadway shoulder, stay buckled inside the car with hazard lights on.",
+      "After a jump, drive for a while or let the engine run so the battery can recharge.",
+    ],
     faqs: [
       {
         question: "Can RoadZone Plus jumpstart my car at home or work?",
@@ -75,6 +122,16 @@ export const services: Service[] = [
         question: "What if the car still does not start after the jump?",
         answer:
           "The technician can check the situation and help you understand if the issue looks like a battery, alternator, starter, or another no-start problem.",
+      },
+      {
+        question: "Will a jumpstart work if my car has been sitting for weeks?",
+        answer:
+          "Often yes. A battery that drained slowly while the car sat unused can usually be boosted. If it will not hold a charge afterward, it may be time for a replacement.",
+      },
+      {
+        question: "Do you jumpstart hybrids and electric vehicles?",
+        answer:
+          "Yes. Hybrids and EVs rely on a 12-volt battery for their electronics, and that battery can die like any other. A jumpstart is the normal fix. Share your year, make, and model when you call.",
       },
     ],
   },
@@ -101,6 +158,53 @@ export const services: Service[] = [
       "Car pulling hard after tire pressure drops",
       "Need help removing tight lug nuts",
     ],
+    intro:
+      "A flat tire can stop your day in seconds, whether it is a curb, a nail, or a blowout on hot Central Florida pavement. If you have a usable spare, RoadZone Plus comes to you and installs it safely, so you are not kneeling on the shoulder of a busy Orlando road or waiting hours for a tow you do not need.",
+    process: [
+      {
+        step: "Call with your location and tire situation",
+        detail:
+          "Tell us where you are and what happened: a slow leak, a blowout, or a flat in a parking lot.",
+      },
+      {
+        step: "Get to a safe spot if you can",
+        detail:
+          "If it is safe, pull onto level ground away from traffic and turn on your hazard lights.",
+      },
+      {
+        step: "Spare tire installed on-site",
+        detail:
+          "The technician loosens the lug nuts, swaps the flat for your spare, and tightens everything to get you moving.",
+      },
+      {
+        step: "Know your limits on the spare",
+        detail:
+          "We explain how far and how fast you can safely drive on the spare so you can reach a tire shop without trouble.",
+      },
+    ],
+    details: [
+      {
+        heading: "You need a usable spare",
+        body:
+          "A standard roadside tire change needs a spare in good condition, either full-size or a temporary donut. No spare? Call anyway and we will help you figure out the fastest next step.",
+      },
+      {
+        heading: "Locked wheel? We can help with that too",
+        body:
+          "Some flats turn into a bigger problem when a locking lug nut blocks the wheel and the wheel lock key is missing. RoadZone Plus also offers wheel lock removal, so one call can cover both.",
+      },
+      {
+        heading: "Summer blowouts in Central Florida",
+        body:
+          "Hot asphalt and underinflated tires are a bad combination, and Florida summers see more blowouts because of it. If your tire pressure light is on, do not ignore it.",
+      },
+    ],
+    safetyTips: [
+      "Pull as far off the road as you safely can before stopping.",
+      "Turn on your hazard lights and set out reflective triangles if you have them.",
+      "Stand away from traffic, never on the traffic side of the vehicle, while you wait.",
+      "On a narrow shoulder or highway, stay inside the car with your seatbelt on.",
+    ],
     faqs: [
       {
         question: "Do I need to have a spare tire?",
@@ -111,6 +215,16 @@ export const services: Service[] = [
         question: "Can you help with a flat in a parking lot?",
         answer:
           "Yes. RoadZone Plus handles tire changes at stores, apartments, hotels, workplaces, and roadside locations.",
+      },
+      {
+        question: "Can you change a tire on the highway?",
+        answer:
+          "We help wherever it is safe to work. On a busy highway shoulder, position and safety come first, so share the exact road and the nearest mile marker or exit when you call.",
+      },
+      {
+        question: "What if I do not have a spare?",
+        answer:
+          "Call anyway. We will talk through your options, including wheel lock removal if a locking lug nut is the problem, and help you reach the fastest safe solution.",
       },
     ],
   },
@@ -228,6 +342,53 @@ export const services: Service[] = [
       "Door closed before keys were removed",
       "Locked out at a hotel, store, or workplace",
     ],
+    intro:
+      "Keys locked in the car is one of the most stressful roadside moments, and it always seems to happen at the worst time: at a store, a hotel, a workplace, or a rest stop on the way to the parks. RoadZone Plus offers damage-conscious auto lockout help across Orlando and Central Florida so you can get back into your vehicle without waiting hours or paying for a tow.",
+    process: [
+      {
+        step: "Call with your vehicle and location",
+        detail:
+          "Share the year, make, model, and exactly where you are so the technician arrives prepared.",
+      },
+      {
+        step: "Stay with your vehicle",
+        detail:
+          "Wait somewhere safe and keep your phone handy so the technician can confirm the car and your location.",
+      },
+      {
+        step: "Damage-conscious entry",
+        detail:
+          "The technician works to open the vehicle carefully, using an approach meant to avoid damage to the door and window.",
+      },
+      {
+        step: "Back in and moving",
+        detail:
+          "Once you are in, you are on your way, with no tow and no long wait.",
+      },
+    ],
+    details: [
+      {
+        heading: "Visiting Orlando in a rental car?",
+        body:
+          "Lockouts in rental cars are common for visitors near Disney, Universal, and the resort corridor. RoadZone Plus serves Lake Buena Vista, Kissimmee, and Celebration, so travelers stranded outside a rental can still get quick local help.",
+      },
+      {
+        heading: "Child or pet locked inside?",
+        body:
+          "If a person or pet is locked in and in danger, especially in Florida heat, call 911 first. Heat inside a closed car rises dangerously fast. RoadZone Plus can still help, but emergency services should come first when safety is urgent.",
+      },
+      {
+        heading: "What we can open",
+        body:
+          "Most common passenger vehicles can be helped. Call with the details and we will confirm the right response before heading out.",
+      },
+    ],
+    safetyTips: [
+      "In a parking lot or garage, wait in a well-lit, visible spot.",
+      "Keep your phone charged and reachable so the technician can find you.",
+      "Never leave a child or pet in a closed car in the heat; call 911 immediately.",
+      "Have your ID ready, since the technician may confirm the vehicle is yours.",
+    ],
     faqs: [
       {
         question: "Can you unlock every vehicle?",
@@ -238,6 +399,16 @@ export const services: Service[] = [
         question: "Should I call if a child or pet is locked inside?",
         answer:
           "If a person or pet is in danger, call 911 first. RoadZone Plus can still be contacted for roadside help, but emergency services should be first when safety is urgent.",
+      },
+      {
+        question: "How is this different from calling a locksmith?",
+        answer:
+          "RoadZone Plus is a roadside service, so a lockout can be handled alongside other roadside needs in one call. For new keys cut or complex ignition work, a specialty locksmith may still be needed, and we will tell you honestly if that is the case.",
+      },
+      {
+        question: "Can you help if I am locked out of a rental car?",
+        answer:
+          "Yes. We help visitors and locals alike. Have the year, make, model, and your exact location ready when you call.",
       },
     ],
   },
@@ -264,6 +435,53 @@ export const services: Service[] = [
       "Tire shop or roadside kit cannot remove the wheel",
       "Flat tire plus locked wheel hardware",
     ],
+    intro:
+      "Wheel locks are special locking lug nuts that protect your wheels from theft, and they work fine until the small key that removes them goes missing. Without it, you cannot take the wheel off, which turns a simple flat tire into a stuck vehicle. Many drivers do not even realize their car has wheel locks until they need them off. RoadZone Plus helps Orlando and Central Florida drivers remove wheel locks when the key is lost, stripped, or broken, so tire service can actually happen.",
+    process: [
+      {
+        step: "Call and describe the wheel lock problem",
+        detail:
+          "Tell us the year, make, and model, and what is happening: a lost key, a stripped lock, or a flat you cannot reach because of the lock.",
+      },
+      {
+        step: "Confirm the situation",
+        detail:
+          "We confirm the details so the technician arrives with the right approach for your vehicle.",
+      },
+      {
+        step: "Wheel lock removed on-site",
+        detail:
+          "The technician works to remove the locking lug nut so the wheel can come off.",
+      },
+      {
+        step: "Move on to the tire service",
+        detail:
+          "With the lock off, a spare can go on or the wheel can be serviced, getting you back on the road.",
+      },
+    ],
+    details: [
+      {
+        heading: "Why a lost wheel lock key is such a problem",
+        body:
+          "A locking lug nut needs its matching key pattern to come off. A normal socket or roadside kit will not budge it, and many tire shops will turn you away until the lock is removed. That is the gap RoadZone Plus fills.",
+      },
+      {
+        heading: "Flat tire plus a missing wheel lock key",
+        body:
+          "This is the worst-case combination: a flat you cannot fix because the wheel will not come off. One call to RoadZone Plus can cover both the wheel lock removal and the tire change.",
+      },
+      {
+        heading: "How wheel locks go missing",
+        body:
+          "The little key often lives in a glovebox, trunk well, or center console, and it disappears after a tire rotation, a used-car purchase, or simply over the years. If you have never seen yours, check before you are stuck on the road.",
+      },
+    ],
+    safetyTips: [
+      "If you are stranded, pull to a safe, level spot and turn on your hazard lights.",
+      "Check the glovebox, center console, and trunk for the wheel lock key before you call.",
+      "Have your vehicle's year, make, and model ready when you call.",
+      "Stay clear of traffic while the technician works.",
+    ],
     faqs: [
       {
         question: "Can wheel lock removal be done roadside?",
@@ -274,6 +492,16 @@ export const services: Service[] = [
         question: "Is this different from a tire change?",
         answer:
           "Yes. Tire changes require the wheel to come off. Wheel lock removal is the extra help needed when a locking lug nut blocks that step.",
+      },
+      {
+        question: "I lost my wheel lock key. Can you still get the wheel off?",
+        answer:
+          "In many cases, yes. Call with your year, make, and model so RoadZone Plus can confirm the right approach before heading out.",
+      },
+      {
+        question: "Will removing the wheel lock damage my wheel?",
+        answer:
+          "The goal is careful removal focused on the locking lug nut. Share your vehicle details when you call so the technician arrives prepared for your specific setup.",
       },
     ],
   },

@@ -42,13 +42,14 @@ export default function HomePage() {
             </div>
 
             <h1 className="mt-6 text-5xl font-black leading-[0.98] text-white sm:text-6xl lg:text-7xl animate-in-delay-1">
-              RoadZone Plus
-              <span className="mt-3 block text-road-red"> roadside help now.</span>
+              24/7 Roadside Assistance
+              <span className="mt-3 block text-road-red"> in Orlando &amp; Central Florida.</span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl animate-in-delay-2">
-              Fast jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock
-              removal, battery replacement, and smart key programming. One call gets a
+              RoadZone Plus is a 24/7 roadside assistance service in Orlando and Central
+              Florida. Fast jumpstarts, tire changes, fuel delivery, auto lockouts, wheel
+              lock removal, battery replacement, and smart key programming — one call gets a
               roadside technician moving.
             </p>
 
