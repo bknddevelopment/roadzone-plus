@@ -53,6 +53,9 @@ export function Footer() {
                   {area.name}
                 </Link>
               ))}
+              <Link href="/theme-park-roadside-assistance" className="footer-link">
+                Near the theme parks
+              </Link>
               <Link href="/areas" className="footer-link font-bold text-white">
                 View all areas
               </Link>
