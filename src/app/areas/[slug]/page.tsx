@@ -77,12 +77,27 @@ export default async function AreaPage({ params }: PageProps) {
     },
   };
 
+  const areaFaqSchema = area.faqs
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: area.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([breadcrumbs, areaServiceSchema]),
+          __html: JSON.stringify([breadcrumbs, areaServiceSchema, areaFaqSchema].filter(Boolean)),
         }}
       />
 
@@ -161,6 +176,35 @@ export default async function AreaPage({ params }: PageProps) {
         </div>
       </section>
 
+      {area.emergencyNotes && area.emergencyNotes.length > 0 ? (
+        <section className="section border-t border-white/10 bg-road-black">
+          <div className="container">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <PhoneCall aria-hidden="true" size={16} />
+                Orlando emergency help
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Roadside assistance in {area.name} when you need a direct call.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                If your vehicle is stuck, the fastest path is still simple: call,
+                describe the problem, and give the clearest location you can.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {area.emergencyNotes.map((item) => (
+                <div key={item.heading} className="card-solid p-6">
+                  <h3 className="text-xl font-black text-white">{item.heading}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/66">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {area.nearParks ? (
         <section className="border-y border-white/10 bg-panel py-8">
           <div className="container flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
@@ -208,6 +252,34 @@ export default async function AreaPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {area.faqs && area.faqs.length > 0 ? (
+        <section className="section bg-asphalt">
+          <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <div className="eyebrow">
+                <CheckCircle2 aria-hidden="true" size={16} />
+                Local FAQ
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Orlando roadside assistance questions.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                Straight answers for drivers searching from Orlando before they call.
+              </p>
+            </div>
+
+            <div className="grid gap-4">
+              {area.faqs.map((faq) => (
+                <div key={faq.question} className="card-solid p-6">
+                  <h3 className="text-xl font-black text-white">{faq.question}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/66">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="bg-road-red py-12 text-white">
         <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
