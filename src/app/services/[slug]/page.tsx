@@ -263,6 +263,28 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
       ) : null}
 
+      {service.slug === "wheel-lock-removal" || service.slug === "tire-change" ? (
+        <section className="section border-y border-white/10 bg-panel">
+          <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Info aria-hidden="true" size={16} />
+                Lost wheel lock key?
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                If the wheel cannot come off, start here.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                A missing wheel lock key can stop a tire change before it starts. Read the Orlando guide on what to check, when to stop forcing the lock, and when to call RoadZone Plus.
+              </p>
+            </div>
+            <Link href="/lost-wheel-lock-key-orlando" className="btn btn-primary shrink-0">
+              Read the Guide
+            </Link>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section border-y border-white/10 bg-panel">
         <div className="container">
           <div className="max-w-3xl">

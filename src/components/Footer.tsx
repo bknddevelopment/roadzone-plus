@@ -56,6 +56,9 @@ export function Footer() {
               <Link href="/theme-park-roadside-assistance" className="footer-link">
                 Near the theme parks
               </Link>
+              <Link href="/lost-wheel-lock-key-orlando" className="footer-link">
+                Lost wheel lock key
+              </Link>
               <Link href="/areas" className="footer-link font-bold text-white">
                 View all areas
               </Link>

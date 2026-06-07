@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/areas",
     "/contact",
     "/theme-park-roadside-assistance",
+    "/lost-wheel-lock-key-orlando",
   ].map((path) => ({
     url: `${site.url}${path}`,
     lastModified: now,
