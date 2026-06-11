@@ -10,6 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/theme-park-roadside-assistance",
     "/lost-wheel-lock-key-orlando",
+    "/roadside-assistance-cost-orlando",
+    "/locked-keys-in-rental-car-orlando",
+    "/ran-out-of-gas-on-i-4-orlando",
   ].map((path) => ({
     url: `${site.url}${path}`,
     lastModified: now,
