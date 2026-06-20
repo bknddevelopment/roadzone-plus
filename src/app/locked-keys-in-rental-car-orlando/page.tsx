@@ -176,6 +176,29 @@ const waitingTips = [
   "Keep your phone charged and reachable so dispatch can confirm the lot section, hotel, or exit.",
 ];
 
+const dispatchDetails = [
+  {
+    label: "Rental company and vehicle",
+    detail:
+      "Tell us whether it is Hertz, Enterprise, Avis, Budget, Turo, or another rental, then share the year, make, model, color, and license plate if you can see it.",
+  },
+  {
+    label: "Where the key or fob is",
+    detail:
+      "Say whether the key is on the seat, in the trunk, in a bag, in the ignition, or if the fob is locked inside a push-to-start car.",
+  },
+  {
+    label: "Exact parking location",
+    detail:
+      "Use the hotel name, garage level, row, section, resort entrance, attraction, or nearby road. In theme-park lots, the section is often the most important detail.",
+  },
+  {
+    label: "Emergency status",
+    detail:
+      "If anyone or any pet is inside the vehicle, call 911 first. If the car is blocking traffic or stuck near a ramp, tell dispatch before a technician is sent.",
+  },
+];
+
 export default function LockedKeysRentalCarPage() {
   const faqSchema = {
     "@context": "https://schema.org",
@@ -187,6 +210,22 @@ export default function LockedKeysRentalCarPage() {
         "@type": "Answer",
         text: faq.answer,
       },
+    })),
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "What to do if you locked keys in a rental car in Orlando",
+    description:
+      "Immediate steps for a rental car lockout near Orlando hotels, theme parks, parking lots, and resort roads.",
+    totalTime: "PT5M",
+    step: rightNowSteps.map((item, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: item.title,
+      text: item.text,
+      url: `${absoluteUrl("/locked-keys-in-rental-car-orlando")}#step-${index + 1}`,
     })),
   };
 
@@ -229,7 +268,7 @@ export default function LockedKeysRentalCarPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([faqSchema, serviceSchema, breadcrumbs]),
+          __html: JSON.stringify([faqSchema, howToSchema, serviceSchema, breadcrumbs]),
         }}
       />
 
@@ -306,7 +345,11 @@ export default function LockedKeysRentalCarPage() {
 
           <ol className="mt-8 grid gap-4 sm:grid-cols-2">
             {rightNowSteps.map((item, index) => (
-              <li key={item.title} className="card-solid flex gap-4 p-6">
+              <li
+                key={item.title}
+                id={`step-${index + 1}`}
+                className="card-solid flex gap-4 p-6"
+              >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-road-red text-base font-black text-white">
                   {index + 1}
                 </span>
@@ -399,6 +442,33 @@ export default function LockedKeysRentalCarPage() {
                 order is what matters: people and pets first, the car second.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section border-y border-white/10 bg-panel">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <PhoneCall aria-hidden="true" size={16} />
+              What to tell dispatch
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              The details that speed up rental-car lockout help.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              Rental lockouts get slower when the location or key situation is vague.
+              Give RoadZone Plus the details below so the technician arrives prepared.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {dispatchDetails.map((item) => (
+              <div key={item.label} className="card-solid p-6">
+                <p className="text-xs font-black uppercase text-route-green">{item.label}</p>
+                <p className="mt-3 text-sm leading-6 text-white/68">{item.detail}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

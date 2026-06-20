@@ -99,6 +99,29 @@ const localScenarios = [
   },
 ];
 
+const dispatchDetails = [
+  {
+    label: "Vehicle and wheel type",
+    detail:
+      "Share the year, make, model, and whether the wheels are factory, aftermarket, chrome, black, or custom. A quick photo helps if you can send one safely.",
+  },
+  {
+    label: "What happened to the key",
+    detail:
+      "Tell us if the key is missing, cracked, stripped, slipping, or stuck on the lock. Do not keep forcing it if it is already rounding out.",
+  },
+  {
+    label: "Your tire situation",
+    detail:
+      "Say whether you have a flat tire now, whether the spare is usable, and whether a tire shop already refused to start until the lock is removed.",
+  },
+  {
+    label: "Exact location",
+    detail:
+      "Use the apartment name, parking lot, hotel, road, exit, or nearest cross street. If you are on a shoulder, stay clear of traffic and keep your hazards on.",
+  },
+];
+
 const faqs = [
   {
     question: "What should I do if I lost my wheel lock key in Orlando?",
@@ -156,6 +179,22 @@ export default function LostWheelLockKeyPage() {
     })),
   };
 
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "What to do when you lost your wheel lock key in Orlando",
+    description:
+      "Step-by-step actions for Orlando drivers when a missing, broken, or stripped wheel lock key blocks a flat tire change or tire service.",
+    totalTime: "PT5M",
+    step: firstSteps.map((item, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: item.title,
+      text: item.text,
+      url: `${absoluteUrl("/lost-wheel-lock-key-orlando")}#step-${index + 1}`,
+    })),
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -192,7 +231,7 @@ export default function LostWheelLockKeyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([faqSchema, serviceSchema, breadcrumbs]),
+          __html: JSON.stringify([faqSchema, howToSchema, serviceSchema, breadcrumbs]),
         }}
       />
 
@@ -287,7 +326,11 @@ export default function LostWheelLockKeyPage() {
 
           <ol className="mt-8 grid gap-4 sm:grid-cols-2">
             {firstSteps.map((item, index) => (
-              <li key={item.title} className="card-solid flex gap-4 p-6">
+              <li
+                key={item.title}
+                id={`step-${index + 1}`}
+                className="card-solid flex gap-4 p-6"
+              >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-road-red text-base font-black text-white">
                   {index + 1}
                 </span>
@@ -395,6 +438,61 @@ export default function LostWheelLockKeyPage() {
                 </span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-road-black">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <PhoneCall aria-hidden="true" size={16} />
+              What to tell dispatch
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Give us the wheel-lock details before the hardware gets worse.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              Wheel locks are easier to handle before repeated force damages the key,
+              lock, wheel, or stud. Share the details below when you call RoadZone Plus.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {dispatchDetails.map((item) => (
+              <div key={item.label} className="card-solid p-6">
+                <p className="text-xs font-black uppercase text-route-green">{item.label}</p>
+                <p className="mt-3 text-sm leading-6 text-white/68">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <Link
+              href="/services/wheel-lock-removal"
+              className="card-solid group p-6 transition hover:-translate-y-1 hover:border-road-red/70"
+            >
+              <h3 className="text-xl font-black text-white">Wheel Lock Removal</h3>
+              <p className="mt-3 text-sm leading-6 text-white/64">
+                Local roadside help when a locking lug nut blocks the tire job.
+              </p>
+              <span className="mt-4 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                See the service
+              </span>
+            </Link>
+            <Link
+              href="/services/tire-change"
+              className="card-solid group p-6 transition hover:-translate-y-1 hover:border-road-red/70"
+            >
+              <h3 className="text-xl font-black text-white">Flat Tire Help</h3>
+              <p className="mt-3 text-sm leading-6 text-white/64">
+                If the lock comes off and you have a usable spare, RoadZone can help
+                move the tire change forward.
+              </p>
+              <span className="mt-4 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                See tire change help
+              </span>
+            </Link>
           </div>
         </div>
       </section>

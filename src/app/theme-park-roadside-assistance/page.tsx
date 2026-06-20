@@ -62,6 +62,48 @@ const corridorAreas = [
   { name: "Celebration", slug: "celebration", note: "the master-planned community next to the parks" },
 ];
 
+const rightNowSteps = [
+  {
+    title: "Move to the safest place you can",
+    text: "If you are on a ramp, resort exit, or park road, get fully out of the travel lane if the vehicle can still move. Turn on your hazard lights and stay clear of traffic.",
+  },
+  {
+    title: "Identify the exact lot, garage, hotel, or road",
+    text: "Use the parking section, garage level, hotel name, attraction, road name, exit, or nearest landmark. 'Universal garage level 3' is faster than 'near Universal.'",
+  },
+  {
+    title: "Confirm the problem and vehicle",
+    text: "Say whether you need fuel, a jumpstart, a lockout, a tire change, or wheel lock help, then share the year, make, model, and color of the vehicle.",
+  },
+  {
+    title: "Call and keep your phone reachable",
+    text: "Call RoadZone Plus, stay near the vehicle when it is safe, and keep your phone on so the technician can confirm the entrance, row, or pickup point.",
+  },
+];
+
+const locationDetails = [
+  {
+    label: "Disney-area lots",
+    detail:
+      "Use the park, resort, Disney Springs garage, lot name, row, level, tram stop, or Hotel Plaza Boulevard landmark if you know it.",
+  },
+  {
+    label: "Universal and I-Drive",
+    detail:
+      "Share the garage level, hotel, attraction, International Drive cross street, Kirkman Road, Major Boulevard, or I-4 exit when you call.",
+  },
+  {
+    label: "US 192 and Kissimmee",
+    detail:
+      "Use the hotel, vacation-home community, mile marker, store, restaurant, or US 192 cross street so the technician does not lose time in the corridor.",
+  },
+  {
+    label: "Rental vehicles",
+    detail:
+      "Have the rental company, vehicle color, and license plate ready if you can see it. For lockouts, tell us where the key or fob is inside the car.",
+  },
+];
+
 const faqs = [
   {
     question: "Do you help with rental cars?",
@@ -121,6 +163,22 @@ export default function ThemeParkRoadsidePage() {
     })),
   };
 
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "What to do if you need roadside assistance near Orlando theme parks",
+    description:
+      "Immediate steps for visitors and locals stranded near Walt Disney World, Universal Orlando, US 192, International Drive, or the resort corridor.",
+    totalTime: "PT5M",
+    step: rightNowSteps.map((item, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: item.title,
+      text: item.text,
+      url: `${absoluteUrl("/theme-park-roadside-assistance")}#step-${index + 1}`,
+    })),
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -159,7 +217,7 @@ export default function ThemeParkRoadsidePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([faqSchema, serviceSchema, breadcrumbs]),
+          __html: JSON.stringify([faqSchema, howToSchema, serviceSchema, breadcrumbs]),
         }}
       />
 
@@ -270,6 +328,46 @@ export default function ThemeParkRoadsidePage() {
                   View area
                 </span>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-road-black">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <PhoneCall aria-hidden="true" size={16} />
+              What to do right now
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Get the exact location before you call.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              The theme-park corridor has giant lots, garages, resort roads, and
+              confusing entrances. These details help RoadZone Plus route the call
+              directly instead of searching the wrong side of the property.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {rightNowSteps.map((item, index) => (
+              <div key={item.title} id={`step-${index + 1}`} className="card-solid p-6">
+                <p className="text-xs font-black uppercase text-safety-yellow">
+                  Step {index + 1}
+                </p>
+                <h3 className="mt-3 text-lg font-black text-white">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/66">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {locationDetails.map((item) => (
+              <div key={item.label} className="card-solid p-6">
+                <p className="text-xs font-black uppercase text-route-green">{item.label}</p>
+                <p className="mt-3 text-sm leading-6 text-white/68">{item.detail}</p>
+              </div>
             ))}
           </div>
         </div>

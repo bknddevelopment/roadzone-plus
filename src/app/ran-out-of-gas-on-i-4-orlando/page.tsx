@@ -131,6 +131,29 @@ const afterFuelTips = [
   "If your low-fuel light has been coming on sooner than the miles suggest, have the gauge or fuel sender checked so this does not repeat.",
 ];
 
+const dispatchDetails = [
+  {
+    label: "Road and direction",
+    detail:
+      "Say the exact road and direction first: I-4 eastbound, I-4 westbound, SR 408 eastbound, or SR 528 toward the airport. Direction matters more than the nearest city.",
+  },
+  {
+    label: "Nearest marker",
+    detail:
+      "Use the closest mile marker, exit, overhead sign, toll plaza, hotel, ramp, or cross street. One precise landmark is better than a long explanation.",
+  },
+  {
+    label: "Vehicle details",
+    detail:
+      "Share the year, make, model, color, and whether the vehicle takes gas or diesel, especially for rentals, trucks, vans, or work vehicles.",
+  },
+  {
+    label: "Safety status",
+    detail:
+      "Tell dispatch if you are fully on the shoulder, partially blocking traffic, stuck in a gore area, or unable to safely exit the lane. Unsafe positions should go to 911 first.",
+  },
+];
+
 const faqs = [
   {
     question: "Who do I call when I run out of gas on I-4 in Orlando?",
@@ -550,6 +573,33 @@ export default function RanOutOfGasI4Page() {
                 See the guide
               </span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-road-black">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <PhoneCall aria-hidden="true" size={16} />
+              What to say on the call
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Give dispatch the details that get fuel to the right shoulder.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              The fastest fuel delivery call is specific. Before you call, gather the
+              details below if you can do it safely without stepping into traffic.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {dispatchDetails.map((item) => (
+              <div key={item.label} className="card-solid p-6">
+                <p className="text-xs font-black uppercase text-route-green">{item.label}</p>
+                <p className="mt-3 text-sm leading-6 text-white/68">{item.detail}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
