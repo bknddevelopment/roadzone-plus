@@ -24,6 +24,16 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const priorityAreaSlugsByService: Record<string, string[]> = {
+  jumpstart: ["orlando", "university", "sanford"],
+  "tire-change": ["orlando", "kissimmee", "winter-garden"],
+  "fuel-delivery": ["orlando", "lake-buena-vista", "kissimmee"],
+  "auto-lockout": ["orlando", "lake-buena-vista", "celebration"],
+  "wheel-lock-removal": ["orlando", "ocoee", "winter-garden"],
+  "battery-replacement": ["orlando", "altamonte-springs", "university"],
+  "smart-key-programming": ["orlando", "kissimmee", "lake-buena-vista"],
+};
+
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
@@ -105,6 +115,10 @@ export default async function ServicePage({ params }: PageProps) {
     { name: "Services", path: "/services" },
     { name: service.name, path: `/services/${service.slug}` },
   ]);
+
+  const priorityAreas = (priorityAreaSlugsByService[service.slug] ?? ["orlando"])
+    .map((areaSlug) => areas.find((area) => area.slug === areaSlug))
+    .filter((area): area is (typeof areas)[number] => Boolean(area));
 
   return (
     <>
@@ -301,6 +315,23 @@ export default async function ServicePage({ params }: PageProps) {
               Springs, University, Kissimmee, Celebration, Lake Buena Vista, Clermont,
               Winter Garden, Oviedo, Sanford, and nearby areas.
             </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {priorityAreas.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/areas/${area.slug}`}
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-route-green">Priority area</p>
+                <h3 className="mt-3 text-xl font-black text-white">{area.name}, FL</h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">{area.emphasis}</p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  View {area.name} coverage
+                </span>
+              </Link>
+            ))}
           </div>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
