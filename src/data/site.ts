@@ -178,6 +178,11 @@ export const services: Service[] = [
         answer:
           "Done correctly, no. RoadZone Plus technicians connect the cables in the proper order and polarity to protect your vehicle's electronics. That is safer than a rushed jump with mismatched cables in a parking lot.",
       },
+      {
+        question: "How much does a jumpstart cost in Orlando?",
+        answer:
+          "A one-time jumpstart is usually one of the lower-cost roadside calls when you pay out of pocket, though larger trucks, vans, and RVs can run higher. RoadZone Plus requires no membership and confirms your exact price on the call before the technician heads out.",
+      },
     ],
   },
   {
@@ -271,6 +276,11 @@ export const services: Service[] = [
         answer:
           "Call anyway. We will talk through your options, including wheel lock removal if a locking lug nut is the problem, and help you reach the fastest safe solution.",
       },
+      {
+        question: "How much does a roadside tire change cost?",
+        answer:
+          "Installing a usable spare on the roadside is typically a lower-cost service, but the price can vary with your vehicle, your location, and the time of day. If a locking lug nut is also blocking the wheel, wheel lock removal may be needed too. RoadZone Plus confirms the cost with you on the call, with no membership required.",
+      },
     ],
   },
   {
@@ -361,6 +371,11 @@ export const services: Service[] = [
         question: "Can you deliver fuel late at night?",
         answer:
           "Yes. RoadZone Plus is available 24 hours a day, including nights, weekends, and holidays.",
+      },
+      {
+        question: "How much does fuel delivery cost?",
+        answer:
+          "Fuel delivery usually includes a service charge to bring the fuel to you, plus the cost of the gas itself. The total depends on your location and how much fuel you need. RoadZone Plus confirms the price on the call before dispatching, and no membership is required.",
       },
     ],
   },
@@ -455,6 +470,11 @@ export const services: Service[] = [
         answer:
           "Yes. We help visitors and locals alike. Have the year, make, model, and your exact location ready when you call.",
       },
+      {
+        question: "How much does it cost to unlock a car in Orlando?",
+        answer:
+          "A car lockout is typically a mid-range roadside cost, with late nights and newer or luxury vehicles tending toward the higher end. RoadZone Plus uses a damage-conscious approach and confirms your exact price on the call, with no membership required.",
+      },
     ],
   },
   {
@@ -547,6 +567,11 @@ export const services: Service[] = [
         question: "Will removing the wheel lock damage my wheel?",
         answer:
           "The goal is careful removal focused on the locking lug nut. Share your vehicle details when you call so the technician arrives prepared for your specific setup.",
+      },
+      {
+        question: "How much does wheel lock removal cost?",
+        answer:
+          "The cost depends on the vehicle, the condition of the lock, your location, and whether another service like a tire change is needed. A stripped or damaged lock can take more work. RoadZone Plus confirms the situation and the price on the call rather than quoting a flat rate online.",
       },
     ],
   },
@@ -641,6 +666,11 @@ export const services: Service[] = [
         answer:
           "RoadZone Plus helps with the 12-volt battery that hybrids and EVs use for their electronics and startup. Share your year, make, and model so the team can confirm the right help before heading out.",
       },
+      {
+        question: "How much does battery replacement cost?",
+        answer:
+          "Battery replacement includes the battery itself plus installation, so it sits higher than a simple jumpstart and varies by battery type and vehicle. If you are not sure whether you need a new battery or just a jump, RoadZone Plus can help you decide and confirms the price on the call.",
+      },
     ],
   },
   {
@@ -733,6 +763,11 @@ export const services: Service[] = [
         question: "Can you make a brand-new key if mine is lost?",
         answer:
           "It depends on the vehicle and key type. Cutting and programming a new key can require specialty equipment, and we will tell you honestly whether RoadZone Plus can help or a dealer or locksmith is the better route.",
+      },
+      {
+        question: "How much does smart key programming cost?",
+        answer:
+          "Smart key and key fob costs vary widely by make, model, and key type — sometimes it is just a fob battery, and sometimes the key needs programming. RoadZone Plus confirms what your specific vehicle needs and the price on the call, and will tell you honestly if a dealer is the better route.",
       },
     ],
   },

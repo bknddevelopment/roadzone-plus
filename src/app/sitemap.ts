@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/lost-wheel-lock-key-orlando",
     "/locked-keys-in-rental-car-orlando",
     "/ran-out-of-gas-on-i-4-orlando",
+    "/roadside-assistance-cost-orlando",
   ].map((path) => ({
     url: `${site.url}${path}`,
     lastModified: now,

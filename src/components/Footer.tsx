@@ -71,6 +71,9 @@ export function Footer() {
               <Link href="/services" className="footer-link">
                 Compare services
               </Link>
+              <Link href="/roadside-assistance-cost-orlando" className="footer-link">
+                Roadside assistance cost in Orlando
+              </Link>
               <Link href="/contact" className="footer-link">
                 Contact RoadZone Plus
               </Link>
