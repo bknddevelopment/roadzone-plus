@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { focusedPageList } from "@/data/focusedPages";
 import { areas, services, site } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/locked-keys-in-rental-car-orlando",
     "/ran-out-of-gas-on-i-4-orlando",
     "/roadside-assistance-cost-orlando",
+    ...focusedPageList.map((page) => page.href),
   ].map((path) => ({
     url: `${site.url}${path}`,
     lastModified: now,

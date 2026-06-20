@@ -49,17 +49,22 @@ const serviceLinks: HeaderLink[] = services.map((service) => ({
 
 const problemLinks: HeaderLink[] = [
   {
-    href: "/roadside-assistance-cost-orlando",
-    label: "Roadside Cost Guide",
-    description: "What one-time roadside help can cost around Orlando.",
-    Icon: CircleDollarSign,
-    badge: "No membership",
-  },
-  {
     href: "/ran-out-of-gas-on-i-4-orlando",
     label: "Ran Out of Gas on I-4",
     description: "Fuel delivery help for Orlando highways and expressways.",
     Icon: Fuel,
+  },
+  {
+    href: "/flat-tire-on-i-4-orlando",
+    label: "Flat Tire on I-4",
+    description: "Roadside tire change guidance for Orlando highways and ramps.",
+    Icon: Wrench,
+  },
+  {
+    href: "/dead-battery-car-wont-start-orlando",
+    label: "Dead Battery / Won't Start",
+    description: "No-start help for batteries, jumpstarts, and parking-lot breakdowns.",
+    Icon: BatteryCharging,
   },
   {
     href: "/locked-keys-in-rental-car-orlando",
@@ -74,22 +79,36 @@ const problemLinks: HeaderLink[] = [
     Icon: Wrench,
   },
   {
+    href: "/key-fob-not-working-orlando",
+    label: "Key Fob Not Working",
+    description: "Smart key, push-to-start, and key-not-detected help.",
+    Icon: KeyRound,
+  },
+  {
     href: "/theme-park-roadside-assistance",
     label: "Theme Park Roadside Help",
     description: "Roadside support near Disney, Universal, hotels, and resorts.",
     Icon: Route,
   },
+  {
+    href: "/roadside-assistance-cost-orlando",
+    label: "Roadside Cost Guide",
+    description: "What one-time roadside help can cost around Orlando.",
+    Icon: CircleDollarSign,
+    badge: "No membership",
+  },
 ];
 
 const featuredAreaSlugs = [
   "orlando",
-  "kissimmee",
   "lake-buena-vista",
+  "kissimmee",
   "celebration",
-  "ocoee",
-  "apopka",
   "winter-garden",
-  "clermont",
+  "ocoee",
+  "altamonte-springs",
+  "sanford",
+  "university",
 ];
 
 const featuredAreas = featuredAreaSlugs
@@ -102,7 +121,22 @@ const areaLinks: HeaderLink[] = featuredAreas.map((area) => ({
   description: area.emphasis,
   Icon: MapPin,
   badge: area.nearParks ? "Resort corridor" : undefined,
-}));
+})).concat([
+  {
+    href: "/international-drive-roadside-assistance",
+    label: "International Drive / Universal",
+    description: "Visitor roadside help for I-Drive, Universal, hotels, and garages.",
+    Icon: Route,
+    badge: "Visitor corridor",
+  },
+  {
+    href: "/orlando-airport-roadside-assistance",
+    label: "Orlando Airport / MCO",
+    description: "Airport-area help for MCO garages, rentals, hotels, and SR 528.",
+    Icon: MapPin,
+    badge: "Airport",
+  },
+]);
 
 function DesktopDropdown({
   label,
@@ -285,7 +319,7 @@ export function Header() {
             <Clock3 aria-hidden="true" size={14} />
             Open 24/7 | No membership | Orlando & Central Florida
           </span>
-          <span>Jumpstarts | Lockouts | Tire Changes | Fuel Delivery</span>
+          <span>Jumpstarts | Lockouts | Tires | Fuel | Key Fobs</span>
         </div>
       </div>
 

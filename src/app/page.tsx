@@ -42,6 +42,18 @@ const emergencyHelpLinks = [
     Icon: Fuel,
   },
   {
+    href: "/flat-tire-on-i-4-orlando",
+    title: "Flat tire on I-4",
+    text: "What to do when a tire fails on a busy Orlando highway, ramp, or expressway shoulder.",
+    Icon: Wrench,
+  },
+  {
+    href: "/dead-battery-car-wont-start-orlando",
+    title: "Car won't start",
+    text: "Dead battery and no-start guidance for homes, hotels, garages, work, and roadside locations.",
+    Icon: BatteryCharging,
+  },
+  {
     href: "/locked-keys-in-rental-car-orlando",
     title: "Locked keys in a rental",
     text: "Lockout help for visitors at hotels, rental lots, theme parks, restaurants, and shopping centers.",
@@ -52,6 +64,12 @@ const emergencyHelpLinks = [
     title: "Lost wheel lock key",
     text: "What to do when a locking lug nut blocks a tire change and the spare cannot go on.",
     Icon: Wrench,
+  },
+  {
+    href: "/key-fob-not-working-orlando",
+    title: "Key fob not working",
+    text: "Smart key, key-not-detected, push-to-start, and lockout paths for modern vehicles.",
+    Icon: KeyRound,
   },
   {
     href: "/theme-park-roadside-assistance",

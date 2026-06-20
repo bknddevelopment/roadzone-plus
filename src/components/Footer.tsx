@@ -56,6 +56,12 @@ export function Footer() {
               <Link href="/theme-park-roadside-assistance" className="footer-link">
                 Near the theme parks
               </Link>
+              <Link href="/international-drive-roadside-assistance" className="footer-link">
+                International Drive / Universal
+              </Link>
+              <Link href="/orlando-airport-roadside-assistance" className="footer-link">
+                Orlando Airport / MCO
+              </Link>
               <Link href="/lost-wheel-lock-key-orlando" className="footer-link">
                 Lost wheel lock key
               </Link>
@@ -73,6 +79,15 @@ export function Footer() {
               </Link>
               <Link href="/roadside-assistance-cost-orlando" className="footer-link">
                 Roadside assistance cost in Orlando
+              </Link>
+              <Link href="/dead-battery-car-wont-start-orlando" className="footer-link">
+                Car won't start
+              </Link>
+              <Link href="/flat-tire-on-i-4-orlando" className="footer-link">
+                Flat tire on I-4
+              </Link>
+              <Link href="/key-fob-not-working-orlando" className="footer-link">
+                Key fob not working
               </Link>
               <Link href="/contact" className="footer-link">
                 Contact RoadZone Plus
