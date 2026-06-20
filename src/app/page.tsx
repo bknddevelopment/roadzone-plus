@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   BatteryCharging,
+  CircleDollarSign,
   Clock3,
   Fuel,
   KeyRound,
@@ -26,6 +27,39 @@ const serviceIcons = {
 };
 
 const priorityServices = services.filter((service) => service.priority);
+
+const emergencyHelpLinks = [
+  {
+    href: "/roadside-assistance-cost-orlando",
+    title: "What will it cost?",
+    text: "See typical Orlando roadside cost ranges, free options to check first, and when to call direct.",
+    Icon: CircleDollarSign,
+  },
+  {
+    href: "/ran-out-of-gas-on-i-4-orlando",
+    title: "Ran out of gas on I-4",
+    text: "Fuel delivery guidance for Orlando highways, expressways, toll roads, and late-night breakdowns.",
+    Icon: Fuel,
+  },
+  {
+    href: "/locked-keys-in-rental-car-orlando",
+    title: "Locked keys in a rental",
+    text: "Lockout help for visitors at hotels, rental lots, theme parks, restaurants, and shopping centers.",
+    Icon: KeyRound,
+  },
+  {
+    href: "/lost-wheel-lock-key-orlando",
+    title: "Lost wheel lock key",
+    text: "What to do when a locking lug nut blocks a tire change and the spare cannot go on.",
+    Icon: Wrench,
+  },
+  {
+    href: "/theme-park-roadside-assistance",
+    title: "Stuck near the parks",
+    text: "Roadside help near Disney, Universal, Lake Buena Vista, Celebration, Kissimmee, and resort corridors.",
+    Icon: Route,
+  },
+];
 
 const neighborhoods = [
   "Downtown Orlando",
@@ -238,6 +272,55 @@ export default function HomePage() {
               </Link>
             );
           })}
+        </div>
+      </section>
+
+      <section className="section border-y border-white/10 bg-panel">
+        <div className="container">
+          <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+            <div>
+              <div className="eyebrow">
+                <Route aria-hidden="true" size={16} />
+                Emergency help
+              </div>
+              <h2 className="mt-5 text-4xl font-black leading-tight text-white sm:text-5xl">
+                Pick the problem first. Then call the right help.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                Roadside calls usually start with a specific problem, not a category list.
+                These quick paths cover the moments Orlando drivers and visitors search for
+                when they are already stranded.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row lg:justify-self-end">
+              <a href={site.phoneHref} className="btn btn-primary">
+                <PhoneCall aria-hidden="true" size={18} />
+                Call {site.phoneDisplay}
+              </a>
+              <Link href="/roadside-assistance-cost-orlando" className="btn btn-secondary">
+                Cost Guide
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {emergencyHelpLinks.map(({ href, title, text, Icon }) => (
+              <Link
+                key={href}
+                href={href}
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-white text-road-black">
+                  <Icon aria-hidden="true" size={21} />
+                </span>
+                <h3 className="mt-5 text-xl font-black text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">{text}</p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Open guide
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
