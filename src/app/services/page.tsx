@@ -16,14 +16,14 @@ import { absoluteUrl, breadcrumbSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Roadside Assistance Services in Orlando, FL",
   description:
-    "See RoadZone Plus roadside assistance services: jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.",
+    "RoadZone Plus handles Orlando jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery help, and smart key issues.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: "Roadside Assistance Services in Orlando, FL",
     description:
-      "See RoadZone Plus roadside assistance services: jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.",
+      "RoadZone Plus handles Orlando jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery help, and smart key issues.",
     url: "/services",
   },
 };

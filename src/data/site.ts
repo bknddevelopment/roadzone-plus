@@ -8,7 +8,7 @@ export const site = {
   phoneE164: "+14072222739",
   phoneHref: "tel:+14072222739",
   description:
-    "24/7 roadside assistance in Orlando and Central Florida for jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery replacement, and smart key programming.",
+    "24/7 roadside assistance in Orlando for jumpstarts, tire changes, fuel delivery, lockouts, wheel lock removal, battery help, and smart keys.",
   address: {
     street: "7337 Habbersham Dr",
     city: "Orlando",
@@ -796,7 +796,7 @@ export const areas: Area[] = [
     name: "Orlando",
     county: "Orange County",
     emphasis: "24/7 emergency roadside assistance across Orlando neighborhoods, highways, and parking lots",
-    metaTitle: "Roadside Assistance Orlando FL | 24/7 Emergency Help",
+    metaTitle: "24/7 Roadside Assistance Orlando FL",
     heading: "24/7 roadside assistance in Orlando, FL.",
     intro:
       "Need roadside assistance in Orlando, FL? RoadZone Plus is based in the city and helps drivers across downtown, College Park, Pine Hills, Conway, MetroWest, International Drive, and the tourist corridors. Call for 24/7 help with dead batteries, flat tires, lockouts, fuel delivery, wheel lock removal, battery replacement, and smart key programming from your exact neighborhood, parking lot, hotel, or stretch of I-4, SR 408, or SR 528.",
@@ -1034,22 +1034,6 @@ export const areas: Area[] = [
 ];
 
 export const counties = ["Orange County", "Osceola County", "Seminole County", "Polk County"];
-
-export const primaryKeywords = [
-  "jumpstart Orlando FL",
-  "auto lockout Orlando FL",
-  "fuel delivery Orlando FL",
-  "tire change Orlando FL",
-  "wheel lock removal Orlando FL",
-  "24 hour roadside assistance Orlando",
-];
-
-export const seoFocus = {
-  primarySurface: "Organic local-service search",
-  mapPackStatus: "Deferred until a Google Business Profile exists",
-  launchFocus:
-    "Indexable service pages, indexable service-area pages, accurate NAP, structured data, and click-to-call conversion.",
-};
 
 export function getService(slug: string) {
   return services.find((service) => service.slug === slug);

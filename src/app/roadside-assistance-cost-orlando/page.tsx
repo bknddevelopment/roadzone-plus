@@ -18,9 +18,9 @@ import {
   cityAreaSchema,
 } from "@/lib/seo";
 
-const title = "How Much Does Roadside Assistance Cost in Orlando? (2026 Guide)";
+const title = "Roadside Assistance Cost Orlando";
 const description =
-  "What does roadside assistance cost in Orlando, FL? See typical price ranges for a jumpstart, car lockout, flat tire change, fuel delivery, and wheel lock removal — plus free options and how to pay less. Call RoadZone Plus at (407) 222-2739.";
+  "See Orlando roadside assistance cost ranges for jumpstarts, lockouts, flat tire changes, fuel delivery, and wheel lock removal. Call (407) 222-2739.";
 
 export const metadata: Metadata = {
   title,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
 };
 
-// NOTE FOR THE OWNER: these are GENERAL Orlando-area market ranges drivers typically
+// General Orlando-area market ranges drivers typically
 // pay out of pocket (no membership) across providers — they are NOT RoadZone Plus
 // quotes. Adjust the `range` values here to match your own market positioning.
 const costAtAGlance = [

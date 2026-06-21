@@ -24,9 +24,9 @@ export const focusedPages = {
   deadBattery: {
     slug: "dead-battery-car-wont-start-orlando",
     href: "/dead-battery-car-wont-start-orlando",
-    title: "Car Won't Start in Orlando? Dead Battery Roadside Help",
+    title: "Car Won't Start Orlando? Dead Battery Help",
     description:
-      "Car won't start in Orlando? RoadZone Plus provides 24/7 jumpstart and battery help for dead batteries at homes, hotels, parking lots, work, and roadside locations. Call (407) 222-2739.",
+      "Car won't start in Orlando? RoadZone Plus provides 24/7 jumpstart and battery help at homes, hotels, parking lots, work, and roadsides. Call (407) 222-2739.",
     eyebrow: "Dead battery help",
     heading: "Car won't start in Orlando?",
     intro:
@@ -123,7 +123,7 @@ export const focusedPages = {
   flatTireI4: {
     slug: "flat-tire-on-i-4-orlando",
     href: "/flat-tire-on-i-4-orlando",
-    title: "Flat Tire on I-4 in Orlando? Roadside Tire Change Help",
+    title: "Flat Tire on I-4 Orlando? Tire Help",
     description:
       "Flat tire on I-4 in Orlando? Learn what to do first, how to stay safe, and when to call RoadZone Plus for 24/7 roadside tire change or wheel lock help.",
     eyebrow: "Flat tire on I-4",
@@ -222,9 +222,9 @@ export const focusedPages = {
   keyFob: {
     slug: "key-fob-not-working-orlando",
     href: "/key-fob-not-working-orlando",
-    title: "Key Fob Not Working in Orlando? Smart Key Roadside Help",
+    title: "Key Fob Not Working Orlando? Smart Key Help",
     description:
-      "Key fob not working in Orlando? RoadZone Plus helps with smart key, key fob, and lockout situations for push-to-start vehicles, rentals, and local drivers. Call (407) 222-2739.",
+      "Key fob not working in Orlando? RoadZone Plus helps with smart key, fob, and lockout issues for push-to-start vehicles and rentals. Call (407) 222-2739.",
     eyebrow: "Key fob help",
     heading: "Key fob not working in Orlando?",
     intro:
@@ -321,9 +321,9 @@ export const focusedPages = {
   mco: {
     slug: "orlando-airport-roadside-assistance",
     href: "/orlando-airport-roadside-assistance",
-    title: "Roadside Assistance Near Orlando Airport (MCO)",
+    title: "Roadside Assistance Near Orlando Airport",
     description:
-      "Need roadside assistance near Orlando International Airport? RoadZone Plus helps with jumpstarts, lockouts, fuel delivery, tire changes, and key fob issues near MCO, SR 528, Semoran, garages, and rental areas.",
+      "RoadZone Plus helps near Orlando Airport with jumpstarts, lockouts, fuel delivery, tire changes, and key fob issues near MCO, garages, and rentals.",
     eyebrow: "Orlando Airport / MCO",
     heading: "Roadside assistance near Orlando Airport.",
     intro:
@@ -420,9 +420,9 @@ export const focusedPages = {
   internationalDrive: {
     slug: "international-drive-roadside-assistance",
     href: "/international-drive-roadside-assistance",
-    title: "Roadside Assistance on International Drive and Near Universal Orlando",
+    title: "International Drive Roadside Assistance",
     description:
-      "Stuck on International Drive or near Universal Orlando? RoadZone Plus brings 24/7 roadside assistance for hotel lots, garages, rental cars, I-4, Kirkman Road, and Major Boulevard.",
+      "Stuck on International Drive or near Universal? RoadZone Plus brings 24/7 roadside help for hotel lots, garages, rental cars, I-4, and Kirkman Road.",
     eyebrow: "International Drive / Universal",
     heading: "Roadside assistance on International Drive.",
     intro:

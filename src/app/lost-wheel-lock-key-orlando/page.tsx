@@ -17,9 +17,9 @@ import {
   businessId,
 } from "@/lib/seo";
 
-const title = "Lost Wheel Lock Key in Orlando? Roadside Wheel Lock Help";
+const title = "Lost Wheel Lock Key Orlando";
 const description =
-  "Lost your wheel lock key in Orlando? RoadZone Plus helps remove locked lug nuts so a flat tire or tire service can move forward. Call (407) 222-2739 for 24/7 roadside help.";
+  "Lost your wheel lock key in Orlando? RoadZone Plus removes locked lug nuts so tire service can move forward. Call (407) 222-2739 for 24/7 help.";
 
 export const metadata: Metadata = {
   title,

@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { LeadTracking } from "@/components/LeadTracking";
 import { MobileCallBar } from "@/components/MobileCallBar";
 import { Schema } from "@/components/Schema";
-import { primaryKeywords, site } from "@/data/site";
+import { site } from "@/data/site";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -31,7 +31,6 @@ export const metadata: Metadata = {
   description:
     site.description,
   applicationName: site.name,
-  keywords: primaryKeywords,
   authors: [{ name: site.name }],
   creator: site.name,
   publisher: site.name,

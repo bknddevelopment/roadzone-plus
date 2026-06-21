@@ -19,10 +19,9 @@ import {
   businessId,
 } from "@/lib/seo";
 
-const title =
-  "Locked Keys in Your Rental Car in Orlando? Fast, Damage-Conscious Help Near the Parks";
+const title = "Locked Keys in Rental Car Orlando";
 const description =
-  "Locked keys in a rental car in Orlando? Skip the slow rental roadside line. RoadZone Plus brings 24/7 damage-conscious lockout help to hotels, parking lots, and resort exits near Disney and Universal. Call (407) 222-2739.";
+  "Locked keys in an Orlando rental car? RoadZone Plus brings damage-conscious lockout help to hotels, parking lots, and resort areas. Call (407) 222-2739.";
 
 export const metadata: Metadata = {
   title,

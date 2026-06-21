@@ -19,9 +19,9 @@ import {
   businessId,
 } from "@/lib/seo";
 
-const title = "Ran Out of Gas on I-4? What to Do (and Who to Call) in Orlando";
+const title = "Ran Out of Gas on I-4 Orlando";
 const description =
-  "Ran out of gas on I-4 in Orlando? Here is exactly what to do right now to stay safe, your options on I-4, SR 408, and SR 528 — Road Rangers vs. 911 vs. local fuel delivery — and who to call. RoadZone Plus brings fuel to you 24/7: (407) 222-2739.";
+  "Ran out of gas on I-4 in Orlando? Stay safe, know who to call, and get 24/7 local fuel delivery from RoadZone Plus. Call (407) 222-2739.";
 
 export const metadata: Metadata = {
   title,

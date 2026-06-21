@@ -5,16 +5,16 @@ import { areas, counties, services, site } from "@/data/site";
 import { absoluteUrl, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Roadside Assistance Service Areas in Central Florida",
+  title: "Central Florida Roadside Service Areas",
   description:
-    "RoadZone Plus serves Orlando, Ocoee, Pine Hills, Apopka, Altamonte Springs, Kissimmee, Celebration, Lake Buena Vista, Clermont, Winter Garden, Oviedo, Sanford, and nearby areas.",
+    "RoadZone Plus serves Orlando and nearby Central Florida cities with 24/7 help for dead batteries, flat tires, lockouts, and fuel delivery.",
   alternates: {
     canonical: "/areas",
   },
   openGraph: {
-    title: "Roadside Assistance Service Areas in Central Florida",
+    title: "Central Florida Roadside Service Areas",
     description:
-      "RoadZone Plus serves Orlando, Ocoee, Pine Hills, Apopka, Altamonte Springs, Kissimmee, Celebration, Lake Buena Vista, Clermont, Winter Garden, Oviedo, Sanford, and nearby areas.",
+      "RoadZone Plus serves Orlando and nearby Central Florida cities with 24/7 help for dead batteries, flat tires, lockouts, and fuel delivery.",
     url: "/areas",
   },
 };

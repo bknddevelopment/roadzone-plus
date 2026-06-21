@@ -16,9 +16,9 @@ import {
   businessId,
 } from "@/lib/seo";
 
-const title = "Roadside Assistance Near Disney, Universal & Orlando's Theme Parks";
+const title = "Theme Park Roadside Assistance Orlando";
 const description =
-  "Stranded near the Orlando theme parks? RoadZone Plus brings 24/7 roadside assistance to visitors and locals near Walt Disney World and Universal Orlando — rental car lockouts, fuel delivery, jumpstarts, and flat tire help. Call (407) 222-2739.";
+  "Roadside assistance near Disney, Universal, I-4, hotels, and rental cars: jumpstarts, lockouts, fuel delivery, and flat tire help. Call (407) 222-2739.";
 
 export const metadata: Metadata = {
   title,

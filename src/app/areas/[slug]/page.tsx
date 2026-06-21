@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = area.metaTitle ?? `Roadside Assistance in ${area.name}, FL`;
-  const description = area.intro;
+  const description = `RoadZone Plus provides 24/7 roadside assistance in ${area.name}, FL for jumpstarts, tire changes, lockouts, fuel delivery, and battery help.`;
 
   return {
     title,
