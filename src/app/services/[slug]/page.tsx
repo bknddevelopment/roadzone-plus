@@ -34,6 +34,35 @@ const priorityAreaSlugsByService: Record<string, string[]> = {
   "smart-key-programming": ["orlando", "kissimmee", "lake-buena-vista"],
 };
 
+const serviceSeo: Partial<
+  Record<string, { title: string; heading: string; description: string }>
+> = {
+  jumpstart: {
+    title: "Jump Start Service Orlando FL | 24 Hour Battery Help",
+    heading: "Jump start service in Orlando, FL",
+    description:
+      "Need jump start service in Orlando, FL? RoadZone Plus provides 24/7 battery boost help at homes, hotels, parking lots, work, and roadside locations.",
+  },
+  "fuel-delivery": {
+    title: "Fuel Delivery Orlando FL | 24 Hour Gas Delivery",
+    heading: "Fuel delivery in Orlando, FL",
+    description:
+      "Need fuel delivery in Orlando, FL? RoadZone Plus brings emergency gas to stranded drivers on roads, at hotels, parking lots, apartments, and workplaces.",
+  },
+  "auto-lockout": {
+    title: "Car Lockout Service Orlando FL | Locked Keys Help",
+    heading: "Car lockout service in Orlando, FL",
+    description:
+      "Locked keys in car in Orlando? Call RoadZone Plus for 24/7 car lockout service at homes, hotels, parking lots, work, and roadside stops.",
+  },
+  "battery-replacement": {
+    title: "Car Battery Replacement Orlando FL | Mobile Battery Help",
+    heading: "Car battery replacement help in Orlando, FL",
+    description:
+      "Need car battery replacement help in Orlando, FL? RoadZone Plus helps when a jumpstart is not enough and your battery keeps failing in Central Florida heat.",
+  },
+};
+
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
@@ -46,8 +75,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
-  const title = `${service.name} in Orlando, FL`;
-  const description = `${service.summary} Call ${site.phoneDisplay} for 24/7 roadside assistance.`;
+  const seo = serviceSeo[service.slug];
+  const title = seo?.title ?? `${service.name} in Orlando, FL`;
+  const description =
+    seo?.description ??
+    `${service.summary} Call ${site.phoneDisplay} for 24/7 roadside assistance.`;
 
   return {
     title,
@@ -119,6 +151,7 @@ export default async function ServicePage({ params }: PageProps) {
   const priorityAreas = (priorityAreaSlugsByService[service.slug] ?? ["orlando"])
     .map((areaSlug) => areas.find((area) => area.slug === areaSlug))
     .filter((area): area is (typeof areas)[number] => Boolean(area));
+  const heading = serviceSeo[service.slug]?.heading ?? `${service.name} in Orlando, FL`;
 
   return (
     <>
@@ -137,7 +170,7 @@ export default async function ServicePage({ params }: PageProps) {
               24/7 {service.shortName}
             </div>
             <h1 className="mt-5 text-5xl font-black leading-tight text-white sm:text-6xl">
-              {service.name} in Orlando, FL
+              {heading}
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
               {service.headline} {service.summary}
@@ -296,6 +329,34 @@ export default async function ServicePage({ params }: PageProps) {
             <Link href="/lost-wheel-lock-key-orlando" className="btn btn-primary shrink-0">
               Read the Guide
             </Link>
+          </div>
+        </section>
+      ) : null}
+
+      {service.slug === "auto-lockout" ? (
+        <section className="section border-y border-white/10 bg-panel">
+          <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Info aria-hidden="true" size={16} />
+                Locked keys in the car?
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Start with the Orlando car lockout guide.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                The guide covers what to check before forcing the door, what to tell dispatch,
+                and when a car lockout becomes an emergency in Florida heat.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+              <Link href="/car-lockout-service-orlando" className="btn btn-primary">
+                Car Lockout Guide
+              </Link>
+              <Link href="/locked-keys-in-rental-car-orlando" className="btn btn-secondary">
+                Rental Car Lockout
+              </Link>
+            </div>
           </div>
         </section>
       ) : null}

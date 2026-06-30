@@ -318,6 +318,110 @@ export const focusedPages = {
       },
     ],
   },
+  carLockout: {
+    slug: "car-lockout-service-orlando",
+    href: "/car-lockout-service-orlando",
+    title: "Car Lockout Service Orlando FL | Locked Keys Help",
+    description:
+      "Locked keys in car in Orlando? RoadZone Plus provides 24/7 car lockout service for homes, hotels, parking lots, work, and roadside stops.",
+    eyebrow: "Car lockout service",
+    heading: "Car lockout service in Orlando, FL.",
+    intro:
+      "A car lockout can happen at a store, hotel, apartment, workplace, attraction lot, or roadside stop. RoadZone Plus helps Orlando drivers who locked keys in the car, left a fob inside, or cannot get back into the vehicle, with damage-conscious roadside lockout help available 24/7.",
+    alertLabel: "Child or pet inside?",
+    alertText:
+      "If a child, pet, or vulnerable person is locked in the vehicle, call 911 first. Florida heat turns a lockout into an emergency fast.",
+    serviceType: "Car lockout and locked keys roadside assistance",
+    areaServed: "Orlando, FL",
+    primaryServiceHref: "/services/auto-lockout",
+    primaryServiceLabel: "Auto Lockout Service",
+    secondaryHref: "/locked-keys-in-rental-car-orlando",
+    secondaryLabel: "Rental Car Lockout",
+    steps: [
+      {
+        title: "Check for immediate danger",
+        text: "If someone is inside the vehicle, the car is running in an unsafe spot, or you feel threatened, call 911 before roadside service.",
+      },
+      {
+        title: "Confirm where the key or fob is",
+        text: "Say whether the key is visible on the seat, in the trunk, in a bag, missing, broken, or inside a rental car.",
+      },
+      {
+        title: "Use a precise location",
+        text: "Share the hotel, store, garage level, apartment building, parking row, cross street, or roadside landmark so the technician can find you.",
+      },
+      {
+        title: "Call before forcing the door",
+        text: "Do not pry the door, force the window, or keep yanking handles. A damage-conscious lockout response is usually safer and cheaper than repair work.",
+      },
+    ],
+    dispatchDetails: [
+      {
+        label: "Vehicle details",
+        detail:
+          "Have the year, make, model, color, and body style ready. Newer vehicles and luxury models can need a more careful approach.",
+      },
+      {
+        label: "Key location",
+        detail:
+          "Tell dispatch if the key is locked on the seat, in the trunk, in a purse or bag, lost, damaged, or possibly in a different location.",
+      },
+      {
+        label: "Property type",
+        detail:
+          "Say whether you are at a hotel, theme park lot, apartment complex, garage, workplace, gas station, or shoulder. Entrances and parking rows matter.",
+      },
+      {
+        label: "Rental status",
+        detail:
+          "If it is a rental, share the rental company if you know it. RoadZone can help with lockout access, while replacement keys may still run through the rental company.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/services/auto-lockout",
+        title: "Auto Lockout Service",
+        text: "Main RoadZone lockout service page for keys locked inside common passenger vehicles.",
+      },
+      {
+        href: "/locked-keys-in-rental-car-orlando",
+        title: "Locked Keys in a Rental Car",
+        text: "Visitor-focused lockout guidance for Orlando rental cars, hotels, parks, and airport trips.",
+      },
+      {
+        href: "/key-fob-not-working-orlando",
+        title: "Key Fob Not Working",
+        text: "Push-to-start and fob problems can look like a lockout or no-start issue.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Who should I call for a car lockout in Orlando?",
+        answer:
+          "Call RoadZone Plus at (407) 222-2739 for 24/7 car lockout help in Orlando. Share your exact location, vehicle details, and whether the key or fob is locked inside, lost, or damaged.",
+      },
+      {
+        question: "Can RoadZone Plus help if I locked my keys in the car?",
+        answer:
+          "Yes. RoadZone Plus provides damage-conscious auto lockout assistance for common passenger vehicles at homes, hotels, parking lots, workplaces, and roadside locations.",
+      },
+      {
+        question: "What if my key is locked in the trunk?",
+        answer:
+          "Call and explain that the key is in the trunk before dispatch. Some vehicles require a different approach when the passenger cabin is open but trunk access is still locked.",
+      },
+      {
+        question: "Should I call 911 for a car lockout?",
+        answer:
+          "Call 911 first if a child, pet, or vulnerable person is locked inside, if the vehicle is in traffic, or if there is any safety threat. For a standard lockout with no immediate danger, call RoadZone Plus for roadside help.",
+      },
+      {
+        question: "How much does car lockout service cost in Orlando?",
+        answer:
+          "The cost depends on your location, time of day, vehicle, and lockout situation. RoadZone Plus confirms the price on the call before dispatching, with no membership required.",
+      },
+    ],
+  },
   mco: {
     slug: "orlando-airport-roadside-assistance",
     href: "/orlando-airport-roadside-assistance",
