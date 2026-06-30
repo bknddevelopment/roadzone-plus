@@ -361,6 +361,67 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
       ) : null}
 
+      {service.slug === "fuel-delivery" ? (
+        <section className="section border-y border-white/10 bg-panel">
+          <div className="container grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="eyebrow">
+                <Info aria-hidden="true" size={16} />
+                Orlando fuel delivery
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Ran out of gas on I-4, near the parks, or away from a station?
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                RoadZone Plus helps with gas delivery when the vehicle is stuck at a
+                hotel, apartment, workplace, parking lot, roadside stop, or Orlando
+                highway location. Free highway service patrol options can help in limited
+                covered areas, but they do not replace direct 24/7 dispatch when you
+                need a local technician sent to your exact spot.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Link
+                href="/ran-out-of-gas-on-i-4-orlando"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-route-green">
+                  Highway guide
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Ran Out of Gas on I-4
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  What to do first if the car is stopped on I-4, SR 408, SR 528,
+                  or another Orlando highway.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Read the guide
+                </span>
+              </Link>
+              <Link
+                href="/roadside-assistance-cost-orlando"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-safety-yellow">
+                  Cost guide
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Fuel Delivery Cost
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  See how roadside fuel delivery is usually priced and when free
+                  highway options may be worth checking first.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  View Orlando costs
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section border-y border-white/10 bg-panel">
         <div className="container">
           <div className="max-w-3xl">

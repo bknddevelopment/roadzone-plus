@@ -293,7 +293,8 @@ export const services: Service[] = [
       "RoadZone Plus offers emergency fuel delivery across Orlando and surrounding service areas.",
     cardText:
       "Emergency fuel brought to you so you can get moving again without walking to a station.",
-    emergencyFit: "Best when the car is safe but out of fuel or very low on fuel.",
+    emergencyFit:
+      "Best when the car is safe but out of fuel or very low on fuel in Orlando.",
     includes: [
       "Emergency fuel delivery",
       "Location confirmation before dispatch",
@@ -301,6 +302,7 @@ export const services: Service[] = [
       "Help restarting after refuel",
       "Guidance to the nearest gas station",
       "24/7 roadside response",
+      "Gas delivery for homes, hotels, lots, and roadside stops",
     ],
     signs: [
       "Fuel gauge is empty",
@@ -308,41 +310,62 @@ export const services: Service[] = [
       "You are stranded away from a gas station",
       "Fuel dropped faster than expected in heavy traffic",
       "Tourist or commuter route changed and fuel ran out",
+      "You need gas brought to a hotel, apartment, workplace, or parking lot",
     ],
     intro:
-      "Running out of fuel can happen to anyone: a longer commute than expected, a faulty gauge, heavy traffic, or an unfamiliar route with no station in sight. RoadZone Plus brings fuel directly to your vehicle so you can get back on the road and reach a gas station, instead of leaving your car on the shoulder or walking along a busy roadway.",
+      "Running out of fuel can happen to anyone in Orlando: a longer drive than expected, a faulty gauge, heavy traffic on I-4, a rental car route you do not know, or a parking lot stop after the low-fuel light has already been on too long. RoadZone Plus brings gas directly to your vehicle so you can get back on the road and reach a station, instead of leaving your car on the shoulder or walking along a busy roadway.",
     process: [
       {
         step: "Call and confirm your location",
         detail:
-          "Call RoadZone Plus and share your exact location and what you are driving so the team can prepare the right response.",
+          "Call RoadZone Plus and share your exact location, nearest entrance, cross street, hotel, parking row, exit, or mile marker so the team can find you without delay.",
+      },
+      {
+        step: "Confirm the fuel type",
+        detail:
+          "Tell dispatch whether your vehicle uses regular gasoline, premium gasoline, or diesel. RoadZone Plus focuses on gasoline delivery and confirms diesel requests before sending help.",
       },
       {
         step: "Stay safe while help is arranged",
         detail:
-          "Keep your vehicle in a safe spot with hazard lights on. The dispatcher confirms the details before a technician heads your way.",
+          "Keep your vehicle in a safe spot with hazard lights on. If you are on a highway shoulder or ramp, stay buckled inside when that is safer than standing outside.",
       },
       {
-        step: "Fuel is delivered to your vehicle",
+        step: "Fuel is delivered and the car is restarted",
         detail:
-          "A technician brings fuel to your location and adds it to your tank so the engine has what it needs to start.",
-      },
-      {
-        step: "Get moving and fill up",
-        detail:
-          "Once the vehicle starts, you can drive to a nearby gas station and top off the tank completely.",
+          "A technician brings gas to your location, adds it to your tank, helps you restart, and points you toward the closest practical station to fill up completely.",
       },
     ],
     details: [
       {
-        heading: "What we fuel",
+        heading: "Emergency gas delivery in Orlando",
         body:
-          "RoadZone Plus focuses on gasoline-powered passenger vehicles. If you drive a diesel vehicle, mention it when you call so the team can confirm the right help before heading out.",
+          "Drivers call RoadZone Plus for fuel delivery in Orlando, gas delivery service, mobile fuel delivery, and roadside fuel help after the tank runs dry. RoadZone Plus responds to local roads, homes, workplaces, apartments, hotel lots, shopping centers, and roadside stops across the Orlando service area.",
+      },
+      {
+        heading: "Where drivers run out most often",
+        body:
+          "Fuel delivery calls often come from I-4, SR 408, SR 528, International Drive, Lake Buena Vista, Kissimmee, theme park corridors, airport routes, apartment complexes, and large parking lots where the nearest gas station is not walkable or safe to reach.",
+      },
+      {
+        heading: "Gasoline and diesel fuel requests",
+        body:
+          "RoadZone Plus focuses on gasoline-powered passenger vehicles. If you drive a diesel vehicle, box truck, RV, work van, or specialty vehicle, mention it immediately so the team can confirm the right help before heading out.",
+      },
+      {
+        heading: "Road Rangers and free highway help",
+        body:
+          "Florida Road Rangers can provide limited no-cost help on covered highways and expressways, including emergency fuel in some situations. Availability depends on the road, time, and patrol coverage. If you are off the covered highway system, in a hotel lot, at an apartment, at work, or need direct 24/7 dispatch, RoadZone Plus is the call to make.",
       },
       {
         heading: "Who uses fuel delivery",
         body:
-          "Daily commuters, rideshare and delivery drivers, tourists exploring Central Florida, and anyone caught between stations can call when the tank runs dry.",
+          "Daily commuters, rideshare and delivery drivers, tourists exploring Central Florida, rental car drivers, night-shift workers, and anyone caught between stations can call when the tank runs dry.",
+      },
+      {
+        heading: "What to tell dispatch",
+        body:
+          "Have your exact location, vehicle color, fuel type, closest landmark, and whether the car is safely parked ready when you call. The more specific you are, the faster a technician can find the right entrance, shoulder, garage level, or parking row.",
       },
     ],
     safetyTips: [
@@ -350,6 +373,8 @@ export const services: Service[] = [
       "Stay buckled and remain inside the vehicle if you are stopped on a highway shoulder.",
       "Keep your phone reachable so the technician can confirm your location.",
       "Note nearby landmarks, exit numbers, or mile markers to share when you call.",
+      "Do not walk along I-4, SR 408, SR 528, or a busy Orlando roadway to look for gas.",
+      "If the vehicle is blocking traffic or you feel unsafe, call 911 first.",
     ],
     faqs: [
       {
@@ -371,6 +396,26 @@ export const services: Service[] = [
         question: "Can you deliver fuel late at night?",
         answer:
           "Yes. RoadZone Plus is available 24 hours a day, including nights, weekends, and holidays.",
+      },
+      {
+        question: "Can RoadZone Plus bring gas to a hotel, apartment, or parking lot?",
+        answer:
+          "Yes. RoadZone Plus can bring fuel to hotels, apartments, workplaces, stores, garages, and parking lots across Orlando. Share the property name, entrance, building, level, row, or nearest landmark when you call.",
+      },
+      {
+        question: "Can RoadZone Plus bring fuel on I-4 or other Orlando highways?",
+        answer:
+          "RoadZone Plus helps stranded drivers on Orlando roads and highways when it is safe to respond. If you are on I-4, SR 408, SR 528, a ramp, or a narrow shoulder, call with the direction, nearest exit, and whether the vehicle is safely out of traffic.",
+      },
+      {
+        question: "Is fuel delivery free in Orlando?",
+        answer:
+          "Free help may be available from Florida Road Rangers on covered highways, but it is limited by route, hours, and patrol availability. RoadZone Plus is a direct paid roadside service for drivers who need 24/7 dispatch, are off the covered highway system, or want help brought to their exact location.",
+      },
+      {
+        question: "Do you deliver diesel fuel in Orlando?",
+        answer:
+          "RoadZone Plus focuses on gasoline-powered passenger vehicles. If your vehicle uses diesel, say that before dispatch so the team can confirm whether the right help is available.",
       },
       {
         question: "How much does fuel delivery cost?",
