@@ -169,7 +169,11 @@ const chooseByProblem = [
 const freeOptions = [
   {
     title: "Road Rangers on the expressways (free)",
-    text: "Florida's Road Ranger program offers free help on many Central Florida expressways and interstates — dial *347 (*FHP). It is a great option on I-4, the Turnpike, and similar roads, but coverage is typically limited to roughly 6 AM–10 PM and to limited-access highways, not local streets, parking lots, hotels, or overnight calls.",
+    text: "Florida's Road Ranger program offers free help on many Central Florida expressways and interstates — dial *347 (*FHP). It is a great option on I-4, the Turnpike, and similar roads, but coverage is typically limited to roughly 6 AM–10 PM and to limited-access highways, not local streets, parking lots, hotels, or overnight calls. See the Orlando Road Rangers guide for the practical split between free highway help and direct 24/7 roadside dispatch.",
+    link: {
+      href: "/road-rangers-orlando",
+      label: "Road Rangers guide",
+    },
   },
   {
     title: "Insurance and warranty add-ons",
@@ -523,6 +527,15 @@ export default function RoadsideCostPage() {
                   <h3 className="text-lg font-black text-white">{item.title}</h3>
                 </div>
                 <p className="mt-3 text-sm leading-6 text-white/66">{item.text}</p>
+                {item.link ? (
+                  <Link
+                    href={item.link.href}
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-black text-white hover:text-red-200"
+                  >
+                    <CheckCircle2 aria-hidden="true" size={16} />
+                    {item.link.label}
+                  </Link>
+                ) : null}
               </div>
             ))}
           </div>

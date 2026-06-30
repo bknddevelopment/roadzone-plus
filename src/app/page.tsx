@@ -10,6 +10,7 @@ import {
   PhoneCall,
   Route,
   ShieldCheck,
+  TrafficCone,
   TimerReset,
   Wrench,
 } from "lucide-react";
@@ -29,6 +30,12 @@ const serviceIcons = {
 const priorityServices = services.filter((service) => service.priority);
 
 const emergencyHelpLinks = [
+  {
+    href: "/road-rangers-orlando",
+    title: "Road Rangers or RoadZone?",
+    text: "Free highway help vs. direct 24/7 roadside assistance in Orlando.",
+    Icon: TrafficCone,
+  },
   {
     href: "/roadside-assistance-cost-orlando",
     title: "What will it cost?",
