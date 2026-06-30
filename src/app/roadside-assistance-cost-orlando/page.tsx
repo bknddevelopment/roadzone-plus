@@ -18,9 +18,9 @@ import {
   cityAreaSchema,
 } from "@/lib/seo";
 
-const title = "Roadside Assistance Cost Orlando";
+const title = "Roadside Assistance Cost Orlando FL";
 const description =
-  "See Orlando roadside assistance cost ranges for jumpstarts, lockouts, flat tire changes, fuel delivery, and wheel lock removal. Call (407) 222-2739.";
+  "Compare Orlando roadside assistance cost ranges, free Road Ranger options, memberships, and direct 24/7 help for jumpstarts, lockouts, tires, fuel, and wheel locks.";
 
 export const metadata: Metadata = {
   title,
@@ -318,7 +318,7 @@ export default function RoadsideCostPage() {
     url: absoluteUrl("/roadside-assistance-cost-orlando"),
     name: title,
     description,
-    dateModified: "2026-06-18",
+    dateModified: "2026-06-30",
     isPartOf: {
       "@type": "WebSite",
       "@id": `${site.url}#website`,
@@ -353,14 +353,15 @@ export default function RoadsideCostPage() {
               Orlando price guide
             </div>
             <h1 className="mt-5 text-5xl font-black leading-tight text-white sm:text-6xl">
-              How Much Does Roadside Assistance Cost in Orlando?
+              How Much Does Roadside Assistance Cost in Orlando, FL?
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
               Most one-time roadside calls in the Orlando area run about{" "}
               <span className="font-black text-white">$50–$150</span> when you pay out of
               pocket without a membership — the exact price depends on the service, your
               vehicle, the time of day, and where you are. Below are typical market ranges
-              to help you plan, plus the free options worth checking first.
+              to help you plan, plus the free Road Ranger, insurance, warranty, and
+              membership options worth checking first.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={site.phoneHref} className="btn btn-primary">

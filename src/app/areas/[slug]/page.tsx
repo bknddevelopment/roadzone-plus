@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CheckCircle2, MapPin, PhoneCall, Route } from "lucide-react";
+import { CheckCircle2, MapPin, PhoneCall, Route, ShieldCheck } from "lucide-react";
 import { areas, getArea, services, site } from "@/data/site";
 import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 
@@ -22,7 +22,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = area.metaTitle ?? `Roadside Assistance in ${area.name}, FL`;
-  const description = `RoadZone Plus provides 24/7 roadside assistance in ${area.name}, FL for jumpstarts, tire changes, lockouts, fuel delivery, and battery help.`;
+  const description =
+    area.metaDescription ??
+    `RoadZone Plus provides 24/7 roadside assistance in ${area.name}, FL for jumpstarts, tire changes, lockouts, fuel delivery, and battery help.`;
 
   return {
     title,
@@ -195,6 +197,45 @@ export default async function AreaPage({ params }: PageProps) {
 
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {area.emergencyNotes.map((item) => (
+                <div key={item.heading} className="card-solid p-6">
+                  <h3 className="text-xl font-black text-white">{item.heading}</h3>
+                  <p className="mt-3 text-sm leading-6 text-white/66">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {area.freeAssistanceNotes && area.freeAssistanceNotes.length > 0 ? (
+        <section className="section border-t border-white/10 bg-panel">
+          <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <div className="eyebrow">
+                <ShieldCheck aria-hidden="true" size={16} />
+                Free vs. direct help
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Road Rangers, memberships, and direct Orlando roadside assistance.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                Some Orlando drivers have a free or membership-backed option. The
+                important question is whether that option covers where your car is
+                actually stuck right now.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href={site.phoneHref} className="btn btn-primary">
+                  <PhoneCall aria-hidden="true" size={18} />
+                  Call {site.phoneDisplay}
+                </a>
+                <Link href="/roadside-assistance-cost-orlando" className="btn btn-secondary">
+                  Compare cost options
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              {area.freeAssistanceNotes.map((item) => (
                 <div key={item.heading} className="card-solid p-6">
                   <h3 className="text-xl font-black text-white">{item.heading}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/66">{item.body}</p>

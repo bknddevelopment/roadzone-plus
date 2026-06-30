@@ -781,9 +781,12 @@ export type Area = {
   intro: string;
   coverage: string[];
   emergencyNotes?: Array<{ heading: string; body: string }>;
+  freeAssistanceNotes?: Array<{ heading: string; body: string }>;
   faqs?: Array<{ question: string; answer: string }>;
   /** Optional title override (used to differentiate the Orlando hub-city page from the homepage). */
   metaTitle?: string;
+  /** Optional description override for high-priority local pages. */
+  metaDescription?: string;
   /** Optional H1 override (defaults to "Roadside assistance in {name}, FL."). */
   heading?: string;
   /** Flags resort-corridor cities so they link to the theme-park guide. */
@@ -796,17 +799,23 @@ export const areas: Area[] = [
     name: "Orlando",
     county: "Orange County",
     emphasis: "24/7 emergency roadside assistance across Orlando neighborhoods, highways, and parking lots",
-    metaTitle: "24/7 Roadside Assistance Orlando FL",
-    heading: "24/7 roadside assistance in Orlando, FL.",
+    metaTitle: "Roadside Assistance Orlando FL | 24 Hour Help",
+    metaDescription:
+      "Need 24 hour roadside assistance in Orlando, FL? Call RoadZone Plus for jumpstarts, tire changes, fuel delivery, lockouts, wheel lock removal, and battery help.",
+    heading: "24 hour roadside assistance in Orlando, FL.",
     intro:
-      "Need roadside assistance in Orlando, FL? RoadZone Plus is based in the city and helps drivers across downtown, College Park, Pine Hills, Conway, MetroWest, International Drive, and the tourist corridors. Call for 24/7 help with dead batteries, flat tires, lockouts, fuel delivery, wheel lock removal, battery replacement, and smart key programming from your exact neighborhood, parking lot, hotel, or stretch of I-4, SR 408, or SR 528.",
+      "Need roadside assistance in Orlando, FL? RoadZone Plus is based in the city and helps drivers across downtown, College Park, Pine Hills, Conway, MetroWest, International Drive, and the tourist corridors. Call for 24 hour roadside assistance with dead batteries, flat tires, lockouts, fuel delivery, wheel lock removal, battery replacement, and smart key programming from your exact neighborhood, parking lot, hotel, apartment community, or stretch of I-4, SR 408, SR 417, or SR 528.",
     coverage: [
       "Interstate 4 (I-4)",
       "SR 408 East-West Expressway",
+      "SR 417 Central Florida GreeneWay",
       "SR 528 Beachline Expressway",
+      "Florida's Turnpike",
       "Downtown Orlando",
       "International Drive area",
       "Orange Blossom Trail (US 17-92)",
+      "Orlando International Airport routes",
+      "Hotel and resort parking lots",
     ],
     emergencyNotes: [
       {
@@ -823,6 +832,23 @@ export const areas: Area[] = [
         heading: "Built for locals, commuters, and visitors",
         body:
           "Orlando roadside calls often happen in office parking lots, apartment communities, airport routes, rental cars, resort areas, and commuter corridors. Call with the vehicle details and the exact location so the right help can be sent.",
+      },
+    ],
+    freeAssistanceNotes: [
+      {
+        heading: "Try Road Rangers first on covered expressways",
+        body:
+          "If you are safely stopped on a covered Central Florida expressway during patrol hours, dialing *347 may connect you with free Road Ranger highway assistance. It is useful for certain highway shoulders, but it is not the same as a 24/7 private roadside dispatch.",
+      },
+      {
+        heading: "Call RoadZone when the free option does not cover the situation",
+        body:
+          "RoadZone Plus is the direct-call option for Orlando parking lots, hotels, apartment communities, neighborhoods, airport routes, local roads, late-night breakdowns, and situations where a membership or highway patrol program is not the right fit.",
+      },
+      {
+        heading: "Give the exact Orlando location",
+        body:
+          "When you call, share the closest address, exit, cross street, garage level, hotel name, lot section, or landmark. That matters more than the keyword you searched because the technician needs to find the vehicle quickly.",
       },
     ],
     faqs: [
@@ -845,6 +871,16 @@ export const areas: Area[] = [
         question: "Do I need a membership for Orlando roadside assistance?",
         answer:
           "No. RoadZone Plus is call-first roadside help. You do not need an annual membership or app account to request help in Orlando.",
+      },
+      {
+        question: "Is there free roadside assistance in Orlando?",
+        answer:
+          "Sometimes. Road Ranger highway assistance may help on covered expressways during patrol hours, and insurance or membership plans may cover some calls. RoadZone Plus is for the situations those options do not solve: parking lots, hotels, apartment communities, local roads, late-night calls, and direct pay-as-you-go roadside dispatch.",
+      },
+      {
+        question: "What is the best roadside assistance option in Orlando if I am in a parking lot?",
+        answer:
+          "If the vehicle is in a hotel, store, apartment, workplace, garage, or theme-park-area parking lot, a direct roadside provider is usually more practical than a highway-only patrol program. Call RoadZone Plus with the exact lot, entrance, garage level, or nearby landmark.",
       },
     ],
   },

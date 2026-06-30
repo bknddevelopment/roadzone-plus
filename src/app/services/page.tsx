@@ -14,16 +14,16 @@ import { services, site } from "@/data/site";
 import { absoluteUrl, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Roadside Assistance Services in Orlando, FL",
+  title: "Roadside Assistance Services Orlando FL",
   description:
-    "RoadZone Plus handles Orlando jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery help, and smart key issues.",
+    "24/7 roadside assistance services in Orlando, FL: jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery help, and smart keys.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: "Roadside Assistance Services in Orlando, FL",
+    title: "Roadside Assistance Services Orlando FL",
     description:
-      "RoadZone Plus handles Orlando jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery help, and smart key issues.",
+      "24/7 roadside assistance services in Orlando, FL: jumpstarts, tire changes, fuel delivery, auto lockouts, wheel lock removal, battery help, and smart keys.",
     url: "/services",
   },
 };
@@ -71,12 +71,13 @@ export default function ServicesPage() {
               24/7 roadside services
             </div>
             <h1 className="mt-5 text-5xl font-black leading-tight text-white sm:text-6xl">
-              Roadside assistance services in Orlando.
+              Roadside assistance services in Orlando, FL.
             </h1>
             <p className="mt-6 text-lg leading-8 text-white/68">
               RoadZone Plus is built for urgent driver needs: dead batteries, flat
               tires, empty tanks, locked cars, missing wheel lock keys, and smart key
-              problems. Call first for the fastest help.
+              problems. Call first for 24 hour roadside assistance with no membership,
+              no app download, and a direct Orlando dispatch path.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={site.phoneHref} className="btn btn-primary">
@@ -93,17 +94,30 @@ export default function ServicesPage() {
 
       <section className="section bg-asphalt">
         <div className="container">
-          <div className="mb-8 grid gap-4 lg:grid-cols-2">
+          <div className="mb-8 grid gap-4 lg:grid-cols-3">
             <div className="flex flex-col items-start justify-between gap-4 rounded-md border border-white/10 bg-black/24 p-5 sm:flex-row sm:items-center">
               <div>
                 <p className="text-sm font-black uppercase text-safety-yellow">Orlando drivers</p>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-white/66">
-                  Need roadside assistance in Orlando right now? Start with the local Orlando page for highway, neighborhood, and parking-lot coverage.
+                  Need roadside assistance in Orlando right now? Start with the local Orlando page for highway, neighborhood, parking-lot, and free-vs-direct help.
                 </p>
               </div>
               <Link href="/areas/orlando" className="btn btn-secondary shrink-0">
                 <MapPin aria-hidden="true" size={18} />
                 Orlando help
+              </Link>
+            </div>
+
+            <div className="flex flex-col items-start justify-between gap-4 rounded-md border border-white/10 bg-black/24 p-5 sm:flex-row sm:items-center">
+              <div>
+                <p className="text-sm font-black uppercase text-safety-yellow">Free option not enough?</p>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-white/66">
+                  Compare Road Rangers, memberships, insurance benefits, and direct
+                  pay-as-you-go Orlando roadside help before you wait.
+                </p>
+              </div>
+              <Link href="/roadside-assistance-cost-orlando" className="btn btn-secondary shrink-0">
+                Cost guide
               </Link>
             </div>
 
