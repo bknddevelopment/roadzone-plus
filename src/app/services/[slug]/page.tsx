@@ -56,10 +56,10 @@ const serviceSeo: Partial<
       "Locked keys in car in Orlando? Call RoadZone Plus for 24/7 car lockout service at homes, hotels, parking lots, work, and roadside stops.",
   },
   "battery-replacement": {
-    title: "Car Battery Replacement Orlando FL | Mobile Battery Help",
-    heading: "Car battery replacement help in Orlando, FL",
+    title: "Mobile Car Battery Replacement Orlando FL | Battery Help",
+    heading: "Mobile car battery replacement help in Orlando, FL",
     description:
-      "Need car battery replacement help in Orlando, FL? RoadZone Plus helps when a jumpstart is not enough and your battery keeps failing in Central Florida heat.",
+      "Need mobile car battery replacement in Orlando, FL? RoadZone Plus helps when a jumpstart is not enough and your battery keeps failing in Central Florida heat.",
   },
 };
 
@@ -361,6 +361,36 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
       ) : null}
 
+      {service.slug === "jumpstart" ? (
+        <section className="section border-y border-white/10 bg-panel">
+          <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Info aria-hidden="true" size={16} />
+                Battery keeps dying?
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                If the jump does not last, the battery may need replacement.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                A jumpstart is the right first move for many Orlando no-start calls. If the
+                vehicle needs repeated boosts, starts and dies again, or has an old,
+                swollen, leaking, or corroded battery, mobile battery replacement support
+                may be the better fix.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+              <Link href="/services/battery-replacement" className="btn btn-primary">
+                Battery Replacement
+              </Link>
+              <Link href="/dead-battery-car-wont-start-orlando" className="btn btn-secondary">
+                Dead Battery Guide
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {service.slug === "fuel-delivery" ? (
         <section className="section border-y border-white/10 bg-panel">
           <div className="container grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
@@ -415,6 +445,66 @@ export default async function ServicePage({ params }: PageProps) {
                 </p>
                 <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
                   View Orlando costs
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {service.slug === "battery-replacement" ? (
+        <section className="section border-y border-white/10 bg-panel">
+          <div className="container grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="eyebrow">
+                <Info aria-hidden="true" size={16} />
+                Mobile battery help
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Battery replacement is the right call when a jumpstart will not last.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                Many Orlando no-start calls begin as a jumpstart. If the battery keeps
+                dying, will not hold a charge, is swollen, corroded, leaking, or is several
+                years old in Florida heat, the better move is battery replacement support
+                at the vehicle instead of another temporary boost.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Link
+                href="/dead-battery-car-wont-start-orlando"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-route-green">
+                  No-start guide
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Car Won&apos;t Start?
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  Check the symptoms that point to a weak battery, dead fob battery,
+                  starter issue, or another no-start problem.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Read the guide
+                </span>
+              </Link>
+              <Link
+                href="/services/jumpstart"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-safety-yellow">
+                  First dead battery?
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Start With a Jumpstart
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  If this is the first time the car died, a battery boost may get you
+                  moving without replacing the battery today.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Compare jumpstart help
                 </span>
               </Link>
             </div>

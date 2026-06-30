@@ -625,96 +625,136 @@ export const services: Service[] = [
     name: "Battery Replacement",
     shortName: "Battery Replacement",
     priority: false,
-    headline: "Battery replacement help when a jump is not enough.",
+    headline: "Mobile car battery replacement help when a jump is not enough.",
     summary:
-      "RoadZone Plus can help with battery replacement needs when your vehicle battery is beyond a simple boost.",
+      "RoadZone Plus helps Orlando drivers with mobile car battery replacement needs when the vehicle battery is beyond a simple boost.",
     cardText:
-      "Battery support for drivers dealing with repeated no-start problems or a failed battery.",
-    emergencyFit: "Best when the battery keeps dying or will not hold a charge.",
+      "Mobile battery support for repeated no-start problems, weak batteries, and failed 12-volt batteries.",
+    emergencyFit: "Best when the battery keeps dying, will not hold a charge, or is too weak for another jump to last.",
     includes: [
-      "Battery condition check",
-      "Replacement guidance",
-      "Installation support when available",
-      "Dead-battery roadside help",
+      "Mobile battery replacement guidance",
+      "Battery condition check before replacing",
+      "12-volt battery support for cars, SUVs, vans, hybrids, and EVs",
+      "On-site installation support when available",
+      "Dead-battery roadside help at homes, work, hotels, parking lots, and roadsides",
     ],
     signs: [
       "Car needs repeated jumps",
       "Battery warning light is on",
-      "Battery is swollen, corroded, or old",
-      "Vehicle starts then dies again later",
+      "Battery is swollen, leaking, corroded, or old",
+      "Vehicle starts after a boost but dies again later",
+      "Slow crank, clicking, dim lights, or a no-start after sitting",
+      "Battery fails after hot days, short trips, airport parking, or a long work shift",
     ],
     intro:
-      "When a battery is too far gone for a jumpstart to hold, replacement is the real fix. Central Florida heat is hard on batteries, so many drivers find theirs failing after just a few summers. RoadZone Plus helps drivers dealing with repeated no-starts and failing batteries, so a dead battery does not strand you again next week.",
+      "When a battery is too far gone for a jumpstart to hold, mobile car battery replacement is the real fix. Central Florida heat is hard on batteries, so many Orlando drivers find theirs failing after just a few summers, often in a driveway, work lot, hotel garage, airport lot, apartment complex, or shopping center. RoadZone Plus helps drivers dealing with repeated no-starts, weak 12-volt batteries, and failing batteries so the same dead-battery problem does not strand you again next week.",
     process: [
       {
-        step: "Call and describe the battery problem",
+        step: "Call with your vehicle and location",
         detail:
-          "Tell us what is happening, such as repeated jumps, a warning light, or a battery that will not hold a charge, along with your year, make, and model.",
+          "Tell RoadZone Plus where the vehicle is parked, the year, make, model, engine type if you know it, and what happens when you turn the key or press start.",
       },
       {
-        step: "Battery condition check",
+        step: "Confirm jumpstart vs replacement",
         detail:
-          "The technician looks at the battery and the situation to confirm whether replacement is the right call.",
+          "The technician reviews the symptoms: repeated jumps, warning lights, battery age, corrosion, swelling, clicking, slow crank, or a battery that will not hold a charge.",
       },
       {
-        step: "Replacement support on-site",
+        step: "Mobile battery support on-site",
         detail:
-          "Where it can be done on-site, the technician helps with installing a replacement battery so you can get moving.",
+          "Where replacement can be handled on-site, the technician helps with the battery install so you do not have to arrange a tow just to get to a parts store.",
       },
       {
-        step: "Back on the road",
+        step: "Start the car and confirm the next move",
         detail:
-          "With a healthy battery in place, you are not facing another dead-battery morning.",
+          "After the battery issue is handled, the vehicle is started and you get practical guidance on whether to drive, charge, or have the charging system checked next.",
       },
     ],
     details: [
       {
         heading: "Why Florida heat kills batteries",
         body:
-          "Heat speeds up the chemical wear inside a battery far more than cold does. In Central Florida's long hot season, batteries often last fewer years than the label suggests, and they tend to fail suddenly rather than warn you.",
+          "Heat speeds up the chemical wear inside a car battery far more than cold does. In Central Florida's long hot season, batteries often last fewer years than the label suggests, and they tend to fail suddenly after short trips, long idle periods, airport parking, or a hot workday.",
       },
       {
-        heading: "Hybrids and electric vehicles",
+        heading: "Mobile battery replacement at home, work, hotels, and lots",
         body:
-          "Hybrids and EVs use a 12-volt battery for their electronics, and it wears out like any other. If your hybrid or EV keeps failing to start, the 12-volt battery may need attention. Share your make and model when you call.",
+          "RoadZone Plus focuses on the places Orlando drivers actually get stuck: driveways, workplaces, apartment communities, hotel garages, theme-park-area lots, stores, restaurants, airport routes, and roadside stops. Share the entrance, garage level, row, building, or landmark so the technician can find the vehicle quickly.",
+      },
+      {
+        heading: "Car, SUV, van, hybrid, and EV 12-volt batteries",
+        body:
+          "Most battery calls involve the regular 12-volt battery, including in hybrids and EVs. That small battery powers electronics and startup systems, and when it fails, the vehicle may not wake up even if the main hybrid or EV battery is charged. Share your year, make, and model before dispatch.",
+      },
+      {
+        heading: "Battery delivery and installation depends on fit",
+        body:
+          "The right replacement depends on battery group size, terminal layout, vehicle electronics, and availability. RoadZone Plus confirms the vehicle and situation on the call instead of promising one universal battery for every car.",
       },
       {
         heading: "Jumpstart first, or replace?",
         body:
-          "A first-time dead battery is usually a jumpstart. Repeated failures, a swollen or corroded battery, or a battery several years old in Florida heat point toward replacement.",
+          "A first-time dead battery is usually a jumpstart. Repeated failures, a swollen or corroded battery, a battery several years old in Florida heat, or a car that dies again after being boosted all point toward replacement.",
+      },
+      {
+        heading: "Avoid a tow when the battery is the problem",
+        body:
+          "If the battery is the only issue, mobile battery replacement support can save the extra step of towing the car to a shop or parts store. If symptoms point to the starter, alternator, key fob, fuel, or another no-start issue, RoadZone Plus can help you understand the likely next step before you spend money in the wrong place.",
       },
     ],
     safetyTips: [
       "If the car keeps dying, avoid parking somewhere you could get stranded overnight.",
-      "Note how old the battery is if you know; age plus heat is the usual culprit.",
-      "Have your year, make, and model ready when you call.",
-      "Turn off lights and accessories to avoid draining a weak battery further.",
+      "Turn off lights, A/C, radio, chargers, and accessories while you wait.",
+      "Do not keep cranking the engine over and over; that can drain the battery further.",
+      "Note how old the battery is if you know; age plus Florida heat is the usual culprit.",
+      "Have your year, make, model, engine type, and exact parking location ready when you call.",
+      "If the vehicle is on a highway shoulder, stay buckled with hazard lights on and call 911 first if the location is unsafe.",
     ],
     faqs: [
       {
         question: "Should I ask for a jumpstart or battery replacement?",
         answer:
-          "If this is the first dead battery issue, start with jumpstart service. If the battery keeps failing, RoadZone Plus can help determine if replacement is the better move.",
+          "If this is the first dead battery issue, start with jumpstart service. If the battery keeps failing, will not hold a charge, is swollen or corroded, or dies again after being boosted, replacement is usually the better move. RoadZone Plus can help you sort that out on the call.",
+      },
+      {
+        question: "Do you offer mobile car battery replacement in Orlando?",
+        answer:
+          "RoadZone Plus helps Orlando drivers with mobile car battery replacement needs when a jumpstart is not enough. Call with your exact location, vehicle year, make, and model so the team can confirm the right help before dispatch.",
       },
       {
         question: "Do you help at night?",
         answer:
-          "Yes. RoadZone Plus is a 24/7 roadside assistance company.",
+          "Yes. RoadZone Plus is a 24/7 roadside assistance company. Battery problems happen at work, hotels, apartment lots, airport parking, and driveways at all hours, so call when the vehicle will not start.",
       },
       {
         question: "How long do car batteries last in Florida?",
         answer:
-          "Heat shortens battery life, so many Central Florida drivers see batteries fail sooner than the typical three-to-five-year range. If yours is a few years old and struggling, do not wait for it to die completely.",
+          "Heat shortens battery life, so many Central Florida drivers see batteries fail sooner than the typical three-to-five-year range. If yours is a few years old, cranks slowly, or needs repeated boosts, do not wait for it to die completely.",
       },
       {
         question: "Do you help with hybrid and EV batteries?",
         answer:
-          "RoadZone Plus helps with the 12-volt battery that hybrids and EVs use for their electronics and startup. Share your year, make, and model so the team can confirm the right help before heading out.",
+          "RoadZone Plus helps with the 12-volt battery that hybrids and EVs use for their electronics and startup systems. This is separate from the large high-voltage drive battery. Share your year, make, and model so the team can confirm the right help before heading out.",
       },
       {
         question: "How much does battery replacement cost?",
         answer:
-          "Battery replacement includes the battery itself plus installation, so it sits higher than a simple jumpstart and varies by battery type and vehicle. If you are not sure whether you need a new battery or just a jump, RoadZone Plus can help you decide and confirms the price on the call.",
+          "Battery replacement includes the battery itself plus installation, so it sits higher than a simple jumpstart and varies by battery type, vehicle, and location. RoadZone Plus confirms the situation and price on the call before dispatch.",
+      },
+      {
+        question: "Can you replace a battery at my hotel, apartment, office, or parking lot?",
+        answer:
+          "Yes, when the vehicle and battery situation can be handled on-site. Give the property name, entrance, garage level, parking row, apartment building, or nearby landmark so the technician can find you quickly.",
+      },
+      {
+        question: "What information do I need for mobile battery replacement?",
+        answer:
+          "Have your year, make, model, vehicle color, exact location, battery age if you know it, and the symptoms ready. Mention clicking, slow crank, repeated jumpstarts, corrosion, swelling, or a battery warning light.",
+      },
+      {
+        question: "What if a new battery does not fix the no-start problem?",
+        answer:
+          "If symptoms point to the alternator, starter, key fob, fuel, or another issue, RoadZone Plus can help you understand that before replacing the wrong part. A battery replacement is best when the battery itself is weak, old, damaged, or unable to hold a charge.",
       },
     ],
   },
