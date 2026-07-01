@@ -38,10 +38,10 @@ const serviceSeo: Partial<
   Record<string, { title: string; heading: string; description: string }>
 > = {
   jumpstart: {
-    title: "Jump Start Orlando FL | 24 Hour Jump Start Service",
-    heading: "Jump start service in Orlando, FL",
+    title: "Dead Battery Jump Start Orlando FL | 24 Hour Battery Boost",
+    heading: "24 hour jump start and battery boost in Orlando, FL",
     description:
-      "Need a jump start in Orlando, FL? RoadZone Plus provides 24/7 battery boost help at homes, hotels, apartments, parking lots, work, and roadside locations.",
+      "Need a dead battery jump start in Orlando, FL? RoadZone Plus provides 24/7 battery boost help at homes, hotels, apartments, parking lots, work, and roadside locations.",
   },
   "fuel-delivery": {
     title: "Fuel Delivery Orlando FL | 24 Hour Gas Delivery",
@@ -133,7 +133,13 @@ export default async function ServicePage({ params }: PageProps) {
     name: service.name,
     alternateName:
       service.slug === "jumpstart"
-        ? ["Jump Start Orlando", "Jump Start Service Orlando FL", "Battery Boost Service"]
+        ? [
+            "Jump Start Orlando",
+            "Jump Start Service Orlando FL",
+            "Dead Battery Jump Start Orlando",
+            "Car Battery Boost Orlando",
+            "Battery Boost Service",
+          ]
         : service.slug === "smart-key-programming"
           ? [
               "Key Fob Programming Orlando",
@@ -383,17 +389,18 @@ export default async function ServicePage({ params }: PageProps) {
             <div>
               <div className="eyebrow">
                 <Info aria-hidden="true" size={16} />
-                Jump start Orlando
+                Battery boost Orlando
               </div>
               <h2 className="mt-5 text-4xl font-black text-white">
-                Car will not start? Call for direct Orlando jump start help.
+                Dead battery? Call for direct Orlando jump start service.
               </h2>
               <p className="mt-5 text-base leading-8 text-white/66">
                 If the car clicks, cranks slowly, shows weak dashboard lights, or will
-                not start after sitting in Orlando heat, RoadZone Plus can send battery
-                boost help to the vehicle. Call from a driveway, apartment complex,
-                hotel, airport-area lot, downtown garage, workplace, shopping center, or
-                roadside stop and share the clearest landmark or entrance.
+                not start after sitting in Orlando heat, RoadZone Plus can send 24 hour
+                jump start and car battery boost help to the vehicle. Call from a driveway,
+                apartment complex, hotel, airport-area lot, downtown garage, workplace,
+                shopping center, parking garage, or roadside stop and share the clearest
+                landmark, entrance, level, or row.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href={site.phoneHref} className="btn btn-primary">
@@ -414,7 +421,7 @@ export default async function ServicePage({ params }: PageProps) {
                   No-start symptoms
                 </p>
                 <h3 className="mt-3 text-xl font-black text-white">
-                  Car Won&apos;t Start?
+                  Dead Battery or No Start?
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-white/62">
                   Compare clicking, slow cranking, weak lights, key-fob problems, and
@@ -432,11 +439,11 @@ export default async function ServicePage({ params }: PageProps) {
                   Price question
                 </p>
                 <h3 className="mt-3 text-xl font-black text-white">
-                  Jump Start Cost
+                  Battery Boost Cost
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-white/62">
-                  See how Orlando roadside calls are usually priced and what can make a
-                  battery boost cheaper or more expensive.
+                  See how Orlando roadside calls are usually priced and what can change
+                  the cost of a dead-battery boost.
                 </p>
                 <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
                   View cost guide

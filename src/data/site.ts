@@ -47,11 +47,11 @@ export const services: Service[] = [
     name: "Jumpstart Service",
     shortName: "Jumpstart",
     priority: true,
-    headline: "24 hour jump start service wherever your car is parked.",
+    headline: "24 hour jump start and battery boost wherever your car is parked.",
     summary:
-      "RoadZone Plus provides 24/7 jump start service in Orlando, FL for dead batteries at homes, hotels, apartments, garages, parking lots, workplaces, and roadside locations.",
+      "RoadZone Plus provides 24/7 jump start service and car battery boost help in Orlando, FL for dead batteries at homes, hotels, apartments, garages, parking lots, workplaces, and roadside locations.",
     cardText:
-      "Fast battery boost service for cars that click, crank slowly, or will not start in Orlando.",
+      "Fast Orlando battery boost service for cars that click, crank slowly, or will not start.",
     emergencyFit: "Best when the lights come on, the car clicks, or the engine will not start.",
     includes: [
       "24 hour battery boost on-site",
@@ -117,6 +117,11 @@ export const services: Service[] = [
           "When you call RoadZone Plus, share your exact location, the vehicle year, make, model, color, and what the car is doing. The dispatcher confirms the situation and sends a technician with jump equipment ready to go. There is no app to download and no membership to join, just a direct call and a real person on the way to get you started. Keep your phone reachable so the technician can confirm exactly where you are parked, especially in a large lot, a parking garage, or along a busy road where the right entrance matters.",
       },
       {
+        heading: "Battery boost help without a tow",
+        body:
+          "Many dead-battery calls do not need a tow truck. If the vehicle only needs a safe boost, RoadZone Plus comes to the car, connects jump equipment properly, and gets you moving from the driveway, hotel lot, workplace, apartment, garage, or roadside stop where the car is already sitting.",
+      },
+      {
         heading: "Why dead batteries are so common in Orlando",
         body:
           "Stop-and-go traffic on I-4 and SR 408, short trips around town, and months of Central Florida heat all shorten battery life. Many drivers get a no-start after the car sits during a long workday, an airport trip, or a few days at the parks. If your engine has been cranking slowly, treat it as an early warning rather than waiting for the battery to quit completely.",
@@ -153,6 +158,11 @@ export const services: Service[] = [
         question: "Do you offer 24 hour jump start service in Orlando?",
         answer:
           "Yes. RoadZone Plus dispatches jump start help 24 hours a day in Orlando and nearby Central Florida areas, including nights, weekends, and holidays.",
+      },
+      {
+        question: "Is a battery boost the same as a jump start?",
+        answer:
+          "For most roadside calls, yes. Drivers may call it a jump start, battery boost, battery jump, or dead-battery boost. The goal is the same: safely send power to the weak 12-volt battery so the car can start again.",
       },
       {
         question: "What if the car still does not start after the jump?",
