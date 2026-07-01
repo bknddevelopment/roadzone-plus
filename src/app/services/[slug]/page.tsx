@@ -38,10 +38,10 @@ const serviceSeo: Partial<
   Record<string, { title: string; heading: string; description: string }>
 > = {
   jumpstart: {
-    title: "Jump Start Service Orlando FL | 24 Hour Battery Help",
+    title: "Jump Start Orlando FL | 24 Hour Jump Start Service",
     heading: "Jump start service in Orlando, FL",
     description:
-      "Need jump start service in Orlando, FL? RoadZone Plus provides 24/7 battery boost help at homes, hotels, parking lots, work, and roadside locations.",
+      "Need a jump start in Orlando, FL? RoadZone Plus provides 24/7 battery boost help at homes, hotels, apartments, parking lots, work, and roadside locations.",
   },
   "fuel-delivery": {
     title: "Fuel Delivery Orlando FL | 24 Hour Gas Delivery",
@@ -125,6 +125,10 @@ export default async function ServicePage({ params }: PageProps) {
     "@type": "Service",
     "@id": `${absoluteUrl(`/services/${service.slug}`)}#service`,
     name: service.name,
+    alternateName:
+      service.slug === "jumpstart"
+        ? ["Jump Start Orlando", "Jump Start Service Orlando FL", "Battery Boost Service"]
+        : undefined,
     serviceType: service.name,
     description: service.summary,
     url: absoluteUrl(`/services/${service.slug}`),
@@ -355,6 +359,76 @@ export default async function ServicePage({ params }: PageProps) {
               </Link>
               <Link href="/locked-keys-in-rental-car-orlando" className="btn btn-secondary">
                 Rental Car Lockout
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {service.slug === "jumpstart" ? (
+        <section className="section border-y border-white/10 bg-panel">
+          <div className="container grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="eyebrow">
+                <Info aria-hidden="true" size={16} />
+                Jump start Orlando
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Car will not start? Call for direct Orlando jump start help.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                If the car clicks, cranks slowly, shows weak dashboard lights, or will
+                not start after sitting in Orlando heat, RoadZone Plus can send battery
+                boost help to the vehicle. Call from a driveway, apartment complex,
+                hotel, airport-area lot, downtown garage, workplace, shopping center, or
+                roadside stop and share the clearest landmark or entrance.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href={site.phoneHref} className="btn btn-primary">
+                  <PhoneCall aria-hidden="true" size={18} />
+                  Call for a Jump Start
+                </a>
+                <Link href="/areas/orlando" className="btn btn-secondary">
+                  Orlando Coverage
+                </Link>
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Link
+                href="/dead-battery-car-wont-start-orlando"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-route-green">
+                  No-start symptoms
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Car Won&apos;t Start?
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  Compare clicking, slow cranking, weak lights, key-fob problems, and
+                  other no-start signs before you call.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Read the no-start guide
+                </span>
+              </Link>
+              <Link
+                href="/roadside-assistance-cost-orlando"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-safety-yellow">
+                  Price question
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Jump Start Cost
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  See how Orlando roadside calls are usually priced and what can make a
+                  battery boost cheaper or more expensive.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  View cost guide
+                </span>
               </Link>
             </div>
           </div>

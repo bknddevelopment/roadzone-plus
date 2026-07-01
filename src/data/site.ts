@@ -47,26 +47,27 @@ export const services: Service[] = [
     name: "Jumpstart Service",
     shortName: "Jumpstart",
     priority: true,
-    headline: "Dead battery help wherever your car is parked.",
+    headline: "24 hour jump start service wherever your car is parked.",
     summary:
-      "RoadZone Plus provides 24/7 jumpstart service for drivers in Orlando and nearby Central Florida cities.",
+      "RoadZone Plus provides 24/7 jump start service in Orlando, FL for dead batteries at homes, hotels, apartments, garages, parking lots, workplaces, and roadside locations.",
     cardText:
-      "Fast battery boost service at home, work, hotels, parking lots, and roadside locations.",
-    emergencyFit: "Best when the lights come on but the engine will not start.",
+      "Fast battery boost service for cars that click, crank slowly, or will not start in Orlando.",
+    emergencyFit: "Best when the lights come on, the car clicks, or the engine will not start.",
     includes: [
-      "Battery boost on-site",
-      "Basic no-start check",
-      "Safe cable connection",
-      "Help deciding if replacement is needed",
+      "24 hour battery boost on-site",
+      "Basic no-start symptom check",
+      "Safe cable connection and boost attempt",
+      "Help deciding if battery replacement is needed",
     ],
     signs: [
       "Clicking sound when turning the key",
       "Dashboard lights are weak or flickering",
       "Vehicle sat unused for several days",
       "Battery died after lights or accessories were left on",
+      "Car will not start after sitting at a hotel, airport lot, garage, or workplace",
     ],
     intro:
-      "A dead battery is the single most common reason drivers in Orlando end up stranded, and Central Florida's climate makes it worse. Heat is harder on a car battery than cold — it speeds up the wear inside, so a battery that started fine all winter can fail without warning on a hot summer morning. Add stop-and-go traffic, short trips, and cars that sit during long workdays or days at the parks, and dead-battery calls climb fast across the Orlando area. RoadZone Plus brings a jumpstart directly to wherever your car is parked — a driveway, a workplace, a hotel, a store parking lot, or the shoulder of the road — 24 hours a day, including nights, weekends, and holidays. One call gets a technician with jump equipment on the way, with no membership and no app required.",
+      "A dead battery is one of the most common reasons drivers in Orlando end up stranded, and Central Florida's climate makes it worse. Heat is harder on a car battery than cold because it speeds up wear inside the battery, so a car that started fine all winter can fail without warning on a hot summer morning. Add stop-and-go traffic, short trips, airport parking, resort lots, downtown garages, and cars that sit during long workdays or theme-park visits, and dead-battery calls climb fast across Orlando. RoadZone Plus brings jump start service directly to wherever your car is parked — a driveway, apartment complex, workplace, hotel, store parking lot, parking garage, or roadside location — 24 hours a day, including nights, weekends, and holidays. One call gets a technician with jump equipment on the way, with no membership and no app required.",
     process: [
       {
         step: "Call and describe what happened",
@@ -103,12 +104,17 @@ export const services: Service[] = [
       {
         heading: "Jumpstart or battery replacement?",
         body:
-          "If this is the first time the battery has died, a jumpstart usually gets you going. If it keeps happening, ask about battery replacement so you are not stuck again next week.",
+          "If this is the first time the battery has died, a jumpstart usually gets you going. If the car needs repeated boosts, starts and dies again, has a swollen or corroded battery, or is several years old in Florida heat, ask about battery replacement so you are not stuck again next week.",
+      },
+      {
+        heading: "Where Orlando drivers call from",
+        body:
+          "RoadZone Plus helps with jump starts at homes, apartments, hotels, theme-park and resort lots, office parks, shopping centers, garages, airport-area lots, and roadside stops across Orlando and nearby Central Florida areas. The clearer your location is, the easier it is to send the technician to the right entrance, level, row, or landmark.",
       },
       {
         heading: "What to expect when you call",
         body:
-          "When you call RoadZone Plus, share your location and what the car is doing. The dispatcher confirms your vehicle and sends a technician with jump equipment ready to go. There is no app to download and no membership to join, just a direct call and a real person on the way to get you started. Keep your phone reachable so the technician can confirm exactly where you are parked, especially in a large lot, a parking garage, or along a busy road where the right entrance matters.",
+          "When you call RoadZone Plus, share your exact location, the vehicle year, make, model, color, and what the car is doing. The dispatcher confirms the situation and sends a technician with jump equipment ready to go. There is no app to download and no membership to join, just a direct call and a real person on the way to get you started. Keep your phone reachable so the technician can confirm exactly where you are parked, especially in a large lot, a parking garage, or along a busy road where the right entrance matters.",
       },
       {
         heading: "Why dead batteries are so common in Orlando",
@@ -139,9 +145,14 @@ export const services: Service[] = [
     ],
     faqs: [
       {
-        question: "Can RoadZone Plus jumpstart my car at home or work?",
+        question: "Can RoadZone Plus jumpstart my car at home, work, or a hotel?",
         answer:
-          "Yes. Call RoadZone Plus and share your exact location. The team can come to homes, offices, parking lots, hotels, and roadside locations.",
+          "Yes. Call RoadZone Plus and share your exact location. The team can come to homes, offices, apartment complexes, parking lots, hotels, parking garages, shopping centers, and roadside locations.",
+      },
+      {
+        question: "Do you offer 24 hour jump start service in Orlando?",
+        answer:
+          "Yes. RoadZone Plus dispatches jump start help 24 hours a day in Orlando and nearby Central Florida areas, including nights, weekends, and holidays.",
       },
       {
         question: "What if the car still does not start after the jump?",

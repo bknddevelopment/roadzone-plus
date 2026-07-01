@@ -207,6 +207,66 @@ export default async function AreaPage({ params }: PageProps) {
         </section>
       ) : null}
 
+      {area.slug === "orlando" ? (
+        <section className="section border-t border-white/10 bg-panel">
+          <div className="container grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="eyebrow">
+                <PhoneCall aria-hidden="true" size={16} />
+                Jump start Orlando
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Dead battery in Orlando? Start with the jump start service page.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                Orlando drivers searching for a jump start usually need help at the
+                vehicle, not a general coverage page. If the car clicks, cranks slowly,
+                has weak dashboard lights, or will not start after sitting in the heat,
+                use the dedicated jump start service page for the fastest call path.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Link
+                href="/services/jumpstart"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-route-green">
+                  Money page
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Jump Start Service
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  24 hour battery boost help at homes, hotels, apartments, parking
+                  garages, workplaces, stores, and roadside locations.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Open jump start service
+                </span>
+              </Link>
+              <Link
+                href="/dead-battery-car-wont-start-orlando"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-safety-yellow">
+                  Problem guide
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Car Won&apos;t Start?
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  Check the symptoms that point to a dead battery, weak key fob,
+                  starter issue, or a battery that needs replacement.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Read no-start help
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {area.freeAssistanceNotes && area.freeAssistanceNotes.length > 0 ? (
         <section className="section border-t border-white/10 bg-panel">
           <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
