@@ -774,16 +774,16 @@ export const services: Service[] = [
     name: "Smart Key Programming",
     shortName: "Smart Keys",
     priority: false,
-    headline: "Smart key and key fob help for modern vehicles.",
+    headline: "Smart key and key fob programming help for modern vehicles.",
     summary:
-      "RoadZone Plus supports smart key programming needs for drivers dealing with key fob and access issues.",
+      "RoadZone Plus supports smart key programming and key fob programming needs for Orlando drivers dealing with key-not-detected, push-to-start, remote, and access issues.",
     cardText:
-      "Smart key programming support for compatible vehicles and key-related roadside problems.",
-    emergencyFit: "Best when your key fob or smart key stops working and you need access or starting help.",
+      "Smart key and key fob programming support for compatible vehicles and key-related roadside problems.",
+    emergencyFit: "Best when your key fob, smart key, remote, or push-to-start system stops working.",
     includes: [
-      "Smart key issue review",
+      "Smart key and key fob issue review",
       "Compatible key programming support",
-      "Key fob troubleshooting",
+      "Remote and push-to-start troubleshooting",
       "Vehicle access guidance",
     ],
     signs: [
@@ -791,24 +791,25 @@ export const services: Service[] = [
       "Key fob stopped unlocking the car",
       "Push-to-start vehicle will not detect key",
       "New key needs programming",
+      "Dashboard shows key not detected or low key battery",
     ],
     intro:
-      "Modern cars rely on smart keys and key fobs to unlock and start, and when one stops working it can leave you stuck. RoadZone Plus supports smart key and key fob issues for compatible vehicles, helping drivers who cannot get in or get started because of a key problem.",
+      "Modern cars rely on smart keys, key fobs, remotes, and push-to-start systems to unlock and start. When one stops working, the car can act like it has a dead battery, refuse to unlock, show key not detected, or leave you stuck in a parking lot. RoadZone Plus supports smart key programming, key fob programming, and fob troubleshooting for compatible vehicles in Orlando and nearby Central Florida areas. Call with the year, make, model, key type, dashboard message, and location so the team can confirm whether RoadZone Plus can help roadside or whether a dealer or specialized locksmith is the better route.",
     process: [
       {
         step: "Call with your key situation and vehicle",
         detail:
-          "Describe what the key is doing and share your year, make, and model so the team can confirm compatibility.",
+          "Describe what the key is doing and share your year, make, model, key type, and dashboard message so the team can confirm compatibility before dispatch.",
       },
       {
         step: "Review the smart key issue",
         detail:
-          "The technician checks whether the problem is a dead fob battery, a key that needs programming, or another access issue.",
+          "The technician checks whether the problem looks like a dead fob battery, a key that needs programming, a remote issue, a lockout, or another access problem.",
       },
       {
         step: "Programming or troubleshooting support",
         detail:
-          "For compatible vehicles and keys, the technician helps with programming or troubleshooting so the key works again.",
+          "For compatible vehicles and keys, the technician helps with programming or troubleshooting so the fob, remote, or smart key can work again.",
       },
       {
         step: "Back in and running",
@@ -820,17 +821,27 @@ export const services: Service[] = [
       {
         heading: "Compatibility depends on the vehicle",
         body:
-          "Smart key programming varies a lot between makes, models, and key types. Calling with your exact vehicle details lets RoadZone Plus confirm what is possible before heading out.",
+          "Smart key programming varies a lot between makes, models, model years, immobilizer systems, and key types. Calling with your exact vehicle details lets RoadZone Plus confirm what is possible before heading out instead of wasting time on a key that needs dealer-only or locksmith-only equipment.",
       },
       {
         heading: "Sometimes it is just the fob battery",
         body:
-          "A key fob that suddenly stops working often just needs a fresh battery. Mention this when you call so the simplest fix is checked first.",
+          "A key fob that suddenly stops working often just needs a fresh battery. Shorter remote range, weak button response, and a low key battery message are signs the simplest fix should be checked before programming.",
       },
       {
         heading: "Lockout vs. key programming",
         body:
-          "If you are simply locked out, auto lockout assistance may be faster. Key programming is for when the key itself is not recognized or needs to be set up.",
+          "If the fob is locked inside the car, auto lockout assistance may be faster. Smart key programming is for when the key itself is not recognized, the remote will not communicate, or a compatible replacement key needs to be set up.",
+      },
+      {
+        heading: "Push-to-start and key-not-detected problems",
+        body:
+          "Push-to-start cars can show key not detected even when the main car battery is fine. The issue may be the fob battery, the fob itself, the vehicle's key reader, or programming. Tell RoadZone Plus the exact message on the dash when you call.",
+      },
+      {
+        heading: "Rental cars and lost keys",
+        body:
+          "Rental companies usually control replacement keys for their own fleet. RoadZone Plus can still help with lockout and key-fob troubleshooting, but a true lost rental key may need the rental company. We will tell you that plainly on the call.",
       },
     ],
     safetyTips: [
@@ -841,19 +852,24 @@ export const services: Service[] = [
     ],
     faqs: [
       {
-        question: "Can every smart key be programmed roadside?",
+        question: "Can every smart key or key fob be programmed roadside?",
         answer:
-          "Compatibility depends on the vehicle and key. Call with the year, make, model, and key situation so RoadZone Plus can confirm.",
+          "No. Compatibility depends on the vehicle, model year, key type, immobilizer system, and equipment required. Call with the year, make, model, and key situation so RoadZone Plus can confirm what is possible before dispatch.",
       },
       {
-        question: "Is smart key programming available 24/7?",
+        question: "Is smart key programming available in Orlando 24/7?",
         answer:
-          "Call RoadZone Plus anytime. Availability can depend on vehicle compatibility and the exact key issue.",
+          "Call RoadZone Plus anytime. Availability can depend on vehicle compatibility and the exact key issue, but the team can review the situation 24/7 and tell you whether RoadZone Plus can help.",
       },
       {
         question: "My key fob suddenly stopped working. What now?",
         answer:
-          "Often the fob battery has died. Call with your vehicle details and we will help you check the simplest fixes first before anything more involved.",
+          "Often the fob battery has died. Call with your vehicle details, dashboard message, and whether the fob was dropped, wet, locked inside, or lost so the simplest fixes can be checked first.",
+      },
+      {
+        question: "What does key not detected mean?",
+        answer:
+          "On a push-to-start vehicle, key not detected usually means the car is not reading the fob. It can be a weak fob battery, damaged fob, programming issue, or vehicle-side reader problem. RoadZone Plus can help you sort the likely next step.",
       },
       {
         question: "Can you make a brand-new key if mine is lost?",

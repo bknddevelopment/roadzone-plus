@@ -61,6 +61,12 @@ const serviceSeo: Partial<
     description:
       "Need mobile car battery replacement in Orlando, FL? RoadZone Plus helps when a jumpstart is not enough and your battery keeps failing in Central Florida heat.",
   },
+  "smart-key-programming": {
+    title: "Key Fob Programming Orlando FL | Smart Key Help",
+    heading: "Key fob and smart key programming in Orlando, FL",
+    description:
+      "Need key fob programming in Orlando, FL? RoadZone Plus helps with smart keys, push-to-start, key-not-detected messages, and compatible key programming.",
+  },
 };
 
 export function generateStaticParams() {
@@ -128,6 +134,12 @@ export default async function ServicePage({ params }: PageProps) {
     alternateName:
       service.slug === "jumpstart"
         ? ["Jump Start Orlando", "Jump Start Service Orlando FL", "Battery Boost Service"]
+        : service.slug === "smart-key-programming"
+          ? [
+              "Key Fob Programming Orlando",
+              "Smart Key Programming Orlando FL",
+              "Push-to-Start Key Help",
+            ]
         : undefined,
     serviceType: service.name,
     description: service.summary,
@@ -579,6 +591,77 @@ export default async function ServicePage({ params }: PageProps) {
                 </p>
                 <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
                   Compare jumpstart help
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {service.slug === "smart-key-programming" ? (
+        <section className="section border-y border-white/10 bg-panel">
+          <div className="container grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="eyebrow">
+                <Info aria-hidden="true" size={16} />
+                Orlando key fob programming
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Key fob not working, key not detected, or push-to-start trouble?
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                RoadZone Plus helps Orlando drivers with compatible smart key, key
+                fob, remote, and push-to-start problems. Some keys can be handled
+                roadside, some need a battery or lockout solution, and some require a
+                dealer or specialty locksmith. Call with the year, make, model, key
+                type, dashboard message, and exact location so the team can route the
+                call correctly before dispatch.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href={site.phoneHref} className="btn btn-primary">
+                  <PhoneCall aria-hidden="true" size={18} />
+                  Call About a Key Fob
+                </a>
+                <Link href="/key-fob-not-working-orlando" className="btn btn-secondary">
+                  Key Fob Guide
+                </Link>
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Link
+                href="/key-fob-not-working-orlando"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-route-green">
+                  Problem guide
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Key Fob Not Working?
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  Check key-not-detected messages, dead fob battery signs, and
+                  push-to-start symptoms before forcing the door or ignition.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Read the key fob guide
+                </span>
+              </Link>
+              <Link
+                href="/services/auto-lockout"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <p className="text-xs font-black uppercase text-safety-yellow">
+                  Fob locked inside?
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Auto Lockout Service
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  If the fob is inside the vehicle, the right call may be damage-conscious
+                  entry instead of programming.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Compare lockout help
                 </span>
               </Link>
             </div>
