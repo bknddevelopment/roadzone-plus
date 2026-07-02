@@ -44,10 +44,10 @@ const serviceSeo: Partial<
       "Need a dead battery jump start in Orlando, FL? RoadZone Plus provides 24/7 battery boost help at homes, hotels, apartments, parking lots, work, and roadside locations.",
   },
   "fuel-delivery": {
-    title: "Fuel Delivery Orlando FL | 24 Hour Gas Delivery",
-    heading: "Fuel delivery in Orlando, FL",
+    title: "Fuel Delivery Orlando FL | 24 Hour Gas Delivery Service",
+    heading: "Emergency fuel delivery and gas delivery in Orlando, FL",
     description:
-      "Need fuel delivery in Orlando, FL? RoadZone Plus brings emergency gas to stranded drivers on roads, at hotels, parking lots, apartments, and workplaces.",
+      "Need fuel delivery in Orlando, FL? RoadZone Plus brings 24/7 emergency gas delivery to stranded drivers on roads, at hotels, parking lots, apartments, and workplaces.",
   },
   "auto-lockout": {
     title: "Car Lockout Service Orlando FL | Locked Keys Help",
@@ -140,6 +140,14 @@ export default async function ServicePage({ params }: PageProps) {
             "Car Battery Boost Orlando",
             "Battery Boost Service",
           ]
+        : service.slug === "fuel-delivery"
+          ? [
+              "Fuel Delivery Orlando",
+              "Gas Delivery Orlando FL",
+              "Emergency Fuel Delivery Orlando",
+              "24 Hour Gas Delivery Service",
+              "Roadside Fuel Delivery",
+            ]
         : service.slug === "smart-key-programming"
           ? [
               "Key Fob Programming Orlando",
@@ -496,11 +504,12 @@ export default async function ServicePage({ params }: PageProps) {
                 Ran out of gas on I-4, near the parks, or away from a station?
               </h2>
               <p className="mt-5 text-base leading-8 text-white/66">
-                RoadZone Plus helps with gas delivery when the vehicle is stuck at a
-                hotel, apartment, workplace, parking lot, roadside stop, or Orlando
-                highway location. Free highway service patrol options can help in limited
-                covered areas, but they do not replace direct 24/7 dispatch when you
-                need a local technician sent to your exact spot.
+                RoadZone Plus helps with 24 hour fuel delivery when the vehicle is stuck
+                at a hotel, apartment, workplace, parking lot, roadside stop, airport
+                route, theme-park corridor, or Orlando highway location. Free highway
+                service patrol options can help in limited covered areas, but they do not
+                replace direct 24/7 dispatch when you need a local technician sent to your
+                exact spot with gas for the car.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">

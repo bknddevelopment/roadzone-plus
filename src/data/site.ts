@@ -309,11 +309,11 @@ export const services: Service[] = [
     name: "Fuel Delivery",
     shortName: "Fuel Delivery",
     priority: true,
-    headline: "Ran out of gas? Get fuel brought to your location.",
+    headline: "Ran out of gas? Get emergency fuel brought to your location.",
     summary:
-      "RoadZone Plus offers emergency fuel delivery across Orlando and surrounding service areas.",
+      "RoadZone Plus offers 24/7 emergency fuel delivery and gas delivery service across Orlando and surrounding Central Florida service areas.",
     cardText:
-      "Emergency fuel brought to you so you can get moving again without walking to a station.",
+      "Emergency gas brought to you so you can get moving again without walking to a station.",
     emergencyFit:
       "Best when the car is safe but out of fuel or very low on fuel in Orlando.",
     includes: [
@@ -361,7 +361,12 @@ export const services: Service[] = [
       {
         heading: "Emergency gas delivery in Orlando",
         body:
-          "Drivers call RoadZone Plus for fuel delivery in Orlando, gas delivery service, mobile fuel delivery, and roadside fuel help after the tank runs dry. RoadZone Plus responds to local roads, homes, workplaces, apartments, hotel lots, shopping centers, and roadside stops across the Orlando service area.",
+          "Drivers call RoadZone Plus for fuel delivery in Orlando, gas delivery service, mobile fuel delivery, and roadside fuel help after the tank runs dry. RoadZone Plus responds to local roads, homes, workplaces, apartments, hotel lots, shopping centers, airport routes, theme-park corridors, and roadside stops across the Orlando service area.",
+      },
+      {
+        heading: "Roadside gas delivery, not bulk fuel delivery",
+        body:
+          "Some fuel delivery companies focus on bulk fuel for fleets, job sites, generators, farms, or businesses. RoadZone Plus is the call when a passenger vehicle, rental car, rideshare car, commuter, or family vehicle is out of gas and needs enough fuel brought directly to the car to get moving again.",
       },
       {
         heading: "Where drivers run out most often",
@@ -404,6 +409,11 @@ export const services: Service[] = [
           "RoadZone Plus brings enough fuel to help get you moving again and reach a nearby gas station safely.",
       },
       {
+        question: "Is this roadside gas delivery or bulk fuel delivery?",
+        answer:
+          "RoadZone Plus provides roadside fuel delivery for stranded passenger vehicles and similar roadside calls. It is not a bulk fuel supplier for fleets, tanks, farms, generators, or commercial fuel contracts.",
+      },
+      {
         question: "Do I need to be with my vehicle for fuel delivery?",
         answer:
           "Plan to be with or near your vehicle so the technician can confirm the right car, add fuel safely, and help you get started.",
@@ -422,6 +432,11 @@ export const services: Service[] = [
         question: "Can RoadZone Plus bring gas to a hotel, apartment, or parking lot?",
         answer:
           "Yes. RoadZone Plus can bring fuel to hotels, apartments, workplaces, stores, garages, and parking lots across Orlando. Share the property name, entrance, building, level, row, or nearest landmark when you call.",
+      },
+      {
+        question: "Can RoadZone Plus bring gas near Disney, Universal, or Orlando Airport?",
+        answer:
+          "Yes. RoadZone Plus helps drivers around Orlando's tourist corridors, airport routes, hotels, resort areas, and large parking lots when the vehicle runs out of gas or cannot safely reach a station.",
       },
       {
         question: "Can RoadZone Plus bring fuel on I-4 or other Orlando highways?",
