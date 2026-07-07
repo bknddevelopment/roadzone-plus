@@ -169,6 +169,11 @@ const sourceLinks = [
 
 const relatedGuides = [
   {
+    href: "/free-roadside-assistance-orlando",
+    title: "Free Roadside Assistance in Orlando",
+    text: "Every legitimate free and already-paid option — Road Rangers, insurance, warranties, memberships — and when direct dispatch fits.",
+  },
+  {
     href: "/roadside-assistance-cost-orlando",
     title: "Roadside Assistance Cost in Orlando",
     text: "Compare free options, memberships, insurance benefits, and direct pay-as-you-go roadside help.",

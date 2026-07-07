@@ -191,9 +191,9 @@ export const focusedPages = {
         text: "What to do when the wheel cannot come off because of a locking lug nut.",
       },
       {
-        href: "/ran-out-of-gas-on-i-4-orlando",
-        title: "I-4 Emergency Guide",
-        text: "Safety guidance for stranded drivers on Orlando highways.",
+        href: "/mobile-tire-repair-orlando",
+        title: "Mobile Tire Repair in Orlando",
+        text: "What mobile flat tire help can fix at your location and when a tire shop is the right call.",
       },
     ],
     faqs: [

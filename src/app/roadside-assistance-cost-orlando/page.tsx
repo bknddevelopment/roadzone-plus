@@ -178,6 +178,10 @@ const freeOptions = [
   {
     title: "Insurance and warranty add-ons",
     text: "Many auto insurance policies and new-car warranties include a roadside assistance benefit. Check your policy or app before you pay out of pocket — you may already be covered for basics like a tow, jumpstart, or lockout.",
+    link: {
+      href: "/free-roadside-assistance-orlando",
+      label: "All free options in Orlando",
+    },
   },
   {
     title: "Memberships and credit cards",

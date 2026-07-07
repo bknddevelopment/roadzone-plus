@@ -330,6 +330,12 @@ export default function ThemeParkRoadsidePage() {
               </Link>
             ))}
           </div>
+
+          <p className="mt-6 text-sm leading-7 text-white/60">
+            Staying near Walt Disney World? There is a dedicated guide to{" "}
+            <Link href="/roadside-assistance-near-disney-world-resort" className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200">roadside assistance near Disney World Resort</Link>{" "}
+            covering resort hotels, Disney Springs, US 192, World Drive, and the I-4 exits.
+          </p>
         </div>
       </section>
 

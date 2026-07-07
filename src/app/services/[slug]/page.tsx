@@ -363,6 +363,30 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
       ) : null}
 
+      {service.slug === "tire-change" ? (
+        <section className="section border-y border-white/10 bg-panel">
+          <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Info aria-hidden="true" size={16} />
+                Searched for mobile tire repair?
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                See what a mobile fix can and cannot solve.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                The Orlando mobile tire repair guide explains honestly what roadside help
+                fixes at your location — spare installation and wheel lock removal — and
+                when the tire itself needs a shop or a tow instead.
+              </p>
+            </div>
+            <Link href="/mobile-tire-repair-orlando" className="btn btn-primary shrink-0">
+              Mobile Tire Repair Guide
+            </Link>
+          </div>
+        </section>
+      ) : null}
+
       {service.slug === "auto-lockout" ? (
         <section className="section border-y border-white/10 bg-panel">
           <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">

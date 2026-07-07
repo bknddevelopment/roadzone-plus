@@ -84,6 +84,12 @@ const emergencyHelpLinks = [
     text: "Roadside help near Disney, Universal, Lake Buena Vista, Celebration, Kissimmee, and resort corridors.",
     Icon: Route,
   },
+  {
+    href: "/roadside-assistance-near-disney-world-resort",
+    title: "Near Disney World Resort",
+    text: "Dedicated Disney-area help for rental cars, resort hotels, Disney Springs, US 192, World Drive, and I-4.",
+    Icon: MapPin,
+  },
 ];
 
 const neighborhoods = [

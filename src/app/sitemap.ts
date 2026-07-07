@@ -15,6 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ran-out-of-gas-on-i-4-orlando",
     "/road-rangers-orlando",
     "/roadside-assistance-cost-orlando",
+    "/roadside-assistance-near-disney-world-resort",
+    "/mobile-tire-repair-orlando",
+    "/free-roadside-assistance-orlando",
     ...focusedPageList.map((page) => page.href),
   ].map((path) => ({
     url: `${site.url}${path}`,
