@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -151,21 +151,49 @@ function DesktopDropdown({
   footerLabel: string;
   footerText: string;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const closeDropdown = () => setIsOpen(false);
+
   return (
-    <div className="group relative">
+    <div
+      ref={wrapperRef}
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={closeDropdown}
+      onFocus={() => setIsOpen(true)}
+      onBlur={(event) => {
+        if (!wrapperRef.current?.contains(event.relatedTarget)) {
+          closeDropdown();
+        }
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          closeDropdown();
+        }
+      }}
+    >
       <button
         type="button"
         className="inline-flex items-center gap-1 py-7 text-sm font-semibold text-white/76 transition hover:text-white"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(true)}
       >
         {label}
         <ChevronDown
           aria-hidden="true"
-          className="transition group-hover:rotate-180 group-focus-within:rotate-180"
+          className={`transition ${isOpen ? "rotate-180" : ""}`}
           size={15}
         />
       </button>
 
-      <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 w-[min(40rem,calc(100vw-2rem))] -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+      <div
+        className={`absolute left-1/2 top-full z-50 w-[min(40rem,calc(100vw-2rem))] -translate-x-1/2 pt-3 transition duration-150 ${
+          isOpen
+            ? "pointer-events-auto visible translate-y-0 opacity-100"
+            : "pointer-events-none invisible translate-y-2 opacity-0"
+        }`}
+      >
         <div className="rounded-md border border-white/12 bg-road-black/95 p-3 shadow-2xl shadow-black/50 backdrop-blur-xl">
           <div className="grid gap-2 sm:grid-cols-2">
             {links.map(({ href, label: itemLabel, description, Icon, badge }) => (
@@ -173,6 +201,7 @@ function DesktopDropdown({
                 key={href}
                 href={href}
                 className="group/link rounded-md border border-white/8 bg-white/[0.04] p-3 transition hover:border-road-red/60 hover:bg-white/[0.07]"
+                onClick={closeDropdown}
               >
                 <span className="flex items-start gap-3">
                   <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-white text-road-black">
@@ -199,6 +228,7 @@ function DesktopDropdown({
           <Link
             href={footerHref}
             className="mt-3 flex items-center justify-between gap-4 rounded-md border border-white/10 bg-white/[0.06] px-4 py-3 text-sm font-black text-white transition hover:border-road-red/60 hover:bg-road-red/18"
+            onClick={closeDropdown}
           >
             <span>{footerLabel}</span>
             <span className="text-xs font-semibold text-white/56">{footerText}</span>
