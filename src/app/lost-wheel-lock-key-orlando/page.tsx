@@ -17,20 +17,21 @@ import {
   businessId,
 } from "@/lib/seo";
 
-const title = "Lost Wheel Lock Key Orlando";
+const path = "/lost-wheel-lock-key-orlando";
+const title = "Lost Wheel Lock Key Orlando | Wheel Lock Removal";
 const description =
-  "Lost your wheel lock key in Orlando? RoadZone Plus removes locked lug nuts so tire service can move forward. Call (407) 222-2739 for 24/7 help.";
+  "Lost your wheel lock key in Orlando? Learn what to check, when to stop, and when to call RoadZone Plus for 24/7 wheel lock removal and tire help.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: "/lost-wheel-lock-key-orlando",
+    canonical: path,
   },
   openGraph: {
     title,
     description,
-    url: "/lost-wheel-lock-key-orlando",
+    url: path,
   },
   twitter: {
     title,
@@ -73,6 +74,27 @@ const firstSteps = [
   {
     title: "Stay visible and reachable",
     text: "If you are on the roadside, turn on hazards, move away from traffic when safe, and keep your phone reachable so the technician can find you.",
+  },
+];
+
+const decisionOptions = [
+  {
+    title: "You need the wheel off now",
+    text: "If a flat tire, brake job, or tire-shop visit is blocked by the locking lug nut, stop forcing it and call for wheel lock removal at the vehicle.",
+    href: "/services/wheel-lock-removal",
+    label: "Get wheel lock removal help",
+  },
+  {
+    title: "You want a replacement key",
+    text: "Check the original wheel-lock paperwork or contact the vehicle dealer or lock manufacturer. Replacement is useful for later, but it may not solve an active roadside emergency quickly.",
+    href: "/contact",
+    label: "Call RoadZone for guidance",
+  },
+  {
+    title: "You also have a flat tire",
+    text: "Tell dispatch that the lock and the flat are connected. RoadZone Plus can confirm whether wheel lock removal and tire-change help can be handled in the same service call.",
+    href: "/services/tire-change",
+    label: "See flat tire help",
   },
 ];
 
@@ -154,6 +176,16 @@ const faqs = [
       "RoadZone Plus focuses on roadside wheel lock removal, not making a new manufacturer key. If you want a replacement key later, the dealer or wheel-lock manufacturer may be the right source.",
   },
   {
+    question: "Can I buy a universal wheel lock key?",
+    answer:
+      "There is no single key guaranteed to fit every factory and aftermarket wheel lock. Wheel-lock patterns vary, so a replacement usually needs to match the lock or its identifying information. If the wheel must come off now, roadside removal may be faster than searching for a matching replacement.",
+  },
+  {
+    question: "Can AutoZone or another parts store replace my wheel lock key?",
+    answer:
+      "Parts stores sell wheel-lock sets and removal tools, but an in-stock key is not guaranteed to match the lock already on your vehicle. Check any wheel-lock paperwork, the dealer, or the manufacturer for a matching replacement. If a flat tire has you stranded, call RoadZone Plus for removal help instead of guessing with the wrong tool.",
+  },
+  {
     question: "Do rental cars have wheel locks?",
     answer:
       "Some do. If you are in a rental car and cannot find the wheel lock key, check with the rental company and call RoadZone Plus if you are stranded and need help at the vehicle.",
@@ -195,35 +227,27 @@ export default function LostWheelLockKeyPage() {
     })),
   };
 
-  const serviceSchema = {
+  const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${absoluteUrl("/lost-wheel-lock-key-orlando")}#service`,
-    name: "Lost Wheel Lock Key Help in Orlando",
-    serviceType: "Wheel lock removal",
-    description:
-      "Roadside wheel lock removal help for Orlando drivers when the wheel lock key is lost, stripped, or broken.",
-    url: absoluteUrl("/lost-wheel-lock-key-orlando"),
-    provider: {
+    "@type": "Article",
+    "@id": `${absoluteUrl(path)}#article`,
+    headline: title,
+    description,
+    datePublished: "2026-06-07",
+    dateModified: "2026-07-10",
+    author: {
+      "@type": "Organization",
+      name: site.name,
+    },
+    publisher: {
       "@id": businessId,
     },
-    areaServed: localScenarios.map((item) => ({
-      "@type": "City",
-      name: `${item.area}, FL`,
-    })),
-    availableChannel: {
-      "@type": "ServiceChannel",
-      servicePhone: {
-        "@type": "ContactPoint",
-        telephone: site.phoneE164,
-        contactType: "customer service",
-      },
-    },
+    mainEntityOfPage: absoluteUrl(path),
   };
 
   const breadcrumbs = breadcrumbSchema([
     { name: "Home", path: "/" },
-    { name: "Lost Wheel Lock Key Orlando", path: "/lost-wheel-lock-key-orlando" },
+    { name: "Lost Wheel Lock Key Orlando", path },
   ]);
 
   return (
@@ -231,7 +255,7 @@ export default function LostWheelLockKeyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([faqSchema, howToSchema, serviceSchema, breadcrumbs]),
+          __html: JSON.stringify([faqSchema, howToSchema, articleSchema, breadcrumbs]),
         }}
       />
 
@@ -246,10 +270,10 @@ export default function LostWheelLockKeyPage() {
               Lost Your Wheel Lock Key in Orlando?
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
-              A missing wheel lock key can turn a normal flat tire into a stuck vehicle.
-              RoadZone Plus helps Orlando and Central Florida drivers remove locked lug
-              nuts so tire service can move forward. Call for 24/7 roadside help when
-              the key is lost, stripped, broken, or nowhere to be found.
+              If your wheel lock key is missing, check the glove box, console, spare-tire
+              well, jack kit, and trunk before forcing the lock. If the wheel still cannot
+              come off, RoadZone Plus provides 24/7 wheel lock removal in Orlando so a
+              blocked tire change or other wheel service can move forward.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={site.phoneHref} className="btn btn-primary">
@@ -278,6 +302,41 @@ export default function LostWheelLockKeyPage() {
               </a>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="section border-b border-white/10 bg-panel">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <CheckCircle2 aria-hidden="true" size={16} />
+              Choose the right next step
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Replacement key later, or wheel removal now?
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              The right answer depends on whether the vehicle is safe and parked, or a
+              missing key is actively blocking a flat tire change or repair. Use the path
+              that matches what is happening now.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {decisionOptions.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="card-solid group flex h-full flex-col p-6 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <h3 className="text-xl font-black text-white">{item.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-6 text-white/66">{item.text}</p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  {item.label}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

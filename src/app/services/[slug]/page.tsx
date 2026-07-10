@@ -55,6 +55,12 @@ const serviceSeo: Partial<
     description:
       "Locked keys in car in Orlando? Call RoadZone Plus for 24/7 car lockout service at homes, hotels, parking lots, work, and roadside stops.",
   },
+  "wheel-lock-removal": {
+    title: "Wheel Lock Removal Orlando FL | Roadside Help",
+    heading: "24 hour wheel lock removal in Orlando, FL",
+    description:
+      "Need wheel lock removal in Orlando? RoadZone Plus provides 24/7 roadside help when a lost, stripped, or broken wheel lock key blocks a tire change.",
+  },
   "battery-replacement": {
     title: "Mobile Car Battery Replacement Orlando FL | Battery Help",
     heading: "Mobile car battery replacement help in Orlando, FL",
@@ -147,6 +153,13 @@ export default async function ServicePage({ params }: PageProps) {
               "Emergency Fuel Delivery Orlando",
               "24 Hour Gas Delivery Service",
               "Roadside Fuel Delivery",
+            ]
+        : service.slug === "wheel-lock-removal"
+          ? [
+              "Wheel Lock Removal Orlando",
+              "Locking Lug Nut Removal Orlando",
+              "Lost Wheel Lock Key Removal",
+              "Roadside Wheel Lock Removal",
             ]
         : service.slug === "smart-key-programming"
           ? [
