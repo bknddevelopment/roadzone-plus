@@ -19,9 +19,9 @@ import {
   businessId,
 } from "@/lib/seo";
 
-const title = "Ran Out of Gas on I-4 Orlando";
+const title = "Ran Out of Gas on the Highway? What to Do on I-4 in Orlando";
 const description =
-  "Ran out of gas on I-4 in Orlando? Stay safe, know who to call, and get 24/7 local fuel delivery from RoadZone Plus. Call (407) 222-2739.";
+  "Ran out of gas on the highway? Coast to the right shoulder, turn on your hazards, stay buckled inside, and call for fuel delivery — or 911 if you're unsafe. 24/7 fuel brought to you on I-4 and across Orlando by RoadZone Plus. Call (407) 222-2739.";
 
 export const metadata: Metadata = {
   title,
@@ -161,9 +161,19 @@ const faqs = [
       "For fuel brought directly to your vehicle anywhere in the Orlando area — including I-4, SR 408, SR 528, surface streets, parking lots, and hotels, 24 hours a day — call RoadZone Plus at (407) 222-2739. On a Central Florida interstate or expressway during daytime hours, you can also dial *347 (*FHP) for Florida's free Road Rangers. If your stalled position is unsafe or there is any danger, call 911 first.",
   },
   {
-    question: "What should I do right now if I just ran out of gas on the highway?",
+    question: "What should I do if I run out of gas on the highway?",
     answer:
       "Steer onto the right shoulder and get the whole car off the travel lanes, turn on your hazard lights, and stay buckled inside the vehicle. Note the nearest mile marker or exit, then call for fuel delivery or, if you feel unsafe, call 911. Do not try to walk along an interstate shoulder to a gas station.",
+  },
+  {
+    question: "Can you call 911 if you run out of gas on the highway?",
+    answer:
+      "Yes. If you are blocking traffic, cannot reach a safe shoulder, or feel unsafe in any way, calling 911 is the right move — dispatchers can send a trooper to protect the scene. 911 handles safety, not refueling, so once you are safe, arrange fuel delivery to actually get moving. On Central Florida expressways you can also dial *347 (*FHP) for the free Road Ranger patrol during daytime hours.",
+  },
+  {
+    question: "What happens to your car when you run out of gas?",
+    answer:
+      "Beyond stranding you, running the tank dry is hard on the car. Most modern fuel pumps sit inside the tank and rely on fuel to cool and lubricate them, so running empty — or driving on fumes regularly — can overheat the pump and shorten its life. Air drawn into the fuel system can also make restarting harder. If the engine cranks but will not start after refueling, tell the technician so they can help troubleshoot.",
   },
   {
     question: "Is it safe to walk to a gas station from I-4?",
@@ -214,9 +224,9 @@ export default function RanOutOfGasI4Page() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "What to do when you run out of gas on I-4 in Orlando",
+    name: "What to do when you run out of gas on the highway",
     description:
-      "Step-by-step safety actions to take if your vehicle runs out of fuel on I-4, SR 408, or SR 528 in the Orlando area.",
+      "Step-by-step safety actions to take if your vehicle runs out of fuel on a highway, including I-4, SR 408, and SR 528 in the Orlando area.",
     totalTime: "PT5M",
     step: immediateSteps.map((item, index) => ({
       "@type": "HowToStep",
@@ -275,7 +285,7 @@ export default function RanOutOfGasI4Page() {
               Out of gas on I-4
             </div>
             <h1 className="mt-5 text-5xl font-black leading-tight text-white sm:text-6xl">
-              Ran Out of Gas on I-4? What to Do in Orlando
+              Ran Out of Gas on the Highway? Here&apos;s What to Do on I-4.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
               Running out of gas on I-4 is stressful, fast-moving, and genuinely

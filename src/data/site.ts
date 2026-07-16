@@ -936,9 +936,9 @@ export const areas: Area[] = [
     name: "Orlando",
     county: "Orange County",
     emphasis: "24/7 emergency roadside assistance across Orlando neighborhoods, highways, and parking lots",
-    metaTitle: "Roadside Assistance Orlando FL | 24 Hour Help",
+    metaTitle: "Roadside Assistance Orlando FL | 24/7 Help, Typically $50–$150",
     metaDescription:
-      "Need 24 hour roadside assistance in Orlando, FL? Call RoadZone Plus for jumpstarts, tire changes, fuel delivery, lockouts, wheel lock removal, and battery help.",
+      "Need 24 hour roadside assistance in Orlando, FL? RoadZone Plus handles jumpstarts, tire changes, fuel delivery, lockouts, wheel lock removal, and battery help — no membership, most calls $50–$150, price confirmed before dispatch.",
     heading: "24 hour roadside assistance in Orlando, FL.",
     intro:
       "Need roadside assistance in Orlando, FL? RoadZone Plus is based in the city and helps drivers across downtown, College Park, Pine Hills, Conway, MetroWest, International Drive, and the tourist corridors. Call for 24 hour roadside assistance with dead batteries, flat tires, lockouts, fuel delivery, wheel lock removal, battery replacement, and smart key programming from your exact neighborhood, parking lot, hotel, apartment community, or stretch of I-4, SR 408, SR 417, or SR 528.",
@@ -1008,6 +1008,11 @@ export const areas: Area[] = [
         question: "Do I need a membership for Orlando roadside assistance?",
         answer:
           "No. RoadZone Plus is call-first roadside help. You do not need an annual membership or app account to request help in Orlando.",
+      },
+      {
+        question: "How much does roadside assistance cost in Orlando?",
+        answer:
+          "Most one-time roadside calls in the Orlando area run about $50 to $150 out of pocket, depending on the service, vehicle, time of day, and location. A simple jumpstart usually sits toward the lower end; battery replacement or wheel lock removal can be higher. RoadZone Plus confirms your exact price on the call before any work begins — see the Orlando roadside assistance cost guide for full service-by-service ranges.",
       },
       {
         question: "Is there free roadside assistance in Orlando?",

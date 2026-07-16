@@ -18,9 +18,9 @@ import {
 } from "@/lib/seo";
 
 const path = "/lost-wheel-lock-key-orlando";
-const title = "Lost Wheel Lock Key Orlando | Wheel Lock Removal";
+const title = "Lost Wheel Lock Key? What to Do, Costs & Removal Options";
 const description =
-  "Lost your wheel lock key in Orlando? Learn what to check, when to stop, and when to call RoadZone Plus for 24/7 wheel lock removal and tire help.";
+  "Lost your wheel lock key? Check the glove box, console, and spare-tire well first, then compare your three real options: a replacement key, shop removal, or roadside wheel lock removal — typically $50–$150 in the Orlando area, 24/7 from RoadZone Plus.";
 
 export const metadata: Metadata = {
   title,
@@ -146,9 +146,19 @@ const dispatchDetails = [
 
 const faqs = [
   {
+    question: "What can you do if you lose your wheel lock key?",
+    answer:
+      "You have three realistic options. One: order a matching replacement key from the dealer or the lock manufacturer using the code card that came with the lock set — usually the cheapest route, but it can take days. Two: have a tire shop or dealer extract the locking lug nuts, which often destroys the locks. Three: call a roadside service that removes wheel locks at your vehicle, which is the fastest option when a flat tire has you stuck right now.",
+  },
+  {
     question: "What should I do if I lost my wheel lock key in Orlando?",
     answer:
       "Check the glove box, console, trunk, spare-tire well, jack kit, and any small pouch first. If you cannot find it, call RoadZone Plus and explain whether you have a flat tire now or need the lock removed before tire service.",
+  },
+  {
+    question: "What happens if I lost my locking wheel nut key?",
+    answer:
+      "The wheel with the locking lug nut cannot come off until that lock is removed, which blocks tire changes, rotations, and brake work. The lock has to be either matched with a replacement key or professionally extracted. Avoid hammering sockets onto it yourself — a damaged or rounded lock is harder and more expensive to remove.",
   },
   {
     question: "Can RoadZone Plus remove a locking lug nut without the key?",
@@ -181,9 +191,9 @@ const faqs = [
       "There is no single key guaranteed to fit every factory and aftermarket wheel lock. Wheel-lock patterns vary, so a replacement usually needs to match the lock or its identifying information. If the wheel must come off now, roadside removal may be faster than searching for a matching replacement.",
   },
   {
-    question: "Can AutoZone or another parts store replace my wheel lock key?",
+    question: "Can I buy a wheel lock key at AutoZone?",
     answer:
-      "Parts stores sell wheel-lock sets and removal tools, but an in-stock key is not guaranteed to match the lock already on your vehicle. Check any wheel-lock paperwork, the dealer, or the manufacturer for a matching replacement. If a flat tire has you stranded, call RoadZone Plus for removal help instead of guessing with the wrong tool.",
+      "AutoZone and other parts stores sell wheel-lock sets and removal tools, but an in-stock key is not guaranteed to match the lock already on your vehicle — lock patterns vary by brand and code. Check any wheel-lock paperwork, the dealer, or the manufacturer for a matching replacement. If a flat tire has you stranded, call RoadZone Plus for removal help instead of guessing with the wrong tool.",
   },
   {
     question: "Do rental cars have wheel locks?",
@@ -193,7 +203,7 @@ const faqs = [
   {
     question: "How much does wheel lock removal cost?",
     answer:
-      "The cost depends on the vehicle, lock condition, location, and whether another roadside service is needed. RoadZone Plus confirms the situation on the call instead of quoting a one-size-fits-all price online.",
+      "In the Orlando area, a one-time roadside wheel lock removal call typically falls in the $50–$150 range, depending on the vehicle, the lock's condition, your location, and whether a tire change is handled in the same visit. A stripped or previously forced lock tends toward the higher end. RoadZone Plus confirms your exact price on the call before any work begins. A replacement key ordered from the dealer or lock maker is usually cheaper, but it can take days to arrive — not helpful when the car is stuck today.",
   },
 ];
 
@@ -214,9 +224,9 @@ export default function LostWheelLockKeyPage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "What to do when you lost your wheel lock key in Orlando",
+    name: "What to do when you lost your wheel lock key",
     description:
-      "Step-by-step actions for Orlando drivers when a missing, broken, or stripped wheel lock key blocks a flat tire change or tire service.",
+      "Step-by-step actions when a missing, broken, or stripped wheel lock key blocks a flat tire change or tire service, including replacement and roadside removal options.",
     totalTime: "PT5M",
     step: firstSteps.map((item, index) => ({
       "@type": "HowToStep",
@@ -234,7 +244,7 @@ export default function LostWheelLockKeyPage() {
     headline: title,
     description,
     datePublished: "2026-06-07",
-    dateModified: "2026-07-10",
+    dateModified: "2026-07-15",
     author: {
       "@type": "Organization",
       name: site.name,
@@ -267,13 +277,16 @@ export default function LostWheelLockKeyPage() {
               Lost wheel lock key
             </div>
             <h1 className="mt-5 text-5xl font-black leading-tight text-white sm:text-6xl">
-              Lost Your Wheel Lock Key in Orlando?
+              Lost Your Wheel Lock Key? Here&apos;s Exactly What to Do
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
-              If your wheel lock key is missing, check the glove box, console, spare-tire
-              well, jack kit, and trunk before forcing the lock. If the wheel still cannot
-              come off, RoadZone Plus provides 24/7 wheel lock removal in Orlando so a
-              blocked tire change or other wheel service can move forward.
+              First, check the glove box, center console, spare-tire well, jack kit, and
+              trunk pockets — that is where most missing wheel lock keys turn up. If the
+              key is truly gone, you have three options: order a matching replacement key
+              (cheap, but it can take days), have a shop extract the lock, or call a
+              roadside technician who removes the locking lug nut at your vehicle. In the
+              Orlando area, RoadZone Plus does roadside wheel lock removal 24/7, typically
+              in the $50–$150 range confirmed on the call.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={site.phoneHref} className="btn btn-primary">
