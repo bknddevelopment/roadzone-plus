@@ -13,6 +13,7 @@ import {
   TimerReset,
 } from "lucide-react";
 import { areas, getService, services, site } from "@/data/site";
+import { serviceCallPrepBySlug } from "@/data/serviceDiscovery";
 import {
   absoluteUrl,
   breadcrumbSchema,
@@ -195,6 +196,9 @@ export default async function ServicePage({ params }: PageProps) {
     .map((areaSlug) => areas.find((area) => area.slug === areaSlug))
     .filter((area): area is (typeof areas)[number] => Boolean(area));
   const heading = serviceSeo[service.slug]?.heading ?? `${service.name} in Orlando, FL`;
+  const callPrep = serviceCallPrepBySlug[
+    service.slug as keyof typeof serviceCallPrepBySlug
+  ];
 
   return (
     <>
@@ -219,7 +223,11 @@ export default async function ServicePage({ params }: PageProps) {
               {service.headline} {service.summary}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={site.phoneHref} className="btn btn-primary">
+              <a
+                href={site.phoneHref}
+                className="btn btn-primary"
+                data-call-cta="service-hero"
+              >
                 <PhoneCall aria-hidden="true" size={18} />
                 Call {site.phoneDisplay}
               </a>
@@ -237,7 +245,11 @@ export default async function ServicePage({ params }: PageProps) {
             </p>
             <div className="mt-6 border-t border-white/10 pt-6">
               <p className="text-sm font-black uppercase text-white/48">Fast contact</p>
-              <a href={site.phoneHref} className="mt-3 flex items-center gap-3 text-2xl font-black text-white">
+              <a
+                href={site.phoneHref}
+                className="mt-3 flex items-center gap-3 text-2xl font-black text-white"
+                data-call-cta="service-fit"
+              >
                 <PhoneCall aria-hidden="true" size={22} />
                 {site.phoneDisplay}
               </a>
@@ -245,6 +257,57 @@ export default async function ServicePage({ params }: PageProps) {
           </aside>
         </div>
       </section>
+
+      {callPrep ? (
+        <section className="section border-b border-white/10 bg-panel">
+          <div className="container grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <div className="eyebrow">
+                <PhoneCall aria-hidden="true" size={16} />
+                Before you call
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                Help RoadZone Plus understand the situation.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                Share these details so the team can understand whether{" "}
+                {service.shortName.toLowerCase()} fits your situation before any
+                service is arranged. Ask about current availability and pricing on
+                the call.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={site.phoneHref}
+                  className="btn btn-primary"
+                  data-call-cta="service-call-prep"
+                >
+                  <PhoneCall aria-hidden="true" size={18} />
+                  Call to discuss {service.shortName}
+                </a>
+                <Link href="/services" className="btn btn-secondary">
+                  Compare all roadside services
+                </Link>
+              </div>
+            </div>
+
+            <ul
+              className="grid gap-3"
+              aria-label="Details to have ready before calling"
+            >
+              {callPrep.map((item) => (
+                <li key={item} className="card-solid flex gap-3 p-5">
+                  <CheckCircle2
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-route-green"
+                    size={20}
+                  />
+                  <span className="text-sm leading-6 text-white/70">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section bg-asphalt">
         <div className="container grid gap-8 lg:grid-cols-2">
@@ -821,7 +884,11 @@ export default async function ServicePage({ params }: PageProps) {
               Need help now? Call RoadZone Plus.
             </h2>
           </div>
-          <a href={site.phoneHref} className="btn border border-white bg-white text-road-black hover:bg-white/90">
+          <a
+            href={site.phoneHref}
+            className="btn border border-white bg-white text-road-black hover:bg-white/90"
+            data-call-cta="service-final"
+          >
             <PhoneCall aria-hidden="true" size={20} />
             {site.phoneDisplay}
           </a>

@@ -80,7 +80,11 @@ export default function ServicesPage() {
               no app download, and a direct Orlando dispatch path.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={site.phoneHref} className="btn btn-primary">
+              <a
+                href={site.phoneHref}
+                className="btn btn-primary"
+                data-call-cta="services-hub-hero"
+              >
                 <PhoneCall aria-hidden="true" size={18} />
                 Call {site.phoneDisplay}
               </a>
@@ -162,7 +166,7 @@ export default function ServicesPage() {
                     </span>
                     <span className="mt-4 inline-flex items-center gap-2 text-sm font-black text-white group-hover:text-red-200">
                       <CheckCircle2 aria-hidden="true" size={17} />
-                      See details
+                      View {service.shortName} service details
                     </span>
                   </span>
                 </Link>

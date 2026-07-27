@@ -2,6 +2,10 @@
 
 import { useEffect } from "react";
 import Script from "next/script";
+import {
+  buildPhoneClickPayload,
+  emitPhoneClick,
+} from "@/lib/phoneTracking";
 
 declare global {
   interface Window {
@@ -12,30 +16,22 @@ declare global {
 
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
-function normalizePhoneHref(href: string) {
-  return href.replace(/^tel:/, "").replace(/[^\d+]/g, "");
-}
-
 function trackPhoneClick(link: HTMLAnchorElement) {
-  const phoneNumber = normalizePhoneHref(link.getAttribute("href") || "");
-  const linkText = link.textContent?.replace(/\s+/g, " ").trim() || "Phone CTA";
-  const eventPayload = {
-    event_category: "lead",
-    event_label: phoneNumber,
-    phone_number: phoneNumber,
-    link_text: linkText,
-    page_location: window.location.href,
-    page_path: window.location.pathname,
-    transport_type: "beacon",
-  };
-
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "phone_call_click",
-    ...eventPayload,
+  const eventPayload = buildPhoneClickPayload({
+    href: link.getAttribute("href") || "",
+    ctaContext: link.dataset.callCta,
+    pagePath: window.location.pathname,
   });
+  if (!eventPayload) return;
 
-  window.gtag?.("event", "phone_call_click", eventPayload);
+  // This is a click-only diagnostic. It does not prove a connected call,
+  // qualified request, dispatch, completed job, or revenue.
+  window.dataLayer = window.dataLayer || [];
+  emitPhoneClick({
+    dataLayer: window.dataLayer,
+    gtag: window.gtag,
+    payload: eventPayload,
+  });
 }
 
 export function LeadTracking() {
