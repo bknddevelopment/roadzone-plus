@@ -6,6 +6,8 @@ import {
 } from "@/data/serviceDiscovery";
 import { areas, services, site } from "@/data/site";
 
+const disneyGrowthLastModified = new Date("2026-08-05T00:00:00.000Z");
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
@@ -24,7 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...focusedPageList.map((page) => page.href),
   ].map((path) => ({
     url: `${site.url}${path}`,
-    lastModified: path === "/services" ? serviceDiscoveryLastModified : undefined,
+    lastModified:
+      path === "/services"
+        ? serviceDiscoveryLastModified
+        : path === "/roadside-assistance-near-disney-world-resort"
+          ? disneyGrowthLastModified
+          : undefined,
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8,
   }));

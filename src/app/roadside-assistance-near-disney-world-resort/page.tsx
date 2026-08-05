@@ -112,11 +112,16 @@ const waitingTips = [
   "Keep your phone charged and reachable so dispatch can confirm your exact spot.",
 ];
 
+const disneyCarCareUrl =
+  "https://disneyworld.disney.go.com/guest-services/car-care-center/";
+const disneyOfficialRoadsideSummary =
+  "Disney says its Car Care Center provides basic roadside services up to one hour after park closing. After that, Disney directs guests to Resort security for support.";
+
 const officialOptions = [
   {
     title: "Walt Disney World Car Care Center",
-    text: "Disney lists its Car Care Center for resort automotive support, rental services, and certain roadside needs. If you want the official Disney route first, start there.",
-    href: "https://disneyworld.disney.go.com/guest-services/car-care-center/",
+    text: disneyOfficialRoadsideSummary,
+    href: disneyCarCareUrl,
   },
   {
     title: "Rental company roadside line",
@@ -258,43 +263,68 @@ export default function DisneyWorldRoadsidePage() {
               <MapPin aria-hidden="true" size={16} />
               Disney World Resort Area
             </div>
-            <h1 className="mt-5 text-5xl font-black leading-tight text-white sm:text-6xl">
+            <h1 className="mt-5 text-4xl font-black leading-tight text-white sm:text-6xl">
               Roadside Assistance Near Disney World Resort
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
-              A dead battery at the hotel, keys locked in a rental car, a flat on World
-              Drive, or an empty tank on US 192 should not cost you a vacation day.
-              RoadZone Plus is a local, call-first roadside service covering the Disney
-              World Resort area — Lake Buena Vista, Disney Springs, Kissimmee,
-              Celebration, and the I-4 corridor — 24 hours a day.
+              Stranded at a Disney-area hotel, garage, US 192 stop, or nearby I-4
+              corridor? RoadZone Plus is an independent, call-first roadside service
+              available 24/7 for lockouts, jumpstarts, tire changes, and fuel delivery.
+              RoadZone Plus is not affiliated with Walt Disney World.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href={site.phoneHref} className="btn btn-primary">
-                <PhoneCall aria-hidden="true" size={18} />
-                Call {site.phoneDisplay}
-              </a>
-              <Link href="/theme-park-roadside-assistance" className="btn btn-secondary">
-                Theme Park Roadside Guide
-              </Link>
-            </div>
-          </div>
-
-          <aside className="card bg-panel p-6">
-            <p className="text-sm font-black uppercase text-safety-yellow">
-              Independent roadside help — no membership
-            </p>
-            <p className="mt-3 text-xl font-black leading-7 text-white">
-              One call gets a technician headed to your hotel, garage, or roadside spot.
-              No app, no annual plan.
-            </p>
-            <div className="mt-6 border-t border-white/10 pt-6">
-              <p className="text-sm font-black uppercase text-white/48">Available 24/7</p>
               <a
                 href={site.phoneHref}
-                className="mt-3 flex items-center gap-3 text-2xl font-black text-white"
+                className="btn btn-primary"
+                data-call-cta="disney-hero"
               >
-                <PhoneCall aria-hidden="true" size={22} />
-                {site.phoneDisplay}
+                <PhoneCall aria-hidden="true" size={18} />
+                Call RoadZone: {site.phoneDisplay}
+              </a>
+              <a
+                href={disneyCarCareUrl}
+                className="btn btn-secondary"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Disney&apos;s official option
+                <ExternalLink aria-hidden="true" size={16} />
+              </a>
+            </div>
+            <p className="mt-3 text-sm font-bold text-white/58">
+              RoadZone is independent local help. No membership or app required.
+            </p>
+          </div>
+
+          <aside
+            aria-label="Choose roadside help near Disney World"
+            className="card bg-panel p-6"
+          >
+            <p className="text-sm font-black uppercase text-safety-yellow">
+              Choose the right number
+            </p>
+            <div className="mt-5">
+              <p className="text-lg font-black text-white">Need independent local help?</p>
+              <p className="mt-2 text-sm leading-6 text-white/66">
+                Call RoadZone for a lockout, jumpstart, tire change, or fuel delivery at
+                a Disney-area hotel, garage, US 192 stop, or nearby I-4 corridor.
+              </p>
+            </div>
+            <div className="mt-6 border-t border-white/10 pt-6">
+              <p className="text-lg font-black text-white">
+                On Walt Disney World property?
+              </p>
+              <p className="mt-2 text-sm leading-6 text-white/66">
+                {disneyOfficialRoadsideSummary}
+              </p>
+              <a
+                href={disneyCarCareUrl}
+                className="mt-4 inline-flex items-center gap-2 text-sm font-black text-white hover:text-red-200"
+                rel="noreferrer"
+                target="_blank"
+              >
+                View Disney&apos;s official roadside instructions
+                <ExternalLink aria-hidden="true" size={15} />
               </a>
             </div>
           </aside>
@@ -573,6 +603,7 @@ export default function DisneyWorldRoadsidePage() {
           <a
             href={site.phoneHref}
             className="btn border border-white bg-white text-road-black hover:bg-white/90"
+            data-call-cta="disney-final"
           >
             <PhoneCall aria-hidden="true" size={20} />
             {site.phoneDisplay}
