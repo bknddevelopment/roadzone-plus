@@ -262,7 +262,7 @@ const savingSteps = [
   "Use your spare if you have one, and get a second key made while you still have a working one. Edmunds' advice is to get the spare now, on your terms, not in an emergency.",
   "Keep your registration or title handy. Dealers in Kelley Blue Book's survey would not program a fob without proof of ownership.",
   "Check your insurance and warranty. Kelley Blue Book notes insurance may pay for a fob, but the claim counts against your deductible.",
-  "Ask for the full price on the phone: key or fob, cutting, programming and any trip or tow charge.",
+  "Ask for the full price on the phone: key or fob, cutting, programming, and any trip, tow or after-hours charge.",
 ];
 
 const faqs = [
@@ -274,7 +274,7 @@ const faqs = [
   {
     question: "How much is it to replace a car key if I lost all my keys?",
     answer:
-      "More than making a spare. With no working key, Carfax says a lost smart key often means a tow to the dealer and proof of ownership, and an ordered key can take a few days. AutoZone says tows start around $50. Edmunds warns that replacing the locks after losing every key can cost close to $1,000.",
+      "Carfax puts a lost smart key at $220 to $500. Other keys follow the ranges in the table above: about $125 to $250 for a transponder (chip) key and $150 to $300 for a flip key (Kelley Blue Book). With no working key, Carfax says you may also need a tow to the dealer and proof of ownership, and AutoZone says tows start around $50. Edmunds warns that replacing the locks after losing every key can cost close to $1,000. These are published national figures, not RoadZone Plus prices.",
   },
   {
     question: "Can AutoZone replace my car key?",
@@ -613,12 +613,45 @@ export default function CarKeyReplacementCostPage() {
                 Copying a key you still have is the cheap job. When every key is gone,
                 the new one has to be made and paired with the car from scratch.
               </p>
+              <div className="rounded-md border border-white/10 bg-black/30 p-5">
+                <p className="text-xs font-black uppercase text-safety-yellow">
+                  Lost every key: published costs (not RoadZone Plus prices)
+                </p>
+                <ul className="mt-3 grid gap-2 text-sm leading-6 text-white/72">
+                  <li>
+                    <span className="font-black text-white">Smart key: $220–$500</span>{" "}
+                    (Carfax, lost smart key)
+                  </li>
+                  <li>
+                    <span className="font-black text-white">Transponder key: $125–$250</span>
+                    {" "}and <span className="font-black text-white">flip key: $150–$300</span>{" "}
+                    (Kelley Blue Book key-type ranges)
+                  </li>
+                  <li>
+                    <span className="font-black text-white">Tow, if needed: from about $50</span>
+                    {" "}(AutoZone)
+                  </li>
+                  <li>
+                    <span className="font-black text-white">New locks: close to $1,000</span>{" "}
+                    in the worst case (Edmunds)
+                  </li>
+                </ul>
+              </div>
               <p>
                 Carfax says losing a smart key with no backup often means having the car
                 towed to a dealer and showing proof of ownership, and an ordered key can
                 keep the car there for a few days. AutoZone says tow charges start around
                 $50 and climb with distance. Edmunds warns that if you lose every key,
                 replacing the car&apos;s locks can cost close to $1,000.
+              </p>
+              <p>
+                Making a key with no original follows the same steps wherever you go: you
+                show proof of ownership (Kelley Blue Book), the key is cut from the
+                vehicle&apos;s code, which Edmunds says can come from the VIN, and the new
+                key is programmed to the car, which on some newer vehicles must be present
+                (Edmunds). Some providers also charge more for late-night or weekend calls,
+                so ask for the full price, including any trip, tow or after-hours charge,
+                before work starts.
               </p>
               <p>
                 That is why the best money you can spend is on a second key now, while one
