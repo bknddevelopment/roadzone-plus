@@ -645,11 +645,11 @@ export default function CarKeyReplacementCostPage() {
                 replacing the car&apos;s locks can cost close to $1,000.
               </p>
               <p>
-                Making a key with no original follows the same steps wherever you go: you
-                show proof of ownership (Kelley Blue Book), the key is cut from the
-                vehicle&apos;s code, which Edmunds says can come from the VIN, and the new
-                key is programmed to the car, which on some newer vehicles must be present
-                (Edmunds). Some providers also charge more for late-night or weekend calls,
+                Making a key with no original usually goes like this: you show proof of
+                ownership (Kelley Blue Book, Edmunds), the key is cut from the
+                vehicle&apos;s code, which Edmunds says can come from the VIN (on some newer
+                vehicles the car must be there for the cut), and the new key is programmed
+                to the car before it will start it. Some providers also charge more for late-night or weekend calls,
                 so ask for the full price, including any trip, tow or after-hours charge,
                 before work starts.
               </p>
