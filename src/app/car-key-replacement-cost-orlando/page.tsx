@@ -577,7 +577,7 @@ export default function CarKeyReplacementCostPage() {
                   {item.link ? (
                     <Link
                       href={item.link.href}
-                      className="mt-2 inline-flex items-center gap-2 text-sm font-black text-white underline decoration-white/30 underline-offset-2 hover:text-red-200"
+                      className="mt-1 inline-flex min-h-11 items-center gap-2 text-sm font-black text-white underline decoration-white/30 underline-offset-2 hover:text-red-200"
                     >
                       {item.link.label}
                     </Link>
@@ -671,7 +671,7 @@ export default function CarKeyReplacementCostPage() {
                 <p className="mt-3 text-sm leading-6 text-white/66">{item.text}</p>
                 <Link
                   href={item.href}
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-black text-white hover:text-red-200"
+                  className="mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-black text-white hover:text-red-200"
                 >
                   <CheckCircle2 aria-hidden="true" size={16} />
                   {item.label}
