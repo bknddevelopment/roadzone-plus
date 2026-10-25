@@ -709,6 +709,24 @@ export default async function ServicePage({ params }: PageProps) {
                   Compare jumpstart help
                 </span>
               </Link>
+              <Link
+                href="/car-battery-replacement-cost-orlando"
+                className="card-solid group block p-5 transition hover:-translate-y-1 hover:border-road-red/70 sm:col-span-2"
+              >
+                <p className="text-xs font-black uppercase text-route-green">
+                  Cost guide
+                </p>
+                <h3 className="mt-3 text-xl font-black text-white">
+                  Car Battery Replacement Cost
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-white/62">
+                  Published battery prices by type, free-install stores vs dealer vs
+                  mobile, and Florida&apos;s battery fee.
+                </p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  Read the battery cost guide
+                </span>
+              </Link>
             </div>
           </div>
         </section>
