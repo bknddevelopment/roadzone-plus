@@ -8,6 +8,7 @@ import { areas, services, site } from "@/data/site";
 
 const disneyGrowthLastModified = new Date("2026-08-05T00:00:00.000Z");
 const carKeyCostLastModified = new Date("2026-10-23T00:00:00.000Z");
+const batteryCostLastModified = new Date("2026-10-25T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -25,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/mobile-tire-repair-orlando",
     "/free-roadside-assistance-orlando",
     "/car-key-replacement-cost-orlando",
+    "/car-battery-replacement-cost-orlando",
     ...focusedPageList.map((page) => page.href),
   ].map((path) => ({
     url: `${site.url}${path}`,
@@ -35,7 +37,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? disneyGrowthLastModified
           : path === "/car-key-replacement-cost-orlando"
             ? carKeyCostLastModified
-            : undefined,
+            : path === "/car-battery-replacement-cost-orlando"
+              ? batteryCostLastModified
+              : undefined,
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8,
   }));
