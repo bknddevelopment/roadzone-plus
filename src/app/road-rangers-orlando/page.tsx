@@ -169,6 +169,11 @@ const sourceLinks = [
 
 const relatedGuides = [
   {
+    href: "/roadside-assistance-florida-turnpike-orlando",
+    title: "Roadside Assistance on Florida's Turnpike",
+    text: "Who reaches you on the Turnpike near Orlando: the 24-hour Road Rangers patrol, STARR tows, and a direct call, exit by exit from Kissimmee to Minneola.",
+  },
+  {
     href: "/free-roadside-assistance-orlando",
     title: "Free Roadside Assistance in Orlando",
     text: "Every legitimate free and already-paid option — Road Rangers, insurance, warranties, memberships — and when direct dispatch fits.",
