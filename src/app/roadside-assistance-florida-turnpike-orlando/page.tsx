@@ -320,7 +320,7 @@ const costRows: Array<{
 ];
 
 const priceFactors = [
-  "Where on the Turnpike you are. A shoulder at Exit 259 and a shoulder past Minneola are different drives for the truck.",
+  "Where on the Turnpike you are. A shoulder at Exit 259 and a shoulder out past Clermont are different drives for the truck.",
   "Time of day. Late-night calls are usually toward the top of each range.",
   "Vehicle size. Trucks, vans, RVs and trailers take more time and equipment.",
   "What you actually need. A jump that turns into a battery question changes the job, and we say so before doing more.",
@@ -439,7 +439,7 @@ const faqs = [
   {
     question: "Which Turnpike exits does RoadZone Plus reach?",
     answer:
-      "RoadZone Plus serves the Orlando-area towns the Turnpike passes through, from the Kissimmee exits (242 and 244) and Osceola Parkway (249) up through Orlando South (254), I-4 (259), Turkey Lake plaza (263), SR 408 and SR 429 (265 and 267A), Ocoee (267B), Winter Garden-Clermont (272) and Minneola (278). Give your milepost and direction when you call and we confirm on the spot whether we can reach you and how long it will take.",
+      "RoadZone Plus serves Orlando and the towns around it, including Kissimmee, Celebration, Orlando, Ocoee, Winter Garden and Clermont, which the Turnpike passes through. Exact Turnpike coverage is confirmed on the call: give your milepost and direction and we tell you on the spot whether we can reach you and how long it will take.",
   },
   {
     question: "Does my SunPass or toll receipt matter when I break down?",
@@ -513,7 +513,6 @@ export default function TurnpikeRoadsideAssistancePage() {
       "@id": businessId,
     },
     areaServed: [
-      { "@type": "Place", name: "Florida's Turnpike, Orlando area (Exits 242 to 278)" },
       { "@type": "City", name: "Orlando, FL" },
       { "@type": "City", name: "Kissimmee, FL" },
       { "@type": "City", name: "Ocoee, FL" },
@@ -590,8 +589,9 @@ export default function TurnpikeRoadsideAssistancePage() {
               gallons of gas, a jump or a spare-tire change at no charge. Want a direct
               Orlando company you pick yourself, with no membership? Call RoadZone Plus at{" "}
               <span className="font-black text-white">{site.phoneDisplay}</span> for a
-              jumpstart, tire change, fuel delivery or lockout on the exits from Kissimmee
-              (242) to Minneola (278).
+              jumpstart, tire change, fuel delivery or lockout near the Turnpike exits for
+              Kissimmee, Celebration, Orlando, Ocoee, Winter Garden and Clermont. Give your
+              milepost and we tell you on the call whether we can reach you.
             </p>
             <p className="mt-4 text-sm font-bold text-white/48">
               Updated <time dateTime={updatedIso}>{updatedLabel}</time> ·{" "}
@@ -744,10 +744,11 @@ export default function TurnpikeRoadsideAssistancePage() {
               The Orlando-area Turnpike exits, from Kissimmee to Minneola.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
-              These are the exits where the Turnpike passes through the towns RoadZone Plus
-              already serves. Exit numbers equal mileposts, so Exit 259 is also Milepost
-              259. Confirm your exit and direction on the call and we tell you straight away
-              whether we can reach you.
+              These are the Orlando-area exits from the Turnpike&apos;s own map. Exit
+              numbers equal mileposts, so Exit 259 is also Milepost 259. The table is a
+              map, not a coverage promise: RoadZone Plus serves Orlando and the towns
+              around it, and whether we can reach your exact milepost is confirmed on the
+              call.
             </p>
           </div>
 
@@ -844,7 +845,7 @@ export default function TurnpikeRoadsideAssistancePage() {
                 What RoadZone Plus does on the shoulder
               </div>
               <h2 className="mt-5 text-4xl font-black text-white">
-                Six roadside jobs we handle on the Turnpike exits. Towing is not one of them.
+                Six roadside jobs we handle for Turnpike drivers near the towns we serve. Towing is not one of them.
               </h2>
               <p className="mt-5 text-base leading-8 text-white/66">
                 RoadZone Plus is a 24/7 roadside assistance company based at{" "}
