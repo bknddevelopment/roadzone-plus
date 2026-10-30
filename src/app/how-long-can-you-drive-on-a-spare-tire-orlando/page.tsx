@@ -19,7 +19,7 @@ import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 const path = "/how-long-can-you-drive-on-a-spare-tire-orlando";
 const title = "How Long Can You Drive on a Spare Tire? Orlando Guide";
 const description =
-  "A donut spare is good for about 50 miles at no more than 50 mph, per Goodyear and Michelin. What that means on I-4 and Orlando toll roads, plus 24/7 spare installation.";
+  "A donut spare is good for about 50 miles at no more than 50 mph, per Goodyear. What that means on I-4 and Orlando toll roads, plus 24/7 spare installation.";
 const updatedIso = "2026-10-30";
 const updatedLabel = "October 30, 2026";
 const heroImage = "/visuals/spare-tire/donut-spare-on-sedan.webp";
@@ -226,7 +226,7 @@ const orlandoRoads: Array<{
   },
   {
     road: "SR 408, SR 417, SR 429 and SR 528",
-    text: "CFX Road Rangers patrol Orlando's expressways from 6 AM to 10 PM and help more than 4,000 drivers a month with things like a flat tire change or gas. Outside those hours on CFX roads, a private call is how the spare goes on.",
+    text: "CFX Road Rangers patrol Orlando's expressways from 6 AM to 10 PM and help more than 4,000 drivers a month with things like a flat tire change or gas. Outside those hours, CFX's Road Rangers are off patrol, so you fit the spare yourself or call a private service. The Turnpike's own patrol still covers SR 408 Milepost 0 to 1 around the clock.",
     cite: ["cfx", "tpRoadRangers"],
   },
   {
