@@ -2,15 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  AlertTriangle,
   BatteryCharging,
-  CheckCircle2,
   ExternalLink,
   Info,
   MapPin,
   PhoneCall,
   Plane,
-  ShieldCheck,
   Snowflake,
   ThermometerSun,
   Wrench,
@@ -22,7 +19,7 @@ import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 const path = "/car-wont-start-in-cold-orlando";
 const title = "Car Won't Start in the Cold? Orlando Guide";
 const description =
-  "An Orlando cold morning does not freeze your car, it exposes a battery summer wore down. AAA: 35% weaker at 32°F. What each sound means, and 24/7 jumpstart help.";
+  "An Orlando cold morning does not freeze your car, it exposes a battery summer wore down. AAA: 35% weaker at 32°F. What each sound means, and who to call.";
 const updatedIso = "2026-11-03";
 const updatedLabel = "November 3, 2026";
 const heroImage = "/visuals/battery-cost/jumper-cable-clamps.webp";
@@ -118,6 +115,18 @@ const sources = {
     short: "Consumer Reports, quoting AAA",
     href: "https://www.consumerreports.org/cars/car-batteries/how-hot-weather-affects-your-car-battery-what-to-do-about-it-a4527456418/",
     note: "Car batteries typically last three to five years according to AAA, from 58 months or longer in the farthest northern regions of the U.S. to less than 41 months in the most southern regions; AAA responds to nearly 2 million battery-related service calls each summer.",
+  },
+  nwsFeb2026: {
+    name: "National Weather Service Melbourne: Preliminary Local Climatological Data (F-6), Orlando International Airport, February 2026 (read November 3, 2026)",
+    short: "NWS F-6, February 2026",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=10&glossary=0",
+    note: "Lowest temperature 24°F on February 1; three mornings at 32°F or below (February 1, 2 and 3); seven mornings at or below 40°F. Preliminary data; the version number in this link changes as new months are issued.",
+  },
+  nwsMar2026: {
+    name: "National Weather Service Melbourne: Preliminary Local Climatological Data (F-6), Orlando International Airport, March 2026 (read November 3, 2026)",
+    short: "NWS F-6, March 2026",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=9&glossary=0",
+    note: "Lowest temperature 44°F on March 17; no morning at or below 40°F. Preliminary data; the version number in this link changes as new months are issued.",
   },
   nwsJan2026: {
     name: "National Weather Service Melbourne: Preliminary Local Climatological Data (F-6), Orlando International Airport, January 2026 (read November 3, 2026)",
@@ -268,6 +277,12 @@ const heatThenCold = [
 
 const orlandoColdFacts = [
   {
+    label: "February 2026",
+    big: "24°F",
+    text: "The coldest reading in these reports, on February 1, with 28°F and 30°F the next two mornings: three freezes in a row. Seven mornings at or below 40°F in the month. The cold season ended there; March 2026 never went below 44°F.",
+    cite: ["nwsFeb2026", "nwsMar2026"] as SourceKey[],
+  },
+  {
     label: "January 2026",
     big: "31°F",
     text: "Lowest reading at Orlando International, on January 31; 32°F on January 16. Eight mornings at or below 40°F, thirteen at or below 45°F. Average low 48.2°F.",
@@ -356,8 +371,8 @@ const paa = [
   {
     question: "What causes a hard start when the engine is cold?",
     answer:
-      "The battery first: AAA Automotive Research Center says a battery loses about 35 percent of its strength at 32°F while a cold start may need up to twice the normal current. Then the parts that borrow from it: a starter drawing too much, corroded terminals, worn plugs. The thickened-oil and frozen-fuel-line causes in the national guides belong to 0°F mornings; Orlando International has not recorded a low under 31°F in the last two Januaries.",
-    cite: ["aaaOregon", "aaaReasons", "nwsJan2026", "nwsJan2025"] as SourceKey[],
+      "The battery first: AAA Automotive Research Center says a battery loses about 35 percent of its strength at 32°F while a cold start may need up to twice the normal current. Then the parts that borrow from it: a starter drawing too much, corroded terminals, worn plugs. The thickened-oil and frozen-fuel-line causes in the national guides belong to 0°F mornings; the lowest reading at Orlando International in the two winters these reports cover is 24°F, on February 1, 2026.",
+    cite: ["aaaOregon", "aaaReasons", "nwsFeb2026", "nwsJan2026", "nwsJan2025"] as SourceKey[],
   },
 ];
 
@@ -431,7 +446,7 @@ const faqs = [
   {
     question: "How cold does it have to be for a car battery to die?",
     answer:
-      "Not freezing. Interstate Batteries says a worn-out battery could die at 40°F and a severely weakened one at 60°F. Orlando International recorded eight mornings at or below 40°F in January 2026 and six in January 2025, with lows of 31°F and 38°F. That is enough cold to catch a weak battery, and January brings most of them: no freeze at all in January 2025, two mornings at 32°F or below in January 2026.",
+      "Not freezing. Interstate Batteries says a worn-out battery could die at 40°F and a severely weakened one at 60°F. Orlando International recorded eight mornings at or below 40°F in January 2026 and six in January 2025, with lows of 31°F and 38°F. That is enough cold to catch a weak battery, and January and February bring almost all of them: in winter 2025-26, eight mornings at or below 40°F in January and seven in February, against one each in November and December and none in March. The freezes were two in January 2026 and three in February 2026, down to 24°F on February 1; January 2025 had none.",
   },
   {
     question: "My car sat at Orlando airport for a week and now won't start. Is it the cold?",
@@ -461,7 +476,7 @@ const faqs = [
   {
     question: "Do frozen fuel lines or thick oil stop cars in Orlando?",
     answer:
-      "Not at Orlando temperatures. Those causes appear in national guides written for mornings near 0°F. The National Weather Service F-6 reports for Orlando International show a lowest reading of 31°F in January 2026 and 38°F in January 2025. If an Orlando car will not start on a cold morning, the battery, its connections or the starter are where the answer almost always is.",
+      "Not at Orlando temperatures. Those causes appear in national guides written for mornings near 0°F. The National Weather Service F-6 reports for Orlando International show a lowest reading of 24°F, on February 1, 2026; January 2026 bottomed at 31°F and January 2025 at 38°F. If an Orlando car will not start on a cold morning, the battery, its connections or the starter are where the answer almost always is.",
   },
   {
     question: "How long do car batteries last in Florida?",
@@ -759,13 +774,13 @@ export default function CarWontStartInColdPage() {
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
               These are the National Weather Service&apos;s own readings for Orlando
-              International Airport. They show two things: Orlando almost never freezes,
-              and it does not need to. Interstate Batteries says a worn-out battery could
+              International Airport. They show two things: Orlando rarely freezes (five mornings at
+              32°F or below in winter 2025-26, none in January 2025), and it does not need to. Interstate Batteries says a worn-out battery could
               die at 40°F and a severely weakened one at 60°F.
             </p>
             <SourceTags keys={["interstateTest"]} />
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {orlandoColdFacts.map((item) => (
               <div key={item.label} className="card-solid p-6">
                 <p className="text-xs font-black uppercase text-route-green">{item.label}</p>
@@ -777,11 +792,11 @@ export default function CarWontStartInColdPage() {
           </div>
           <p className="mt-8 max-w-3xl text-sm leading-7 text-white/60">
             Frozen fuel lines, block heaters and thickened engine oil fill the national
-            guides because they are written for 0°F. Orlando International has not
-            recorded a low under 31°F in the last two Januaries. On an Orlando cold morning
+            guides because they are written for 0°F. The coldest Orlando International got in
+            the two winters these reports cover was 24°F, on February 1, 2026. On an Orlando cold morning
             the question is the battery, its terminals and the starter, in that order.
           </p>
-          <SourceTags keys={["nwsJan2026", "nwsJan2025"]} />
+          <SourceTags keys={["nwsFeb2026", "nwsJan2026", "nwsJan2025"]} />
         </div>
       </section>
 
