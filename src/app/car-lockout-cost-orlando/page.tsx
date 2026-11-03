@@ -546,7 +546,7 @@ export default function CarLockoutCostPage() {
               Five published lockout prices, side by side.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
-              Each figure below is quoted from its source, with the source&apos;s date. None
+              Each figure below is quoted from its source; each source&apos;s date is in the source list at the bottom of the page. None
               of the sources read for this page publishes an Orlando-only number, so these
               are national figures; two are individual locksmiths&apos; own price guides from
               Pennsylvania and New York.
