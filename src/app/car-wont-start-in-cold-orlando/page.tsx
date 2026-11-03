@@ -22,7 +22,7 @@ import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 const path = "/car-wont-start-in-cold-orlando";
 const title = "Car Won't Start in the Cold? Orlando Guide";
 const description =
-  "In Orlando a cold morning does not freeze your car, it exposes a battery summer wore down. AAA: 35% weaker at 32°F. What each sound means, and 24/7 jumpstart help.";
+  "An Orlando cold morning does not freeze your car, it exposes a battery summer wore down. AAA: 35% weaker at 32°F. What each sound means, and 24/7 jumpstart help.";
 const updatedIso = "2026-11-03";
 const updatedLabel = "November 3, 2026";
 const heroImage = "/visuals/battery-cost/jumper-cable-clamps.webp";
