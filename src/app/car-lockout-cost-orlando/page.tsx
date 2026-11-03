@@ -766,8 +766,9 @@ export default function CarLockoutCostPage() {
               Five signs the price will not be the price.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
-              Lockouts are where bait-and-switch pricing happens, because you are stuck and
-              in a hurry. The BBB and two state consumer offices name the same warning signs.
+              The BBB says most people call a locksmith only when they are desperate, which
+              makes red flags easy to miss. The BBB and two state consumer offices name these
+              warning signs.
             </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -825,7 +826,7 @@ export default function CarLockoutCostPage() {
               className="h-auto w-full rounded-md border border-white/10"
             />
             <figcaption className="mt-3 text-sm leading-6 text-white/56">
-              Door panels, lock rods and window seals are what a forced entry can cost you.
+              J.D. Power puts a replacement car door lock at $300 to $600.
             </figcaption>
           </figure>
           <div>
