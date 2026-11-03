@@ -131,6 +131,12 @@ const sources = {
     href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=23&glossary=0",
     note: "Lowest temperature 38°F (January 9, 10 and 25); no freeze; six mornings at or below 40°F; average low for the month 46.4°F. Preliminary data; the version number in this link changes as new months are issued.",
   },
+  nwsNov2025: {
+    name: "National Weather Service Melbourne: Preliminary Local Climatological Data (F-6), Orlando International Airport, November 2025 (read November 3, 2026)",
+    short: "NWS F-6, November 2025",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=13&glossary=0",
+    note: "Lowest temperature 36°F on November 11. Preliminary data; the version number in this link changes as new months are issued.",
+  },
   nwsDec2025: {
     name: "National Weather Service Melbourne: Preliminary Local Climatological Data (F-6), Orlando International Airport, December 2025 (read November 3, 2026)",
     short: "NWS F-6, December 2025",
@@ -147,19 +153,19 @@ const sources = {
     name: "National Weather Service Melbourne: F-6, Orlando International Airport, July 2026 (read November 3, 2026)",
     short: "NWS F-6, July 2026",
     href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=5&glossary=0",
-    note: "29 days with a high of 90°F or more, 18 at 95°F or more, highest 99°F.",
+    note: "30 days with a high of 90°F or more, 18 at 95°F or more, highest 99°F.",
   },
   nwsAug2026: {
     name: "National Weather Service Melbourne: F-6, Orlando International Airport, August 2026 (read November 3, 2026)",
     short: "NWS F-6, August 2026",
     href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=4&glossary=0",
-    note: "28 days with a high of 90°F or more, 15 at 95°F or more, highest 98°F.",
+    note: "29 days with a high of 90°F or more, 15 at 95°F or more, highest 98°F.",
   },
   nwsSep2026: {
     name: "National Weather Service Melbourne: F-6, Orlando International Airport, September 2026 (read November 3, 2026)",
     short: "NWS F-6, September 2026",
     href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=3&glossary=0",
-    note: "17 days with a high of 90°F or more, 4 at 95°F or more, highest 97°F.",
+    note: "18 days with a high of 90°F or more, 4 at 95°F or more, highest 97°F.",
   },
   nwsOct2026: {
     name: "National Weather Service Melbourne: F-6, Orlando International Airport, October 2026 (read November 3, 2026)",
@@ -244,8 +250,8 @@ const heatThenCold = [
     cite: ["interstateHeat", "interstateDied"] as SourceKey[],
   },
   {
-    title: "Orlando had 99 days at 90°F or more this summer",
-    text: "June through September 2026 at Orlando International, from the National Weather Service's monthly reports: 99 days with a high of at least 90°F (25 in June, 29 in July, 28 in August, 17 in September) and 55 days at 95°F or more, peaking at 99°F in July. That is the under-hood season your battery just lived through.",
+    title: "Orlando had 102 days at 90°F or more this summer",
+    text: "June through September 2026 at Orlando International, from the National Weather Service's monthly reports: 102 days with a high of at least 90°F (25 in June, 30 in July, 29 in August, 18 in September) and 55 days at 95°F or more, peaking at 99°F in July. That is the under-hood season your battery just lived through.",
     cite: ["nwsJun2026", "nwsJul2026", "nwsAug2026", "nwsSep2026"] as SourceKey[],
   },
   {
@@ -276,8 +282,8 @@ const orlandoColdFacts = [
   {
     label: "December 2025",
     big: "37°F",
-    text: "Lowest reading, on December 31, and the only morning of the month at or below 40°F. In 2025-26 the first cold morning of the season arrived on New Year's Eve.",
-    cite: ["nwsDec2025"] as SourceKey[],
+    text: "Lowest reading, on December 31, and the only morning of the month at or below 40°F. November 2025 had already dipped to 36°F on the 11th, so the season's first cold morning can come before December.",
+    cite: ["nwsDec2025", "nwsNov2025"] as SourceKey[],
   },
   {
     label: "October 2026",
@@ -425,7 +431,7 @@ const faqs = [
   {
     question: "How cold does it have to be for a car battery to die?",
     answer:
-      "Not freezing. Interstate Batteries says a worn-out battery could die at 40°F and a severely weakened one at 60°F. Orlando International recorded eight mornings at or below 40°F in January 2026 and six in January 2025, with lows of 31°F and 38°F. That is enough cold to catch a weak battery, and those mornings fall in late December and January: no freeze at all in January 2025, two mornings at 32°F or below in January 2026.",
+      "Not freezing. Interstate Batteries says a worn-out battery could die at 40°F and a severely weakened one at 60°F. Orlando International recorded eight mornings at or below 40°F in January 2026 and six in January 2025, with lows of 31°F and 38°F. That is enough cold to catch a weak battery, and January brings most of them: no freeze at all in January 2025, two mornings at 32°F or below in January 2026.",
   },
   {
     question: "My car sat at Orlando airport for a week and now won't start. Is it the cold?",
