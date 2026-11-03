@@ -856,6 +856,17 @@ export default function CarBatteryReplacementCostPage() {
               slowly, a free test now is cheaper than a dead car in a parking lot later.
             </p>
             <SourceTags keys={["kbb", "pepboysGuide", "walser"]} />
+            <p>
+              For the cold-morning version of this problem, with Orlando&apos;s own weather
+              readings and what each no-start sound means, see{" "}
+              <Link
+                href="/car-wont-start-in-cold-orlando"
+                className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+              >
+                car won&apos;t start in the cold
+              </Link>
+              .
+            </p>
           </div>
         </div>
       </section>

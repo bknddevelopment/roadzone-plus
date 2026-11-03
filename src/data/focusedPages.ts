@@ -96,6 +96,11 @@ export const focusedPages = {
         title: "Key Fob Not Working",
         text: "Push-to-start and key fob issues can look like a dead battery.",
       },
+      {
+        href: "/car-wont-start-in-cold-orlando",
+        title: "Car Won't Start in the Cold",
+        text: "Why an Orlando battery weakened by summer quits on the first 40°F morning, and what the sounds mean.",
+      },
     ],
     faqs: [
       {
