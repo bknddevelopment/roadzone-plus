@@ -398,6 +398,11 @@ export const focusedPages = {
         title: "Key Fob Not Working",
         text: "Push-to-start and fob problems can look like a lockout or no-start issue.",
       },
+      {
+        href: "/car-lockout-cost-orlando",
+        title: "What a Car Lockout Costs",
+        text: "Sourced unlock prices, what AAA covers, and the red flags to watch for on the phone.",
+      },
     ],
     faqs: [
       {
