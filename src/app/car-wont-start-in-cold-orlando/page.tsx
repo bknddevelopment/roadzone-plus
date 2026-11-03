@@ -57,8 +57,8 @@ export const metadata: Metadata = {
 // Every temperature, percentage and battery fact on this page is quoted from a
 // page in `sources`, read on the date above: AAA for cold-weather battery loss
 // and no-start symptoms, Interstate Batteries for heat damage, the National
-// Weather Service F-6 climate reports and the NOAA Regional Climate Centers
-// record for Orlando International Airport (MCO), the U.S. Department of
+// Weather Service F-6 climate reports for Orlando International Airport (MCO),
+// the U.S. Department of
 // Energy for hybrids and EVs, and a Toyota owner's manual for the hybrid 12-volt
 // battery. RoadZone Plus facts are limited to what the live jumpstart and
 // battery replacement service pages say: no prices, arrival times, certifications
@@ -131,11 +131,41 @@ const sources = {
     href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=23&glossary=0",
     note: "Lowest temperature 38°F (January 9, 10 and 25); no freeze; six mornings at or below 40°F; average low for the month 46.4°F. Preliminary data; the version number in this link changes as new months are issued.",
   },
-  acis: {
-    name: "NOAA Regional Climate Centers, ACIS daily record for Orlando Area (MCO threaded station), pulled November 3, 2026",
-    short: "NOAA RCC climate record",
-    href: "https://data.rcc-acis.org/StnData",
-    note: "June through September 2026 at Orlando International: 102 days with a high of 90°F or more and 55 days at 95°F or more, peak 99°F; December 2025 lowest 37°F (December 31), one morning at or below 40°F; 1991-2020 normal January low about 49 to 50°F. Pulled by query, raw JSON saved in the MIT receipt folder.",
+  nwsDec2025: {
+    name: "National Weather Service Melbourne: Preliminary Local Climatological Data (F-6), Orlando International Airport, December 2025 (read November 3, 2026)",
+    short: "NWS F-6, December 2025",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=12&glossary=0",
+    note: "Lowest temperature 37°F on December 31, the only morning of the month at or below 40°F. Preliminary data; the version number in this link changes as new months are issued.",
+  },
+  nwsJun2026: {
+    name: "National Weather Service Melbourne: F-6, Orlando International Airport, June 2026 (read November 3, 2026)",
+    short: "NWS F-6, June 2026",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=6&glossary=0",
+    note: "25 days with a high of 90°F or more, 18 at 95°F or more, highest 98°F.",
+  },
+  nwsJul2026: {
+    name: "National Weather Service Melbourne: F-6, Orlando International Airport, July 2026 (read November 3, 2026)",
+    short: "NWS F-6, July 2026",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=5&glossary=0",
+    note: "29 days with a high of 90°F or more, 18 at 95°F or more, highest 99°F.",
+  },
+  nwsAug2026: {
+    name: "National Weather Service Melbourne: F-6, Orlando International Airport, August 2026 (read November 3, 2026)",
+    short: "NWS F-6, August 2026",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=4&glossary=0",
+    note: "28 days with a high of 90°F or more, 15 at 95°F or more, highest 98°F.",
+  },
+  nwsSep2026: {
+    name: "National Weather Service Melbourne: F-6, Orlando International Airport, September 2026 (read November 3, 2026)",
+    short: "NWS F-6, September 2026",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=3&glossary=0",
+    note: "17 days with a high of 90°F or more, 4 at 95°F or more, highest 97°F.",
+  },
+  nwsOct2026: {
+    name: "National Weather Service Melbourne: F-6, Orlando International Airport, October 2026 (read November 3, 2026)",
+    short: "NWS F-6, October 2026",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=2&glossary=0",
+    note: "9 days with a high of 90°F or more, highest 94°F; lowest 60°F on October 23.",
   },
   doeCold: {
     name: "U.S. Department of Energy, fueleconomy.gov: Fuel Economy in Cold Weather (read November 3, 2026)",
@@ -214,9 +244,9 @@ const heatThenCold = [
     cite: ["interstateHeat", "interstateDied"] as SourceKey[],
   },
   {
-    title: "Orlando had 102 days at 90°F or more this summer",
-    text: "June through September 2026 at Orlando International: 102 days with a high of at least 90°F and 55 days at 95°F or more, peaking at 99°F. That is the under-hood season your battery just lived through.",
-    cite: ["acis"] as SourceKey[],
+    title: "Orlando had 99 days at 90°F or more this summer",
+    text: "June through September 2026 at Orlando International, from the National Weather Service's monthly reports: 99 days with a high of at least 90°F (25 in June, 29 in July, 28 in August, 17 in September) and 55 days at 95°F or more, peaking at 99°F in July. That is the under-hood season your battery just lived through.",
+    cite: ["nwsJun2026", "nwsJul2026", "nwsAug2026", "nwsSep2026"] as SourceKey[],
   },
   {
     title: "Batteries wear out faster in the South",
@@ -246,14 +276,14 @@ const orlandoColdFacts = [
   {
     label: "December 2025",
     big: "37°F",
-    text: "Lowest reading, on December 31, and the only morning at or below 40°F. The cold-start season in Orlando usually starts late December and peaks in January.",
-    cite: ["acis"] as SourceKey[],
+    text: "Lowest reading, on December 31, and the only morning of the month at or below 40°F. In 2025-26 the first cold morning of the season arrived on New Year's Eve.",
+    cite: ["nwsDec2025"] as SourceKey[],
   },
   {
-    label: "Normal January low",
-    big: "49 to 50°F",
-    text: "The 1991-2020 normal low for the month at MCO. Most Orlando winter mornings never get near freezing, and a battery can still fail on them.",
-    cite: ["acis", "interstateTest"] as SourceKey[],
+    label: "October 2026",
+    big: "94°F",
+    text: "Highest reading in October, with 9 days at 90°F or more and a lowest of 60°F. The heat ran into the month before the first cold mornings; Interstate says a severely weakened battery could die at 60°F.",
+    cite: ["nwsOct2026", "interstateTest"] as SourceKey[],
   },
 ];
 
@@ -314,7 +344,7 @@ const paa = [
   {
     question: "How do I warm up my car faster?",
     answer:
-      "On a modern car you mostly do not need to. AAA Northern New England: with newer vehicles, warming up the car might not be a necessary requirement from a mechanical standpoint; what it does is clear ice and condensation from the windows. In Orlando, where the lowest January 2026 reading was 31°F, that means a minute for the glass, not ten for the engine. Driving gently warms everything faster than idling.",
+      "On a modern car you mostly do not need to. AAA Northern New England: with newer vehicles, warming up the car might not be a necessary requirement from a mechanical standpoint; what it does is clear ice and condensation from the windows. In Orlando, where the lowest January 2026 reading was 31°F, that means a minute for the glass, not ten for the engine.",
     cite: ["aaaNewEngland", "nwsJan2026"] as SourceKey[],
   },
   {
@@ -385,7 +415,7 @@ const faqs = [
   {
     question: "Why won't my car start in the cold in Orlando?",
     answer:
-      "Almost always the battery. AAA Automotive Research Center reports a car battery loses about 35 percent of its strength at 32°F and may need up to twice the normal current to start the engine in the cold. In Orlando the battery usually arrived at that cold morning already weakened by summer: Interstate Batteries says heat shortens battery life and the damage typically becomes apparent in cold weather when the engine struggles to start. A jumpstart gets most of these cars going; a battery test says whether it will happen again tomorrow.",
+      "Almost always the battery. AAA Automotive Research Center reports a car battery loses about 35 percent of its strength at 32°F and may need up to twice the normal current to start the engine in the cold. In Orlando the battery usually arrived at that cold morning already weakened by summer: Interstate Batteries says heat shortens battery life and the damage typically becomes apparent in cold weather when the engine struggles to start. AAA's first step is to try a jumpstart; Interstate's battery test says whether it will happen again tomorrow.",
   },
   {
     question: "Does cold weather drain a car battery?",
@@ -395,7 +425,7 @@ const faqs = [
   {
     question: "How cold does it have to be for a car battery to die?",
     answer:
-      "Not freezing. Interstate Batteries says a worn-out battery could die at 40°F and a severely weakened one at 60°F. Orlando International recorded eight mornings at or below 40°F in January 2026 and six in January 2025, with lows of 31°F and 38°F. That is enough cold to catch a weak battery, and it is why Orlando no-start calls cluster in late December and January without a single snowflake.",
+      "Not freezing. Interstate Batteries says a worn-out battery could die at 40°F and a severely weakened one at 60°F. Orlando International recorded eight mornings at or below 40°F in January 2026 and six in January 2025, with lows of 31°F and 38°F. That is enough cold to catch a weak battery, and those mornings fall in late December and January: no freeze at all in January 2025, two mornings at 32°F or below in January 2026.",
   },
   {
     question: "My car sat at Orlando airport for a week and now won't start. Is it the cold?",
@@ -420,7 +450,7 @@ const faqs = [
   {
     question: "Why is my tire pressure light on this cold morning?",
     answer:
-      "Air shrinks when it cools. AAA Northeast says tires lose about one PSI for every 10 degrees the air temperature drops, plus about one PSI a month on their own. NHTSA notes the warning system only comes on when a tire is significantly underinflated, and says to check pressure at least once a month when the tires are cold, meaning the car has not been driven for at least three hours. On a 40°F Orlando morning after a 90°F October, the light is usually telling the truth: add air to the number on the driver's door label.",
+      "Air shrinks when it cools. AAA Northeast says tires lose about one PSI for every 10 degrees the air temperature drops, plus about one PSI a month on their own. NHTSA notes the warning system only comes on when a tire is significantly underinflated, and says to check pressure at least once a month when the tires are cold, meaning the car has not been driven for at least three hours. On a 40°F Orlando morning after an October that reached 94°F, the light is usually telling the truth: add air to the number on the driver's door label.",
   },
   {
     question: "Do frozen fuel lines or thick oil stop cars in Orlando?",
@@ -532,8 +562,9 @@ export default function CarWontStartInColdPage() {
               In Orlando a cold morning does not freeze anything in your car. It exposes a
               battery that summer already wore down. AAA Automotive Research Center says a
               battery loses about 35 percent of its strength at 32°F while a cold start
-              can need twice the normal current. Most Orlando cold-morning no-starts end
-              with a jumpstart and a battery test, not a repair bill.
+              can need twice the normal current. AAA says the battery is the first thing to
+              check; Interstate Batteries says a one-minute battery test tells you whether
+              it will happen again.
             </p>
             <p className="mt-4 text-sm font-bold text-white/48">
               Updated <time dateTime={updatedIso}>{updatedLabel}</time> ·{" "}
@@ -759,8 +790,8 @@ export default function CarWontStartInColdPage() {
               The car that sat at Orlando airport over Christmas.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
-              The classic January no-start: a week or two in an MCO garage, a cold front
-              on the day you land, and a car that clicks. Four things to know.
+              A week or two in an MCO garage, a cold front on the day you land, and a car
+              that clicks. Four things to know.
             </p>
             <figure className="mt-8">
               <Image
@@ -996,7 +1027,7 @@ export default function CarWontStartInColdPage() {
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
               Each page below was read on {updatedLabel}. Battery figures come from AAA and
-              a battery maker, weather readings from the National Weather Service and NOAA,
+              a battery maker, weather readings from the National Weather Service,
               hybrid and EV figures from the U.S. Department of Energy and a Toyota
               owner&apos;s manual, not from us. Your own owner&apos;s manual comes first.
             </p>
