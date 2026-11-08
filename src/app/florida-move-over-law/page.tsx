@@ -552,7 +552,7 @@ export default function FloridaMoveOverLawPage() {
         </div>
       </section>
 
-      <section id="what-to-do" className="section bg-asphalt">
+      <section id="what-to-do" className="section scroll-mt-8 bg-asphalt">
         <div className="container">
           <div className="max-w-3xl">
             <div className="eyebrow">
@@ -641,7 +641,7 @@ export default function FloridaMoveOverLawPage() {
         </div>
       </section>
 
-      <section id="who-it-covers" className="section border-y border-white/10 bg-panel">
+      <section id="who-it-covers" className="section scroll-mt-8 border-y border-white/10 bg-panel">
         <div className="container">
           <div className="max-w-3xl">
             <div className="eyebrow">
@@ -717,7 +717,7 @@ export default function FloridaMoveOverLawPage() {
         </div>
       </section>
 
-      <section id="disabled-cars" className="section bg-road-black">
+      <section id="disabled-cars" className="section scroll-mt-8 bg-road-black">
         <div className="container grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div>
             <div className="eyebrow">
@@ -767,7 +767,7 @@ export default function FloridaMoveOverLawPage() {
         </div>
       </section>
 
-      <section id="fine-and-points" className="section border-y border-white/10 bg-panel">
+      <section id="fine-and-points" className="section scroll-mt-8 border-y border-white/10 bg-panel">
         <div className="container">
           <div className="max-w-3xl">
             <div className="eyebrow">
@@ -844,7 +844,7 @@ export default function FloridaMoveOverLawPage() {
         </div>
       </section>
 
-      <section id="if-you-are-stopped" className="section bg-asphalt">
+      <section id="if-you-are-stopped" className="section scroll-mt-8 bg-asphalt">
         <div className="container">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             <div>
@@ -993,7 +993,7 @@ export default function FloridaMoveOverLawPage() {
         </div>
       </section>
 
-      <section id="faq" className="section border-y border-white/10 bg-panel">
+      <section id="faq" className="section scroll-mt-8 border-y border-white/10 bg-panel">
         <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <div className="eyebrow">
@@ -1015,7 +1015,7 @@ export default function FloridaMoveOverLawPage() {
         </div>
       </section>
 
-      <section id="sources" className="section bg-road-black">
+      <section id="sources" className="section scroll-mt-8 bg-road-black">
         <div className="container">
           <div className="max-w-3xl">
             <div className="eyebrow">
