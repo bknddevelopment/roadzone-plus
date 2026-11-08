@@ -329,7 +329,7 @@ const priceFactors = [
 
 const safetyTips: Array<{ text: string; cite: SourceKey[] }> = [
   {
-    text: "Keep the hazards on the whole time and stay buckled inside. Florida's Move Over law makes passing drivers change lanes or slow to 20 mph under the limit for stopped responders, but it does not protect a person standing on the shoulder.",
+    text: "Keep the hazards on the whole time and stay buckled inside. Florida's Move Over law makes passing drivers change lanes or slow to 20 mph under the limit for stopped responders and, since January 1, 2024, for a disabled car with its hazards on or a person visibly present (Fla. Stat. 316.126(1)(b)).",
     cite: ["cfx", "tpSafety"],
   },
   {

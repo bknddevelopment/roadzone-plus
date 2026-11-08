@@ -13,6 +13,7 @@ const turnpikeLastModified = new Date("2026-10-28T00:00:00.000Z");
 const coldStartLastModified = new Date("2026-11-03T00:00:00.000Z");
 const spareTireLastModified = new Date("2026-10-30T00:00:00.000Z");
 const lockoutCostLastModified = new Date("2026-11-03T00:00:00.000Z");
+const moveOverLawLastModified = new Date("2026-11-08T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -35,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/how-long-can-you-drive-on-a-spare-tire-orlando",
     "/car-wont-start-in-cold-orlando",
     "/car-lockout-cost-orlando",
+    "/florida-move-over-law",
     ...focusedPageList.map((page) => page.href),
   ].map((path) => ({
     url: `${site.url}${path}`,
@@ -55,7 +57,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
                     ? coldStartLastModified
                     : path === "/car-lockout-cost-orlando"
                       ? lockoutCostLastModified
-                      : undefined,
+                      : path === "/florida-move-over-law"
+                        ? moveOverLawLastModified
+                        : undefined,
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8,
   }));

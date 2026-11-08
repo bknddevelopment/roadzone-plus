@@ -423,7 +423,14 @@ export default function RoadRangersOrlandoPage() {
             <p className="mt-5 text-base leading-8 text-white/66">
               Do not start by comparing prices while traffic is moving around you. Stabilize
               the situation first, then choose the help path that actually covers your
-              location.
+              location. Hazard lights also bring your car under{" "}
+              <Link
+                href="/florida-move-over-law"
+                className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+              >
+                Florida&apos;s Move Over law
+              </Link>
+              .
             </p>
           </div>
 
