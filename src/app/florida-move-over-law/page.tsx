@@ -307,14 +307,14 @@ const stoppedSteps: Array<{
     cites: [{ key: "fs316126", pin: "(1)(b)" }, { key: "fs3162397", pin: "(7)(a)" }],
   },
   {
-    title: "Stay inside with your seat belt on",
+    title: "Stay inside and wait for help",
     text: "FDOT says that once you are out of the flow of traffic, stay inside your vehicle and wait for help. The law does not stop every driver: Florida counted 205 failure-to-move-over crashes in 2024.",
     cites: ["fdotFaq", "flhsmv"],
   },
   {
     title: "Call the right number",
     text: "In a lane, in a crash, with smoke, or if you feel unsafe, call 911. Otherwise dial *347 from a mobile phone for Florida Highway Patrol and the Road Rangers.",
-    cites: ["fdotFaq", "cfx"],
+    cites: ["fdotHome", "fdotFaq", "cfx"],
   },
   {
     title: "Say exactly where you are",
