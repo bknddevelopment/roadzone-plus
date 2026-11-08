@@ -20,7 +20,7 @@ import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 const path = "/florida-move-over-law";
 const title = "Florida Move Over Law: Who It Covers, Fine and Points";
 const description =
-  "Florida's Move Over law, read from the statute: leave the lane or slow 20 mph under the limit. Disabled cars count since 2024. $30 base fine, 3 points.";
+  "Florida's Move Over law: leave the lane or slow 20 mph under the limit. Disabled cars count since 2024. $30 base; 3 points, or 4 if it results in a crash.";
 const updatedIso = "2026-11-08";
 const updatedLabel = "November 8, 2026";
 const heroImage = "/visuals/move-over/road-ranger-move-over-sign.webp";
@@ -80,19 +80,19 @@ const sources = {
     name: "Florida Statutes 322.27, driver license point system, 2026 edition (read November 8, 2026)",
     short: "Fla. Stat. 322.27",
     href: "https://www.flsenate.gov/Laws/Statutes/2026/322.27",
-    note: "Paragraph (3)(d)8 assigns 3 points to all other moving violations. Paragraphs (3)(a) to (c) set suspensions at 12 points in 12 months, 18 in 18 months and 24 in 36 months.",
+    note: "Paragraph (3)(d)8 assigns 3 points to all other moving violations. Paragraph (3)(d)9 assigns 4 points to a moving violation in that paragraph, other than unlawful speed or unlawful use of a wireless communications device, that results in a crash. Paragraphs (3)(a) to (c) set suspensions at 12 points in 12 months, 18 in 18 months and 24 in 36 months.",
   },
   fs31814: {
     name: "Florida Statutes 318.14, Noncriminal traffic infractions, 2026 edition (read November 8, 2026)",
     short: "Fla. Stat. 318.14",
     href: "https://www.flsenate.gov/Laws/Statutes/2026/318.14",
-    note: "Subsection (9) lets a driver without a commercial license elect a driver improvement course: adjudication withheld and no points, not within 12 months of a prior election, no more than eight in a lifetime.",
+    note: "Subsection (4) lets a person who does not elect to appear pay the civil penalty by mail or in person, or enter a payment plan, within 30 days after the citation is issued. Doing so is deemed an admission of the infraction. Subsection (9) lets a driver without a commercial license elect a driver improvement course: adjudication withheld and no points, not within 12 months of a prior election, no more than eight in a lifetime.",
   },
   fs31819: {
     name: "Florida Statutes 318.19, Infractions requiring a mandatory hearing, 2026 edition (read November 8, 2026)",
     short: "Fla. Stat. 318.19",
     href: "https://www.flsenate.gov/Laws/Statutes/2026/318.19",
-    note: "An infraction that results in a crash causing death or serious bodily injury requires a hearing. The options in s. 318.14(2), (4) and (9) are not available.",
+    note: "A person cited for an infraction that results in a crash causing the death or serious bodily injury of another must appear at the scheduled hearing. The options in s. 318.14(2), (4) and (9), which include paying without a hearing and traffic school, are not available.",
   },
   fs316003: {
     name: "Florida Statutes 316.003, Definitions, 2026 edition (read November 8, 2026)",
@@ -262,10 +262,10 @@ const penaltyCards: Array<{
     cites: ["pascoClerk", { key: "fs31818", pin: "(12), (18), (19)" }],
   },
   {
-    figure: "3",
+    figure: "3 or 4",
     label: "Points on your license",
-    text: "A violation of subsection (1) is a moving violation. Florida assigns 3 points to moving violations it does not list separately.",
-    cites: [{ key: "fs316126", pin: "(6)" }, { key: "fs32227", pin: "(3)(d)8." }],
+    text: "A violation of subsection (1) is a moving violation. Florida assigns 3 points to moving violations it does not list separately, or 4 if the violation results in a crash.",
+    cites: [{ key: "fs316126", pin: "(6)" }, { key: "fs32227", pin: "(3)(d)8. and 9." }],
   },
 ];
 
@@ -276,7 +276,7 @@ const ticketOptions: Array<{
 }> = [
   {
     title: "Pay it",
-    text: "Paying is an admission, and the 3 points go on your record. Orange County's clerk says to make your election within 30 calendar days of receiving the ticket.",
+    text: "Paying is an admission, and the points go on your record: 3, or 4 if the violation results in a crash. Orange County's clerk says to make your election within 30 calendar days of receiving the ticket.",
     cites: ["orangeClerk", { key: "fs31814", pin: "(4)" }],
   },
   {
@@ -364,7 +364,7 @@ const faqs = [
   {
     question: "How many points is a Move Over ticket in Florida?",
     answer:
-      "Three. Section 316.126(6) makes a violation of subsection (1) a moving violation, and section 322.27 assigns 3 points to moving violations it does not list separately. If you qualify and complete an approved traffic school, adjudication is withheld and no points are assessed.",
+      "Three, or four if the violation results in a crash. Section 316.126(6) makes a violation of subsection (1) a moving violation. Section 322.27 assigns 3 points to moving violations it does not list separately, and 4 to one that results in a crash. If you qualify and complete an approved traffic school, adjudication is withheld and no points are assessed.",
   },
   {
     question: "Did Florida's Move Over law change in 2025?",
@@ -486,14 +486,15 @@ export default function FloridaMoveOverLawPage() {
             <p className="mt-4 max-w-3xl text-base leading-7 text-white/66">
               Disabled cars count since January 1, 2024, if they show hazards, flares or signs,
               or someone is visibly there. It is a moving violation: a $30 base penalty before
-              court costs, plus 3 points. General information, not legal advice.
+              court costs, plus 3 points, or 4 if it results in a crash. General information,
+              not legal advice.
             </p>
             <SourceTags
               cites={[
                 { key: "fs316126", pin: "(1)(b), (6)" },
                 "ch2023197",
                 { key: "fs31818", pin: "(2)(d)" },
-                { key: "fs32227", pin: "(3)(d)8." },
+                { key: "fs32227", pin: "(3)(d)8. and 9." },
               ]}
             />
             <p className="mt-4 text-sm font-bold text-white/56">
@@ -775,7 +776,7 @@ export default function FloridaMoveOverLawPage() {
               Fine and points
             </div>
             <h2 className="mt-5 text-4xl font-black text-white">
-              A $30 base penalty before costs, and 3 points on your license.
+              A $30 base penalty before costs, and 3 points, or 4 if it results in a crash.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
               You will see $120, $158 and &ldquo;up to $500&rdquo; quoted for this ticket. The
@@ -815,10 +816,16 @@ export default function FloridaMoveOverLawPage() {
               />
               <div className="text-sm leading-6 text-white/72">
                 <p>
-                  If the violation causes a crash that kills or seriously injures someone, a
-                  hearing is mandatory. Paying by mail and traffic school are off the table.
+                  If the violation results in a crash that kills or seriously injures someone
+                  else, you must appear at a hearing. Paying without one, by mail, in person or on a
+                  payment plan, is off the table, and so is traffic school.
                 </p>
-                <SourceTags cites={[{ key: "fs31819", pin: "(1), (2)" }]} />
+                <SourceTags
+                  cites={[
+                    { key: "fs31819", pin: "(1), (2)" },
+                    { key: "fs31814", pin: "(2), (4), (9)" },
+                  ]}
+                />
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-md border border-white/10 bg-black/20 p-5">
