@@ -485,9 +485,9 @@ export default function FloridaMoveOverLawPage() {
             </p>
             <p className="mt-4 max-w-3xl text-base leading-7 text-white/66">
               Disabled cars count since January 1, 2024, if they show hazards, flares or signs,
-              or someone is visibly there. It is a moving violation: a $30 base penalty before
-              court costs, plus 3 points, or 4 if it results in a crash. General information,
-              not legal advice.
+              or someone is visibly there. A ticket carries a $30 base penalty before court
+              costs, plus 3 points, or 4 if it results in a crash. General information, not
+              legal advice.
             </p>
             <SourceTags
               cites={[
