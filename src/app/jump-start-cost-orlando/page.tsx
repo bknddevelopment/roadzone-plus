@@ -435,8 +435,9 @@ export default function JumpStartCostPage() {
               How much does a jump start cost?
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
-              Usually about $50 to $100 if you pay out of pocket: that is State Farm&apos;s
-              estimate, and MarketWatch gives the same range. Allstate&apos;s pay-per-use
+              Usually about $50 to $100 if you pay out of pocket: State Farm&apos;s cost
+              table lists that range for one jump-start, citing MarketWatch&apos;s roadside
+              figures. Allstate&apos;s pay-per-use
               roadside service lists a jump start at $95. It can cost nothing extra if you
               already have AAA, a roadside add-on on your car insurance, or a free Road
               Ranger on a covered Orlando highway.
