@@ -14,6 +14,7 @@ const coldStartLastModified = new Date("2026-11-03T00:00:00.000Z");
 const spareTireLastModified = new Date("2026-10-30T00:00:00.000Z");
 const lockoutCostLastModified = new Date("2026-11-03T00:00:00.000Z");
 const moveOverLawLastModified = new Date("2026-11-08T00:00:00.000Z");
+const jumpStartCostLastModified = new Date("2026-11-12T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -37,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/car-wont-start-in-cold-orlando",
     "/car-lockout-cost-orlando",
     "/florida-move-over-law",
+    "/jump-start-cost-orlando",
     ...focusedPageList.map((page) => page.href),
   ].map((path) => ({
     url: `${site.url}${path}`,
@@ -59,7 +61,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
                       ? lockoutCostLastModified
                       : path === "/florida-move-over-law"
                         ? moveOverLawLastModified
-                        : undefined,
+                        : path === "/jump-start-cost-orlando"
+                          ? jumpStartCostLastModified
+                          : undefined,
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8,
   }));

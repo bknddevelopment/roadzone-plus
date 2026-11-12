@@ -101,6 +101,11 @@ export const focusedPages = {
         title: "Car Won't Start in the Cold",
         text: "Why an Orlando battery weakened by summer quits on the first 40°F morning, and what the sounds mean.",
       },
+      {
+        href: "/jump-start-cost-orlando",
+        title: "What a Jump Start Costs",
+        text: "Sourced jump start prices, what AAA and insurance add-ons cover, and when Road Rangers help for free.",
+      },
     ],
     faqs: [
       {
