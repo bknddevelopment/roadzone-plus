@@ -67,7 +67,7 @@ const roadRows: Array<{
   {
     where: "CFX toll roads: SR 408, SR 414, SR 417, SR 429, SR 451 and SR 528",
     detail:
-      "Road Rangers on the Central Florida Expressway Authority network help more than 4,000 drivers a month with minor breakdowns such as a flat tire or an empty tank. CFX lists their hours as 6 AM to 8 PM, seven days a week. Some stretches of SR 417, SR 429 and SR 528 are run by Florida's Turnpike instead; see the next row.",
+      "Road Rangers on the Central Florida Expressway Authority network help more than 4,000 drivers a month with minor breakdowns such as a flat tire or an empty tank. CFX's expressway guide lists their hours as 6 AM to 8 PM, seven days a week. Some stretches of SR 417, SR 429 and SR 528 are run by Florida's Turnpike instead; see the next row.",
     call: "*347 from 6 AM to 8 PM",
     callNote: "Outside those hours, or if no Road Ranger can reach you, call RoadZone Plus.",
     sourceKeys: ["cfxRoadside", "cfxExpressways"],
