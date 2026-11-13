@@ -412,6 +412,16 @@ export default function FreeRoadsideAssistancePage() {
             covers the highway-specific safety steps and both the free and direct fuel
             options.
           </p>
+          <p className="mt-3 text-sm leading-7 text-white/60">
+            Not sure whether a free patrol covers your spot? The{" "}
+            <Link
+              href="/areas/orlando"
+              className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+            >
+              24 hour roadside assistance in Orlando
+            </Link>{" "}
+            page lists patrol roads and hours next to the places only a direct call reaches.
+          </p>
         </div>
       </section>
 

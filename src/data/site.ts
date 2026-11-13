@@ -1024,6 +1024,15 @@ export const areas: Area[] = [
         answer:
           "If the vehicle is in a hotel, store, apartment, workplace, garage, or theme-park-area parking lot, a direct roadside provider is usually more practical than a highway-only patrol program. Call RoadZone Plus with the exact lot, entrance, garage level, or nearby landmark.",
       },
+      {
+        question: "What does roadside assistance help with in Orlando?",
+        answer:
+          "RoadZone Plus comes to the car for seven roadside problems: jumpstarts, flat tire changes with your spare, emergency fuel delivery, car lockouts, wheel lock removal, battery replacement, and smart key or key fob programming for compatible vehicles. Many of these calls end without a tow.",
+      },
+      {
+        question: "Where is RoadZone Plus based in Orlando?",
+        answer: `RoadZone Plus is based at ${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}, and takes roadside calls 24 hours a day, 7 days a week across Orlando and nearby Central Florida. Call ${site.phoneDisplay}.`,
+      },
     ],
   },
   {
