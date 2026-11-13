@@ -59,6 +59,8 @@ const roadRows: Array<{
   detail: string;
   call: string;
   callNote: string;
+  /** Show a tap-to-call RoadZone Plus link under the label. */
+  callRoadZone?: boolean;
   link?: { href: string; label: string };
   sourceKeys: SourceKey[];
 }> = [
@@ -105,9 +107,10 @@ const roadRows: Array<{
       "Driveways, neighborhood streets, apartment communities, hotel and resort lots, parking garages, store and office lots",
     detail:
       "These are not highway patrol zones. And none of the published Road Ranger service lists (FDOT and Florida's Turnpike) includes car lockouts, battery replacement, wheel lock removal, or key fob programming, wherever the car is.",
-    call: `RoadZone Plus, ${site.phoneDisplay}`,
+    call: "RoadZone Plus",
     callNote:
       "Open 24 hours, 7 days a week. No membership or app needed, and the price is confirmed on the call before any work begins.",
+    callRoadZone: true,
     sourceKeys: ["fdotRoadRangers", "turnpikeRangers"],
   },
   {
@@ -295,6 +298,15 @@ export function OrlandoRoadsideGuide() {
                     </td>
                     <td className="mt-3 block align-top md:mt-0 md:table-cell md:w-[24%] md:p-5">
                       <span className="block text-lg font-black text-safety-yellow">{row.call}</span>
+                      {row.callRoadZone ? (
+                        <a
+                          href={site.phoneHref}
+                          className="mt-1 inline-flex min-h-11 items-center gap-2 whitespace-nowrap text-lg font-black text-white hover:text-red-200"
+                        >
+                          <PhoneCall aria-hidden="true" size={18} className="shrink-0 text-road-red" />
+                          {site.phoneDisplay}
+                        </a>
+                      ) : null}
                       <span className="mt-2 block text-sm leading-6 text-white/66">{row.callNote}</span>
                     </td>
                   </tr>
@@ -337,7 +349,7 @@ export function OrlandoRoadsideGuide() {
             </p>
           </div>
 
-          <ul className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {problemRows.map((row) => (
               <li key={row.problem} className="card-solid p-6">
                 <h3 className="text-lg font-black leading-7 text-white">{row.problem}</h3>
