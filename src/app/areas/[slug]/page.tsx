@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CheckCircle2, MapPin, PhoneCall, Route, ShieldCheck } from "lucide-react";
+import { OrlandoRoadsideGuide } from "@/components/OrlandoRoadsideGuide";
 import { areas, getArea, services, site } from "@/data/site";
 import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 
@@ -305,6 +306,8 @@ export default async function AreaPage({ params }: PageProps) {
           </div>
         </section>
       ) : null}
+
+      {area.slug === "orlando" ? <OrlandoRoadsideGuide /> : null}
 
       {area.nearParks ? (
         <section className="border-y border-white/10 bg-panel py-8">
