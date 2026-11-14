@@ -25,12 +25,12 @@ const sources: Record<SourceKey, { name: string; href: string; note: string }> =
   cfxRoadside: {
     name: "Central Florida Expressway Authority: Roadside Assistance, Dial *347",
     href: "https://www.cfxway.com/for-travelers/traveler-help-center/roadside-assistance/",
-    note: "Names the toll roads where CFX Road Rangers help (SR 408, 414, 417, 429, 451 and 528) and says they help more than 4,000 motorists every month.",
+    note: "Names the toll roads where CFX Road Rangers help (SR 408, 414, 417, 429, 451 and 528), says they help more than 4,000 motorists every month, and gives their hours as 6:00 AM to 10:00 PM, seven days a week, 365 days a year.",
   },
   cfxExpressways: {
     name: "Central Florida Expressway Authority: Using Our Expressways",
     href: "https://www.cfxway.com/for-travelers/traveler-help-center/using-our-expressways/",
-    note: "Gives Road Ranger hours on CFX expressways as 6 AM to 8 PM, seven days a week, on a 125-mile toll road network.",
+    note: "Describes the 125-mile CFX toll road network. This page lists Road Ranger hours as 6 AM to 8 PM, which differs from the 6 AM to 10 PM on CFX's Roadside Assistance page.",
   },
   fdotRoadRangers: {
     name: "Florida Department of Transportation: Road Rangers",
@@ -67,8 +67,8 @@ const roadRows: Array<{
   {
     where: "CFX toll roads: SR 408, SR 414, SR 417, SR 429, SR 451 and SR 528",
     detail:
-      "Road Rangers on the Central Florida Expressway Authority network help more than 4,000 drivers a month with minor breakdowns such as a flat tire or an empty tank. CFX's expressway guide lists their hours as 6 AM to 8 PM, seven days a week. Some stretches of SR 417, SR 429 and SR 528 are run by Florida's Turnpike instead; see the next row.",
-    call: "*347 from 6 AM to 8 PM",
+      "Road Rangers on the Central Florida Expressway Authority network help more than 4,000 drivers a month with minor breakdowns such as a flat tire or an empty tank. CFX's Roadside Assistance page gives their hours as 6 AM to 10 PM, seven days a week (CFX's Using Our Expressways page lists 8 PM instead). Some stretches of SR 417, SR 429 and SR 528 are run by Florida's Turnpike instead; see the next row.",
+    call: "*347 from 6 AM to 10 PM",
     callNote: "Outside those hours, or if no Road Ranger can reach you, call RoadZone Plus.",
     sourceKeys: ["cfxRoadside", "cfxExpressways"],
   },
