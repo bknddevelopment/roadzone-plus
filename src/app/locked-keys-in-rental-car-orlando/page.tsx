@@ -596,6 +596,24 @@ export default function LockedKeysRentalCarPage() {
               covers that too, and we will tell you honestly when the rental company is
               the right call for a true key replacement.
             </p>
+            <p className="mt-4 text-base leading-8 text-white/66">
+              Keys are not the only rental trouble. If the rental has a flat, RoadZone Plus
+              can put on its{" "}
+              <Link
+                href="/services/tire-change"
+                className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+              >
+                spare with a mobile tire change
+              </Link>
+              , and if it will not start, a{" "}
+              <Link
+                href="/services/jumpstart"
+                className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+              >
+                jump start
+              </Link>{" "}
+              can get it running, day or night.
+            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/services/auto-lockout" className="btn btn-secondary">
                 Auto Lockout Help
