@@ -18,6 +18,24 @@ export type FocusedRoadsidePage = {
   dispatchDetails: Array<{ label: string; detail: string }>;
   relatedLinks: Array<{ href: string; title: string; text: string }>;
   faqs: Array<{ question: string; answer: string }>;
+  guide?: FocusedPageGuide;
+};
+
+// An optional sourced section for one focused page. Only pages that set it render it.
+export type FocusedPageGuide = {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  whoToCall: Array<{ situation: string; call: string; detail: string }>;
+  table: {
+    heading: string;
+    intro: string;
+    columns: [string, string, string];
+    rows: Array<[string, string, string]>;
+    note: string;
+  };
+  notes: Array<{ heading: string; text: string }>;
+  sources: Array<{ name: string; href: string; note: string }>;
 };
 
 export const focusedPages = {
@@ -442,7 +460,7 @@ export const focusedPages = {
     href: "/orlando-airport-roadside-assistance",
     title: "Roadside Assistance Near Orlando Airport",
     description:
-      "RoadZone Plus helps near Orlando Airport with jumpstarts, lockouts, fuel delivery, tire changes, and key fob issues near MCO, garages, and rentals.",
+      "Stuck near Orlando Airport (MCO)? Rental pick-up levels, SR 528 Road Ranger hours, and RoadZone Plus 24/7 for jumpstarts, tires, lockouts and fuel.",
     eyebrow: "Orlando Airport / MCO",
     heading: "Roadside assistance near Orlando Airport.",
     intro:
@@ -517,7 +535,94 @@ export const focusedPages = {
         title: "Roadside Assistance in Orlando",
         text: "Who to call on SR 528, the other toll roads, and I-4, and where only a direct call reaches across Orlando.",
       },
+      {
+        href: "/services/tire-change",
+        title: "Airport Tire Changes",
+        text: "Spare tire help in garages, hotel lots and rental return lanes near MCO, day or night.",
+      },
     ],
+    guide: {
+      eyebrow: "MCO, rental cars and late nights",
+      heading: "Stuck at Orlando Airport: who to call, by where you are and the hour.",
+      intro:
+        "Help at MCO depends on three things: whether the car is a rental, whether you are on a toll road, and the time of day. This is who covers what, taken from MCO's, CFX's and Alamo's own pages (read November 19, 2026).",
+      whoToCall: [
+        {
+          situation: "The rental car will not start, or has a flat, before you leave the rental garage",
+          call: "The rental company's counter or lot staff on that level",
+          detail:
+            "You are still on the company's own lot, so start with its staff. The table below shows which level each company uses at MCO.",
+        },
+        {
+          situation: "You bought the rental company's roadside cover",
+          call: "The roadside number on your rental agreement",
+          detail:
+            "Alamo's Roadside Plus, if bought at the time of rental, covers jumpstarts, lockouts with the keys inside, flat tire service, up to 3 gallons of fuel, towing not caused by an accident, and lost key replacement, without additional charge. Alamo's roadside line is 1-800-803-4444.",
+        },
+        {
+          situation: "On SR 528 between 6:00 AM and 10:00 PM",
+          call: "Road Rangers: dial *347",
+          detail:
+            "CFX's Road Rangers give free help on SR 528 and the other CFX toll roads, seven days a week, 6:00 AM to 10:00 PM, for problems such as a flat tire changed or gas.",
+        },
+        {
+          situation: "After 10:00 PM, or off the toll road in a hotel lot, a parking lot or an airport-area street",
+          call: "A 24-hour private service: RoadZone Plus, (407) 222-2739",
+          detail:
+            "CFX lists its patrol hours as 6:00 AM to 10:00 PM, and hotel and parking lots are off its toll roads. RoadZone Plus answers 24/7 for jumpstarts, tire changes, lockouts and fuel delivery.",
+        },
+        {
+          situation: "A crash, an injury, or a car stopped in a live lane",
+          call: "911",
+          detail: "MCO's own contact page says: in case of emergency, call 911.",
+        },
+      ],
+      table: {
+        heading: "Where each rental company hands out cars at MCO",
+        intro:
+          "Pick-up levels as MCO lists them. Give the dispatcher the terminal and level, plus the row and the nearest elevator or stair.",
+        columns: ["Company", "Terminals A and B", "Terminal C"],
+        rows: [
+          ["Alamo, Enterprise, National", "Level R1", "Parking C1"],
+          ["Avis, Budget, Dollar, Hertz, Payless, Thrifty", "Level R2", "Parking C2"],
+          ["Sixt", "Level P1", "Parking C1"],
+        ],
+        note:
+          "Some companies take cars back on a different level from where they hand them out: Hertz, for example, takes returns at Terminal A on Level R2 and at Terminal B on Level R1. MCO's page also lists 36 off-airport rental companies; their shuttles stop at Level 1 Ground Transportation (Terminal A spaces A11 to A13, Terminal B B60 to B62, Terminal C C277 to C278, and the train station C3 to C4).",
+      },
+      notes: [
+        {
+          heading: "Low on fuel before returning the car",
+          text: "MCO names a Shell station at its South Travel Plaza, at Jeff Fuqua Boulevard and South Park Place, opposite the train station, on the south entrance and exit road. If the car will not make it there, RoadZone Plus delivers fuel.",
+        },
+        {
+          heading: "Need the airport itself",
+          text: "MCO's customer experience line, +1-407-825-3177, has live agents from 6:00 AM to midnight.",
+        },
+      ],
+      sources: [
+        {
+          name: "Orlando International Airport (MCO): Rental Cars",
+          href: "https://flymco.com/rental-cars/",
+          note: "pick-up and return levels, off-airport companies and shuttle stops, South Travel Plaza fuel",
+        },
+        {
+          name: "Orlando International Airport (MCO): Contact Us",
+          href: "https://flymco.com/contact/",
+          note: "agent hours and the emergency number",
+        },
+        {
+          name: "Central Florida Expressway Authority: Roadside Assistance",
+          href: "https://www.cfxway.com/for-travelers/traveler-help-center/roadside-assistance/",
+          note: "Road Rangers on SR 528 and the other CFX toll roads, *347, 6:00 AM to 10:00 PM",
+        },
+        {
+          name: "Alamo: 24/7 Roadside Assistance",
+          href: "https://www.alamo.com/en/customer-support/car-rental-faqs/insurance-coverage-options/roadside-assistance.html",
+          note: "what Roadside Plus covers and Alamo's roadside number",
+        },
+      ],
+    },
     faqs: [
       {
         question: "Does RoadZone Plus help near Orlando Airport?",
@@ -537,7 +642,17 @@ export const focusedPages = {
       {
         question: "Do you help late at night near the airport?",
         answer:
-          "Yes. RoadZone Plus operates 24/7 for Orlando and Central Florida roadside calls.",
+          "Yes. RoadZone Plus operates 24/7 for Orlando and Central Florida roadside calls. That matters near MCO because CFX lists its Road Ranger patrol on SR 528 from 6:00 AM to 10:00 PM, and hotel and parking lots are off the toll roads.",
+      },
+      {
+        question: "Should I call my rental company or RoadZone Plus?",
+        answer:
+          "If you bought the rental company's roadside cover, call the number on your rental agreement first. Alamo's Roadside Plus, for example, covers jumpstarts, lockouts, flat tire service and up to 3 gallons of fuel without additional charge. If you did not buy it, call RoadZone Plus at (407) 222-2739, 24/7.",
+      },
+      {
+        question: "Where are the rental cars at Orlando Airport?",
+        answer:
+          "At Terminals A and B, Alamo, Enterprise and National hand out cars on Level R1; Avis, Budget, Dollar, Hertz, Payless and Thrifty on Level R2; Sixt on Level P1. At Terminal C, Alamo, Enterprise, National and Sixt use Parking C1 and the other six use Parking C2, per MCO's rental car page.",
       },
     ],
   },
