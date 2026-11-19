@@ -25,7 +25,7 @@ export const nightRentalSources: Record<"cfx" | "turnpike" | "aaaSpare", NightRe
   cfx: {
     name: "Central Florida Expressway Authority: Roadside Assistance, Dial *347 (read November 19, 2026)",
     href: "https://www.cfxway.com/for-travelers/traveler-help-center/roadside-assistance/",
-    note: "Road Rangers give free help on SR 408, 417, 414, 429, 528 and 451, seven days a week, from 6:00 AM to 10:00 PM.",
+    note: "Road Rangers give free help along central Florida's toll roads, including SR 408, 417, 414, 429, 528 and 451; on patrol seven days a week, 6:00 AM to 10:00 PM.",
   },
   turnpike: {
     name: "Florida's Turnpike: Road Rangers Safety Patrol (read November 19, 2026)",
@@ -40,7 +40,7 @@ export const nightRentalSources: Record<"cfx" | "turnpike" | "aaaSpare", NightRe
 };
 
 const roadRangerHours =
-  "On the Central Florida Expressway Authority's toll roads (SR 408, 414, 417, 429, 451 and 528), the free Road Rangers patrol from 6:00 AM to 10:00 PM, seven days a week, according to CFX. Florida's Turnpike patrols its mainline 24 hours a day, but lists 6 AM to 10 PM for its own stretches of the Beachline, the Southern Connector, the Seminole Expressway and the Western Beltway.";
+  "On the Central Florida Expressway Authority's toll roads, including SR 408, 414, 417, 429, 451 and 528, the free Road Rangers patrol from 6:00 AM to 10:00 PM, seven days a week, according to CFX. Florida's Turnpike patrols its mainline 24 hours a day, but lists 6 AM to 10 PM for its own stretches of the Beachline, the Southern Connector, the Seminole Expressway and the Western Beltway.";
 
 export const nightRentalGuides: Record<"tire-change" | "jumpstart", NightRentalGuide> = {
   "tire-change": {
@@ -52,10 +52,10 @@ export const nightRentalGuides: Record<"tire-change" | "jumpstart", NightRentalG
       heading: "After 10 PM, the free toll-road patrols thin out",
       body: [
         roadRangerHours,
-        "Road Rangers change a tire only with the vehicle's own spare, and only on the roads they patrol. A flat in a hotel lot, an apartment complex, a parking garage or a driveway is outside their roads at any hour. RoadZone Plus takes tire change calls 24 hours a day at the roadside and at those addresses.",
+        "Florida's Turnpike lists its free Road Ranger tire change as a change with the vehicle's own spare, and Road Rangers work the highways they patrol. A flat in a hotel lot, an apartment complex, a parking garage or a driveway is outside their roads at any hour. RoadZone Plus takes tire change calls 24 hours a day at the roadside and at those addresses.",
       ],
       tellUs: [
-        "The road and direction of travel, plus the nearest exit or green mile marker, or the hotel or complex name and the section of the lot",
+        "The road and direction of travel, plus the nearest exit or mile marker, or the hotel or complex name and the section of the lot",
         "Whether the car is on a highway shoulder or off the road in a lot",
         "Whether the spare, the jack and the lug wrench are in the car",
         "Whether the wheels have a locking lug nut, and where its key is",
@@ -65,7 +65,7 @@ export const nightRentalGuides: Record<"tire-change" | "jumpstart", NightRentalG
       heading: "In a rental, check the trunk floor before you call",
       body: [
         "Lift the trunk floor or look under the cargo area before you call anyone. AAA found that 28 percent of 2017 model year vehicles had no spare tire as standard equipment. Some carry a tire-inflator kit instead, and AAA notes that those kits cannot fix sidewall damage or a blowout.",
-        "If the rental has a usable spare, a roadside tire change gets you moving. If it has no spare, a roadside tire change is not possible: call the roadside number on your rental agreement or key tag so the rental company can arrange a tow or a replacement car. Either way, ask the rental company whether it will cover a local provider before you pay anyone.",
+        "If the rental has a usable spare, a roadside tire change gets you moving. If it has no spare, a roadside tire change is not possible: call the roadside number on your rental agreement or key tag and ask how the company handles a car with no spare. Either way, ask the rental company whether it will cover a local provider before you pay anyone.",
       ],
       tellUs: [
         "The rental company's name and the car's year, make, model and color",
@@ -77,12 +77,12 @@ export const nightRentalGuides: Record<"tire-change" | "jumpstart", NightRentalG
       {
         question: "Can RoadZone Plus change a flat tire on a rental car in Orlando?",
         answer:
-          "Yes, when the rental has a usable spare. Check under the trunk floor first, and ask the rental company whether it will cover a local provider before you pay. If the car has no spare, call the roadside number on the rental agreement so the company can arrange a tow or a replacement car.",
+          "Yes, when the rental has a usable spare. Check under the trunk floor first, and ask the rental company whether it will cover a local provider before you pay. If the car has no spare, call the roadside number on the rental agreement and ask how the company handles it.",
       },
       {
         question: "Do Road Rangers change tires at night in Orlando?",
         answer:
-          "On the Central Florida Expressway roads (SR 408, 414, 417, 429, 451 and 528), CFX lists Road Ranger hours of 6:00 AM to 10:00 PM. Florida's Turnpike patrols its mainline 24 hours a day. Road Rangers use your own spare and patrol their highways, so a hotel lot, garage or driveway is outside their roads.",
+          "On the Central Florida Expressway toll roads, including SR 408, 414, 417, 429, 451 and 528, CFX lists Road Ranger hours of 6:00 AM to 10:00 PM. Florida's Turnpike patrols its mainline 24 hours a day. Florida's Turnpike lists its free tire change as a change with your own spare, and Road Rangers work their highways, so a hotel lot, garage or driveway is outside their roads.",
       },
     ],
     related: [
@@ -101,18 +101,18 @@ export const nightRentalGuides: Record<"tire-change" | "jumpstart", NightRentalG
       heading: "After 10 PM, the free toll-road patrols thin out",
       body: [
         roadRangerHours,
-        "Road Rangers jump cars only on the highways they patrol. A car that dies in a hotel garage, a theme park lot, an apartment complex or a driveway is outside their roads at any hour. RoadZone Plus takes jump start calls 24 hours a day at the roadside and at those addresses.",
+        "Florida's Turnpike lists jump starts among its free Road Ranger services, and Road Rangers work the highways they patrol. A car that dies in a hotel garage, a theme park lot, an apartment complex or a driveway is outside their roads at any hour. RoadZone Plus takes jump start calls 24 hours a day at the roadside and at those addresses.",
       ],
       tellUs: [
         "The garage or lot name, the level and the row, or the road and nearest exit",
-        "Whether the car is parked nose-in against a wall or another car, which decides how the cables reach the battery",
+        "Whether the car is parked nose-in against a wall or another car, which helps the technician plan how to reach the battery",
         "Whether the car clicks, cranks slowly or shows no lights at all",
       ],
     },
     rental: {
       heading: "In a rental, tell the rental company too",
       body: [
-        "A jump start gets a rental running, but the battery belongs to the rental company. If the car needs a second jump, or dies again after a short drive, call the roadside number on the rental agreement or key tag so the company can repair or swap the car.",
+        "A jump start gets a rental running, but the battery belongs to the rental company. If the car needs a second jump, or dies again after a short drive, call the roadside number on the rental agreement or key tag and ask the company to repair or swap the car.",
         "If the dashboard shows a key-not-detected message rather than a dead battery, that is a different problem; the key fob guide below covers it. Ask the rental company whether it will cover a local provider before you pay anyone.",
       ],
       tellUs: [
@@ -130,7 +130,7 @@ export const nightRentalGuides: Record<"tire-change" | "jumpstart", NightRentalG
       {
         question: "Who jump starts a car at night in Orlando?",
         answer:
-          "On the Central Florida Expressway roads, CFX lists Road Ranger hours of 6:00 AM to 10:00 PM, and Florida's Turnpike patrols its mainline 24 hours a day. Off those highways, in garages, hotel lots and driveways, RoadZone Plus takes jump start calls 24 hours a day.",
+          "On the Central Florida Expressway toll roads, CFX lists Road Ranger hours of 6:00 AM to 10:00 PM, and Florida's Turnpike patrols its mainline 24 hours a day. Off those highways, in garages, hotel lots and driveways, RoadZone Plus takes jump start calls 24 hours a day.",
       },
     ],
     related: [
