@@ -432,9 +432,14 @@ export default function MobileTireRepairPage() {
               your exact price on the call — no membership, no surprises.
             </p>
           </div>
-          <Link href="/roadside-assistance-cost-orlando" className="btn btn-primary shrink-0">
-            View Orlando Cost Guide
-          </Link>
+          <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+            <Link href="/roadside-assistance-cost-orlando" className="btn btn-primary">
+              View Orlando Cost Guide
+            </Link>
+            <Link href="/tire-change-cost-orlando" className="btn btn-secondary">
+              Tire Change Cost
+            </Link>
+          </div>
         </div>
       </section>
 

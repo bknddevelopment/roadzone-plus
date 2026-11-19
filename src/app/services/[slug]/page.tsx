@@ -463,6 +463,30 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
       ) : null}
 
+      {service.slug === "tire-change" ? (
+        <section className="section bg-road-black">
+          <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Info aria-hidden="true" size={16} />
+                Price question
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                What does a tire change cost?
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                Published prices for a roadside spare swap and for putting a new tire on at
+                a shop, side by side, plus what AAA, insurance add-ons and Road Rangers
+                already cover.
+              </p>
+            </div>
+            <Link href="/tire-change-cost-orlando" className="btn btn-primary shrink-0">
+              Tire Change Cost Guide
+            </Link>
+          </div>
+        </section>
+      ) : null}
+
       {service.slug === "auto-lockout" ? (
         <section className="section border-y border-white/10 bg-panel">
           <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">

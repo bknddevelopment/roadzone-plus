@@ -372,6 +372,11 @@ const relatedLinks = [
     title: "Wheel Lock Removal",
     text: "No key for the locking lug nut? It has to come off before any spare goes on.",
   },
+  {
+    href: "/tire-change-cost-orlando",
+    title: "Tire Change Cost",
+    text: "What a roadside spare swap costs, what a shop charges to put a new tire on, and what may already be paid for.",
+  },
 ];
 
 const faqs = [
@@ -956,7 +961,7 @@ export default function SpareTireDrivingLimitsPage() {
               More on flats and spares in Orlando.
             </h2>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {relatedLinks.map((link) => (
               <Link
                 key={link.href}
