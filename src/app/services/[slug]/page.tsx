@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { areas, getService, services, site } from "@/data/site";
 import { serviceCallPrepBySlug } from "@/data/serviceDiscovery";
+import { nightRentalGuides, nightRentalSources } from "@/data/serviceNightRental";
 import {
   absoluteUrl,
   breadcrumbSchema,
@@ -43,6 +44,12 @@ const serviceSeo: Partial<
     heading: "24 hour jump start and battery boost in Orlando, FL",
     description:
       "Need a dead battery jump start in Orlando, FL? RoadZone Plus provides 24/7 battery boost help at homes, hotels, apartments, parking lots, work, and roadside locations.",
+  },
+  "tire-change": {
+    title: "Tire Change Orlando FL | 24 Hour Mobile Spare Tire Change",
+    heading: "24 hour mobile tire change in Orlando, FL",
+    description:
+      "Flat tire in Orlando, day or night? RoadZone Plus puts your spare on at the roadside, in hotel lots, garages and driveways, rental cars included. Call (407) 222-2739.",
   },
   "fuel-delivery": {
     title: "Fuel Delivery Orlando FL | 24 Hour Gas Delivery Service",
@@ -123,7 +130,10 @@ export default async function ServicePage({ params }: PageProps) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: service.faqs.map((faq) => ({
+    mainEntity: [
+      ...service.faqs,
+      ...(nightRentalGuides[service.slug as keyof typeof nightRentalGuides]?.faqs ?? []),
+    ].map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -196,6 +206,8 @@ export default async function ServicePage({ params }: PageProps) {
     .map((areaSlug) => areas.find((area) => area.slug === areaSlug))
     .filter((area): area is (typeof areas)[number] => Boolean(area));
   const heading = serviceSeo[service.slug]?.heading ?? `${service.name} in Orlando, FL`;
+  const nightRental =
+    nightRentalGuides[service.slug as keyof typeof nightRentalGuides];
   const callPrep = serviceCallPrepBySlug[
     service.slug as keyof typeof serviceCallPrepBySlug
   ];
@@ -305,6 +317,109 @@ export default async function ServicePage({ params }: PageProps) {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+      ) : null}
+
+      {nightRental ? (
+        <section
+          className="section border-b border-white/10 bg-road-black"
+          aria-labelledby="night-rental-heading"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <TimerReset aria-hidden="true" size={16} />
+                {nightRental.eyebrow}
+              </div>
+              <h2
+                id="night-rental-heading"
+                className="mt-5 text-4xl font-black text-white"
+              >
+                {nightRental.heading}
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                {nightRental.intro}
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              {[
+                { key: "night", Icon: TimerReset, block: nightRental.night },
+                { key: "rental", Icon: Route, block: nightRental.rental },
+              ].map(({ key, Icon, block }) => (
+                <article key={key} className="card-solid p-6">
+                  <div className="flex items-center gap-3">
+                    <Icon aria-hidden="true" className="shrink-0 text-safety-yellow" size={22} />
+                    <h3 className="text-2xl font-black text-white">{block.heading}</h3>
+                  </div>
+                  {block.body.map((paragraph) => (
+                    <p key={paragraph} className="mt-4 text-sm leading-7 text-white/70">
+                      {paragraph}
+                    </p>
+                  ))}
+                  <p className="mt-6 text-sm font-black uppercase text-white/48">
+                    Tell the dispatcher
+                  </p>
+                  <ul className="mt-3 grid gap-2">
+                    {block.tellUs.map((item) => (
+                      <li key={item} className="flex gap-3 rounded-md bg-white/6 p-3">
+                        <CheckCircle2
+                          aria-hidden="true"
+                          className="mt-0.5 shrink-0 text-route-green"
+                          size={18}
+                        />
+                        <span className="text-sm leading-6 text-white/70">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-8 grid gap-4 lg:grid-cols-2">
+              {nightRental.faqs.map((faq) => (
+                <div key={faq.question} className="rounded-md bg-white/6 p-5">
+                  <h3 className="text-base font-black text-white">{faq.question}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/70">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href={site.phoneHref}
+                className="btn btn-primary"
+                data-call-cta="service-night-rental"
+              >
+                <PhoneCall aria-hidden="true" size={18} />
+                Call {site.phoneDisplay}, 24 hours
+              </a>
+              {nightRental.related.map((link) => (
+                <Link key={link.href} href={link.href} className="btn btn-secondary">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <p className="text-xs font-black uppercase text-white/48">Sources</p>
+              <ol className="mt-3 grid gap-2 text-xs leading-5 text-white/56">
+                {nightRental.sources.map((key) => nightRentalSources[key]).map((source) => (
+                  <li key={source.href}>
+                    <a
+                      href={source.href}
+                      className="underline decoration-white/30 underline-offset-2 hover:text-white"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {source.name}
+                    </a>
+                    : {source.note}
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </section>
       ) : null}

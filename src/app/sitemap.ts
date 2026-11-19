@@ -5,6 +5,12 @@ import {
   serviceDiscoveryTargetSlugs,
 } from "@/data/serviceDiscovery";
 import { areas, services, site } from "@/data/site";
+import {
+  nightRentalGuides,
+  serviceNightRentalLastModified,
+} from "@/data/serviceNightRental";
+
+const serviceNightRentalSlugs = new Set<string>(Object.keys(nightRentalGuides));
 
 const disneyGrowthLastModified = new Date("2026-08-05T00:00:00.000Z");
 const carKeyCostLastModified = new Date("2026-10-23T00:00:00.000Z");
@@ -74,9 +80,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const serviceRoutes = services.map((service) => ({
     url: `${site.url}/services/${service.slug}`,
-    lastModified: serviceDiscoveryTargetSlugs.has(service.slug)
-      ? serviceDiscoveryLastModified
-      : undefined,
+    lastModified: serviceNightRentalSlugs.has(service.slug)
+      ? serviceNightRentalLastModified
+      : serviceDiscoveryTargetSlugs.has(service.slug)
+        ? serviceDiscoveryLastModified
+        : undefined,
     changeFrequency: "weekly" as const,
     priority: service.priority ? 0.9 : 0.75,
   }));
