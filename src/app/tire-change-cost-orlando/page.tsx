@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   BadgeDollarSign,
@@ -20,7 +21,9 @@ const description =
   "A roadside spare swap runs about $50 to $100 in labor; Allstate lists $99. A new tire at a shop is the tire plus installation. AAA, insurance and Road Rangers compared.";
 const updatedIso = "2026-11-19";
 const updatedLabel = "November 19, 2026";
-const shareImage = "/brand/roadzone-plus-logo.png";
+const heroImage = "/visuals/turnpike/spare-tire-fitted.webp";
+const heroAlt =
+  "A compact spare tire with a yellow 50 mph caution label fitted to a car's rear wheel";
 
 export const metadata: Metadata = {
   title,
@@ -34,10 +37,10 @@ export const metadata: Metadata = {
     url: path,
     images: [
       {
-        url: shareImage,
-        width: 1575,
-        height: 430,
-        alt: `${site.name} logo`,
+        url: heroImage,
+        width: 1600,
+        height: 1067,
+        alt: heroAlt,
       },
     ],
   },
@@ -538,7 +541,12 @@ export default function TireChangeCostPage() {
     description,
     datePublished: updatedIso,
     dateModified: updatedIso,
-    image: absoluteUrl(shareImage),
+    image: {
+      "@type": "ImageObject",
+      url: absoluteUrl(heroImage),
+      width: 1600,
+      height: 1067,
+    },
     author: {
       "@type": "Organization",
       name: site.name,
@@ -608,31 +616,42 @@ export default function TireChangeCostPage() {
             </div>
           </div>
 
-          <aside className="card bg-panel p-6" aria-labelledby="hero-call-heading">
-            <p
-              id="hero-call-heading"
-              className="text-sm font-black uppercase text-safety-yellow"
-            >
-              Flat tire right now?
-            </p>
-            <p className="mt-3 text-xl font-black leading-7 text-white">
-              RoadZone Plus installs your usable spare 24/7 where the car is: a driveway,
-              parking lot, workplace, hotel or roadside stop. No membership. Your exact
-              price is confirmed on the call, before dispatch.
-            </p>
-            <a
-              href={site.phoneHref}
-              className="mt-5 flex min-h-11 items-center gap-3 text-2xl font-black text-white"
-            >
-              <PhoneCall aria-hidden="true" size={22} />
-              {site.phoneDisplay}
-            </a>
-            <Link
-              href="/services/tire-change"
-              className="mt-3 inline-flex min-h-11 items-center text-sm font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
-            >
-              How the tire change service works
-            </Link>
+          <aside className="card overflow-hidden bg-panel" aria-labelledby="hero-call-heading">
+            <Image
+              src={heroImage}
+              alt={heroAlt}
+              width={1600}
+              height={1067}
+              priority
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="h-auto w-full"
+            />
+            <div className="p-6">
+              <p
+                id="hero-call-heading"
+                className="text-sm font-black uppercase text-safety-yellow"
+              >
+                Flat tire right now?
+              </p>
+              <p className="mt-3 text-xl font-black leading-7 text-white">
+                RoadZone Plus installs your usable spare 24/7 where the car is: a driveway,
+                parking lot, workplace, hotel or roadside stop. No membership. Your exact
+                price is confirmed on the call, before dispatch.
+              </p>
+              <a
+                href={site.phoneHref}
+                className="mt-5 flex min-h-11 items-center gap-3 text-2xl font-black text-white"
+              >
+                <PhoneCall aria-hidden="true" size={22} />
+                {site.phoneDisplay}
+              </a>
+              <Link
+                href="/services/tire-change"
+                className="mt-3 inline-flex min-h-11 items-center text-sm font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+              >
+                How the tire change service works
+              </Link>
+            </div>
           </aside>
         </div>
       </section>
@@ -762,23 +781,41 @@ export default function TireChangeCostPage() {
               </div>
             ))}
           </div>
-          <p className="mt-6 max-w-3xl text-sm leading-7 text-white/66">
-            Stopped on an Orlando highway or toll road? Read{" "}
-            <Link
-              href="/road-rangers-orlando"
-              className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
-            >
-              how Road Rangers work in Orlando
-            </Link>{" "}
-            first. In a lot, a garage or at home, call{" "}
-            <a
-              href={site.phoneHref}
-              className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
-            >
-              {site.phoneDisplay}
-            </a>
-            .
-          </p>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:items-center">
+            <figure>
+              <Image
+                src="/visuals/turnpike/turnpike-open-shoulder.webp"
+                alt="An empty stretch of Florida's Turnpike with a wide paved right shoulder, grass verge and pine trees under a clear sky"
+                width={1600}
+                height={1200}
+                loading="lazy"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/60">
+                Florida&apos;s Turnpike, photographed in January 2022. On the Turnpike
+                mainline, the Turnpike&apos;s Road Rangers change tires with the vehicle&apos;s
+                spare 24 hours a day.
+              </figcaption>
+            </figure>
+            <p className="text-sm leading-7 text-white/66">
+              Stopped on an Orlando highway or toll road? Read{" "}
+              <Link
+                href="/road-rangers-orlando"
+                className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+              >
+                how Road Rangers work in Orlando
+              </Link>{" "}
+              first. In a lot, a garage or at home, call{" "}
+              <a
+                href={site.phoneHref}
+                className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+              >
+                {site.phoneDisplay}
+              </a>
+              .
+            </p>
+          </div>
         </div>
       </section>
 
@@ -802,6 +839,21 @@ export default function TireChangeCostPage() {
             >
               How far you can drive on a spare in Orlando
             </Link>
+            <figure className="mt-6">
+              <Image
+                src="/visuals/spare-tire/donut-spare-on-sedan.webp"
+                alt="An orange sedan parked at a curb with a small blue temporary donut spare fitted on its front wheel"
+                width={1560}
+                height={1170}
+                loading="lazy"
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/60">
+                A temporary donut spare on a sedan&apos;s front wheel: a way to reach the
+                tire shop, not a replacement tire.
+              </figcaption>
+            </figure>
           </div>
           <div className="grid gap-4">
             <div className="card-solid p-6">
