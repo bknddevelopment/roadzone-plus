@@ -12,7 +12,7 @@ import {
 
 const serviceNightRentalSlugs = new Set<string>(Object.keys(nightRentalGuides));
 
-const disneyGrowthLastModified = new Date("2026-08-05T00:00:00.000Z");
+const disneyCarCareLastModified = new Date("2026-11-19T00:00:00.000Z");
 const carKeyCostLastModified = new Date("2026-10-23T00:00:00.000Z");
 const batteryCostLastModified = new Date("2026-10-25T00:00:00.000Z");
 const turnpikeLastModified = new Date("2026-10-28T00:00:00.000Z");
@@ -55,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       path === "/services"
         ? serviceDiscoveryLastModified
         : path === "/roadside-assistance-near-disney-world-resort"
-          ? disneyGrowthLastModified
+          ? disneyCarCareLastModified
           : path === "/car-key-replacement-cost-orlando"
             ? carKeyCostLastModified
             : path === "/car-battery-replacement-cost-orlando"

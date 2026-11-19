@@ -16,7 +16,7 @@ import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 
 const title = "Roadside Assistance Near Disney World Resort";
 const description =
-  "Stranded near Disney World Resort? RoadZone Plus brings 24/7 roadside help to Disney-area hotels, rental cars, Disney Springs, US 192, and I-4. Call (407) 222-2739.";
+  "Near Disney World: what Disney's Car Care Center covers until one hour after park closing, and RoadZone Plus 24/7 for lockouts, late nights and US 192 hotels.";
 
 const path = "/roadside-assistance-near-disney-world-resort";
 
@@ -65,7 +65,7 @@ const locationGuidance = [
   {
     label: "Disney Springs and Lake Buena Vista",
     detail:
-      "Use the garage name (Orange, Lime, or Grapefruit), the level and row, or the nearest store or restaurant. Off the garages, use Hotel Plaza Boulevard, Apopka-Vineland Road, or the closest I-4 exit.",
+      "Use the garage name (Orange, Lime, or Grapefruit) or the surface lot (Mango, Strawberry, or Watermelon), the level and row, or the nearest store or restaurant. Off the garages, use Hotel Plaza Boulevard, Apopka-Vineland Road, or the closest I-4 exit.",
   },
   {
     label: "US 192 in Kissimmee",
@@ -114,22 +114,91 @@ const waitingTips = [
 
 const disneyCarCareUrl =
   "https://disneyworld.disney.go.com/guest-services/car-care-center/";
+const disneySpringsParkingUrl =
+  "https://www.disneysprings.com/disney-springs-map/parking-transportation/";
+const disneyCarCarePhone = "(407) 824-0976";
 const disneyOfficialRoadsideSummary =
-  "Disney says its Car Care Center provides basic roadside services up to one hour after park closing. After that, Disney directs guests to Resort security for support.";
+  `Disney says its Car Care Center, ${disneyCarCarePhone}, provides basic roadside services up to one hour after park closing. After that, Disney directs guests to Resort security for support.`;
 
-const officialOptions = [
+// Quoted from Disney's Car Care Center page, read November 19, 2026.
+// Disney's number is shown as text, never as a tel: link, so a tap on it is
+// not counted as a RoadZone phone tap.
+const disneyCarCareServices = [
+  "Complimentary towing to the Car Care Center, or, if the center is closed, to a destination within Walt Disney World Resort",
+  "Fuel assistance",
+  "Battery jump start",
+  "Flat tire assistance, including inflating the flat tire",
+  "Winch out, when the vehicle is stuck in mud",
+];
+
+const disneyRepairHours = [
+  { days: "Monday to Wednesday, and Friday", hours: "8:00 AM to 6:00 PM" },
+  { days: "Thursday", hours: "8:00 AM to 8:30 PM" },
+  { days: "Saturday", hours: "8:00 AM to 5:00 PM" },
+  { days: "Sunday", hours: "9:00 AM to 5:00 PM" },
+];
+
+const whoToCallNearDisney: Array<{
+  situation: string;
+  call: string;
+  detail: string;
+  link?: { href: string; label: string };
+}> = [
   {
-    title: "Walt Disney World Car Care Center",
-    text: disneyOfficialRoadsideSummary,
+    situation: "On Walt Disney World property, up to one hour after park closing",
+    call: `Disney's Car Care Center: ${disneyCarCarePhone}`,
+    detail:
+      "Disney lists towing to the center, fuel assistance, a battery jump start, flat tire help and a winch out, for automobiles, SUVs and small trucks.",
+  },
+  {
+    situation: "On Disney property, more than one hour after park closing",
+    call: "Resort security",
+    detail:
+      "That is where Disney's Car Care Center page directs guests who need help after its cutoff.",
+  },
+  {
+    situation: "Keys locked inside the car",
+    call: `RoadZone Plus: ${site.phoneDisplay}, 24/7`,
+    detail:
+      "Lockouts are not on the roadside list Disney publishes for its Car Care Center. RoadZone Plus offers damage-conscious lockout help at hotels, garages, and roadside stops.",
+    link: {
+      href: "/locked-keys-in-rental-car-orlando",
+      label: "Locked keys in a rental car: the full guide",
+    },
+  },
+  {
+    situation: "A rental car, if you bought the rental company's roadside cover",
+    call: "The number on the key tag or rental agreement",
+    detail:
+      "That cover has its own rules and charges. Check it before you pay a second service for the same job.",
+  },
+  {
+    situation: "A US 192 hotel in Kissimmee, a Celebration address, or I-4",
+    call: `RoadZone Plus: ${site.phoneDisplay}, 24/7`,
+    detail:
+      "Give the hotel name, the US 192 mile marker, or the I-4 direction and exit.",
+    link: {
+      href: "/road-rangers-orlando",
+      label: "Free Road Ranger highway help around Orlando, and when to call a 24/7 service",
+    },
+  },
+  {
+    situation: "A crash, an injury, or a car stopped in a travel lane",
+    call: "911",
+    detail: "Call 911 first. Roadside help comes once everyone is safe.",
+  },
+];
+
+const disneySources = [
+  {
+    name: "Walt Disney World: Car Care Center",
     href: disneyCarCareUrl,
+    note: "roadside services, the one-hour cutoff, Resort security, location, repair hours",
   },
   {
-    title: "Rental company roadside line",
-    text: "If the vehicle is a rental, the rental company may have its own roadside coverage, rules, and charges. Check the key tag or rental agreement before paying twice.",
-  },
-  {
-    title: "RoadZone Plus direct local dispatch",
-    text: "Use RoadZone Plus when you need a direct local call for a hotel lot, garage, US 192 stop, I-4 corridor issue, lockout, jumpstart, tire change, or fuel delivery.",
+    name: "Disney Springs: Parking & Transportation map",
+    href: disneySpringsParkingUrl,
+    note: "garage and surface lot names",
   },
 ];
 
@@ -167,7 +236,17 @@ const faqs = [
   {
     question: "My car won't start in a theme park parking lot. What do I do?",
     answer:
-      "Note the lot name, section, and row before you leave the car or as soon as you get back to it, then call with the vehicle details. Dead batteries after a long park day are one of the most common calls, and a jumpstart at the parking spot is usually the fix.",
+      "Note the lot name, section, and row before you leave the car or as soon as you get back to it. Up to one hour after park closing, Disney's own Car Care Center at (407) 824-0976 lists battery jump starts, flat tire help, and fuel assistance; after that, Disney directs guests to Resort security. For keys locked inside, which is not on Disney's list, call RoadZone Plus with the vehicle details. Dead batteries after a long park day are one of the most common calls, and a jumpstart at the parking spot is usually the fix.",
+  },
+  {
+    question: "What is the phone number for Disney's Car Care Center?",
+    answer:
+      "Disney lists (407) 824-0976 for its Car Care Center, both for roadside help and for repair appointments. It is near the Magic Kingdom auto plaza, beside the Speedway gas station, at 1000 West Car Care Drive, Bay Lake, FL 32830. RoadZone Plus is a separate, independent service at (407) 222-2739.",
+  },
+  {
+    question: "Does Disney's Car Care Center help with lockouts?",
+    answer:
+      "Lockouts are not on the roadside list Disney publishes for its Car Care Center, which names towing to the center, fuel assistance, battery jump starts, flat tire assistance, and winch outs (read November 19, 2026). For keys locked inside a car near Disney, RoadZone Plus offers lockout help 24/7 at (407) 222-2739; in a rental, also check whether you bought the rental company's roadside cover.",
   },
   {
     question: "Do I need a membership or an app?",
@@ -331,6 +410,149 @@ export default function DisneyWorldRoadsidePage() {
         </div>
       </section>
 
+      <section
+        id="who-to-call"
+        aria-labelledby="disney-who-to-call-heading"
+        className="section border-b border-white/10 bg-panel"
+      >
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <Info aria-hidden="true" size={16} />
+              Disney&apos;s own roadside help, and what it leaves out
+            </div>
+            <h2
+              id="disney-who-to-call-heading"
+              className="mt-5 text-4xl font-black text-white"
+            >
+              Who to call near Disney, by where the car is and the hour.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              Walt Disney World runs its own Car Care Center, and it covers some calls
+              on Disney property until one hour after park closing. Lockouts, late
+              nights, the hotels along US 192, and I-4 need a different call. RoadZone
+              Plus is independent and not affiliated with Walt Disney World; Disney&apos;s
+              details below are taken from Disney&apos;s own page.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+            <ol className="grid gap-3" aria-label="Who to call, situation by situation">
+              {whoToCallNearDisney.map((row) => (
+                <li key={row.situation} className="card-solid p-5">
+                  <p className="text-xs font-black uppercase text-safety-yellow">
+                    {row.situation}
+                  </p>
+                  <p className="mt-2 text-lg font-black text-white">{row.call}</p>
+                  <p className="mt-2 text-sm leading-6 text-white/66">{row.detail}</p>
+                  {row.link ? (
+                    <Link
+                      href={row.link.href}
+                      className="mt-2 inline-flex py-1.5 text-sm font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+                    >
+                      {row.link.label}
+                    </Link>
+                  ) : null}
+                </li>
+              ))}
+            </ol>
+
+            <aside
+              aria-labelledby="disney-car-care-heading"
+              className="card-solid h-fit p-6"
+            >
+              <h3
+                id="disney-car-care-heading"
+                className="text-xl font-black text-white"
+              >
+                Disney&apos;s Car Care Center, as Disney lists it
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-white/66">
+                Roadside line: <span className="font-black text-white">{disneyCarCarePhone}</span>.
+                Basic roadside services for automobiles, SUVs, and small trucks, up to one
+                hour after park closing:
+              </p>
+              <ul className="mt-4 grid gap-2">
+                {disneyCarCareServices.map((item) => (
+                  <li key={item} className="flex gap-2 text-sm leading-6 text-white/72">
+                    <CheckCircle2
+                      aria-hidden="true"
+                      className="mt-1 shrink-0 text-route-green"
+                      size={16}
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 rounded-md bg-white/6 p-3 text-sm font-bold leading-6 text-white/80">
+                Not on Disney&apos;s list: lockouts (keys locked inside).
+              </p>
+              <p className="mt-4 text-sm leading-6 text-white/66">
+                <span className="font-black text-white">Where:</span> near the Magic
+                Kingdom auto plaza, beside the Speedway gas station, 1000 West Car Care
+                Drive, Bay Lake, FL 32830.
+              </p>
+              <div className="mt-4 text-sm leading-6 text-white/66">
+                <p>
+                  <span className="font-black text-white">Repairs</span> are charged and
+                  booked by phone at the same number, in these hours:
+                </p>
+                <ul className="mt-2 grid gap-1">
+                  {disneyRepairHours.map((slot) => (
+                    <li key={slot.days} className="flex gap-2">
+                      <Clock3
+                        aria-hidden="true"
+                        className="mt-1 shrink-0 text-white/50"
+                        size={14}
+                      />
+                      <span>
+                        {slot.days}: {slot.hours}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={site.phoneHref}
+              className="btn btn-primary"
+              data-call-cta="disney-who-to-call"
+            >
+              <PhoneCall aria-hidden="true" size={18} />
+              Call RoadZone: {site.phoneDisplay}, 24 hours
+            </a>
+            <Link href="/locked-keys-in-rental-car-orlando" className="btn btn-secondary">
+              Locked out of a rental?
+            </Link>
+          </div>
+
+          <div className="mt-8 border-t border-white/10 pt-6">
+            <p className="text-xs font-black uppercase text-white/50">
+              Sources (read November 19, 2026)
+            </p>
+            <ul className="mt-3 grid gap-2">
+              {disneySources.map((source) => (
+                <li key={source.href} className="text-sm leading-6 text-white/62">
+                  <a
+                    href={source.href}
+                    className="inline-flex items-center gap-1 font-black text-white underline decoration-white/30 underline-offset-2 hover:text-red-200"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {source.name}
+                    <ExternalLink aria-hidden="true" size={13} />
+                  </a>
+                  : {source.note}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-asphalt">
         <div className="container">
           <div className="max-w-3xl">
@@ -472,46 +694,6 @@ export default function DisneyWorldRoadsidePage() {
             </Link>
             .
           </p>
-        </div>
-      </section>
-
-      <section className="section border-y border-white/10 bg-panel">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="eyebrow">
-              <Info aria-hidden="true" size={16} />
-              Official vs. direct help
-            </div>
-            <h2 className="mt-5 text-4xl font-black text-white">
-              Which roadside number should you call near Disney?
-            </h2>
-            <p className="mt-5 text-base leading-8 text-white/66">
-              RoadZone Plus is independent local roadside help. It is not Walt Disney
-              World, a rental company, or a membership plan. The best call depends on
-              where the vehicle is, what coverage you already have, and whether you need
-              direct dispatch right now.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-4 lg:grid-cols-3">
-            {officialOptions.map((option) => (
-              <div key={option.title} className="card-solid p-6">
-                <h3 className="text-xl font-black text-white">{option.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/66">{option.text}</p>
-                {option.href ? (
-                  <a
-                    href={option.href}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-black text-white hover:text-red-200"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Official Disney source
-                    <ExternalLink aria-hidden="true" size={15} />
-                  </a>
-                ) : null}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
