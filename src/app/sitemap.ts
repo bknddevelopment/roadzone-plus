@@ -22,6 +22,7 @@ const lockoutCostLastModified = new Date("2026-11-03T00:00:00.000Z");
 const moveOverLawLastModified = new Date("2026-11-08T00:00:00.000Z");
 const jumpStartCostLastModified = new Date("2026-11-12T00:00:00.000Z");
 const tireChangeCostLastModified = new Date("2026-11-19T00:00:00.000Z");
+const airportGuideLastModified = new Date("2026-11-19T00:00:00.000Z");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -73,7 +74,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
                           ? jumpStartCostLastModified
                           : path === "/tire-change-cost-orlando"
                             ? tireChangeCostLastModified
-                            : undefined,
+                            : path === "/orlando-airport-roadside-assistance"
+                              ? airportGuideLastModified
+                              : undefined,
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8,
   }));

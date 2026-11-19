@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   AlertTriangle,
   CheckCircle2,
+  Clock,
   MapPin,
   PhoneCall,
   Route,
@@ -123,6 +124,116 @@ export function FocusedRoadsidePage({ page }: { page: FocusedRoadsidePageData })
           </aside>
         </div>
       </section>
+
+      {page.guide ? (
+        <section
+          className="section border-b border-white/10 bg-panel"
+          aria-labelledby="local-guide-heading"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Clock aria-hidden="true" size={16} />
+                {page.guide.eyebrow}
+              </div>
+              <h2 id="local-guide-heading" className="mt-5 text-4xl font-black text-white">
+                {page.guide.heading}
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">{page.guide.intro}</p>
+            </div>
+
+            <ol className="mt-8 grid gap-4 lg:grid-cols-2">
+              {page.guide.whoToCall.map((row) => (
+                <li key={row.situation} className="card-solid p-6">
+                  <p className="text-xs font-black uppercase text-safety-yellow">If</p>
+                  <h3 className="mt-2 text-lg font-black leading-7 text-white">{row.situation}</h3>
+                  <p className="mt-4 flex gap-3 text-base font-black leading-7 text-white">
+                    <CheckCircle2
+                      aria-hidden="true"
+                      className="mt-1 shrink-0 text-route-green"
+                      size={18}
+                    />
+                    <span>Call: {row.call}</span>
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-white/68">{row.detail}</p>
+                </li>
+              ))}
+            </ol>
+
+            <div className="mt-10 max-w-3xl">
+              <h3 className="text-2xl font-black text-white">{page.guide.table.heading}</h3>
+              <p className="mt-3 text-sm leading-6 text-white/66">{page.guide.table.intro}</p>
+            </div>
+            <div className="mt-5 overflow-x-auto rounded-md border border-white/10">
+              <table className="w-full min-w-[20rem] text-left text-sm">
+                <thead className="bg-white/6 text-xs font-black uppercase text-white/60">
+                  <tr>
+                    {page.guide.table.columns.map((column) => (
+                      <th key={column} scope="col" className="px-4 py-3">
+                        {column}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {page.guide.table.rows.map(([company, terminalsAB, terminalC]) => (
+                    <tr key={company} className="border-t border-white/10 text-white/72">
+                      <th scope="row" className="px-4 py-3 font-black text-white">
+                        {company}
+                      </th>
+                      <td className="px-4 py-3">{terminalsAB}</td>
+                      <td className="px-4 py-3">{terminalC}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-white/60">
+              {page.guide.table.note}
+            </p>
+
+            <div className="mt-8 grid gap-4 lg:grid-cols-2">
+              {page.guide.notes.map((note) => (
+                <div key={note.heading} className="rounded-md bg-white/6 p-5">
+                  <h3 className="text-base font-black text-white">{note.heading}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/70">{note.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href={site.phoneHref} className="btn btn-primary" data-call-cta="airport-guide">
+                <PhoneCall aria-hidden="true" size={18} />
+                Call {site.phoneDisplay}, 24 hours
+              </a>
+              <Link href={page.secondaryHref} className="btn btn-secondary">
+                {page.secondaryLabel}
+              </Link>
+            </div>
+
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <p className="text-xs font-black uppercase text-white/48">
+                Sources (read November 19, 2026)
+              </p>
+              <ol className="mt-3 grid gap-2 text-xs leading-5 text-white/56">
+                {page.guide.sources.map((source) => (
+                  <li key={source.href}>
+                    <a
+                      href={source.href}
+                      className="underline decoration-white/30 underline-offset-2 hover:text-white"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {source.name}
+                    </a>
+                    : {source.note}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section bg-asphalt">
         <div className="container">
