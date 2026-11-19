@@ -96,7 +96,7 @@ export const nightRentalGuides: Record<"tire-change" | "jumpstart", NightRentalG
     eyebrow: "Late-night and rental car dead batteries",
     heading: "Dead battery after dark or in a rental car in Orlando",
     intro:
-      "Two situations make an Orlando dead battery harder to sort out: the car will not start late at night, or the car is a rental that dies in a hotel garage or park lot. Here is who can help at what hour, what to check in a rental, and what to tell RoadZone Plus so the jump start goes quickly.",
+      "Two situations make an Orlando dead battery harder to sort out: the car will not start late at night, or the car is a rental that dies in a hotel garage or theme park lot. Here is who can help at what hour, what to check in a rental, and what to tell RoadZone Plus so the jump start goes quickly.",
     night: {
       heading: "After 10 PM, the free toll-road patrols thin out",
       body: [
