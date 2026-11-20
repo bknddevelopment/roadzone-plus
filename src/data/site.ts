@@ -1121,7 +1121,7 @@ export const areas: Area[] = [
     slug: "kissimmee",
     name: "Kissimmee",
     county: "Osceola County",
-    emphasis: "24/7 roadside help on US 192, at hotels and vacation homes, and in rental cars near Walt Disney World",
+    emphasis: "fast service for residents, tourists, and resort-area drivers",
     nearParks: true,
     metaTitle: "Roadside Assistance Kissimmee FL | 24/7 on US 192 and Near Disney",
     metaDescription:
