@@ -185,7 +185,7 @@ export default async function AreaPage({ params }: PageProps) {
             <div className="max-w-3xl">
               <div className="eyebrow">
                 <PhoneCall aria-hidden="true" size={16} />
-                Orlando emergency help
+                {`${area.name} emergency help`}
               </div>
               <h2 className="mt-5 text-4xl font-black text-white">
                 Roadside assistance in {area.name} when you need a direct call.
@@ -277,12 +277,10 @@ export default async function AreaPage({ params }: PageProps) {
                 Free vs. direct help
               </div>
               <h2 className="mt-5 text-4xl font-black text-white">
-                Road Rangers, memberships, and direct Orlando roadside assistance.
+                {`Road Rangers, memberships, and direct ${area.name} roadside assistance.`}
               </h2>
               <p className="mt-5 text-base leading-8 text-white/66">
-                Some Orlando drivers have a free or membership-backed option. The
-                important question is whether that option covers where your car is
-                actually stuck right now.
+                {`Some ${area.name} drivers have a free or membership-backed option. The important question is whether that option covers where your car is actually stuck right now.`}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href={site.phoneHref} className="btn btn-primary">
@@ -366,10 +364,10 @@ export default async function AreaPage({ params }: PageProps) {
                 Local FAQ
               </div>
               <h2 className="mt-5 text-4xl font-black text-white">
-                Orlando roadside assistance questions.
+                {`${area.name} roadside assistance questions.`}
               </h2>
               <p className="mt-5 text-base leading-8 text-white/66">
-                Straight answers for drivers searching from Orlando before they call.
+                {`Straight answers for drivers searching from ${area.name} before they call.`}
               </p>
             </div>
 
@@ -381,6 +379,56 @@ export default async function AreaPage({ params }: PageProps) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      ) : null}
+
+      {area.relatedLinks && area.relatedLinks.length > 0 ? (
+        <section className="section border-t border-white/10 bg-road-black">
+          <div className="container">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Route aria-hidden="true" size={16} />
+                Nearby help
+              </div>
+              <h2 className="mt-5 text-4xl font-black text-white">
+                {`More roadside help near ${area.name}.`}
+              </h2>
+            </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {area.relatedLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="card-solid group block p-5 transition hover:border-road-red/70"
+                >
+                  <h3 className="text-xl font-black text-white">{item.label}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/62">{item.description}</p>
+                </Link>
+              ))}
+            </div>
+            {area.sources && area.sources.items.length > 0 ? (
+              <div className="mt-10 border-t border-white/10 pt-6">
+                <p className="text-xs font-black uppercase text-white/48">
+                  {`Sources for the hours and figures on this page (read ${area.sources.readOn})`}
+                </p>
+                <ol className="mt-3 grid gap-2 text-xs leading-5 text-white/56">
+                  {area.sources.items.map((source) => (
+                    <li key={source.href}>
+                      <a
+                        href={source.href}
+                        className="underline decoration-white/30 underline-offset-2 hover:text-white"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {source.name}
+                      </a>
+                      {`: ${source.note}`}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ) : null}
           </div>
         </section>
       ) : null}
