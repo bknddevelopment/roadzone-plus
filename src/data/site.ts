@@ -1128,7 +1128,7 @@ export const areas: Area[] = [
       "24/7 roadside assistance in Kissimmee, FL: jump starts, spare tire changes, fuel, lockouts and wheel lock removal on US 192, at hotels and vacation homes. Who to call on each road, by hour.",
     heading: "24 hour roadside assistance in Kissimmee, FL.",
     intro:
-      "Need roadside assistance in Kissimmee, FL? RoadZone Plus takes calls 24 hours a day for jump starts, spare tire changes, emergency fuel, car lockouts, wheel lock removal, battery replacement and smart key help: on US 192, in hotel lots and vacation-home driveways, and on the roads around Walt Disney World. There is no membership and no app. Free Road Rangers patrol Florida's Turnpike and the toll roads; on US 192 and in the lots and driveways along it, RoadZone Plus is the direct call.",
+      "Need roadside assistance in Kissimmee, FL? RoadZone Plus takes calls 24 hours a day for jump starts, spare tire changes, emergency fuel, car lockouts, wheel lock removal, battery replacement and smart key help: on US 192, in hotel lots and vacation-home driveways, and on the roads around Walt Disney World. There is no membership and no app. Free Road Rangers patrol Florida's Turnpike and Central Florida's toll roads during set hours; on US 192 and in the lots and driveways along it, RoadZone Plus is the direct call.",
     coverage: [
       "US 192 (Irlo Bronson Memorial Hwy)",
       "Florida's Turnpike",
@@ -1145,10 +1145,10 @@ export const areas: Area[] = [
       {
         heading: "Florida's Turnpike: dial *347, any hour",
         body:
-          "Florida's Turnpike lists Road Ranger patrols on its mainline 24 hours a day, 7 days a week. At no charge they change a tire with your spare, bring up to 2 gallons of gas and give jump starts. Dial *347 from a cell phone. If the problem is bigger than that, or you have already left the Turnpike, call RoadZone Plus.",
+          "Florida's Turnpike lists Road Ranger patrols on the Turnpike itself, mileposts 0 to 308, 24 hours a day, 7 days a week. At no charge they change a tire with your spare, bring up to 2 gallons of gas and give jump starts. Dial *347 from a cell phone. If the problem is bigger than that, or you have already left the Turnpike, call RoadZone Plus.",
       },
       {
-        heading: "SR 417 and the other toll roads: *347 from 6 AM to 10 PM",
+        heading: "SR 417 and other CFX toll roads: *347 from 6 AM to 10 PM",
         body:
           "The Central Florida Expressway Authority lists Road Ranger hours of 6:00 AM to 10:00 PM, seven days a week, on its toll roads, including SR 417, SR 429 and SR 528. Between 10:00 PM and 6:00 AM, call RoadZone Plus.",
       },
@@ -1162,7 +1162,7 @@ export const areas: Area[] = [
       {
         heading: "What Road Rangers do, and where their help stops",
         body:
-          "FDOT describes Road Rangers as limited no-cost highway assistance: changing a flat, a jump start, emergency gas and two free local calls. When a repair is more than that, FDOT says the Road Ranger moves the car out of the travel lane and the Florida Highway Patrol calls a towing service at the driver's expense.",
+          "FDOT describes Road Rangers as limited no-cost highway assistance, including changing a flat, a jump start, emergency gas and two free local calls. When a repair is more than that, FDOT says the Road Ranger moves the car out of the travel lane and the Florida Highway Patrol calls a towing service at the driver's expense.",
       },
       {
         heading: "Visiting in a rental car",
@@ -1188,7 +1188,7 @@ export const areas: Area[] = [
       {
         question: "What are the Road Ranger hours near Kissimmee?",
         answer:
-          "Florida's Turnpike lists its mainline patrols at 24 hours a day, 7 days a week. The Central Florida Expressway Authority lists 6:00 AM to 10:00 PM, seven days a week, for its toll roads, including SR 417. Dial *347 from a cell phone on those roads. Off those roads, or on a toll road between 10:00 PM and 6:00 AM, call RoadZone Plus.",
+          "Florida's Turnpike lists its patrols on the Turnpike itself, mileposts 0 to 308, at 24 hours a day, 7 days a week. The Central Florida Expressway Authority lists 6:00 AM to 10:00 PM, seven days a week, for its toll roads, including SR 417. Dial *347 from a cell phone on those roads. Off those roads, or on a CFX toll road between 10:00 PM and 6:00 AM, call RoadZone Plus.",
       },
       {
         question: "Can you help at a Kissimmee hotel or vacation home?",
@@ -1206,8 +1206,8 @@ export const areas: Area[] = [
           "No. RoadZone Plus is call-first roadside help: one call, no annual plan and no app account.",
       },
       {
-        question: "Is RoadZone Plus part of Walt Disney World or a resort?",
-        answer: `No. RoadZone Plus is an independent roadside assistance company based at ${site.address.street}, ${site.address.city}, and is not affiliated with Walt Disney World or any resort.`,
+        question: "Is RoadZone Plus part of Walt Disney World?",
+        answer: `No. RoadZone Plus is an independent roadside assistance company based at ${site.address.street}, ${site.address.city}, and is not affiliated with Walt Disney World.`,
       },
     ],
     relatedLinks: [
@@ -1248,7 +1248,7 @@ export const areas: Area[] = [
         {
           name: "Florida's Turnpike: Road Rangers Safety Patrol",
           href: "https://floridasturnpike.com/traveler-resources/safety-and-assistance/road-rangers-safety-patrol/",
-          note: "mainline patrols 24 hours a day, 7 days a week; free tire change with your spare, up to 2 gallons of gas, jump starts; dial *347",
+          note: "Florida's Turnpike mileposts 0 to 308: 24 hours a day, 7 days a week; free tire change with your spare, up to 2 gallons of gas, jump starts; dial *347",
         },
         {
           name: "Central Florida Expressway Authority: Roadside Assistance",
