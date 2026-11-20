@@ -23,6 +23,9 @@ const moveOverLawLastModified = new Date("2026-11-08T00:00:00.000Z");
 const jumpStartCostLastModified = new Date("2026-11-12T00:00:00.000Z");
 const tireChangeCostLastModified = new Date("2026-11-19T00:00:00.000Z");
 const airportGuideLastModified = new Date("2026-11-19T00:00:00.000Z");
+const areaLastModified: Record<string, Date> = {
+  kissimmee: new Date("2026-11-20T00:00:00.000Z"),
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -94,6 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const areaRoutes = areas.map((area) => ({
     url: `${site.url}/areas/${area.slug}`,
+    lastModified: areaLastModified[area.slug],
     changeFrequency: "weekly" as const,
     priority: 0.75,
   }));

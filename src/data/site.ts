@@ -928,6 +928,13 @@ export type Area = {
   heading?: string;
   /** Flags resort-corridor cities so they link to the theme-park guide. */
   nearParks?: boolean;
+  /** Optional links to nearby RoadZone pages; the section renders only when set. */
+  relatedLinks?: Array<{ label: string; href: string; description: string }>;
+  /** Optional outside sources for hours and figures quoted on the page, with the day they were read. */
+  sources?: {
+    readOn: string;
+    items: Array<{ name: string; href: string; note: string }>;
+  };
 };
 
 export const areas: Area[] = [
@@ -1116,15 +1123,160 @@ export const areas: Area[] = [
     county: "Osceola County",
     emphasis: "fast service for residents, tourists, and resort-area drivers",
     nearParks: true,
+    metaTitle: "Roadside Assistance Kissimmee FL | 24/7 on US 192 and Near Disney",
+    metaDescription:
+      "24/7 roadside assistance in Kissimmee, FL: jump starts, spare tire changes, fuel, lockouts and wheel lock removal on US 192, at hotels and vacation homes. Who to call on each road, by hour.",
+    heading: "24 hour roadside assistance in Kissimmee, FL.",
     intro:
-      "Kissimmee runs along the US 192 tourist corridor near Walt Disney World, mixing residents, resort visitors, and rideshare drivers. RoadZone Plus helps locals and travelers stranded along the highways, hotels, and routes around Lake Tohopekaliga.",
+      "Need roadside assistance in Kissimmee, FL? RoadZone Plus takes calls 24 hours a day for jump starts, spare tire changes, emergency fuel, car lockouts, wheel lock removal, battery replacement and smart key help: on US 192, in hotel lots and vacation-home driveways, and on the roads around Walt Disney World. There is no membership and no app. Free Road Rangers patrol Florida's Turnpike and Central Florida's toll roads during set hours; on US 192 and in the lots and driveways along it, RoadZone Plus is the direct call.",
     coverage: [
       "US 192 (Irlo Bronson Memorial Hwy)",
       "Florida's Turnpike",
+      "SR 417 (Central Florida GreeneWay)",
       "John Young Parkway",
-      "Near Walt Disney World",
+      "Osceola Parkway",
+      "Old Town Kissimmee",
       "Downtown Kissimmee",
+      "Lake Tohopekaliga lakefront",
+      "Kissimmee Gateway Airport",
+      "Hotels and vacation homes near Walt Disney World",
     ],
+    emergencyNotes: [
+      {
+        heading: "Florida's Turnpike: dial *347, any hour",
+        body:
+          "Florida's Turnpike lists Road Ranger patrols on the Turnpike itself, mileposts 0 to 308, 24 hours a day, 7 days a week. At no charge they change a tire with your spare, bring up to 2 gallons of gas and give jump starts. Dial *347 from a cell phone. If the problem is bigger than that, or you have already left the Turnpike, call RoadZone Plus.",
+      },
+      {
+        heading: "SR 417 and other CFX toll roads: *347 from 6 AM to 10 PM",
+        body:
+          "The Central Florida Expressway Authority lists Road Ranger hours of 6:00 AM to 10:00 PM, seven days a week, on its toll roads, including SR 417, SR 429 and SR 528. Between 10:00 PM and 6:00 AM, call RoadZone Plus.",
+      },
+      {
+        heading: "US 192, hotel lots and vacation homes: call RoadZone Plus",
+        body:
+          "FDOT's I-4 project site lists Central Florida's Road Ranger routes as I-4, I-4 Express, I-95, I-75, the Central Florida Expressway toll roads and Florida's Turnpike. US 192, John Young Parkway, hotel parking lots and vacation-home driveways are not on that list, so RoadZone Plus is the call there, day or night.",
+      },
+    ],
+    freeAssistanceNotes: [
+      {
+        heading: "What Road Rangers do, and where their help stops",
+        body:
+          "FDOT describes Road Rangers as limited no-cost highway assistance, including changing a flat, a jump start, emergency gas and two free local calls. When a repair is more than that, FDOT says the Road Ranger moves the car out of the travel lane and the Florida Highway Patrol calls a towing service at the driver's expense.",
+      },
+      {
+        heading: "Visiting in a rental car",
+        body:
+          "Experience Kissimmee reports that visits to Osceola County grew from 6.1 million to 10.4 million since 2015. If you are one of those visitors and the rental will not start, has a flat or is locked with the keys inside, RoadZone Plus can help: have the rental company, the plate and the exact lot ready. A lost rental key is different, because the rental company controls replacement keys for its fleet.",
+      },
+      {
+        heading: "Give the exact Kissimmee location",
+        body:
+          "Share the hotel name or vacation-home community and street, the nearest US 192 cross street, or your Turnpike direction and the last exit you passed. That matters more than the words you searched, because the technician has to find the car.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is there 24 hour roadside assistance in Kissimmee, FL?",
+        answer: `Yes. RoadZone Plus takes roadside calls 24 hours a day, 7 days a week in Kissimmee and nearby Celebration and Lake Buena Vista: jump starts, spare tire changes, emergency fuel, car lockouts, wheel lock removal, battery replacement and smart key help. Call ${site.phoneDisplay}, say what happened and where the car is.`,
+      },
+      {
+        question: "Do Road Rangers patrol US 192 in Kissimmee?",
+        answer:
+          "US 192 is not on their route list. FDOT's I-4 project site lists Central Florida's Road Ranger routes as I-4, I-4 Express, I-95, I-75, the Central Florida Expressway toll roads and Florida's Turnpike. On US 192, at hotels and at vacation homes, call RoadZone Plus.",
+      },
+      {
+        question: "What are the Road Ranger hours near Kissimmee?",
+        answer:
+          "Florida's Turnpike lists its patrols on the Turnpike itself, mileposts 0 to 308, at 24 hours a day, 7 days a week. The Central Florida Expressway Authority lists 6:00 AM to 10:00 PM, seven days a week, for its toll roads, including SR 417. Dial *347 from a cell phone on those roads. Off those roads, or on a CFX toll road between 10:00 PM and 6:00 AM, call RoadZone Plus.",
+      },
+      {
+        question: "Can you help at a Kissimmee hotel or vacation home?",
+        answer:
+          "Yes. Give the property or community name, the street and unit, and the nearest US 192 cross street or landmark, and the technician comes to the car in the lot or driveway.",
+      },
+      {
+        question: "Can you help with a rental car near Disney?",
+        answer:
+          "Yes, for a lockout, a dead battery, a flat with a usable spare, or an empty tank. Have the rental company, the plate and the exact lot ready. If the rental key is lost rather than locked inside, the rental company controls replacement keys.",
+      },
+      {
+        question: "Do I need a membership or an app for roadside help in Kissimmee?",
+        answer:
+          "No. RoadZone Plus is call-first roadside help: one call, no annual plan and no app account.",
+      },
+      {
+        question: "Is RoadZone Plus part of Walt Disney World?",
+        answer: `No. RoadZone Plus is an independent roadside assistance company based at ${site.address.street}, ${site.address.city}, and is not affiliated with Walt Disney World.`,
+      },
+    ],
+    relatedLinks: [
+      {
+        label: "Roadside help near Disney World",
+        href: "/roadside-assistance-near-disney-world-resort",
+        description: "Who to call at the parks and Disney Springs, and where Disney's own Car Care Center stops.",
+      },
+      {
+        label: "Locked keys in a rental car",
+        href: "/locked-keys-in-rental-car-orlando",
+        description: "What to have ready, and when the rental company is the right call instead.",
+      },
+      {
+        label: "Orlando airport roadside help",
+        href: "/orlando-airport-roadside-assistance",
+        description: "Who to call at MCO by place and hour, and where each rental company hands out cars.",
+      },
+      {
+        label: "Florida's Turnpike roadside help",
+        href: "/roadside-assistance-florida-turnpike-orlando",
+        description: "Stuck on the Turnpike near Orlando: what Road Rangers cover and when to call us.",
+      },
+      {
+        label: "Celebration roadside assistance",
+        href: "/areas/celebration",
+        description: "The community next to Walt Disney World, off US 192 and World Drive.",
+      },
+      {
+        label: "Lake Buena Vista roadside assistance",
+        href: "/areas/lake-buena-vista",
+        description: "Disney Springs, Hotel Plaza Boulevard and the hotels right off I-4.",
+      },
+    ],
+    sources: {
+      readOn: "November 20, 2026",
+      items: [
+        {
+          name: "Florida's Turnpike: Road Rangers Safety Patrol",
+          href: "https://floridasturnpike.com/traveler-resources/safety-and-assistance/road-rangers-safety-patrol/",
+          note: "Florida's Turnpike mileposts 0 to 308: 24 hours a day, 7 days a week; free tire change with your spare, up to 2 gallons of gas, jump starts; dial *347",
+        },
+        {
+          name: "Central Florida Expressway Authority: Roadside Assistance",
+          href: "https://www.cfxway.com/for-travelers/traveler-help-center/roadside-assistance/",
+          note: "Road Rangers on SR 408, 417, 414, 429, 528 and 451, 6:00 AM to 10:00 PM, seven days a week",
+        },
+        {
+          name: "FDOT: Road Rangers",
+          href: "https://www.fdot.gov/traffic/cvotim/tim/roadrangers/home.htm",
+          note: "limited no-cost highway assistance: flat tires, jump starts, emergency gasoline, two free local calls; call *347",
+        },
+        {
+          name: "FDOT: Road Ranger frequently asked questions",
+          href: "https://www.fdot.gov/traffic/cvotim/tim/roadrangers/faq.htm",
+          note: "no charge to motorists; when a repair exceeds their services, FHP calls a towing service at the motorist's expense",
+        },
+        {
+          name: "I-4 Beyond (FDOT): Road Rangers, Heroes of the Highway",
+          href: "https://i4beyond.com/road-rangers-heroes-of-the-highway/",
+          note: "Central Florida routes: I-4, I-4 Express, I-95, I-75, CFX roadways and Florida's Turnpike",
+        },
+        {
+          name: "Experience Kissimmee: Kissimmee at a Glance",
+          href: "https://www.experiencekissimmee.com/partners/kissimmee-at-a-glance",
+          note: "visitation to Osceola County up from 6.1 million to 10.4 million since 2015",
+        },
+      ],
+    },
   },
   {
     slug: "celebration",
