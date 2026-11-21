@@ -19,8 +19,9 @@ const path = "/car-key-replacement-cost-orlando";
 const title = "Car Key Replacement Cost in Orlando (2026 Guide)";
 const description =
   "What car key replacement costs in 2026: published ranges for basic, transponder, flip, laser-cut and smart keys, dealer vs locksmith, lost-key costs, and Orlando next steps.";
-const updatedIso = "2026-10-23";
-const updatedLabel = "October 23, 2026";
+const publishedIso = "2026-10-23";
+const updatedIso = "2026-11-20";
+const updatedLabel = "November 20, 2026";
 
 export const metadata: Metadata = {
   title,
@@ -272,14 +273,29 @@ const faqs = [
       "It depends on the key. Published 2025 ranges run from under $10 to copy a basic metal key to about $200–$500 for a push-to-start smart key. A transponder (chip) key is about $125–$250 and a flip or switchblade key about $150–$300 (Kelley Blue Book, Carfax, AutoZone). These are national ranges, not RoadZone Plus prices.",
   },
   {
+    question: "How much does it cost to get a second key for a car?",
+    answer:
+      "With a working key in hand, it depends on the key type. Carfax says copying an old metal key at a hardware store should cost less than $10. A key with a chip or a remote also has to be programmed, so the ranges in the table above apply, for example $125–$250 for a transponder key (Kelley Blue Book). AutoZone notes that a spare for a modern key is not as simple as buying a key blank, and Kelley Blue Book says some locksmiths can program specific keys but will likely need a second, functioning fob to do it. Edmunds' advice is to get the spare now, on your terms, rather than in an emergency. These are published national figures, not RoadZone Plus prices.",
+  },
+  {
+    question: "How much does it cost to get a key cut?",
+    answer:
+      "For a basic metal key with no chip, there is nothing to program. Carfax says copying an old metal key at a hardware store should cost less than $10, Kelley Blue Book lists $5–$15 for a basic mechanical key, and AutoZone puts a traditional key replacement at $25–$100. A transponder, remote or smart key costs more because it must also be programmed, and Carfax says you could pay a lot more if the key is laser cut. AutoZone's own guide says it does not currently provide key cutting or programming. These are published national figures, not RoadZone Plus prices.",
+  },
+  {
+    question: "What is a transponder key?",
+    answer:
+      "A car key with a security chip built in. Carfax explains that the chip emits a signal to the car's ignition and door locks, which lets the door unlock and the car start, and AutoZone says the chip adds an extra layer of security. A new transponder key has to be programmed to your car: Kelley Blue Book lists $50–$100 for the key plus $75–$150 to program it, $125–$250 in all, and AutoZone puts a transponder key replacement at $100–$250.",
+  },
+  {
     question: "How much is it to replace a car key if I lost all my keys?",
     answer:
       "Carfax puts a lost smart key at $220 to $500. Other keys follow the ranges in the table above: about $125 to $250 for a transponder (chip) key and $150 to $300 for a flip key (Kelley Blue Book). With no working key, Carfax says you may also need a tow to the dealer and proof of ownership, and AutoZone says tows start around $50. Edmunds warns that replacing the locks after losing every key can cost close to $1,000. These are published national figures, not RoadZone Plus prices.",
   },
   {
-    question: "Can AutoZone replace my car key?",
+    question: "Can AutoZone make a key without the original?",
     answer:
-      "AutoZone's own key-cost guide (June 2025) says it does not currently provide key cutting or programming services. Call your local store before you go.",
+      "No. AutoZone's own key-cost guide says it does not currently provide key cutting and programming services. Without the original, Carfax says an automotive locksmith may still be able to make a new key if you give the model and year and prove you own the car, and Edmunds says a key can be made from the VIN with proof of ownership. Call your local store before you go.",
   },
   {
     question: "Can I replace a key fob myself?",
@@ -352,7 +368,7 @@ export default function CarKeyReplacementCostPage() {
     name: title,
     headline: "How Much Does Car Key Replacement Cost in Orlando?",
     description,
-    datePublished: updatedIso,
+    datePublished: publishedIso,
     dateModified: updatedIso,
     primaryImageOfPage: {
       "@type": "ImageObject",

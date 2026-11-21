@@ -13,7 +13,7 @@ import {
 const serviceNightRentalSlugs = new Set<string>(Object.keys(nightRentalGuides));
 
 const disneyCarCareLastModified = new Date("2026-11-19T00:00:00.000Z");
-const carKeyCostLastModified = new Date("2026-10-23T00:00:00.000Z");
+const carKeyCostLastModified = new Date("2026-11-20T00:00:00.000Z");
 const batteryCostLastModified = new Date("2026-10-25T00:00:00.000Z");
 const turnpikeLastModified = new Date("2026-10-28T00:00:00.000Z");
 const coldStartLastModified = new Date("2026-11-03T00:00:00.000Z");
