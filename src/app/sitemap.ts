@@ -25,6 +25,7 @@ const tireChangeCostLastModified = new Date("2026-11-19T00:00:00.000Z");
 const airportGuideLastModified = new Date("2026-11-19T00:00:00.000Z");
 const areaLastModified: Record<string, Date> = {
   kissimmee: new Date("2026-11-20T00:00:00.000Z"),
+  sanford: new Date("2026-11-22T00:00:00.000Z"),
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
