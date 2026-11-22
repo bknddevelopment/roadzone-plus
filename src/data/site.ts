@@ -1148,9 +1148,9 @@ export const areas: Area[] = [
           "Florida's Turnpike lists Road Ranger patrols on the Turnpike itself, mileposts 0 to 308, 24 hours a day, 7 days a week. At no charge they change a tire with your spare, bring up to 2 gallons of gas and give jump starts. Dial *347 from a cell phone. If the problem is bigger than that, or you have already left the Turnpike, call RoadZone Plus.",
       },
       {
-        heading: "SR 417 and other CFX toll roads: *347 from 6 AM to 10 PM",
+        heading: "SR 417 and other CFX toll roads: Road Rangers 6 AM to 10 PM",
         body:
-          "The Central Florida Expressway Authority lists Road Ranger hours of 6:00 AM to 10:00 PM, seven days a week, on its toll roads, including SR 417, SR 429 and SR 528. Between 10:00 PM and 6:00 AM, call RoadZone Plus.",
+          "The Central Florida Expressway Authority lists Road Ranger hours of 6:00 AM to 10:00 PM, seven days a week, on its toll roads, including SR 417, SR 429 and SR 528. Between 10:00 PM and 6:00 AM no Road Ranger patrol is listed there, so call RoadZone Plus for the car.",
       },
       {
         heading: "US 192, hotel lots and vacation homes: call RoadZone Plus",
@@ -1188,7 +1188,7 @@ export const areas: Area[] = [
       {
         question: "What are the Road Ranger hours near Kissimmee?",
         answer:
-          "Florida's Turnpike lists its patrols on the Turnpike itself, mileposts 0 to 308, at 24 hours a day, 7 days a week. The Central Florida Expressway Authority lists 6:00 AM to 10:00 PM, seven days a week, for its toll roads, including SR 417. Dial *347 from a cell phone on those roads. Off those roads, or on a CFX toll road between 10:00 PM and 6:00 AM, call RoadZone Plus.",
+          "Florida's Turnpike lists its patrols on the Turnpike itself, mileposts 0 to 308, at 24 hours a day, 7 days a week. The Central Florida Expressway Authority lists Road Ranger hours of 6:00 AM to 10:00 PM, seven days a week, for its toll roads, including SR 417. Dial *347 from a cell phone on those roads. Off those roads, or on a CFX toll road between 10:00 PM and 6:00 AM, when no patrol is listed there, call RoadZone Plus.",
       },
       {
         question: "Can you help at a Kissimmee hotel or vacation home?",
