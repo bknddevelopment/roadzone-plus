@@ -1360,15 +1360,177 @@ export const areas: Area[] = [
     name: "Sanford",
     county: "Seminole County",
     emphasis: "north metro roadside assistance near major commuter routes",
+    metaTitle: "Roadside Assistance Sanford FL | 24/7 Jump Starts, Tires and Fuel",
+    metaDescription:
+      "24/7 roadside assistance in Sanford, FL: jump starts, spare tire changes, emergency fuel and lockouts on I-4, SR 417 and US 17-92, at SFB and the Auto Train station. Who to call, by road and hour.",
+    heading: "24 hour roadside assistance in Sanford, FL.",
     intro:
-      "Sanford sits on the shores of Lake Monroe in north Seminole County, anchored by a historic downtown and Orlando Sanford International Airport. RoadZone Plus covers the commuter routes along I-4 and SR 417 where north-metro drivers need roadside help.",
+      "Need roadside assistance in Sanford, FL? RoadZone Plus answers calls 24 hours a day for jump starts, spare tire changes, emergency fuel delivery, car lockouts, wheel lock removal, battery replacement and smart key help. We come to I-4 and SR 417, US 17-92, downtown Sanford and Lake Monroe, the rental car lots at Orlando Sanford International Airport and the Amtrak Auto Train station. You need no membership and no app. Free Road Rangers work I-4 and the Seminole Expressway (SR 417); on SR 417, Florida's Turnpike lists their hours as 6:00 AM to 10:00 PM. Off those highways, and on SR 417 overnight, call RoadZone Plus directly.",
     coverage: [
       "Interstate 4 (I-4)",
-      "SR 417 (GreeneWay)",
-      "Orlando Sanford International Airport",
-      "Lake Monroe / Downtown Sanford",
+      "SR 417 (Seminole Expressway)",
       "US 17-92",
+      "Lake Monroe / Downtown Sanford",
+      "Orlando Sanford International Airport (SFB) rental car lots",
+      "Amtrak Auto Train station, 600 S Persimmon Ave",
     ],
+    emergencyNotes: [
+      {
+        heading: "SR 417 Seminole Expressway: *347 from 6 AM to 10 PM only",
+        body:
+          "Florida's Turnpike Enterprise runs the Seminole Expressway, the 17-mile northern leg of SR 417 that ends at I-4 in Sanford. It lists Road Ranger patrols there, mileposts 38 to 55, from 6:00 AM to 10:00 PM, 7 days a week. Inside those hours, dial *347: the free help it lists is a tire change with your spare, up to 2 gallons of gas, a jump start, a water refill, or a minor repair that takes less than 15 minutes. From 10:00 PM to 6:00 AM no patrol is listed, so call RoadZone Plus.",
+      },
+      {
+        heading: "I-4 through Sanford: dial *FHP (*347)",
+        body:
+          "FDOT's I-4 Beyond site says Road Rangers patrol I-4, and that calling *FHP (*347) reaches a dispatcher who can send a trooper or a Road Ranger. Have your direction of travel and the last exit or landmark ready. FDOT also notes that Road Ranger availability varies across the state. Once you are off the interstate at a Sanford exit, a gas station or a parking lot, call RoadZone Plus.",
+      },
+      {
+        heading: "US 17-92, downtown streets and driveways: call RoadZone Plus",
+        body:
+          "I-4 Beyond lists Central Florida's Road Ranger routes as I-4, I-4 Express, I-95, I-75, the Central Florida Expressway toll roads and Florida's Turnpike. US 17-92, the streets around Lake Monroe and downtown, apartment lots and home driveways are not on it. There, any hour of the day, RoadZone Plus is the call.",
+      },
+    ],
+    freeAssistanceNotes: [
+      {
+        heading: "Free highway help, and where it ends",
+        body:
+          "FDOT calls the Road Ranger patrol limited no-cost highway assistance. Its list of services includes changing a flat, a jump start or a minor repair, emergency gasoline, diesel or water, and two free local calls. Its FAQ adds that when a repair goes beyond that, the Road Ranger moves the car out of the travel lane and the Florida Highway Patrol contacts a towing service at the driver's expense. A dead battery in your own driveway or a store lot is outside that highway patrol.",
+      },
+      {
+        heading: "Picking up a rental at Orlando Sanford International Airport",
+        body:
+          "SFB lists seven on-site rental companies: Alamo, Avis, Budget, Dollar, Enterprise, Hertz and National, plus Florida Van Rentals off site by shuttle. Pick-up is across the street from the terminal in the Welcome Center; Alamo, National and Enterprise are in the Alamo building south of it. If the rental has a flat, will not start, or has its keys locked inside, tell us the company, the plate and the lot. A lost rental key goes to the rental company, which controls the keys for its fleet.",
+      },
+      {
+        heading: "Coming off the Amtrak Auto Train",
+        body:
+          "Amtrak's Auto Train carries you and your car nonstop between Lorton, Virginia and Sanford, a trip Amtrak lists at 17 hours 29 minutes. The Sanford station is at 600 South Persimmon Avenue, with a waiting room open 8:30 AM to 3:30 PM and no station parking, according to Amtrak. If your car will not start or has a flat tire when you collect it, call RoadZone Plus and give the station address.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is there 24 hour roadside assistance in Sanford, FL?",
+        answer: `Yes. RoadZone Plus takes roadside calls in Sanford 24 hours a day, 7 days a week: jump starts, spare tire changes, emergency fuel delivery, car lockouts, wheel lock removal, battery replacement and smart key help. Call ${site.phoneDisplay} and tell us what happened and where the car is.`,
+      },
+      {
+        question: "I ran out of gas in Sanford. Can someone bring fuel?",
+        answer:
+          "Yes. RoadZone Plus brings emergency fuel to the car, on a highway shoulder, a city street or a parking lot. On the Seminole Expressway between 6:00 AM and 10:00 PM, Florida's Turnpike also lists free Road Ranger help of up to 2 gallons of gas; dial *347.",
+      },
+      {
+        question: "Is there a free jump start service in Sanford?",
+        answer:
+          "On the highways Road Rangers patrol, yes: FDOT lists jump starts among its no-cost services, and on SR 417 near Sanford Florida's Turnpike lists patrol hours of 6:00 AM to 10:00 PM. In a driveway, a parking lot or on a city street, Road Rangers do not come, and RoadZone Plus is the direct call.",
+      },
+      {
+        question: "What are the Road Ranger hours on SR 417 near Sanford?",
+        answer:
+          "Florida's Turnpike lists 6:00 AM to 10:00 PM, 7 days a week, for the Seminole Expressway (SR 417), mileposts 38 to 55. Outside those hours, call RoadZone Plus.",
+      },
+      {
+        question: "Can you help with a rental car at Orlando Sanford airport?",
+        answer:
+          "Yes, for a lockout, a dead battery, a flat with a usable spare, or an empty tank. Tell us the rental company, the plate and whether you are at the Welcome Center or the Alamo building. If the key is lost rather than locked inside, call the rental company first.",
+      },
+      {
+        question: "Can you come to the Auto Train station in Sanford?",
+        answer:
+          "Yes. Give the address, 600 South Persimmon Avenue, and say where the car is when you call. Amtrak lists no station parking, so tell us if you have moved the car to a nearby street or lot.",
+      },
+      {
+        question: "Do I need a membership or an app for roadside help in Sanford?",
+        answer:
+          "No. RoadZone Plus works by phone: one call, no yearly plan and no app account.",
+      },
+    ],
+    relatedLinks: [
+      {
+        label: "Emergency fuel delivery",
+        href: "/services/fuel-delivery",
+        description: "Fuel brought to the car when the tank runs dry, any hour.",
+      },
+      {
+        label: "Jump start service",
+        href: "/services/jumpstart",
+        description: "A dead battery at home, at work or in a parking lot.",
+      },
+      {
+        label: "Ran out of gas on I-4",
+        href: "/ran-out-of-gas-on-i-4-orlando",
+        description: "What to do first when the tank runs dry on the interstate.",
+      },
+      {
+        label: "Locked keys in a rental car",
+        href: "/locked-keys-in-rental-car-orlando",
+        description: "What to have ready, and when the rental company is the right call instead.",
+      },
+      {
+        label: "Oviedo roadside assistance",
+        href: "/areas/oviedo",
+        description: "South along SR 417, near UCF and Red Bug Lake Road.",
+      },
+      {
+        label: "Altamonte Springs roadside assistance",
+        href: "/areas/altamonte-springs",
+        description: "South down I-4 in Seminole County.",
+      },
+    ],
+    sources: {
+      readOn: "November 22, 2026",
+      items: [
+        {
+          name: "Florida's Turnpike: Road Rangers Safety Patrol",
+          href: "https://floridasturnpike.com/traveler-resources/safety-and-assistance/road-rangers-safety-patrol/",
+          note: "SR 417 Seminole Expressway, mileposts 38 to 55: 6am to 10pm, 7 days a week; free tire changes with your spare, up to 2 gallons of gas, jump starts, water refills and minor repairs under 15 minutes; dial *347",
+        },
+        {
+          name: "Wikipedia: Florida State Road 417",
+          href: "https://en.wikipedia.org/wiki/Florida_State_Road_417",
+          note: "the Seminole Expressway section, run by Florida's Turnpike Enterprise, is 17 miles long and extends to an interchange with I-4 in Sanford",
+        },
+        {
+          name: "I-4 Beyond (FDOT): Road Rangers, Heroes of the Highway",
+          href: "https://i4beyond.com/road-rangers-heroes-of-the-highway/",
+          note: "Central Florida routes: I-4, I-4 Express, I-95, I-75, CFX roadways and Florida's Turnpike",
+        },
+        {
+          name: "I-4 Beyond (FDOT): Need Help on the Road? Know Who to Call",
+          href: "https://i4beyond.com/need-help-on-the-road-know-who-to-call/",
+          note: "*FHP (*347) connects you with a dispatcher who can send an FHP trooper or Road Ranger",
+        },
+        {
+          name: "FDOT: Road Rangers",
+          href: "https://www.fdot.gov/traffic/cvotim/tim/roadrangers/home.htm",
+          note: "limited no-cost highway assistance; services can include changing flat tires, jump-starts and minor repairs, emergency gasoline, diesel and water, and two free local calls",
+        },
+        {
+          name: "FDOT: Road Ranger frequently asked questions",
+          href: "https://www.fdot.gov/traffic/cvotim/tim/roadrangers/faq.htm",
+          note: "no charge to motorists; availability varies throughout the state; FHP calls a towing service at the motorist's expense when a repair exceeds their services",
+        },
+        {
+          name: "Orlando Sanford International Airport: Rental Cars",
+          href: "https://flysfb.com/parking-transportation/rental-cars/",
+          note: "on-site: Alamo, Avis, Budget, Dollar, Enterprise, Hertz, National; off-site via shuttle: Florida Van Rentals",
+        },
+        {
+          name: "Orlando Sanford International Airport: Taxis, Shuttles and Rides",
+          href: "https://flysfb.com/taxis-shuttles-rides/",
+          note: "rental car pick-up across the street from the terminal in the Welcome Center; Alamo, National and Enterprise in the Alamo building south of it",
+        },
+        {
+          name: "Amtrak: Auto Train",
+          href: "https://www.amtrak.com/auto-train",
+          note: "Lorton, VA to Sanford, FL, nonstop with your car; 17 hours 29 minutes",
+        },
+        {
+          name: "Amtrak: Sanford, FL Auto Train Station (SFA)",
+          href: "https://www.amtrak.com/stations/sfa",
+          note: "600 South Persimmon Avenue; waiting room 8:30 AM to 3:30 PM; station parking is not available",
+        },
+      ],
+    },
   },
 ];
 
