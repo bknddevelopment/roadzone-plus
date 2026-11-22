@@ -1376,9 +1376,9 @@ export const areas: Area[] = [
     ],
     emergencyNotes: [
       {
-        heading: "SR 417 Seminole Expressway: *347 from 6 AM to 10 PM only",
+        heading: "SR 417 Seminole Expressway: Road Rangers 6 AM to 10 PM only",
         body:
-          "Florida's Turnpike Enterprise runs the Seminole Expressway, the 17-mile northern leg of SR 417 that ends at I-4 in Sanford. It lists Road Ranger patrols there, mileposts 38 to 55, from 6:00 AM to 10:00 PM, 7 days a week. Inside those hours, dial *347: the free help it lists is a tire change with your spare, up to 2 gallons of gas, a jump start, a water refill, or a minor repair that takes less than 15 minutes. From 10:00 PM to 6:00 AM no patrol is listed, so call RoadZone Plus.",
+          "Florida's Turnpike Enterprise runs the Seminole Expressway, the 17-mile northern leg of SR 417 that ends at I-4 in Sanford. It lists Road Ranger patrols there, mileposts 38 to 55, from 6:00 AM to 10:00 PM, 7 days a week, and the free help it lists is a tire change with your spare, up to 2 gallons of gas, a jump start, a water refill, or a minor repair that takes less than 15 minutes. From 10:00 PM to 6:00 AM no Road Ranger patrol is listed there, so call RoadZone Plus for the car. FDOT's I-4 Beyond site gives *FHP (*347) as the number to call for a disabled vehicle on the roadside; it connects you with a dispatcher who can send an FHP trooper or Road Ranger.",
       },
       {
         heading: "I-4 through Sanford: dial *FHP (*347)",
@@ -1426,7 +1426,7 @@ export const areas: Area[] = [
       {
         question: "What are the Road Ranger hours on SR 417 near Sanford?",
         answer:
-          "Florida's Turnpike lists 6:00 AM to 10:00 PM, 7 days a week, for the Seminole Expressway (SR 417), mileposts 38 to 55. Outside those hours, call RoadZone Plus.",
+          "Florida's Turnpike lists Road Ranger hours of 6:00 AM to 10:00 PM, 7 days a week, for the Seminole Expressway (SR 417), mileposts 38 to 55. Outside those hours no patrol is listed there, so call RoadZone Plus.",
       },
       {
         question: "Can you help with a rental car at Orlando Sanford airport?",
