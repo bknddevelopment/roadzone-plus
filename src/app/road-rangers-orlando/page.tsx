@@ -150,6 +150,14 @@ const roadHours: RoadHours[] = [
   },
 ];
 
+const areaLinks = [
+  { href: "/areas/kissimmee", label: "Kissimmee" },
+  { href: "/areas/celebration", label: "Celebration" },
+  { href: "/areas/lake-buena-vista", label: "Lake Buena Vista" },
+  { href: "/areas/orlando", label: "Orlando" },
+  { href: "/areas/sanford", label: "Sanford" },
+];
+
 const whatTheyDo = [
   "Change flat tires. Florida's Turnpike lists this as a tire change with the vehicle's own spare.",
   "Jump-start vehicles and make minor repairs. Florida's Turnpike lists minor emergency repairs that can be completed in less than 15 minutes.",
@@ -604,6 +612,20 @@ export default function RoadRangersOrlandoPage() {
             CFX adds that its Road Rangers follow the Florida Highway Patrol in suspending patrols
             when sustained winds reach 45 mph or more. On I-4 the exit numbers follow the mile
             markers: exit 64, for example, is at mile 64.2.
+          </p>
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-white/66">
+            RoadZone Plus area guides near these exits:{" "}
+            {areaLinks.map((area, index) => (
+              <span key={area.href}>
+                <Link
+                  href={area.href}
+                  className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+                >
+                  {area.label}
+                </Link>
+                {index < areaLinks.length - 2 ? ", " : index === areaLinks.length - 2 ? " and " : "."}
+              </span>
+            ))}
           </p>
         </div>
       </section>
