@@ -91,7 +91,7 @@ const sources = {
     name: "CAA-Quebec: Starting your car in cold weather: Tips and best methods (updated October 28, 2025; read November 23, 2026)",
     short: "CAA-Quebec",
     href: "https://www.caaquebec.com/en/advices/maintaining-a-vehicle/starting-your-car-in-cold-weather",
-    note: "Written for Quebec winters down to -30°C, under \"Limit your start attempts when the engine is frozen\": first, consult your vehicle's manual for the specific cold-weather starting procedure; each attempt to start your car should last no more than eight to ten seconds; after three or four failed attempts, contact Roadside Assistance or a towing service. Mineral oil can thicken like molasses in freezing temperatures; a low fuel level increases the risk of condensation and ice buildup in the fuel lines.",
+    note: "Written for Quebec winters down to -30°C, under \"Limit your start attempts when the engine is frozen\": first, consult your vehicle's manual for the specific cold-weather starting procedure; each attempt to start your car should last no more than eight to ten seconds; after three or four failed attempts, contact Roadside Assistance or a towing service. A block heater makes winter starts easier. Mineral oil can thicken like molasses in freezing temperatures; a low fuel level increases the risk of condensation and ice buildup in the fuel lines.",
   },
   aaaNewEngland: {
     name: "AAA Northern New England: Prepare Yourself and Your Vehicle for the Cold (December 15, 2016; read November 3, 2026)",
@@ -590,7 +590,7 @@ const faqs = [
   {
     question: "Do frozen fuel lines or thick oil stop cars in Orlando?",
     answer:
-      "Not at Orlando temperatures. Those causes appear in national guides written for mornings near 0°F. The National Weather Service F-6 reports for Orlando International show a lowest reading of 24°F, on February 1, 2026; January 2026 bottomed at 31°F and January 2025 at 38°F. If an Orlando car will not start on a cold morning, the battery, its connections or the starter are where the answer almost always is.",
+      "They are not the first place to look. CAA-Quebec names thick oil and ice in the fuel lines as freezing-weather risks, writing for Quebec winters down to -30°C. The National Weather Service F-6 reports for Orlando International show a lowest reading of 24°F, on February 1, 2026; January 2026 bottomed at 31°F and January 2025 at 38°F. AAA says the battery is the first thing to check, so if an Orlando car will not start on a cold morning, start with the battery, its connections and the starter.",
   },
   {
     question: "How long do car batteries last in Florida?",
@@ -985,12 +985,13 @@ export default function CarWontStartInColdPage() {
             ))}
           </div>
           <p className="mt-8 max-w-3xl text-sm leading-7 text-white/60">
-            Frozen fuel lines, block heaters and thickened engine oil fill the national
-            guides because they are written for 0°F. The coldest Orlando International got in
-            the two winters these reports cover was 24°F, on February 1, 2026. On an Orlando cold morning
-            the question is the battery, its terminals and the starter, in that order.
+            CAA-Quebec&apos;s advice on block heaters, oil that thickens like molasses and ice
+            in the fuel lines is written for Quebec winters down to -30°C. The coldest Orlando
+            International got in the two winters these reports cover was 24°F, on February 1,
+            2026. AAA says the battery is the first thing to check, so on an Orlando cold morning
+            start with the battery, its terminals and the starter.
           </p>
-          <SourceTags keys={["nwsFeb2026", "nwsJan2026", "nwsJan2025"]} />
+          <SourceTags keys={["caaQuebec", "nwsFeb2026", "nwsJan2026", "nwsJan2025", "aaaReasons"]} />
         </div>
       </section>
 
