@@ -94,7 +94,7 @@ const roadHours: RoadHours[] = [
     stretch:
       "From the Beachline (exit 72) through Sand Lake Road (exit 74A), Universal (exits 74B and 75A), Kirkman Road (exit 75B) and the Turnpike junction (exit 77) to Lake Mary and Heathrow (exit 98).",
     hours: "24 hours a day, every day of the week.",
-    plain: "The only stretch of I-4 near Orlando that FDOT lists around the clock.",
+    plain: "Of the I-4 stretches from Four Corners to DeLand, the only one FDOT lists around the clock.",
     source: "FDOT Road Ranger coverage map",
   },
   {
@@ -174,7 +174,7 @@ const whereHelpStops = [
   },
   {
     title: "Outside their hours",
-    text: "Away from I-4 between exits 72 and 98 and the Turnpike itself, the listed patrols stop at night. The hours by road are above.",
+    text: "Away from I-4 between exits 72 and 98 and the Turnpike mainline, most listed patrols around Orlando stop at night. The hours by road are above.",
   },
   {
     title: "Without a spare",
