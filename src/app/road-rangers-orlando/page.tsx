@@ -19,7 +19,7 @@ import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 
 const title = "Road Rangers Orlando FL: Free Roadside Help, *347 & Hours";
 const description =
-  "Florida Road Rangers are free: dial *347 from a cell phone. Hours by road around Orlando (I-4, the Turnpike, toll roads), what they do, and who to call off their routes.";
+  "Florida Road Rangers give free highway roadside assistance: dial *347 from a cell phone. Hours by road around Orlando, and who to call off their routes.";
 
 const path = "/road-rangers-orlando";
 const checkedOn = "November 23, 2026";
