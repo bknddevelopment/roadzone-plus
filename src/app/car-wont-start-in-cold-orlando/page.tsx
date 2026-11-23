@@ -79,7 +79,7 @@ const sources = {
     name: "AAA Automotive: 14 Reasons Why Your Car Won't Start (read November 3 and November 23, 2026)",
     short: "AAA, 14 reasons",
     href: "https://www.aaa.com/autorepair/articles/14-reasons-why-your-car-wont-start",
-    note: "The most common reason a car won't start is a bad alternator or battery, so it's the first thing you should check; battery signs include dim dashboard lights, a corroded terminal, a battery over 3 to 5 years old, and a clicking noise or nothing at all when you turn the key; a swollen battery is a serious issue, do not attempt to jump-start it; a slow crank, or a single click or silence while the dashboard lights still come on, points to the starter; a car that has power but still won't start may have a starter, ignition switch or fuel system problem; worn spark plugs show as the engine sputtering or stalling when you try to start it.",
+    note: "The most common reason a car won't start is a bad alternator or battery, so it's the first thing you should check; battery signs include dim dashboard lights, a corroded terminal, a battery over 3 to 5 years old, and a clicking noise or nothing at all when you turn the key; a swollen battery is a serious issue, do not attempt to jump-start it; a slow crank, or a single click or silence while the dashboard lights still come on, points to the starter; a car that has power but still won't start may have a starter, ignition switch or fuel system problem; worn spark plugs show as the engine sputtering or stalling when you try to start it.; a faulty starter needs a dealership or auto repair shop; a faulty or loose ground cable can stop current from flowing properly and leave the engine struggling or failing to crank; if the engine turns over but does not start, low fuel could be the cause; a clogged fuel filter can leave an engine that cranks but does not start, and if replacing it does not help, have the car towed to a repair shop; if you cannot start the car or replace worn spark plugs, you will need a tow to a repair shop",
   },
   aaaWinter2026: {
     name: "AAA Northeast: AAA Offers Tips to Avoid Getting Caught With a Dead Battery This Winter (January 7, 2026; read November 23, 2026)",
@@ -258,7 +258,7 @@ const sounds: Array<{
     cause:
       "The battery is doing its job. AAA says a car that has power but still won't start may have a starter, ignition switch or fuel system problem; sputtering on start can be worn spark plugs.",
     doNow:
-      "Check the fuel gauge first: AAA says that if the engine turns over but does not start, low fuel could be the cause. For an ignition switch or worn spark plugs, AAA says you may need a tow to a repair shop. If the car is blocking a lane or a gate, call for help getting it somewhere safe.",
+      "Check the fuel gauge first: AAA says that if the engine turns over but does not start, low fuel could be the cause. For worn spark plugs or a clogged fuel filter, AAA says you may need a tow to a repair shop. If the car is blocking a lane or a gate, call for help getting it somewhere safe.",
     cite: ["aaaReasons"],
   },
   {
@@ -323,13 +323,13 @@ const nowSteps: Array<{
   },
   {
     title: "Try once, listen, then wait",
-    text: "AAA: if the car doesn't start on the first try, wait 10 to 15 seconds and try again. CAA-Quebec, writing for frozen engines in Quebec winters, says to follow your owner's manual's cold-weather starting procedure first and to keep each attempt to no more than eight to ten seconds. Listen to what the car does; the table below matches each sound to its likely cause.",
-    cite: ["aaaWinter2026", "caaQuebec"],
+    text: "Listen to the first try; the table below matches each sound to its likely cause. If it clicks, cranks slowly or does nothing, go to step 4: AAA lists clicking and silence as battery signs and says to try a jump start, and its brochure lists a slow crank among the warning signs of a weak battery. If it cranks at normal speed but does not start, AAA says to wait 10 to 15 seconds and try again, and CAA-Quebec, writing for frozen engines in Quebec winters, says to follow your owner's manual's cold-weather starting procedure first and to keep each attempt to no more than eight to ten seconds.",
+    cite: ["aaaReasons", "aaaBrochure", "aaaWinter2026", "caaQuebec"],
   },
   {
     title: "Stop after three or four tries",
-    text: "CAA-Quebec's rule for frozen engines: after three or four failed attempts, contact roadside assistance or a towing service. If all you hear is clicking or nothing at all, AAA lists those as battery signs and says to try a jump start. If the battery is swollen, do not jump it; AAA calls that a serious issue and says to call roadside assistance.",
-    cite: ["caaQuebec", "aaaReasons"],
+    text: "For a normal crank that will not catch, CAA-Quebec's rule for frozen engines is to contact roadside assistance or a towing service after three or four failed attempts. A click, a slow crank or nothing at all does not get more tries: call for a jump (step 4). If the battery is swollen, do not jump it; AAA calls that a serious issue and says to call roadside assistance.",
+    cite: ["caaQuebec", "aaaReasons", "aaaBrochure"],
   },
   {
     title: "Call for a jumpstart, any hour",
@@ -480,7 +480,7 @@ const paa = [
   {
     question: "How do you fix a cold start problem?",
     answer:
-      "Find which part is failing first, because the fix differs. A battery that clicks or cranks slowly takes a jump now and a battery test the same day; AAA says the test is the only way to gauge a battery's remaining life. A single click with the dash lights on points to the starter, which AAA says needs a repair shop. A normal crank that will not catch can be as simple as low fuel, AAA says, or an ignition switch or worn spark plugs, for which you may need a tow to a repair shop. CAA-Quebec's rule for frozen engines is to call roadside assistance after three or four failed attempts.",
+      "Find which part is failing first, because the fix differs. A battery that clicks or cranks slowly takes a jump now and a battery test the same day; AAA says the test is the only way to gauge a battery's remaining life. A single click with the dash lights on points to the starter, which AAA says needs a repair shop. A normal crank that will not catch can be as simple as low fuel, AAA says, or worn spark plugs or a clogged fuel filter, for which you may need a tow to a repair shop. CAA-Quebec's rule for frozen engines is to call roadside assistance after three or four failed attempts.",
     cite: ["aaaWinter2026", "aaaReasons", "caaQuebec"] as SourceKey[],
   },
 ];
@@ -565,12 +565,12 @@ const faqs = [
   {
     question: "How long should I crank a car that won't start in the cold?",
     answer:
-      "Briefly. CAA-Quebec, writing for frozen engines in Quebec winters, says each attempt should last no more than eight to ten seconds and that after three or four failed attempts you should contact roadside assistance. AAA says to turn the lights and accessories off first and, if the car doesn't start on the first try, to wait 10 to 15 seconds before trying again. In Orlando, RoadZone Plus answers (407) 222-2739 around the clock.",
+      "Briefly, and only while it cranks at normal speed. If it clicks, cranks slowly or does nothing, stop and call for a jump: AAA lists clicking and silence as battery signs, and its brochure lists a slow crank among the warning signs of a weak battery. For a normal crank that will not catch, CAA-Quebec, writing for frozen engines in Quebec winters, says each attempt should last no more than eight to ten seconds and that after three or four failed attempts you should contact roadside assistance. AAA says to turn the lights and accessories off first and, if the car doesn't start on the first try, to wait 10 to 15 seconds before trying again. In Orlando, RoadZone Plus answers (407) 222-2739 around the clock.",
   },
   {
     question: "Should I keep trying to start it?",
     answer:
-      "Not for long, and not at all if it only clicks. If all you hear is clicking or nothing at all, AAA lists those as battery signs and says to try a jump start. Otherwise, AAA says to wait 10 to 15 seconds after a failed first try before trying again, and CAA-Quebec's rule for frozen engines is no more than eight to ten seconds per attempt and a call to roadside assistance after three or four failed attempts. AAA Northeast says the cold makes starting harder, especially for batteries three to five years old or ones that previously went dead and needed a jump-start. Turn off the lights, fan and radio, and call.",
+      "Not if it clicks, cranks slowly or does nothing. AAA lists clicking and silence as battery signs and says to try a jump start, and AAA's battery brochure lists a slow crank among the warning signs of a weak battery, so call for a boost rather than draining what is left. If it cranks at normal speed but will not catch, AAA says to wait 10 to 15 seconds after a failed first try before trying again, and CAA-Quebec's rule for frozen engines is no more than eight to ten seconds per attempt and a call to roadside assistance after three or four failed attempts. AAA Northeast says the cold makes starting harder, especially for batteries three to five years old or ones that previously went dead and needed a jump-start. Turn off the lights, fan and radio, and call.",
   },
   {
     question: "Will a jumpstart fix it for good?",
@@ -839,7 +839,7 @@ export default function CarWontStartInColdPage() {
               What the sound tells you
             </div>
             <h2 className="mt-5 text-4xl font-black text-white">
-              Turn the key once more and listen. Then stop.
+              Listen when you turn the key. The sound decides the next step.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
               The noise the car makes on a cold morning narrows the cause before anyone
