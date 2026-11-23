@@ -20,8 +20,9 @@ const path = "/car-wont-start-in-cold-orlando";
 const title = "Car Won't Start in the Cold? Orlando Guide";
 const description =
   "An Orlando cold morning does not freeze your car, it exposes a battery summer wore down. AAA: 35% weaker at 32°F. What each sound means, and who to call.";
-const updatedIso = "2026-11-03";
-const updatedLabel = "November 3, 2026";
+const publishedIso = "2026-11-03";
+const updatedIso = "2026-11-23";
+const updatedLabel = "November 23, 2026";
 const heroImage = "/visuals/battery-cost/jumper-cable-clamps.webp";
 const heroAlt =
   "Two pairs of red and black jumper cable clamps resting on an open engine";
@@ -75,10 +76,22 @@ const sources = {
     note: "The cold slows the chemical reaction that creates an electrical charge, which makes starting a vehicle more difficult, especially with batteries that are three to five years old or those that previously went dead and needed a jump-start; tires lose about one PSI of pressure for every 10 degrees the air temperature drops, and about one PSI a month on their own.",
   },
   aaaReasons: {
-    name: "AAA Automotive: 14 Reasons Why Your Car Won't Start (read November 3, 2026)",
+    name: "AAA Automotive: 14 Reasons Why Your Car Won't Start (read November 3 and November 23, 2026)",
     short: "AAA, 14 reasons",
     href: "https://www.aaa.com/autorepair/articles/14-reasons-why-your-car-wont-start",
-    note: "The most common reason a car won't start is a bad alternator or battery; battery signs include dim dashboard lights, a corroded terminal, a battery over 3 to 5 years old, and a clicking noise or nothing at all when you turn the key; a slow crank, or a single click or silence while the dashboard lights still come on, points to the starter; a car that has power but still won't start may have a starter, ignition switch or fuel system problem; worn spark plugs show as the engine sputtering or stalling when you try to start it.",
+    note: "The most common reason a car won't start is a bad alternator or battery, so it's the first thing you should check; battery signs include dim dashboard lights, a corroded terminal, a battery over 3 to 5 years old, and a clicking noise or nothing at all when you turn the key; a swollen battery is a serious issue, do not attempt to jump-start it; a slow crank, or a single click or silence while the dashboard lights still come on, points to the starter; a car that has power but still won't start may have a starter, ignition switch or fuel system problem; worn spark plugs show as the engine sputtering or stalling when you try to start it.",
+  },
+  aaaWinter2026: {
+    name: "AAA Northeast: AAA Offers Tips to Avoid Getting Caught With a Dead Battery This Winter (January 7, 2026; read November 23, 2026)",
+    short: "AAA winter battery tips",
+    href: "https://magazine.northeast.aaa.com/daily/newsroom/aaa-offers-tips-to-avoid-getting-caught-with-a-dead-battery-this-winter/",
+    note: "When you first get in a cold car, make sure all the lights and accessories are turned off; if your car doesn't start on the first try, wait 10-15 seconds and try again; have the battery and charging system tested if the battery is older than three years or you've noticed recent difficulty starting in the cold; the only way to gauge remaining life is with a battery test; if you don't drive often, consider driving the car for at least 30 minutes once or twice a week, which won't fully charge the battery but can help; if your car is likely to sit idle for days at a time, a trickle charger or battery booster pack might be a worthwhile investment.",
+  },
+  caaQuebec: {
+    name: "CAA-Quebec: Starting your car in cold weather: Tips and best methods (updated October 28, 2025; read November 23, 2026)",
+    short: "CAA-Quebec",
+    href: "https://www.caaquebec.com/en/advices/maintaining-a-vehicle/starting-your-car-in-cold-weather",
+    note: "First, consult your vehicle's manual for the specific cold-weather starting procedure; each attempt to start your car should last no more than eight to ten seconds; after three or four failed attempts, contact Roadside Assistance or a towing service.",
   },
   aaaNewEngland: {
     name: "AAA Northern New England: Prepare Yourself and Your Vehicle for the Cold (December 15, 2016; read November 3, 2026)",
@@ -151,6 +164,12 @@ const sources = {
     short: "NWS F-6, December 2025",
     href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=12&glossary=0",
     note: "Lowest temperature 37°F on December 31, the only morning of the month at or below 40°F. Preliminary data; the version number in this link changes as new months are issued.",
+  },
+  nwsNov2026: {
+    name: "National Weather Service Melbourne: Preliminary Local Climatological Data (F-6), Orlando International Airport, November 2026 through November 21, issued November 22 (read November 23, 2026)",
+    short: "NWS F-6, November 2026",
+    href: "https://forecast.weather.gov/product.php?site=MLB&issuedby=MCO&product=CF6&format=TXT&version=1&glossary=0",
+    note: "Lowest temperature 48°F on November 14, then 50°F on November 15; no morning at 32°F or below; no morning at or below 40°F through November 21. Preliminary month-to-date data; the version number in this link changes as new reports are issued.",
   },
   nwsJun2026: {
     name: "National Weather Service Melbourne: F-6, Orlando International Airport, June 2026 (read November 3, 2026)",
@@ -252,6 +271,78 @@ const sounds: Array<{
   },
 ];
 
+const likelyCauses: Array<{
+  title: string;
+  text: string;
+  cite: SourceKey[];
+  link?: { href: string; label: string };
+}> = [
+  {
+    title: "A battery the cold has weakened",
+    text: "AAA's no-start guide says the most common reason a car won't start is a bad alternator or battery, so it is the first thing to check. AAA's research center puts the loss at about 35 percent of a battery's strength at 32°F, while a cold start can need up to twice the normal current.",
+    cite: ["aaaReasons", "aaaOregon"],
+    link: { href: "/jump-start-cost-orlando", label: "What a jump start costs in Orlando" },
+  },
+  {
+    title: "A battery summer already wore down",
+    text: "Interstate Batteries says heat shortens battery life and the damage typically shows in cold weather, when the engine struggles to start. AAA's figure, reported by Consumer Reports: batteries last less than 41 months in the most southern regions of the U.S.",
+    cite: ["interstateHeat", "consumerReports"],
+    link: { href: "/car-battery-replacement-cost-orlando", label: "What a new battery costs in Orlando" },
+  },
+  {
+    title: "Corroded or loose battery terminals",
+    text: "AAA lists a corroded battery terminal among the signs that the battery is the problem, next to dim dashboard lights and a clicking noise or nothing at all when you turn the key.",
+    cite: ["aaaReasons"],
+  },
+  {
+    title: "A tired starter",
+    text: "AAA: a single click or nothing at all while the dashboard lights still come on points to the starter. A jump will not fix a starter.",
+    cite: ["aaaReasons"],
+  },
+  {
+    title: "Spark plugs, ignition or fuel",
+    text: "AAA: a car that has power but still won't start may have a starter, ignition switch or fuel system problem, and worn spark plugs show as the engine sputtering or stalling when you try to start it.",
+    cite: ["aaaReasons"],
+  },
+  {
+    title: "Thick oil and frozen fuel lines",
+    text: "National guides list them. Orlando International's coldest reading in the two winters on this page was 24°F, on February 1, 2026, and this November's lowest so far is 48°F. Check the battery first, as AAA says.",
+    cite: ["nwsFeb2026", "nwsNov2026", "aaaReasons"],
+  },
+];
+
+const nowSteps: Array<{
+  title: string;
+  text: string;
+  cite: SourceKey[];
+}> = [
+  {
+    title: "Turn off the lights and accessories",
+    text: "AAA: when you first get in a cold car, make sure all the lights and accessories are turned off. That leaves the battery's power for the starter.",
+    cite: ["aaaWinter2026"],
+  },
+  {
+    title: "Try once, listen, then wait",
+    text: "AAA: if the car doesn't start on the first try, wait 10 to 15 seconds and try again. CAA-Quebec keeps each attempt to eight to ten seconds and says your owner's manual's cold-weather starting procedure comes first. The sound it makes is your best clue; the table below sorts them.",
+    cite: ["aaaWinter2026", "caaQuebec"],
+  },
+  {
+    title: "Stop after three or four tries",
+    text: "CAA-Quebec: after three or four failed attempts, contact roadside assistance or a towing service. If the battery is swollen, do not jump it; AAA calls that a serious issue.",
+    cite: ["caaQuebec", "aaaReasons"],
+  },
+  {
+    title: "Call for a jumpstart, any hour",
+    text: "RoadZone Plus provides 24/7 jump start service in Orlando at homes, hotels, apartments, garages, parking lots, workplaces and roadside locations. Tell us where the car is and what it does when you turn the key.",
+    cite: [],
+  },
+  {
+    title: "Once it runs, drive it and test it",
+    text: "AAA says the only way to gauge a battery's remaining life is a battery test, and to have the battery and charging system tested if it is older than three years or the car has struggled to start in the cold. If you don't drive often, AAA suggests at least 30 minutes once or twice a week; it won't fully charge the battery, but it can help.",
+    cite: ["aaaWinter2026"],
+  },
+];
+
 const heatThenCold = [
   {
     title: "Summer does the damage",
@@ -276,6 +367,12 @@ const heatThenCold = [
 ];
 
 const orlandoColdFacts = [
+  {
+    label: "November 2026, to the 21st",
+    big: "48°F",
+    text: "This season's lowest reading so far, on November 14, then 50°F on the 15th. No morning at or below 40°F yet; November 2025 reached 36°F on the 11th. The cold mornings are still ahead, and in winter 2025-26 almost all of them came in January and February.",
+    cite: ["nwsNov2026", "nwsNov2025", "nwsDec2025", "nwsJan2026", "nwsFeb2026", "nwsMar2026"] as SourceKey[],
+  },
   {
     label: "February 2026",
     big: "24°F",
@@ -374,6 +471,18 @@ const paa = [
       "The battery first: AAA Automotive Research Center says a battery loses about 35 percent of its strength at 32°F while a cold start may need up to twice the normal current. Then the parts that borrow from it: a starter drawing too much, corroded terminals, worn plugs. The thickened-oil and frozen-fuel-line causes in the national guides belong to 0°F mornings; the lowest reading at Orlando International in the two winters these reports cover is 24°F, on February 1, 2026.",
     cite: ["aaaOregon", "aaaReasons", "nwsFeb2026", "nwsJan2026", "nwsJan2025"] as SourceKey[],
   },
+  {
+    question: "How do you warm up a car battery in cold weather?",
+    answer:
+      "You keep it charged rather than warm it. AAA's winter advice: if the car is likely to sit idle for days at a time, a trickle charger or battery booster pack may be worth it, and if you don't drive often, drive at least 30 minutes once or twice a week. Orlando's cold is mild by those guides' standards: this November's lowest reading at Orlando International so far is 48°F, and Interstate Batteries says a worn-out battery could die at 40°F. A battery that cannot start the car at Orlando temperatures needs a jump and a test, not heat.",
+    cite: ["aaaWinter2026", "nwsNov2026", "interstateTest"] as SourceKey[],
+  },
+  {
+    question: "How do you fix a cold start problem?",
+    answer:
+      "Find which part is failing first, because the fix differs. A battery that clicks or cranks slowly takes a jump now and a battery test the same day; AAA says the test is the only way to gauge a battery's remaining life. A single click with the dash lights on points to the starter, and a normal crank that will not catch points to spark or fuel, both shop repairs. If it will not start after three or four tries, CAA-Quebec says to call roadside assistance.",
+    cite: ["aaaWinter2026", "aaaReasons", "caaQuebec"] as SourceKey[],
+  },
 ];
 
 const onTheCall = [
@@ -454,6 +563,11 @@ const faqs = [
       "Partly. Toyota's owner's manual says the 12-volt battery discharges gradually even when the car is not in use, and a car left for a long time may not start. Interstate says the usual trigger is a drop in temperature, a light left on or not driving for a few days. A week in an MCO garage in January combines all of it. Note the garage, level and row, then call; our Orlando airport roadside guide explains the lots.",
   },
   {
+    question: "How long should I crank a car that won't start in the cold?",
+    answer:
+      "Briefly. CAA-Quebec says each attempt should last no more than eight to ten seconds, and AAA says that if the car doesn't start on the first try, wait 10 to 15 seconds before trying again. Turn the lights and accessories off first, as AAA advises. After three or four failed attempts, CAA-Quebec says to contact roadside assistance; in Orlando, RoadZone Plus answers (407) 222-2739 around the clock.",
+  },
+  {
     question: "Should I keep trying to start it?",
     answer:
       "No. AAA's battery brochure says that if the engine seems to be turning too slowly, stop cranking. Each attempt takes more out of a battery that is already short, and AAA Northeast notes that batteries that previously went dead and needed a jump-start are the ones most likely to fail again in the cold. Turn off the lights, fan and radio, and call.",
@@ -532,7 +646,7 @@ export default function CarWontStartInColdPage() {
     "@id": `${absoluteUrl(path)}#article`,
     headline: title,
     description,
-    datePublished: updatedIso,
+    datePublished: publishedIso,
     dateModified: updatedIso,
     image: {
       "@type": "ImageObject",
@@ -634,6 +748,86 @@ export default function CarWontStartInColdPage() {
               </a>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section id="short-answer" className="section border-b border-white/10 bg-panel">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <Wrench aria-hidden="true" size={16} />
+              The short answer
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Why a car won&apos;t start in the cold, and what to do in the next five
+              minutes.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              Most cold-morning no-starts come down to the battery: AAA says it is the
+              most common reason a car won&apos;t start and the first thing to check. The
+              usual causes are listed battery first, then the steps AAA and CAA-Quebec
+              give for getting the car going without making it worse.
+            </p>
+            <SourceTags keys={["aaaReasons"]} />
+          </div>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <div className="card-solid p-6">
+              <h3 className="text-2xl font-black text-white">
+                The usual causes, battery first
+              </h3>
+              <ol className="mt-5 grid gap-5">
+                {likelyCauses.map((cause, index) => (
+                  <li key={cause.title} className="flex gap-4">
+                    <span
+                      aria-hidden="true"
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-safety-yellow text-sm font-black text-road-black"
+                    >
+                      {index + 1}
+                    </span>
+                    <div>
+                      <p className="text-lg font-black text-white">{cause.title}</p>
+                      <p className="mt-2 text-sm leading-6 text-white/66">{cause.text}</p>
+                      {cause.link ? (
+                        <Link
+                          href={cause.link.href}
+                          className="mt-2 inline-flex min-h-11 items-center text-sm font-bold text-route-green underline decoration-route-green/40 underline-offset-2 hover:text-white"
+                        >
+                          {cause.link.label}
+                        </Link>
+                      ) : null}
+                      <SourceTags keys={cause.cite} />
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="card-solid p-6">
+              <h3 className="text-2xl font-black text-white">What to do now</h3>
+              <ol className="mt-5 grid gap-5">
+                {nowSteps.map((step, index) => (
+                  <li key={step.title} className="flex gap-4">
+                    <span
+                      aria-hidden="true"
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-route-green text-sm font-black text-road-black"
+                    >
+                      {index + 1}
+                    </span>
+                    <div>
+                      <p className="text-lg font-black text-white">{step.title}</p>
+                      <p className="mt-2 text-sm leading-6 text-white/66">{step.text}</p>
+                      <SourceTags keys={step.cite} />
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <a href={site.phoneHref} className="btn btn-primary mt-6">
+                <PhoneCall aria-hidden="true" size={18} />
+                Call {site.phoneDisplay} for a jumpstart
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -884,15 +1078,15 @@ export default function CarWontStartInColdPage() {
           <div>
             <div className="eyebrow">
               <Info aria-hidden="true" size={16} />
-              Four questions people ask Google
+              Six questions people ask Google
             </div>
             <h2 className="mt-5 text-4xl font-black text-white">
               Misfires, &ldquo;good&rdquo; batteries, warming up and hard starts.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
-              The four questions Google shows next to this search, answered from AAA,
-              Interstate and the Orlando weather record rather than from a snow-belt
-              checklist.
+              The questions Google showed next to this search on November 3 and November
+              23, 2026, answered from AAA, CAA-Quebec, Interstate and the Orlando weather
+              record rather than from a snow-belt checklist.
             </p>
           </div>
           <div className="grid gap-4">
