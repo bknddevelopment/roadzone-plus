@@ -85,7 +85,7 @@ const sources = {
     name: "AAA Northeast: AAA Offers Tips to Avoid Getting Caught With a Dead Battery This Winter (January 7, 2026; read November 23, 2026)",
     short: "AAA winter battery tips",
     href: "https://magazine.northeast.aaa.com/daily/newsroom/aaa-offers-tips-to-avoid-getting-caught-with-a-dead-battery-this-winter/",
-    note: "When you first get in a cold car, make sure all the lights and accessories are turned off; if your car doesn't start on the first try, wait 10-15 seconds and try again; have the battery and charging system tested if the battery is older than three years or you've noticed recent difficulty starting in the cold; the only way to gauge remaining life is with a battery test; if you don't drive often, consider driving the car for at least 30 minutes once or twice a week, which won't fully charge the battery but can help; if your car is likely to sit idle for days at a time, a trickle charger or battery booster pack might be a worthwhile investment.",
+    note: "When you first get in a cold car, make sure all the lights and accessories are turned off; if your car doesn't start on the first try, wait 10-15 seconds and try again; have the battery and charging system tested if the battery is older than three years or you've noticed recent difficulty starting in the cold; the only way to gauge remaining life is with a battery test; if you don't drive often, consider driving the car for at least 30 minutes once or twice a week, which won't fully charge the battery but can help; if your car is likely to sit idle for days at a time, a trickle charger or battery booster pack might be a worthwhile investment; the same advice applies to electric vehicles, which also come equipped with 12-volt batteries.",
   },
   caaQuebec: {
     name: "CAA-Quebec: Starting your car in cold weather: Tips and best methods (updated October 28, 2025; read November 23, 2026)",
@@ -296,7 +296,7 @@ const likelyCauses: Array<{
   },
   {
     title: "A tired starter",
-    text: "AAA: a single click or nothing at all while the dashboard lights still come on points to the starter. A jump will not fix a starter.",
+    text: "AAA: a single click or nothing at all while the dashboard lights still come on points to the starter, and AAA says a faulty starter needs a repair shop.",
     cite: ["aaaReasons"],
   },
   {
@@ -370,7 +370,7 @@ const orlandoColdFacts = [
   {
     label: "November 2026, to the 21st",
     big: "48°F",
-    text: "This season's lowest reading so far, on November 14, then 50°F on the 15th. No morning at or below 40°F yet; November 2025 reached 36°F on the 11th. The cold mornings are still ahead, and in winter 2025-26 almost all of them came in January and February.",
+    text: "This season's lowest reading so far, on November 14, then 50°F on the 15th. No morning at or below 40°F yet; November 2025 reached 36°F on the 11th. In winter 2025-26 almost all of the mornings at or below 40°F came in January and February.",
     cite: ["nwsNov2026", "nwsNov2025", "nwsDec2025", "nwsJan2026", "nwsFeb2026", "nwsMar2026"] as SourceKey[],
   },
   {
@@ -474,7 +474,7 @@ const paa = [
   {
     question: "How do you warm up a car battery in cold weather?",
     answer:
-      "You keep it charged rather than warm it. AAA's winter advice: if the car is likely to sit idle for days at a time, a trickle charger or battery booster pack may be worth it, and if you don't drive often, drive at least 30 minutes once or twice a week. Orlando's cold is mild by those guides' standards: this November's lowest reading at Orlando International so far is 48°F, and Interstate Batteries says a worn-out battery could die at 40°F. A battery that cannot start the car at Orlando temperatures needs a jump and a test, not heat.",
+      "Keep it charged. AAA's winter tips for the 12-volt battery: if the car is likely to sit idle for days at a time, a trickle charger or battery booster pack might be worth it, and if you don't drive often, drive at least 30 minutes once or twice a week. This November's lowest reading at Orlando International so far is 48°F, and Interstate Batteries says a worn-out battery could die at 40°F. If the battery cannot start the car, call for a jump and have it tested; AAA says a test is the only way to gauge its remaining life.",
     cite: ["aaaWinter2026", "nwsNov2026", "interstateTest"] as SourceKey[],
   },
   {
