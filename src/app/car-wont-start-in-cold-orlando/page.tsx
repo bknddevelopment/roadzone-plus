@@ -121,7 +121,7 @@ const sources = {
     name: "Interstate Batteries: When Your Car Battery is at Death's Door (March 31, 2023; read November 3, 2026)",
     short: "Interstate, battery test",
     href: "https://www.interstatebatteries.com/blog/get-a-battery-test",
-    note: "Warm temperatures, a healthy engine and routine drives can mask a weak battery; if the temps drop, a light gets left on or you don't drive a few days, that's when the car won't start; a worn-out battery could die at 40°F and a severely weakened one at 60°F; a test reads Good, Weak or Replace now.",
+    note: "Warm temperatures, a healthy engine and routine drives can mask a weak battery; if the temps drop, a light gets left on or you don't drive a few days, that's when the car won't start; a worn-out battery could die at 40°F and a severely weakened one at 60°F; a test takes less than a minute and reads Good, Weak or Replace now.",
   },
   consumerReports: {
     name: "Consumer Reports: How Hot Weather Affects Your Car Battery (September 16, 2022; read November 3, 2026)",
@@ -232,7 +232,7 @@ const sounds: Array<{
   {
     hear: "Fast clicking, dim dash lights",
     cause:
-      "A battery too weak for the cold. AAA lists a clicking noise and dim dashboard lights as battery signs, and says the battery is the first thing to check.",
+      "A battery too weak for the cold. AAA lists a clicking noise and dim dashboard lights as battery signs, and says a bad alternator or battery is the first thing to check.",
     doNow:
       "Turn off lights, fan and radio. AAA lists a clicking noise as a battery sign and says to try a jump start, so call for one rather than cranking again; then get the battery tested the same day.",
     cite: ["aaaReasons", "aaaOregon"],
@@ -250,7 +250,7 @@ const sounds: Array<{
     cause:
       "AAA: a single click or nothing at all while the dashboard lights still come on points to the starter. AAA adds that a loose or corroded ground cable can also leave the engine struggling or failing to crank.",
     doNow:
-      "A jump may not help. Tell the technician exactly what you hear so the right next step is clear on arrival.",
+      "Call, but a jump may not help: tell the technician exactly what you hear so the right next step is clear on arrival.",
     cite: ["aaaReasons"],
   },
   {
@@ -306,7 +306,7 @@ const likelyCauses: Array<{
   },
   {
     title: "Thick oil and frozen fuel lines",
-    text: "CAA-Quebec names both for freezing weather: mineral oil can thicken like molasses, and a low fuel level raises the risk of ice in the fuel lines. Orlando International's coldest reading in the two winters on this page was 24°F, on February 1, 2026, and this November's lowest so far is 48°F. Check the battery first, as AAA says.",
+    text: "CAA-Quebec names both for freezing weather: mineral oil can thicken like molasses, and a low fuel level raises the risk of ice in the fuel lines. Orlando International's coldest reading in the two winters on this page was 24°F, on February 1, 2026, and this November's lowest so far is 48°F. AAA says to check the alternator or battery first.",
     cite: ["caaQuebec", "nwsFeb2026", "nwsNov2026", "aaaReasons"],
   },
 ];
@@ -590,7 +590,7 @@ const faqs = [
   {
     question: "Do frozen fuel lines or thick oil stop cars in Orlando?",
     answer:
-      "They are not the first place to look. CAA-Quebec names thick oil and ice in the fuel lines as freezing-weather risks, writing for Quebec winters down to -30°C. The National Weather Service F-6 reports for Orlando International show a lowest reading of 24°F, on February 1, 2026; January 2026 bottomed at 31°F and January 2025 at 38°F. AAA says the battery is the first thing to check, so if an Orlando car will not start on a cold morning, start with the battery, its connections and the starter.",
+      "They are not the first place to look. CAA-Quebec names thick oil and ice in the fuel lines as freezing-weather risks, writing for Quebec winters down to -30°C. The National Weather Service F-6 reports for Orlando International show a lowest reading of 24°F, on February 1, 2026; January 2026 bottomed at 31°F and January 2025 at 38°F. AAA says a bad alternator or battery is the first thing to check, so if an Orlando car will not start on a cold morning, start with the battery, the alternator, their connections and the starter.",
   },
   {
     question: "How long do car batteries last in Florida?",
@@ -694,11 +694,12 @@ export default function CarWontStartInColdPage() {
               Car won&apos;t start in the cold?
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
-              In Orlando a cold morning does not freeze anything in your car. It exposes a
-              battery that summer already wore down. AAA Automotive Research Center says a
+              A cold Orlando morning can expose a battery that summer already wore
+              down: Interstate Batteries says heat shortens battery life and the damage
+              typically shows in cold weather. AAA Automotive Research Center says a
               battery loses about 35 percent of its strength at 32°F while a cold start
-              can need twice the normal current. AAA says the battery is the first thing to
-              check; Interstate Batteries says a one-minute battery test tells you whether
+              can need twice the normal current. AAA says a bad alternator or battery is the
+              first thing to check; Interstate Batteries says a one-minute battery test tells you whether
               it will happen again.
             </p>
             <p className="mt-4 text-sm font-bold text-white/48">
@@ -988,8 +989,9 @@ export default function CarWontStartInColdPage() {
             CAA-Quebec&apos;s advice on block heaters, oil that thickens like molasses and ice
             in the fuel lines is written for Quebec winters down to -30°C. The coldest Orlando
             International got in the two winters these reports cover was 24°F, on February 1,
-            2026. AAA says the battery is the first thing to check, so on an Orlando cold morning
-            start with the battery, its terminals and the starter.
+            2026. AAA says a bad alternator or battery is the first thing to check, so on an
+            Orlando cold morning start with the battery, the alternator, the terminals and the
+            starter.
           </p>
           <SourceTags keys={["caaQuebec", "nwsFeb2026", "nwsJan2026", "nwsJan2025", "aaaReasons"]} />
         </div>
