@@ -91,7 +91,7 @@ const sources = {
     name: "CAA-Quebec: Starting your car in cold weather: Tips and best methods (updated October 28, 2025; read November 23, 2026)",
     short: "CAA-Quebec",
     href: "https://www.caaquebec.com/en/advices/maintaining-a-vehicle/starting-your-car-in-cold-weather",
-    note: "First, consult your vehicle's manual for the specific cold-weather starting procedure; each attempt to start your car should last no more than eight to ten seconds; after three or four failed attempts, contact Roadside Assistance or a towing service.",
+    note: "Written for Quebec winters down to -30°C, under \"Limit your start attempts when the engine is frozen\": first, consult your vehicle's manual for the specific cold-weather starting procedure; each attempt to start your car should last no more than eight to ten seconds; after three or four failed attempts, contact Roadside Assistance or a towing service. Mineral oil can thicken like molasses in freezing temperatures; a low fuel level increases the risk of condensation and ice buildup in the fuel lines.",
   },
   aaaNewEngland: {
     name: "AAA Northern New England: Prepare Yourself and Your Vehicle for the Cold (December 15, 2016; read November 3, 2026)",
@@ -103,7 +103,7 @@ const sources = {
     name: "AAA: Make Sense of Car Care, Batteries (brochure, read November 3, 2026)",
     short: "AAA car care brochure",
     href: "https://exchange.aaa.com/wp-content/uploads/2012/09/AAA-Car-Care-Battery.pdf",
-    note: "Warning signs of a weak battery: the starter cranks the engine slowly, the headlamps are dim at idle, the battery or charging lamp is on; when jump-starting, if the engine seems to be turning too slowly, stop cranking.",
+    note: "Warning signs of a weak battery: the starter cranks the engine slowly, the headlamps are dim at idle, the battery or charging lamp is on; in its jump-start steps, if the engine seems to be turning too slowly, stop cranking and start the other vehicle to avoid draining both batteries.",
   },
   interstateHeat: {
     name: "Interstate Batteries: Is your car's battery ready for the summer? (read November 3, 2026)",
@@ -234,21 +234,21 @@ const sounds: Array<{
     cause:
       "A battery too weak for the cold. AAA lists a clicking noise and dim dashboard lights as battery signs, and says the battery is the first thing to check.",
     doNow:
-      "Turn off lights, fan and radio. Do not keep trying. A jumpstart usually gets the car going; then get the battery tested the same day.",
+      "Turn off lights, fan and radio. AAA lists a clicking noise as a battery sign and says to try a jump start, so call for one rather than cranking again; then get the battery tested the same day.",
     cite: ["aaaReasons", "aaaOregon"],
   },
   {
     hear: "Slow, dragging crank",
     cause:
-      "The battery is low on cranking power, or the starter is tired. AAA's brochure calls a slow crank the first warning sign of a weak battery; its no-start guide also lists a low crank under the starter.",
+      "The battery is low on cranking power, or the starter is tired. AAA's brochure lists a slow crank among the warning signs of a weak battery; its no-start guide also lists a low crank under the starter.",
     doNow:
-      "AAA says to stop cranking when the engine turns too slowly. Call for a boost and a battery check rather than draining what is left.",
+      "AAA's jump-start steps say to stop cranking when the engine seems to turn too slowly, so both batteries are not drained. Call for a boost and a battery check rather than draining what is left.",
     cite: ["aaaBrochure", "aaaReasons"],
   },
   {
     hear: "One click or silence, dash lights on",
     cause:
-      "AAA: a single click or nothing at all while the dashboard lights still come on points to the starter. A corroded or loose terminal can look the same.",
+      "AAA: a single click or nothing at all while the dashboard lights still come on points to the starter. AAA adds that a loose or corroded ground cable can also leave the engine struggling or failing to crank.",
     doNow:
       "A jump may not help. Tell the technician exactly what you hear so the right next step is clear on arrival.",
     cite: ["aaaReasons"],
@@ -258,7 +258,7 @@ const sounds: Array<{
     cause:
       "The battery is doing its job. AAA says a car that has power but still won't start may have a starter, ignition switch or fuel system problem; sputtering on start can be worn spark plugs.",
     doNow:
-      "Not a battery call. Stop cranking and arrange a shop. If the car is blocking a lane or a gate, call for help getting it somewhere safe.",
+      "Check the fuel gauge first: AAA says that if the engine turns over but does not start, low fuel could be the cause. For an ignition switch or worn spark plugs, AAA says you may need a tow to a repair shop. If the car is blocking a lane or a gate, call for help getting it somewhere safe.",
     cite: ["aaaReasons"],
   },
   {
@@ -290,8 +290,8 @@ const likelyCauses: Array<{
     link: { href: "/car-battery-replacement-cost-orlando", label: "What a new battery costs in Orlando" },
   },
   {
-    title: "Corroded or loose battery terminals",
-    text: "AAA lists a corroded battery terminal among the signs that the battery is the problem, next to dim dashboard lights and a clicking noise or nothing at all when you turn the key.",
+    title: "A corroded terminal or a loose ground cable",
+    text: "AAA lists a corroded battery terminal among the signs that the battery is the problem, next to dim dashboard lights and a clicking noise or nothing at all when you turn the key. It also says a faulty or loose ground cable can stop current from flowing properly.",
     cite: ["aaaReasons"],
   },
   {
@@ -306,8 +306,8 @@ const likelyCauses: Array<{
   },
   {
     title: "Thick oil and frozen fuel lines",
-    text: "National guides list them. Orlando International's coldest reading in the two winters on this page was 24°F, on February 1, 2026, and this November's lowest so far is 48°F. Check the battery first, as AAA says.",
-    cite: ["nwsFeb2026", "nwsNov2026", "aaaReasons"],
+    text: "CAA-Quebec names both for freezing weather: mineral oil can thicken like molasses, and a low fuel level raises the risk of ice in the fuel lines. Orlando International's coldest reading in the two winters on this page was 24°F, on February 1, 2026, and this November's lowest so far is 48°F. Check the battery first, as AAA says.",
+    cite: ["caaQuebec", "nwsFeb2026", "nwsNov2026", "aaaReasons"],
   },
 ];
 
@@ -318,17 +318,17 @@ const nowSteps: Array<{
 }> = [
   {
     title: "Turn off the lights and accessories",
-    text: "AAA: when you first get in a cold car, make sure all the lights and accessories are turned off. That leaves the battery's power for the starter.",
+    text: "AAA: when you first get in a cold car, make sure all the lights and accessories are turned off.",
     cite: ["aaaWinter2026"],
   },
   {
     title: "Try once, listen, then wait",
-    text: "AAA: if the car doesn't start on the first try, wait 10 to 15 seconds and try again. CAA-Quebec keeps each attempt to eight to ten seconds and says your owner's manual's cold-weather starting procedure comes first. The sound it makes is your best clue; the table below sorts them.",
+    text: "AAA: if the car doesn't start on the first try, wait 10 to 15 seconds and try again. CAA-Quebec, writing for frozen engines in Quebec winters, says to follow your owner's manual's cold-weather starting procedure first and to keep each attempt to no more than eight to ten seconds. Listen to what the car does; the table below matches each sound to its likely cause.",
     cite: ["aaaWinter2026", "caaQuebec"],
   },
   {
     title: "Stop after three or four tries",
-    text: "CAA-Quebec: after three or four failed attempts, contact roadside assistance or a towing service. If the battery is swollen, do not jump it; AAA calls that a serious issue.",
+    text: "CAA-Quebec's rule for frozen engines: after three or four failed attempts, contact roadside assistance or a towing service. If all you hear is clicking or nothing at all, AAA lists those as battery signs and says to try a jump start. If the battery is swollen, do not jump it; AAA calls that a serious issue and says to call roadside assistance.",
     cite: ["caaQuebec", "aaaReasons"],
   },
   {
@@ -468,8 +468,8 @@ const paa = [
   {
     question: "What causes a hard start when the engine is cold?",
     answer:
-      "The battery first: AAA Automotive Research Center says a battery loses about 35 percent of its strength at 32°F while a cold start may need up to twice the normal current. Then the parts that borrow from it: a starter drawing too much, corroded terminals, worn plugs. The thickened-oil and frozen-fuel-line causes in the national guides belong to 0°F mornings; the lowest reading at Orlando International in the two winters these reports cover is 24°F, on February 1, 2026.",
-    cite: ["aaaOregon", "aaaReasons", "nwsFeb2026", "nwsJan2026", "nwsJan2025"] as SourceKey[],
+      "The battery first: AAA Automotive Research Center says a battery loses about 35 percent of its strength at 32°F while a cold start may need up to twice the normal current. Then the parts that borrow from it: a starter drawing too much, corroded terminals, worn plugs. CAA-Quebec names thick oil and ice in the fuel lines as freezing-weather causes; the lowest reading at Orlando International in the two winters these reports cover is 24°F, on February 1, 2026.",
+    cite: ["aaaOregon", "aaaReasons", "caaQuebec", "nwsFeb2026", "nwsJan2026", "nwsJan2025"] as SourceKey[],
   },
   {
     question: "How do you warm up a car battery in cold weather?",
@@ -480,7 +480,7 @@ const paa = [
   {
     question: "How do you fix a cold start problem?",
     answer:
-      "Find which part is failing first, because the fix differs. A battery that clicks or cranks slowly takes a jump now and a battery test the same day; AAA says the test is the only way to gauge a battery's remaining life. A single click with the dash lights on points to the starter, and a normal crank that will not catch points to spark or fuel, both shop repairs. If it will not start after three or four tries, CAA-Quebec says to call roadside assistance.",
+      "Find which part is failing first, because the fix differs. A battery that clicks or cranks slowly takes a jump now and a battery test the same day; AAA says the test is the only way to gauge a battery's remaining life. A single click with the dash lights on points to the starter, which AAA says needs a repair shop. A normal crank that will not catch can be as simple as low fuel, AAA says, or an ignition switch or worn spark plugs, for which you may need a tow to a repair shop. CAA-Quebec's rule for frozen engines is to call roadside assistance after three or four failed attempts.",
     cite: ["aaaWinter2026", "aaaReasons", "caaQuebec"] as SourceKey[],
   },
 ];
@@ -565,12 +565,12 @@ const faqs = [
   {
     question: "How long should I crank a car that won't start in the cold?",
     answer:
-      "Briefly. CAA-Quebec says each attempt should last no more than eight to ten seconds, and AAA says that if the car doesn't start on the first try, wait 10 to 15 seconds before trying again. Turn the lights and accessories off first, as AAA advises. After three or four failed attempts, CAA-Quebec says to contact roadside assistance; in Orlando, RoadZone Plus answers (407) 222-2739 around the clock.",
+      "Briefly. CAA-Quebec, writing for frozen engines in Quebec winters, says each attempt should last no more than eight to ten seconds and that after three or four failed attempts you should contact roadside assistance. AAA says to turn the lights and accessories off first and, if the car doesn't start on the first try, to wait 10 to 15 seconds before trying again. In Orlando, RoadZone Plus answers (407) 222-2739 around the clock.",
   },
   {
     question: "Should I keep trying to start it?",
     answer:
-      "No. AAA's battery brochure says that if the engine seems to be turning too slowly, stop cranking. Each attempt takes more out of a battery that is already short, and AAA Northeast notes that batteries that previously went dead and needed a jump-start are the ones most likely to fail again in the cold. Turn off the lights, fan and radio, and call.",
+      "Not for long, and not at all if it only clicks. If all you hear is clicking or nothing at all, AAA lists those as battery signs and says to try a jump start. Otherwise, AAA says to wait 10 to 15 seconds after a failed first try before trying again, and CAA-Quebec's rule for frozen engines is no more than eight to ten seconds per attempt and a call to roadside assistance after three or four failed attempts. AAA Northeast says the cold makes starting harder, especially for batteries three to five years old or ones that previously went dead and needed a jump-start. Turn off the lights, fan and radio, and call.",
   },
   {
     question: "Will a jumpstart fix it for good?",
@@ -763,10 +763,10 @@ export default function CarWontStartInColdPage() {
               minutes.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
-              Most cold-morning no-starts come down to the battery: AAA says it is the
-              most common reason a car won&apos;t start and the first thing to check. The
-              usual causes are listed battery first, then the steps AAA and CAA-Quebec
-              give for getting the car going without making it worse.
+              AAA says a bad alternator or battery is the most common reason a car
+              won&apos;t start, so it is the first thing to check. The usual causes are
+              listed battery first, then the steps AAA and CAA-Quebec give for trying
+              again and when to stop.
             </p>
             <SourceTags keys={["aaaReasons"]} />
           </div>
