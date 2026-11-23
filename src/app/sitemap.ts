@@ -23,6 +23,7 @@ const moveOverLawLastModified = new Date("2026-11-08T00:00:00.000Z");
 const jumpStartCostLastModified = new Date("2026-11-12T00:00:00.000Z");
 const tireChangeCostLastModified = new Date("2026-11-19T00:00:00.000Z");
 const airportGuideLastModified = new Date("2026-11-19T00:00:00.000Z");
+const roadRangersLastModified = new Date("2026-11-23T00:00:00.000Z");
 const areaLastModified: Record<string, Date> = {
   kissimmee: new Date("2026-11-22T00:00:00.000Z"),
   sanford: new Date("2026-11-22T00:00:00.000Z"),
@@ -80,7 +81,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
                             ? tireChangeCostLastModified
                             : path === "/orlando-airport-roadside-assistance"
                               ? airportGuideLastModified
-                              : undefined,
+                              : path === "/road-rangers-orlando"
+                                ? roadRangersLastModified
+                                : undefined,
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8,
   }));

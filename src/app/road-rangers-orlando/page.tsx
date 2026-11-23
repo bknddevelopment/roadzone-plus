@@ -1,26 +1,32 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   AlertTriangle,
   CheckCircle2,
   Clock3,
   ExternalLink,
-  Fuel,
   Info,
   MapPin,
   PhoneCall,
   Route,
   ShieldCheck,
   Wrench,
+  XCircle,
 } from "lucide-react";
 import { site } from "@/data/site";
 import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 
-const title = "Road Rangers Orlando FL | Free vs 24/7 Roadside Help";
+const title = "Road Rangers Orlando FL: Free Roadside Help, *347 & Hours";
 const description =
-  "Looking for Road Rangers in Orlando? Learn when free highway assistance may help, the *347 phone path, and when to call RoadZone Plus for 24/7 roadside help.";
+  "Florida Road Rangers are free: dial *347 from a cell phone. Hours by road around Orlando (I-4, the Turnpike, toll roads), what they do, and who to call off their routes.";
 
 const path = "/road-rangers-orlando";
+const checkedOn = "November 23, 2026";
+
+const heroImage = "/visuals/move-over/road-ranger-move-over-sign.webp";
+const heroAlt =
+  "A Florida Road Ranger truck on the right shoulder of Interstate 10 with an amber sign on its roof reading MOVE OVER, with traffic in the lanes ahead";
 
 export const metadata: Metadata = {
   title,
@@ -32,6 +38,14 @@ export const metadata: Metadata = {
     title,
     description,
     url: path,
+    images: [
+      {
+        url: heroImage,
+        width: 1600,
+        height: 1067,
+        alt: heroAlt,
+      },
+    ],
   },
   twitter: {
     title,
@@ -39,131 +53,234 @@ export const metadata: Metadata = {
   },
 };
 
-const quickAnswer = [
+const shortAnswers = [
   {
-    label: "Road Rangers",
-    value: "Try first on covered highways",
-    text: "Use this path when you are safely stopped on a covered Central Florida highway or expressway and need limited no-cost help.",
+    question: "Is it free?",
+    answer: "Yes, on the roads they patrol.",
+    detail:
+      "FDOT calls it limited no-cost highway assistance. Florida's Turnpike and CFX both describe it as free.",
   },
   {
-    label: "Phone path",
-    value: "Dial *347 (*FHP)",
-    text: "Official FDOT and CFX pages point motorists to *347 from a mobile phone for Florida Highway Patrol and Road Ranger help.",
+    question: "What number?",
+    answer: "Dial *347 (*FHP)",
+    detail:
+      "From a cell phone. If your carrier does not support *347, FDOT points you to the Florida Highway Patrol's regional communication centers.",
   },
   {
-    label: "RoadZone Plus",
-    value: "Call direct 24/7",
-    text: "Use RoadZone when you are in a parking lot, hotel, apartment, local road, late-night situation, or want a paid local dispatch.",
-  },
-];
-
-const firstSteps = [
-  {
-    title: "Get safe first",
-    text: "Move fully out of the lane if you can, turn on hazards, and call 911 first if the car is blocking traffic, there is a crash, you see smoke, or you feel unsafe.",
+    question: "Where?",
+    answer: "Highways, not parking lots.",
+    detail:
+      "Around Orlando: I-4 and I-4 Express, Florida's Turnpike, and the toll roads run by CFX and by the Turnpike.",
   },
   {
-    title: "Check whether you are on a covered highway",
-    text: "Road Rangers are built for highway and expressway incidents. If you are in a hotel lot, apartment complex, store lot, neighborhood, or garage, that is usually a private roadside call.",
-  },
-  {
-    title: "Dial *347 if the public option fits",
-    text: "If you are on a covered Orlando-area highway or expressway, dial *347 (*FHP) from your mobile phone and ask about Road Ranger assistance.",
-  },
-  {
-    title: "Call RoadZone when coverage does not fit",
-    text: "If the free highway option is not available, does not cover your location, or you need direct 24/7 help, call RoadZone Plus with your exact location and vehicle details.",
+    question: "When?",
+    answer: "It depends on the road.",
+    detail:
+      "I-4 between exits 72 and 98 and the Turnpike itself are listed 24 hours a day. Most Orlando toll roads list no patrol overnight. See the hours below.",
   },
 ];
 
-const comparisonRows = [
+type RoadHours = {
+  road: string;
+  stretch: string;
+  hours: string;
+  plain: string;
+  source: string;
+};
+
+const roadHours: RoadHours[] = [
   {
-    option: "Covered highway shoulder",
-    roadRangers: "Often the first path to check if you are safely stopped on a covered route.",
-    roadZone: "Good backup if you need direct dispatch, are outside patrol coverage, or need help at night.",
+    road: "I-4, mile 72 to mile 98",
+    stretch:
+      "From the Beachline (exit 72) through Sand Lake Road (exit 74A), Universal (exits 74B and 75A), Kirkman Road (exit 75B) and the Turnpike junction (exit 77) to Lake Mary and Heathrow (exit 98).",
+    hours: "24 hours a day, every day of the week.",
+    plain: "The only stretch of I-4 near Orlando that FDOT lists around the clock.",
+    source: "FDOT Road Ranger coverage map",
   },
   {
-    option: "Parking lot, hotel, apartment, workplace, or store",
-    roadRangers: "Usually not the right fit because this is off the highway patrol coverage area.",
-    roadZone: "Best fit for direct roadside help at the vehicle with no membership or app required.",
+    road: "I-4, mile 58 to mile 72",
+    stretch:
+      "From Four Corners (exit 58) past Celebration (exit 62), US 192 (exit 64), Osceola Parkway (exit 65), Epcot and Disney Springs (exit 67), Lake Buena Vista (exit 68) and SeaWorld (exit 71) to the Beachline (exit 72).",
+    hours:
+      "Monday to Thursday, 6:00 a.m. to midnight. Friday to Sunday, 6:00 a.m. to 3:30 a.m.",
+    plain:
+      "No patrol is listed here between 3:30 a.m. and 6:00 a.m. on any day, and from Monday to Thursday the listed patrol ends at midnight.",
+    source: "FDOT Road Ranger coverage map",
   },
   {
-    option: "I-Drive, theme parks, resort corridor, or rental car",
-    roadRangers: "May help only if the vehicle is actually on a covered expressway or interstate.",
-    roadZone: "Built for visitors and local drivers in lots, garages, hotels, restaurants, and resort areas.",
+    road: "I-4, mile 98 to mile 114",
+    stretch:
+      "From Lake Mary and Heathrow (exit 98) past the Sanford exits (101A and 104) to the SR 472 exit for Deltona and DeLand (exit 114).",
+    hours:
+      "Monday to Thursday, 6:00 a.m. to midnight. Friday to Sunday, 6:00 a.m. to 3:30 a.m.",
+    plain: "The same late-night gap as the stretch past the Disney exits.",
+    source: "FDOT Road Ranger coverage map",
   },
   {
-    option: "Late night or urgent direct dispatch",
-    roadRangers: "Availability depends on route, hours, weather, and patrol coverage.",
-    roadZone: "Available 24/7 for paid roadside help when you want one direct local call.",
+    road: "Florida's Turnpike",
+    stretch: "The Turnpike itself, which meets I-4 at exit 77.",
+    hours: "24 hours a day, 7 days a week, on every milepost Florida's Turnpike lists, 0 to 308.",
+    plain: "Around the clock, all year.",
+    source: "Florida's Turnpike, Road Rangers Safety Patrol",
+  },
+  {
+    road: "Toll roads run by Florida's Turnpike",
+    stretch:
+      "The Western Beltway (SR 429, mileposts 0 to 11), which meets I-4 at exit 60; the Southern Connector (SR 417, mileposts 0 to 10), which meets I-4 at exit 62 by Celebration; the Beachline (SR 528, mileposts 0 to 8), which starts at I-4 exit 72 toward Orlando International Airport; and the Seminole Expressway (SR 417, mileposts 38 to 55).",
+    hours: "6:00 a.m. to 10:00 p.m., 7 days a week.",
+    plain: "No patrol is listed on these stretches between 10:00 p.m. and 6:00 a.m.",
+    source: "Florida's Turnpike, Road Rangers Safety Patrol",
+  },
+  {
+    road: "CFX toll roads",
+    stretch: "SR 408, SR 414, SR 417, SR 429, SR 451 and SR 528, run by the Central Florida Expressway Authority.",
+    hours:
+      "CFX lists 6:00 a.m. to 10:00 p.m., seven days a week, 365 days a year. FDOT's coverage map lists 6:00 a.m. to 8:00 p.m. for the same six roads.",
+    plain:
+      "The two published schedules differ between 8:00 p.m. and 10:00 p.m. After 10:00 p.m. neither lists a patrol.",
+    source: "CFX Roadside Assistance; FDOT Road Ranger coverage map",
+  },
+  {
+    road: "Arterial pilot on Orlando surface roads",
+    stretch:
+      "SR 50, SR 526, US 441, Oak Ridge Road, SR 423, SR 435 (Kirkman Road), SR 482 (Sand Lake Road) and Conroy Road, as FDOT's map names them.",
+    hours: "Monday to Friday, 6:00 a.m. to 10:00 p.m. Not in operation on Saturday or Sunday.",
+    plain: "A weekday patrol on surface roads, which FDOT lists as a pilot.",
+    source: "FDOT Road Ranger coverage map",
   },
 ];
 
-const whatTheyMayHelpWith = [
-  "Flat tire assistance on covered highways",
-  "Jump-starts and minor vehicle help",
-  "Small emergency fuel assistance",
-  "Traffic control and help clearing disabled vehicles",
-  "Roadway debris and incident support",
+const whatTheyDo = [
+  "Change flat tires. Florida's Turnpike lists this as a tire change with the vehicle's own spare.",
+  "Jump-start vehicles and make minor repairs. Florida's Turnpike lists minor emergency repairs that can be completed in less than 15 minutes.",
+  "Supply emergency gasoline, diesel and water. Florida's Turnpike lists emergency gas of up to 2 gallons.",
+  "Give stranded drivers two free local calls.",
+  "Clear disabled vehicles and debris from the travel lanes, and move disabled vehicles to safer locations.",
+  "Help with traffic control at crash scenes, and notify the Florida Highway Patrol about abandoned vehicles.",
+];
+
+const whereHelpStops = [
+  {
+    title: "Off their roads",
+    text: "Hotel lots, theme park lots, parking garages, airport rental garages and vacation-home driveways are not on any route that FDOT, Florida's Turnpike, CFX or the I-4 project site lists.",
+  },
+  {
+    title: "Outside their hours",
+    text: "Away from I-4 between exits 72 and 98 and the Turnpike itself, the listed patrols stop at night. The hours by road are above.",
+  },
+  {
+    title: "Without a spare",
+    text: "Florida's Turnpike lists its free tire change as a change with the vehicle's own spare. A tire that cannot be swapped for a spare is not on its list.",
+  },
+  {
+    title: "Tows, lockouts and long repairs",
+    text: "None of the four official pages lists a tow to a repair shop or home, or a lockout, among the free services. Florida's Turnpike lists only minor repairs that take less than 15 minutes.",
+  },
 ];
 
 const roadZoneSituations = [
   {
-    title: "Out of gas away from a covered highway",
-    text: "Fuel delivery calls often happen at hotels, apartments, local roads, stores, and parking lots where Road Rangers are not the practical path.",
-    href: "/services/fuel-delivery",
-    label: "Fuel Delivery",
-    Icon: Fuel,
-  },
-  {
-    title: "Dead battery at a home, hotel, work, or garage",
-    text: "A dead battery off the highway is usually a direct jumpstart call. RoadZone Plus can come to the vehicle 24/7.",
-    href: "/services/jumpstart",
-    label: "Jumpstart Service",
-    Icon: ShieldCheck,
-  },
-  {
-    title: "Flat tire in a lot or unsafe shoulder",
-    text: "If you have a usable spare, RoadZone Plus can help install it. If you are blocking traffic or cannot get safe, call 911 first.",
+    title: "Flat tire in a hotel lot, garage or driveway",
+    text: "If you have a usable spare, RoadZone Plus comes to the car and puts it on, at any hour.",
     href: "/services/tire-change",
     label: "Tire Change",
     Icon: Wrench,
   },
   {
+    title: "Dead battery off the highway",
+    text: "A car that will not start in a theme park lot, a rental garage or a driveway is a direct jump start call.",
+    href: "/services/jumpstart",
+    label: "Jump Start Service",
+    Icon: ShieldCheck,
+  },
+  {
     title: "Keys locked inside the car",
-    text: "Lockouts at airports, rentals, hotels, restaurants, and parking lots are usually private roadside calls, not a highway patrol issue.",
+    text: "No Road Ranger agency lists lockouts. RoadZone Plus handles them at hotels, restaurants, airports and parking lots.",
     href: "/services/auto-lockout",
     label: "Auto Lockout",
     Icon: CheckCircle2,
   },
+  {
+    title: "A tire that needs more than a swap",
+    text: "When the problem is the tire itself, see the mobile tire options and what can be done where the car is.",
+    href: "/mobile-tire-repair-orlando",
+    label: "Mobile Tire Help",
+    Icon: MapPin,
+  },
 ];
 
-const orlandoRoutes = [
-  "I-4",
-  "SR 408",
-  "SR 417",
-  "SR 414",
-  "SR 429",
-  "SR 528",
-  "SR 451",
-  "Turnpike area routes",
+const dialSteps = [
+  {
+    title: "Get safe first",
+    text: "Pull fully onto the shoulder if you can and turn on your hazard lights. Call 911 if the car is blocking traffic, there has been a crash, you see smoke or you feel unsafe.",
+  },
+  {
+    title: "Dial *347 from your cell phone",
+    text: "Ask for a Road Ranger. CFX also says its Road Rangers stop to help when they see a car pulled over on the side of the road.",
+  },
+  {
+    title: "Say where you are",
+    text: "The I-4 project site says to have three things ready: the road you are on, your direction of travel, and the last exit or landmark you passed.",
+  },
+  {
+    title: "Know the truck",
+    text: "FDOT says every Road Ranger vehicle is white, with the Road Rangers logo on the rear and sides, and the drivers are in uniform.",
+  },
+];
+
+const comparisonRows = [
+  {
+    option: "On I-4 between exits 72 and 98, any hour",
+    roadRangers: "Listed 24 hours a day. Dial *347.",
+    roadZone: "A direct paid call if you would rather not wait for the patrol, or need more than they offer.",
+  },
+  {
+    option: "On I-4 past the Disney exits or on a toll road, late at night",
+    roadRangers: "No patrol listed past the Disney exits between 3:30 a.m. and 6:00 a.m., or on most toll roads after 10:00 p.m.",
+    roadZone: "Takes calls 24 hours a day.",
+  },
+  {
+    option: "Hotel lot, theme park lot, airport garage or driveway",
+    roadRangers: "Not on any listed route.",
+    roadZone: "Comes to the car, with no membership and no app.",
+  },
+  {
+    option: "Locked out, no spare, or the car needs more than 15 minutes",
+    roadRangers: "Not among the free services the agencies list.",
+    roadZone: "Lockouts, tire help and jump starts on one call.",
+  },
 ];
 
 const sourceLinks = [
   {
-    name: "Central Florida Expressway Authority Roadside Assistance",
-    href: "https://www.cfxway.com/for-travelers/traveler-help-center/roadside-assistance/",
-    note: "CFX lists Road Rangers, *347 (*FHP), covered Central Florida toll roads, daily patrol, and posted patrol hours.",
-  },
-  {
-    name: "FDOT Road Ranger Service Patrol",
+    name: "FDOT: Road Rangers",
     href: "https://www.fdot.gov/traffic/cvotim/tim/roadrangers/home.htm",
-    note: "FDOT describes Road Rangers as limited no-cost highway assistance and lists examples such as flat tires, jump-starts, emergency fuel, and incident support.",
+    note: "Limited no-cost highway assistance, sponsored by GEICO; *347 from a mobile phone; the list of services; white vehicles with the Road Rangers logo; more than 6.1 million service assists since 2000.",
   },
   {
-    name: "Florida Highway Patrol contact guidance",
+    name: "FDOT: Road Ranger coverage map (District 5)",
+    href: "https://fdot.maps.arcgis.com/apps/webappviewer/index.html?id=e375cf8cdf664c10961fb879788205bb",
+    note: "Hours by stretch: I-4 mile 72 to 98, 24 hours a day; I-4 mile 58 to 72 and 98 to 114, Monday to Thursday 6:00 a.m. to midnight and Friday to Sunday 6:00 a.m. to 3:30 a.m.; CFX toll roads 6:00 a.m. to 8:00 p.m.; the arterial pilot, weekdays 6:00 a.m. to 10:00 p.m.",
+  },
+  {
+    name: "Florida's Turnpike: Road Rangers Safety Patrol",
+    href: "https://floridasturnpike.com/traveler-resources/safety-and-assistance/road-rangers-safety-patrol/",
+    note: "Free assistance 365 days a year; tire changes with the vehicle's spare, up to 2 gallons of gas, jump starts, water, repairs under 15 minutes; hours by road.",
+  },
+  {
+    name: "Central Florida Expressway Authority: Roadside Assistance",
+    href: "https://www.cfxway.com/for-travelers/traveler-help-center/roadside-assistance/",
+    note: "Free help on SR 408, 417, 414, 429, 528 and 451; more than 4,000 drivers helped every month; 6:00 AM to 10:00 PM, 365 days a year; patrols follow FHP in suspending at sustained winds of 45 mph or more.",
+  },
+  {
+    name: "I-4 Beyond the Ultimate (FDOT): Road Rangers, Heroes of the Highway",
+    href: "https://i4beyond.com/road-rangers-heroes-of-the-highway/",
+    note: "Patrols on I-4, I-4 Express, I-95, I-75, CFX roads and Florida's Turnpike; what to have ready when you call *347.",
+  },
+  {
+    name: "Florida Highway Patrol: regional communication centers",
     href: "https://www.flhsmv.gov/florida-highway-patrol/contact-fhp/regional-communication-centers/",
-    note: "FDOT points motorists here when a mobile carrier does not support the *347 phone path.",
+    note: "Where FDOT sends drivers whose mobile carrier does not support *347.",
   },
 ];
 
@@ -171,65 +288,80 @@ const relatedGuides = [
   {
     href: "/roadside-assistance-florida-turnpike-orlando",
     title: "Roadside Assistance on Florida's Turnpike",
-    text: "Who reaches you on the Turnpike near Orlando: the 24-hour Road Rangers patrol, STARR tows, and a direct call, exit by exit from Kissimmee to Minneola.",
+    text: "Who reaches you on the Turnpike near Orlando, exit by exit from Kissimmee to Minneola.",
   },
   {
     href: "/free-roadside-assistance-orlando",
     title: "Free Roadside Assistance in Orlando",
-    text: "Every legitimate free and already-paid option — Road Rangers, insurance, warranties, memberships — and when direct dispatch fits.",
+    text: "Every free and already-paid option: Road Rangers, insurance, warranties and memberships.",
   },
   {
-    href: "/roadside-assistance-cost-orlando",
-    title: "Roadside Assistance Cost in Orlando",
-    text: "Compare free options, memberships, insurance benefits, and direct pay-as-you-go roadside help.",
-  },
-  {
-    href: "/ran-out-of-gas-on-i-4-orlando",
-    title: "Ran Out of Gas on I-4",
-    text: "Safety steps and fuel delivery options for Orlando highways, toll roads, and expressway shoulders.",
+    href: "/roadside-assistance-near-disney-world-resort",
+    title: "Roadside Help Near Disney World",
+    text: "Who to call near Disney by place and hour, including Disney's own Car Care Center.",
   },
   {
     href: "/orlando-airport-roadside-assistance",
-    title: "Airport Roadside Assistance",
-    text: "Roadside help for MCO, airport hotels, rental cars, cell phone lots, and nearby routes.",
+    title: "Orlando Airport Roadside Assistance",
+    text: "Who to call at MCO, in the rental garages and on the airport roads.",
   },
   {
-    href: "/international-drive-roadside-assistance",
-    title: "International Drive Roadside Help",
-    text: "Help for I-Drive hotels, restaurants, shopping centers, attractions, and local roads.",
+    href: "/locked-keys-in-rental-car-orlando",
+    title: "Locked Keys in a Rental Car",
+    text: "What to do first with a rental, and who can open it.",
+  },
+  {
+    href: "/florida-move-over-law",
+    title: "Florida's Move Over Law",
+    text: "What drivers must do when they pass a Road Ranger or any stopped vehicle.",
   },
 ];
 
 const faqs = [
   {
-    question: "Are Road Rangers free in Orlando?",
+    question: "Are Road Rangers free in Florida?",
     answer:
-      "Road Rangers are a public highway assistance program that can provide limited no-cost help on covered highways and expressways. The free option depends on the road, patrol coverage, hours, and the type of problem. It is not the same as a 24/7 private roadside service for parking lots, hotels, apartments, local roads, or garages.",
+      "Yes, on the roads they patrol. FDOT describes Road Rangers as limited no-cost highway assistance, and both Florida's Turnpike and the Central Florida Expressway Authority call the service free. Parking lots, garages and driveways are not on their routes.",
   },
   {
-    question: "What is the Road Rangers Orlando phone number?",
+    question: "How do I call a Road Ranger in Florida?",
     answer:
-      "The public phone path listed by official Florida transportation sources is *347, also shown as *FHP, from a mobile phone. If your carrier does not support *347, FDOT points motorists to Florida Highway Patrol regional communication center contact information.",
+      "Dial *347, also written *FHP, from a cell phone and ask for a Road Ranger. Be ready to give the road you are on, your direction of travel and the last exit or landmark you passed. If your carrier does not support *347, FDOT points drivers to the Florida Highway Patrol's regional communication centers.",
   },
   {
-    question: "Can Road Rangers help in a parking lot?",
+    question: "What is a Road Ranger?",
     answer:
-      "Usually no. Road Rangers are designed for highway and expressway assistance. If your car is in a hotel lot, apartment community, workplace, shopping center, theme-park-area lot, airport garage, or neighborhood, call RoadZone Plus for direct 24/7 roadside help.",
+      "A roving patrol vehicle of the Florida Department of Transportation's Road Ranger Service Patrol, which FDOT bids out to private contractors. Road Rangers clear minor incidents from the travel lanes and help stranded drivers with flat tires, jump starts, emergency fuel and water, minor repairs and two free local calls. FDOT says the program has made more than 6.1 million service assists since it began in 2000.",
   },
   {
-    question: "Should I call Road Rangers or RoadZone Plus?",
+    question: "What are the Road Ranger hours in Orlando?",
     answer:
-      "If you are safely stopped on a covered highway or expressway, Road Rangers may be worth trying first. If you are off the covered highway system, need late-night help, want direct dispatch, or are stranded in a parking lot, hotel, garage, apartment, or local road, call RoadZone Plus.",
+      "It depends on the road. FDOT's coverage map lists I-4 from mile 72 to mile 98 at 24 hours a day, and I-4 from mile 58 to mile 72, past the Disney exits, at 6:00 a.m. to midnight Monday to Thursday and 6:00 a.m. to 3:30 a.m. Friday to Sunday. Florida's Turnpike patrols its mainline 24 hours a day. CFX lists 6:00 a.m. to 10:00 p.m. on its toll roads, while FDOT's map lists 6:00 a.m. to 8:00 p.m. for them.",
+  },
+  {
+    question: "Do Road Rangers work on Thanksgiving, Christmas and New Year's Day?",
+    answer:
+      "Florida's Turnpike and CFX both say their Road Rangers patrol 365 days a year. FDOT's coverage map gives I-4 hours by weekday and weekend and has no separate holiday line. CFX adds that its patrols follow the Florida Highway Patrol in stopping when sustained winds reach 45 mph or more.",
+  },
+  {
+    question: "Can a Road Ranger tow my car?",
+    answer:
+      "Not to a shop or home: none of the FDOT, Florida's Turnpike, CFX or I-4 project pages lists that among the free services. Road Rangers do clear disabled vehicles from the travel lanes and move them to safer locations.",
+  },
+  {
+    question: "Can Road Rangers help in a hotel or theme park parking lot?",
+    answer:
+      "Those lots are not on any route the Road Ranger agencies list. For a car in a hotel lot, a theme park lot, an airport rental garage or a vacation-home driveway, RoadZone Plus is a direct paid roadside service that takes calls 24 hours a day.",
+  },
+  {
+    question: "Is RoadZone Plus part of the Road Ranger program?",
+    answer:
+      "No. RoadZone Plus is a private, paid roadside service in Orlando. It is not FDOT, CFX, Florida's Turnpike, the Florida Highway Patrol or the Road Rangers. This page explains the free program first and then where a direct call fits.",
   },
   {
     question: "What if I am blocking traffic or feel unsafe?",
     answer:
-      "Call 911 first. Roadside service is not a substitute for emergency response when the vehicle is blocking traffic, there has been a crash, there is smoke or fire, or you feel in danger.",
-  },
-  {
-    question: "Can RoadZone Plus help if Road Rangers cannot?",
-    answer:
-      "Yes. RoadZone Plus is a direct paid roadside service for Orlando drivers who need 24/7 help with jumpstarts, tire changes, fuel delivery, lockouts, battery help, wheel lock removal, and related roadside problems where the public highway option does not fit.",
+      "Call 911. A roadside service is not a substitute for emergency response when the car is blocking traffic, there has been a crash, there is smoke or fire, or you feel in danger.",
   },
 ];
 
@@ -253,8 +385,9 @@ export default function RoadRangersOrlandoPage() {
     "@id": `${absoluteUrl(path)}#article`,
     headline: title,
     description,
+    image: absoluteUrl(heroImage),
     datePublished: "2026-06-30",
-    dateModified: "2026-06-30",
+    dateModified: "2026-11-23",
     author: {
       "@type": "Organization",
       name: site.name,
@@ -275,7 +408,7 @@ export default function RoadRangersOrlandoPage() {
     name: "24/7 Roadside Assistance in Orlando",
     serviceType: "Roadside assistance",
     description:
-      "Direct 24/7 roadside assistance in Orlando for drivers who need help beyond public highway patrol coverage, including jumpstarts, tire changes, fuel delivery, lockouts, battery help, and wheel lock removal.",
+      "Direct 24/7 roadside assistance in Orlando where the free Road Ranger patrols do not reach: hotel lots, theme park lots, airport rental garages, driveways and late-night hours. Jump starts, tire changes with your spare, lockouts and fuel delivery.",
     url: absoluteUrl(path),
     provider: {
       "@id": businessId,
@@ -301,6 +434,7 @@ export default function RoadRangersOrlandoPage() {
     url: absoluteUrl(path),
     name: title,
     description,
+    dateModified: "2026-11-23",
     isPartOf: {
       "@type": "WebSite",
       "@id": `${site.url}#website`,
@@ -328,115 +462,254 @@ export default function RoadRangersOrlandoPage() {
       />
 
       <section className="section border-b border-white/10 bg-road-black">
-        <div className="container grid gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+        <div className="container grid gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-center">
           <div>
             <div className="eyebrow">
               <ShieldCheck aria-hidden="true" size={16} />
-              Orlando Road Rangers guide
+              Florida Road Rangers near Orlando
             </div>
-            <h1 className="mt-5 text-5xl font-black leading-tight text-white sm:text-6xl">
-              Road Rangers in Orlando: free highway help vs. 24/7 roadside service.
+            <h1 className="mt-5 text-4xl font-black leading-tight text-white sm:text-6xl">
+              Road Rangers in Orlando: free highway help, the *347 number, and the hours by road.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
-              If you searched for Road Rangers in Orlando, start with the safe public option:
-              on covered highways and expressways, dial{" "}
-              <span className="font-black text-white">*347 (*FHP)</span>. If that does not
-              cover where your car is actually stuck, RoadZone Plus is the direct 24/7
-              roadside call for Orlando parking lots, hotels, local roads, apartments,
-              garages, and late-night breakdowns.
+              Road Rangers are free on the highways they patrol. Dial{" "}
+              <span className="font-black text-white">*347 (*FHP)</span> from a cell phone. Around
+              Orlando they cover I-4, Florida&apos;s Turnpike and the toll roads, but the hours
+              change by road, and hotel lots, garages and driveways are not on their routes.
+              RoadZone Plus is a private 24/7 roadside service for those places and hours.
+            </p>
+            <p className="mt-4 text-sm font-bold text-white/56">
+              Hours and services checked against FDOT, Florida&apos;s Turnpike and CFX on {checkedOn}.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="#hours-by-road" className="btn btn-secondary">
+                <Clock3 aria-hidden="true" size={18} />
+                Road Ranger Hours by Road
+              </a>
               <a href={site.phoneHref} className="btn btn-primary">
                 <PhoneCall aria-hidden="true" size={18} />
-                Call {site.phoneDisplay}
+                Call RoadZone {site.phoneDisplay}
               </a>
-              <Link href="/roadside-assistance-cost-orlando" className="btn btn-secondary">
-                Compare Cost Options
-              </Link>
             </div>
           </div>
 
-          <aside className="card bg-panel p-6">
-            <div className="flex items-start gap-3">
-              <AlertTriangle aria-hidden="true" className="mt-1 shrink-0 text-safety-yellow" size={22} />
-              <div>
-                <p className="text-sm font-black uppercase text-safety-yellow">
-                  Important distinction
-                </p>
-                <p className="mt-3 text-base leading-7 text-white/70">
-                  RoadZone Plus is not FDOT, CFX, Florida Highway Patrol, or Road Rangers.
-                  This page explains the public highway option and when a direct private
-                  roadside service is the better fit.
+          <aside className="card overflow-hidden bg-panel">
+            <figure>
+              <Image
+                src={heroImage}
+                alt={heroAlt}
+                width={1600}
+                height={1067}
+                priority
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="h-auto w-full"
+              />
+              <figcaption className="px-6 pt-4 text-xs leading-5 text-white/56">
+                A Florida Road Ranger truck on the shoulder of Interstate 10 in Madison County,
+                April 2024.
+              </figcaption>
+            </figure>
+            <div className="p-6">
+              <div className="flex items-start gap-3">
+                <AlertTriangle aria-hidden="true" className="mt-1 shrink-0 text-safety-yellow" size={20} />
+                <p className="text-sm leading-6 text-white/70">
+                  RoadZone Plus is not FDOT, CFX, Florida&apos;s Turnpike, the Florida Highway Patrol
+                  or the Road Rangers. This guide explains the free program first.
                 </p>
               </div>
-            </div>
-            <div className="mt-6 border-t border-white/10 pt-6">
-              <p className="text-sm font-black uppercase text-white/48">Need direct help?</p>
-              <a href={site.phoneHref} className="mt-3 flex items-center gap-3 text-2xl font-black text-white">
-                <PhoneCall aria-hidden="true" size={22} />
-                {site.phoneDisplay}
-              </a>
             </div>
           </aside>
         </div>
       </section>
 
-      <section className="section bg-asphalt">
+      <section id="short-answer" className="section bg-asphalt">
         <div className="container">
           <div className="max-w-3xl">
             <div className="eyebrow">
               <Info aria-hidden="true" size={16} />
-              Quick answer
+              Short answer
             </div>
-            <h2 className="mt-5 text-4xl font-black text-white">
-              The right call depends on where the car is stuck.
+            <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
+              Free, *347, highways only, and the hours depend on the road.
             </h2>
-            <p className="mt-5 text-base leading-8 text-white/66">
-              Road Rangers are useful when the vehicle is on the covered highway system.
-              RoadZone Plus is for direct Orlando roadside dispatch when that free option
-              does not fit the location, hour, or problem.
-            </p>
           </div>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-3">
-            {quickAnswer.map((item) => (
-              <div key={item.label} className="card-solid p-6">
-                <p className="text-xs font-black uppercase text-white/42">{item.label}</p>
-                <h3 className="mt-3 text-2xl font-black text-white">{item.value}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/66">{item.text}</p>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {shortAnswers.map((item) => (
+              <div key={item.question} className="card-solid p-6">
+                <p className="text-xs font-black uppercase text-white/42">{item.question}</p>
+                <h3 className="mt-3 text-2xl font-black text-white">{item.answer}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/66">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      <section id="hours-by-road" className="section border-y border-white/10 bg-panel">
+        <div className="container">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Clock3 aria-hidden="true" size={16} />
+                Road Ranger hours around Orlando
+              </div>
+              <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
+                Road Ranger hours, road by road.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                Each agency publishes its own hours. These are the stretches an Orlando driver or
+                visitor is most likely to be on, with the hours as each source lists them, read on{" "}
+                {checkedOn}.
+              </p>
+            </div>
+            <figure>
+              <Image
+                src="/visuals/spare-tire/i-4-express-orlando.webp"
+                alt="An entrance road to the I-4 Express lanes in Orlando, with XPRESS painted on the pavement, orange barrels and elevated interstate ramps overhead"
+                width={1600}
+                height={1200}
+                loading="lazy"
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/60">
+                An entrance to the I-4 Express lanes in Orlando, May 2023. The I-4 project site lists
+                I-4 Express among the Road Ranger routes.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="mt-8 grid gap-4">
+            {roadHours.map((item) => (
+              <div key={item.road} className="card-solid grid gap-4 p-6 lg:grid-cols-[0.9fr_1.4fr_1fr]">
+                <div>
+                  <h3 className="text-xl font-black text-white">{item.road}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/60">{item.stretch}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-black uppercase text-white/42">Listed hours</p>
+                  <p className="mt-2 font-black leading-7 text-white">{item.hours}</p>
+                  <p className="mt-2 text-sm leading-6 text-white/66">{item.plain}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-black uppercase text-white/42">Source</p>
+                  <p className="mt-2 text-sm leading-6 text-white/66">{item.source}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-white/60">
+            CFX adds that its Road Rangers follow the Florida Highway Patrol in suspending patrols
+            when sustained winds reach 45 mph or more. On I-4 the exit numbers follow the mile
+            markers: exit 64, for example, is at mile 64.2.
+          </p>
+        </div>
+      </section>
+
+      <section className="section bg-road-black">
+        <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <div className="eyebrow">
+              <Route aria-hidden="true" size={16} />
+              What they do
+            </div>
+            <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
+              What a Road Ranger can do at the roadside.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              The Road Ranger Service Patrol is funded by FDOT and its partners, bid out to private
+              contractors and sponsored by GEICO. FDOT counts more than 6.1 million service assists
+              since the program began in 2000, and CFX says its Road Rangers help more than 4,000
+              drivers every month on its toll roads.
+            </p>
+          </div>
+
+          <div className="card-solid p-6">
+            <h3 className="text-xl font-black text-white">
+              The free services, as the official pages list them
+            </h3>
+            <ul className="mt-5 grid gap-3">
+              {whatTheyDo.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 aria-hidden="true" className="mt-1 shrink-0 text-route-green" size={18} />
+                  <span className="text-sm leading-6 text-white/72">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="section border-y border-white/10 bg-panel">
+        <div className="container">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-start">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <XCircle aria-hidden="true" size={16} />
+                Where their help stops
+              </div>
+              <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
+                Where Road Rangers do not go, and what is not on their list.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">
+                Road Rangers are a highway patrol. A car can also give out somewhere else: a hotel
+                garage, a theme park lot, an airport rental level or a vacation-home driveway.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {whereHelpStops.map((item) => (
+                  <div key={item.title} className="card-solid p-5">
+                    <h3 className="text-lg font-black text-white">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-white/66">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <figure>
+              <Image
+                src="/visuals/battery-cost/parking-garage-level.webp"
+                alt="An empty level of a multistory parking garage with painted parking lines and low afternoon light"
+                width={1200}
+                height={800}
+                loading="lazy"
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/60">
+                A parking garage level. Garages and lots are not on any Road Ranger route the
+                agencies list.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-asphalt">
         <div className="container grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
           <div>
             <div className="eyebrow">
-              <Clock3 aria-hidden="true" size={16} />
-              What to do first
+              <PhoneCall aria-hidden="true" size={16} />
+              When you dial *347
             </div>
-            <h2 className="mt-5 text-4xl font-black text-white">
-              If you are stranded right now, use this order.
+            <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
+              Broken down on the highway right now? Use this order.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
-              Do not start by comparing prices while traffic is moving around you. Stabilize
-              the situation first, then choose the help path that actually covers your
-              location. Hazard lights also bring your car under{" "}
+              Hazard lights also bring your car under{" "}
               <Link
                 href="/florida-move-over-law"
                 className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
               >
                 Florida&apos;s Move Over law
               </Link>
-              .
+              , which tells passing drivers to move over or slow down.
             </p>
           </div>
 
-          <div className="grid gap-4">
-            {firstSteps.map((step, index) => (
-              <div key={step.title} className="card-solid p-6">
+          <ol className="grid gap-4">
+            {dialSteps.map((step, index) => (
+              <li key={step.title} className="card-solid p-6">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-road-red text-sm font-black text-white">
                     {index + 1}
@@ -444,66 +717,9 @@ export default function RoadRangersOrlandoPage() {
                   <h3 className="text-xl font-black text-white">{step.title}</h3>
                 </div>
                 <p className="mt-3 text-sm leading-6 text-white/66">{step.text}</p>
-              </div>
+              </li>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section bg-road-black">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="eyebrow">
-              <Route aria-hidden="true" size={16} />
-              Orlando coverage check
-            </div>
-            <h2 className="mt-5 text-4xl font-black text-white">
-              Road Rangers are highway assistance, not a replacement for every roadside call.
-            </h2>
-            <p className="mt-5 text-base leading-8 text-white/66">
-              Official sources describe Road Rangers as limited no-cost highway assistance.
-              In Central Florida, CFX lists covered toll roads including major expressways,
-              and FDOT describes services that can include flat-tire help, jump-starts,
-              emergency fuel, and incident support.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="card-solid p-6">
-              <h3 className="text-xl font-black text-white">
-                Orlando-area roads people usually mean
-              </h3>
-              <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {orlandoRoutes.map((road) => (
-                  <span
-                    key={road}
-                    className="rounded-md border border-white/10 bg-black/24 px-3 py-2 text-center text-sm font-black text-white"
-                  >
-                    {road}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-5 text-sm leading-6 text-white/60">
-                Always verify the current route, hours, weather restrictions, and dispatch
-                availability with the official public source before relying on the free
-                program.
-              </p>
-            </div>
-
-            <div className="card-solid p-6">
-              <h3 className="text-xl font-black text-white">
-                Problems Road Rangers may be able to help with
-              </h3>
-              <div className="mt-5 grid gap-3">
-                {whatTheyMayHelpWith.map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 aria-hidden="true" className="mt-1 shrink-0 text-route-green" size={18} />
-                    <p className="text-sm leading-6 text-white/68">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          </ol>
         </div>
       </section>
 
@@ -512,28 +728,23 @@ export default function RoadRangersOrlandoPage() {
           <div className="max-w-3xl">
             <div className="eyebrow">
               <MapPin aria-hidden="true" size={16} />
-              Road Rangers vs. RoadZone Plus
+              Road Rangers or RoadZone Plus
             </div>
-            <h2 className="mt-5 text-4xl font-black text-white">
-              Use Road Rangers when the public highway option fits. Call RoadZone when it does not.
+            <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
+              Which call fits where your car is.
             </h2>
-            <p className="mt-5 text-base leading-8 text-white/66">
-              This is the practical split for Orlando drivers and visitors. The wrong call
-              can cost you time, especially if your vehicle is not actually on a covered
-              highway shoulder.
-            </p>
           </div>
 
           <div className="mt-8 overflow-hidden rounded-md border border-white/10">
             {comparisonRows.map((row, index) => (
               <div
                 key={row.option}
-                className={`grid gap-4 bg-black/20 p-5 lg:grid-cols-[0.78fr_1fr_1fr] ${
+                className={`grid gap-4 bg-black/20 p-5 lg:grid-cols-[0.9fr_1fr_1fr] ${
                   index > 0 ? "border-t border-white/10" : ""
                 }`}
               >
                 <div>
-                  <p className="text-xs font-black uppercase text-white/42">Situation</p>
+                  <p className="text-xs font-black uppercase text-white/42">Where you are</p>
                   <p className="mt-2 font-black text-white">{row.option}</p>
                 </div>
                 <div>
@@ -550,7 +761,7 @@ export default function RoadRangersOrlandoPage() {
         </div>
       </section>
 
-      <section className="section bg-asphalt">
+      <section className="section bg-road-black">
         <div className="container">
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <div>
@@ -558,13 +769,14 @@ export default function RoadRangersOrlandoPage() {
                 <PhoneCall aria-hidden="true" size={16} />
                 When to call RoadZone
               </div>
-              <h2 className="mt-5 text-4xl font-black text-white">
-                Direct 24/7 help for the places public patrols usually do not cover.
+              <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
+                24/7 roadside help in the places and hours the patrols do not cover.
               </h2>
               <p className="mt-5 text-base leading-8 text-white/66">
-                RoadZone Plus is for the real Orlando situations that happen away from a
-                patrol route: hotels, garages, apartments, restaurants, stores, airport
-                areas, tourist corridors, local roads, and late-night breakdowns.
+                RoadZone Plus takes calls 24 hours a day in Kissimmee, Lake Buena Vista, the area
+                around Walt Disney World, Orlando International Airport and Universal: hotel lots,
+                theme park lots, rental garages and vacation-home driveways. There is no membership
+                and no app.
               </p>
               <div className="mt-8">
                 <a href={site.phoneHref} className="btn btn-primary">
@@ -597,18 +809,41 @@ export default function RoadRangersOrlandoPage() {
       </section>
 
       <section className="section border-y border-white/10 bg-panel">
+        <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <div className="eyebrow">
+              <Clock3 aria-hidden="true" size={16} />
+              FAQ
+            </div>
+            <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
+              Road Rangers questions from Florida drivers
+            </h2>
+          </div>
+
+          <div className="grid gap-4">
+            {faqs.map((faq) => (
+              <div key={faq.question} className="card-solid p-6">
+                <h3 className="text-xl font-black text-white">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/66">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-asphalt">
         <div className="container">
           <div className="max-w-3xl">
             <div className="eyebrow">
               <ExternalLink aria-hidden="true" size={16} />
-              Public source check
+              Sources
             </div>
-            <h2 className="mt-5 text-4xl font-black text-white">
-              Official sources used for this guide.
+            <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
+              Official sources, read on {checkedOn}.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
-              RoadZone Plus uses these public pages for context and does not claim to
-              operate the public Road Ranger program.
+              Hours and services change. Check the agency&apos;s own page before you rely on the
+              free program.
             </p>
           </div>
 
@@ -639,16 +874,12 @@ export default function RoadRangersOrlandoPage() {
               <Info aria-hidden="true" size={16} />
               Related Orlando guides
             </div>
-            <h2 className="mt-5 text-4xl font-black text-white">
+            <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl">
               More help if the free option does not solve it.
             </h2>
-            <p className="mt-5 text-base leading-8 text-white/66">
-              These pages connect the Road Rangers search to the services and locations most
-              likely to turn into a real customer call.
-            </p>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {relatedGuides.map((guide) => (
               <Link
                 key={guide.href}
@@ -666,35 +897,12 @@ export default function RoadRangersOrlandoPage() {
         </div>
       </section>
 
-      <section className="section border-y border-white/10 bg-panel">
-        <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <div className="eyebrow">
-              <Clock3 aria-hidden="true" size={16} />
-              FAQ
-            </div>
-            <h2 className="mt-5 text-4xl font-black text-white">
-              Road Rangers Orlando questions
-            </h2>
-          </div>
-
-          <div className="grid gap-4">
-            {faqs.map((faq) => (
-              <div key={faq.question} className="card-solid p-6">
-                <h3 className="text-xl font-black text-white">{faq.question}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/66">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-road-red py-12 text-white">
         <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
           <div>
-            <p className="text-sm font-black uppercase text-white/72">Covered highway or not</p>
+            <p className="text-sm font-black uppercase text-white/72">Off the patrol routes or after hours</p>
             <h2 className="mt-2 text-3xl font-black sm:text-4xl">
-              When the public option does not fit, call RoadZone Plus.
+              When the Road Rangers cannot reach you, call RoadZone Plus.
             </h2>
           </div>
           <a href={site.phoneHref} className="btn border border-white bg-white text-road-black hover:bg-white/90">
