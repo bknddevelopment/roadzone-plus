@@ -18,7 +18,7 @@ import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 const path = "/jump-start-service-kissimmee-fl";
 const title = "Jump Start Service in Kissimmee, FL, 24/7";
 const description =
-  "24/7 jump start service in Kissimmee, FL at hotels, vacation homes and US 192 lots. Where Road Rangers jump cars free on the Turnpike and I-4, and the hours they stop.";
+  "24/7 jump start service in Kissimmee, FL at hotels, vacation homes and US 192 lots, plus where free Road Ranger jump starts run on the Turnpike and I-4, and when.";
 const updatedIso = "2026-11-24";
 const updatedLabel = "November 24, 2026";
 const heroImage = "/visuals/battery-cost/jumper-cable-clamps.webp";
