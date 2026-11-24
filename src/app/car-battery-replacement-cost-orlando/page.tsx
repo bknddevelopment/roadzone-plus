@@ -821,6 +821,16 @@ export default function CarBatteryReplacementCostPage() {
                 Dead Battery Guide
               </Link>
             </div>
+            <p className="mt-5 text-sm leading-6 text-white/60">
+              Dead battery in Kissimmee, at a hotel, a vacation home or on US 192? See{" "}
+              <Link
+                href="/jump-start-service-kissimmee-fl"
+                className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+              >
+                jump start service in Kissimmee
+              </Link>{" "}
+              for where Road Rangers jump cars free and when to call us.
+            </p>
           </div>
         </div>
       </section>

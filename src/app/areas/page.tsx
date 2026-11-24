@@ -99,6 +99,17 @@ export default function AreasPage() {
               </Link>
             ))}
           </div>
+          <p className="mt-8 max-w-3xl text-sm leading-6 text-white/60">
+            Dead battery near the parks?{" "}
+            <Link
+              href="/jump-start-service-kissimmee-fl"
+              className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+            >
+              Jump start service in Kissimmee, FL
+            </Link>{" "}
+            covers hotels, vacation homes, US 192, and when free Road Rangers help on the
+            Turnpike and I-4.
+          </p>
         </div>
       </section>
 
