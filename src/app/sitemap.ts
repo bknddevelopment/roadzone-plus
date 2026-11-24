@@ -24,6 +24,7 @@ const jumpStartCostLastModified = new Date("2026-11-12T00:00:00.000Z");
 const tireChangeCostLastModified = new Date("2026-11-19T00:00:00.000Z");
 const airportGuideLastModified = new Date("2026-11-19T00:00:00.000Z");
 const roadRangersLastModified = new Date("2026-11-23T00:00:00.000Z");
+const kissimmeeJumpStartLastModified = new Date("2026-11-24T00:00:00.000Z");
 const areaLastModified: Record<string, Date> = {
   kissimmee: new Date("2026-11-22T00:00:00.000Z"),
   sanford: new Date("2026-11-22T00:00:00.000Z"),
@@ -53,6 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/florida-move-over-law",
     "/jump-start-cost-orlando",
     "/tire-change-cost-orlando",
+    "/jump-start-service-kissimmee-fl",
     ...focusedPageList.map((page) => page.href),
   ].map((path) => ({
     url: `${site.url}${path}`,
@@ -83,7 +85,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
                               ? airportGuideLastModified
                               : path === "/road-rangers-orlando"
                                 ? roadRangersLastModified
-                                : undefined,
+                                : path === "/jump-start-service-kissimmee-fl"
+                                  ? kissimmeeJumpStartLastModified
+                                  : undefined,
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8,
   }));
