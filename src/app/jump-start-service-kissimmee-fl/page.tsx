@@ -68,7 +68,7 @@ const sources = {
     name: "Florida's Turnpike: Road Rangers Safety Patrol (read November 24, 2026)",
     short: "Florida's Turnpike",
     href: "https://floridasturnpike.com/traveler-resources/safety-and-assistance/road-rangers-safety-patrol/",
-    note: "Free roadway assistance includes tire changes with the vehicle's spare, emergency gas (up to 2 gallons), jump starts, water refills and minor emergency repairs that take less than 15 minutes; every Turnpike milepost band from 0 to 308 is listed at 24 hours a day, 7 days a week; dial *347.",
+    note: "Free roadway assistance includes tire changes with the vehicle's spare, emergency gas (up to 2 gallons), jump starts, water refills and minor emergency repairs that take less than 15 minutes; every Turnpike milepost band from 0 to 308 is listed at 24 hours a day, 7 days a week; the SR 417 Southern Connector (mileposts 0 to 10) and the SR 429 Western Beltway (mileposts 0 to 11) are listed at 6am to 10pm, 7 days a week; dial *347.",
   },
   fdotMap: {
     name: "FDOT: Road Ranger coverage map, RoadRangerBeats layer (read November 24, 2026)",
@@ -152,12 +152,12 @@ const byRoad: Array<{
     keys: ["fdotMap", "wikipediaI4"],
   },
   {
-    road: "SR 417 and the other CFX toll roads",
+    road: "SR 417 and SR 429 toll roads",
     who: "Road Rangers, free: dial *347, during listed hours",
     hours: "6 AM to 10 PM",
     detail:
-      "The Central Florida Expressway Authority lists free Road Ranger help on SR 408, 417, 414, 429, 528 and 451 from 6:00 AM to 10:00 PM. From 10 PM to 6 AM, call RoadZone Plus.",
-    keys: ["cfx"],
+      "Florida's Turnpike lists Road Rangers on the SR 417 Southern Connector (mileposts 0 to 10) and the SR 429 Western Beltway (mileposts 0 to 11) from 6 AM to 10 PM, and the Central Florida Expressway Authority lists the same hours on SR 408, 417, 414, 429, 528 and 451. From 10 PM to 6 AM, call RoadZone Plus.",
+    keys: ["turnpike", "cfx"],
   },
   {
     road: "US 192, hotel lots, garages and vacation homes",
@@ -257,7 +257,7 @@ const faqs = [
   {
     question: "Do Road Rangers give free jump starts in Kissimmee?",
     answer:
-      "On the highways they patrol, yes. Florida's Turnpike lists jump starts among its free Road Ranger services, 24 hours a day. On I-4 from mile marker 58 to 72, FDOT's map lists patrols Monday to Thursday from 6 AM to midnight and Friday to Sunday from 6 AM to 3:30 AM. CFX lists 6 AM to 10 PM on SR 417 and its other toll roads. Dial *347 there. US 192, hotel lots and vacation homes are not on their routes.",
+      "On the highways they patrol, yes. Florida's Turnpike lists jump starts among its free Road Ranger services, 24 hours a day. On I-4 from mile marker 58 to 72, FDOT's map lists patrols Monday to Thursday from 6 AM to midnight and Friday to Sunday from 6 AM to 3:30 AM. On SR 417 and SR 429, Florida's Turnpike and CFX list 6 AM to 10 PM. Dial *347 there. US 192, hotel lots and vacation homes are not on their routes.",
   },
   {
     question: "Can you jump start a car at a Kissimmee vacation home or hotel?",
@@ -531,7 +531,8 @@ export default function JumpStartServiceKissimmeePage() {
               Hybrids and push-button cars
             </div>
             <h2 className="mt-5 text-4xl font-black text-white">
-              A hybrid still needs its 12-volt battery to wake up.
+              A hybrid still needs its <span className="whitespace-nowrap">12-volt</span>{" "}
+              battery to wake up.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
               Hybrids and EVs still use a regular 12-volt battery to power the electronics
