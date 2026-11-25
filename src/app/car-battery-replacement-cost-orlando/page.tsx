@@ -21,8 +21,9 @@ const path = "/car-battery-replacement-cost-orlando";
 const title = "How Much Does It Cost to Replace a Car Battery in Orlando?";
 const description =
   "2026 car battery replacement costs: published prices by battery type, free-install stores vs dealer vs mobile, Florida's $1.50 battery fee, core charges, and what to do if the car is dead where it's parked.";
-const updatedIso = "2026-10-25";
-const updatedLabel = "October 25, 2026";
+const publishedIso = "2026-10-25";
+const updatedIso = "2026-11-25";
+const updatedLabel = "November 25, 2026";
 const heroImage = "/visuals/battery-cost/battery-in-engine-bay.webp";
 
 export const metadata: Metadata = {
@@ -69,55 +70,55 @@ const sources = {
     note: "A dealer group's installed-price range, what it includes, and why batteries in the trunk or under a seat take more labor.",
   },
   kbb: {
-    name: "Kelley Blue Book: Car Battery Replacement Prices & Cost Estimates (read October 25, 2026)",
+    name: "Kelley Blue Book: Car Battery Replacement Prices & Cost Estimates (read November 25, 2026)",
     short: "Kelley Blue Book",
     href: "https://www.kbb.com/battery-replacement/",
     note: "A replacement battery price range, average battery life and what shortens it, and step-by-step jump-start and DIY replacement instructions.",
   },
   pepboys: {
-    name: "Pep Boys: Car Batteries & Replacement (read October 25, 2026)",
+    name: "Pep Boys: Car Batteries & Replacement (read November 25, 2026)",
     short: "Pep Boys",
     href: "https://www.pepboys.com/batteries/battery-replacement",
-    note: "\"As low as\" prices and free-replacement warranty lengths for four Interstate battery lines, and a free test and installation coupon ending October 31, 2026.",
+    note: "\"As low as\" prices and free-replacement warranty lengths for four Interstate battery lines, and a free test and installation coupon ending December 31, 2026.",
   },
   pepboysGuide: {
-    name: "Pep Boys: Get the Right Car Battery with Our Guide (read October 25, 2026)",
+    name: "Pep Boys: Get the Right Car Battery with Our Guide (read November 25, 2026)",
     short: "Pep Boys guide",
     href: "https://www.pepboys.com/how-to-buy/car-battery",
     note: "Buying advice, including that higher temperatures are hard on car batteries.",
   },
   advance: {
-    name: "Advance Auto Parts: Free Store Services (read October 25, 2026)",
+    name: "Advance Auto Parts: Free Store Services (read November 25, 2026)",
     short: "Advance Auto Parts",
     href: "https://shop.advanceautoparts.com/o/storeservices",
     note: "Free battery installation and registration with purchase, free testing, and battery recycling, for most vehicles at most locations.",
   },
   oreilly: {
-    name: "O'Reilly Auto Parts: Free Car Battery Testing and Installation (read October 25, 2026)",
+    name: "O'Reilly Auto Parts: Free Car Battery Testing and Installation (read November 25, 2026)",
     short: "O'Reilly Auto Parts",
     href: "https://www.oreillyauto.com/store-services/free-battery-testing",
     note: "Free testing, charging and installation, and which vehicles O'Reilly may not install on.",
   },
   walmart: {
-    name: "Walmart: Battery Install (read October 25, 2026)",
+    name: "Walmart: Battery Install (read November 25, 2026)",
     short: "Walmart",
     href: "https://www.walmart.com/cp/battery-install/6110703",
     note: "Free installation with Walmart battery purchases at Walmart Auto Care Centers.",
   },
   midas: {
-    name: "Midas: Car Battery Replacement, Battery Testing, Starting & Charging (read October 25, 2026)",
+    name: "Midas: Car Battery Replacement, Battery Testing, Starting & Charging (read November 25, 2026)",
     short: "Midas",
     href: "https://www.midas.com/auto-repair-services/car-battery-service",
     note: "How long a battery swap takes, what the service includes, and when a battery should be replaced.",
   },
   aaa: {
-    name: "AAA The Auto Club Group: Car Battery Replacement & Install Service (read October 25, 2026)",
+    name: "AAA The Auto Club Group: Car Battery Replacement & Install Service (read November 25, 2026)",
     short: "AAA (Auto Club Group)",
     href: "https://www.acg.aaa.com/automotive/battery-service.html",
     note: "AAA Mobile Battery Service for members of the club that serves Florida: member discount, warranty, and what the price leaves out.",
   },
   aaaRoadside: {
-    name: "AAA The Auto Club Group: 24/7 Roadside Assistance (read October 25, 2026)",
+    name: "AAA The Auto Club Group: 24/7 Roadside Assistance (read November 25, 2026)",
     short: "AAA roadside",
     href: "https://www.acg.aaa.com/aaa-membership/roadside-assistance.html",
     note: "Free battery delivery and installation in most vehicles for members, and that the call counts as a roadside service call.",
@@ -135,13 +136,13 @@ const sources = {
     note: "Florida's $1.50 fee on each new or remanufactured lead-acid battery sold at retail.",
   },
   jiffylube: {
-    name: "Jiffy Lube: Car Battery Replacement Services (read October 25, 2026)",
+    name: "Jiffy Lube: Car Battery Replacement Services (read November 25, 2026)",
     short: "Jiffy Lube",
     href: "https://www.jiffylube.com/auto-services/battery/battery-replacement",
     note: "What a battery replacement includes and how often batteries are usually replaced.",
   },
   interstate: {
-    name: "Interstate Batteries: Refundable Core Deposit (read October 25, 2026)",
+    name: "Interstate Batteries: Refundable Core Deposit (read November 25, 2026)",
     short: "Interstate Batteries",
     href: "https://www.interstatebatteries.com/support/refundable-core-deposit",
     note: "How a battery core deposit is charged and refunded, and when it is not charged at installation.",
@@ -226,7 +227,7 @@ const whereToBuy: Array<{
   {
     option: "Pep Boys",
     install:
-      "Interstate batteries \"as low as\" $134.95 to $259.95 by line. A coupon makes the test and installation free through October 31, 2026 (up to a $19.99 value).",
+      "Interstate batteries \"as low as\" $134.95 to $259.95 by line. A coupon makes the test and installation free through December 31, 2026 (up to a $19.99 value).",
     watchOut:
       "The coupon excludes high-voltage hybrids, EVs and hard-to-reach batteries. Check the warranty length of the line you buy.",
     cite: ["pepboys"],
@@ -305,6 +306,11 @@ const faqs = [
     question: "Is $200 a lot for a car battery?",
     answer:
       "Not usually. $200 is at the top of AutoZone's $90 to $200 range for a standard battery, inside Walser's $120 to $300 range for an installed replacement, and below AutoZone's $230 starting price for an AGM battery. Whether it is fair depends on the battery type and how long the warranty is.",
+  },
+  {
+    question: "Is $300 a lot for a car battery?",
+    answer:
+      "For a standard battery, yes: $300 is above AutoZone's $90 to $200 range and at the top of Walser's $120 to $300 range for a dealer replacement that includes installation. For an AGM battery it is normal, inside AutoZone's $230 to $450-or-more range, and it is where AutoZone's $300 to $500 range for specialty batteries starts. Pep Boys' Interstate MTX line starts at $259.95 with a 36-month free-replacement warranty. If your car takes a standard battery, ask why the quote is that high.",
   },
   {
     question: "Will AutoZone replace my battery?",
@@ -392,7 +398,7 @@ export default function CarBatteryReplacementCostPage() {
     name: title,
     headline: title,
     description,
-    datePublished: updatedIso,
+    datePublished: publishedIso,
     dateModified: updatedIso,
     primaryImageOfPage: {
       "@type": "ImageObject",
@@ -861,8 +867,8 @@ export default function CarBatteryReplacementCostPage() {
             <p>
               Orlando drivers feel it. Searches for &quot;car battery replacement cost&quot; in
               the Orlando area hit 720 in January 2026, against about 390 in a typical
-              month over the last year (Google Ads search data through DataForSEO, pulled{" "}
-              {updatedLabel}). If your battery is three or more years old and cranking
+              month over the last year (Google Ads search data through DataForSEO, pulled
+              October 25, 2026). If your battery is three or more years old and cranking
               slowly, a free test now is cheaper than a dead car in a parking lot later.
             </p>
             <SourceTags keys={["kbb", "pepboysGuide", "walser"]} />
