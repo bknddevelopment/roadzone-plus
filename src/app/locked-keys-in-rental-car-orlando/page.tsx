@@ -20,7 +20,7 @@ import {
 
 const title = "Locked Keys in Rental Car Orlando: Who to Call";
 const description =
-  "Keys locked in a rental car in Orlando? What Hertz, Enterprise, Alamo, Avis, Dollar and Sixt say about lockout fees and lost keys, and who to call first.";
+  "Keys locked in a rental car in Orlando? What Hertz, Enterprise, Alamo, Avis, Dollar and SIXT say about lockout fees and lost keys, and who to call first.";
 
 // Rental company terms below were read on the companies' own pages on this date.
 // Quotations are word for word; a cell says "Not stated" where the page read is silent.
@@ -206,7 +206,7 @@ const rentalCompanies: RentalCompany[] = [
       "Premium Emergency Roadside Service, which covers \"Lost, damaged, or locked-in keys\"; with it, Dollar offers \"the unlock service at no charge.\"",
     withoutAddOn:
       "Dollar says \"there may be a maximum fee of $250 for this service,\" and \"Use your own auto club to unlock the vehicle.\"",
-    keys: "Without the add-on: \"Use your own auto club to have new keys made for the vehicle,\" or call Dollar, with the same $250 maximum fee.",
+    keys: "With the add-on, Dollar offers \"the lost key service at no charge.\" Without it: \"Use your own auto club to have new keys made for the vehicle,\" or call Dollar, with the same $250 maximum fee.",
     source: "dollar",
   },
   {
@@ -217,7 +217,7 @@ const rentalCompanies: RentalCompany[] = [
       "Premium Emergency Roadside Service, which covers \"Lost, damaged, or locked-in keys.\"",
     withoutAddOn:
       "For lost keys, Thrifty says \"there may be a maximum fee of $250 for this service\"; the page does not state a fee for keys locked inside.",
-    keys: "\"Use your own auto club to have new keys made for the vehicle,\" or call 800-435-7650, the number Thrifty gives for lost keys.",
+    keys: "With the add-on, Thrifty offers \"the lost key service at no charge\" on 800-435-7650, the number it gives for lost keys. Without it: \"Use your own auto club to have new keys made for the vehicle,\" or call that number.",
     source: "thrifty",
   },
   {
@@ -227,8 +227,8 @@ const rentalCompanies: RentalCompany[] = [
     addOn:
       "Roadside Assistance Protection, an optional add-on that covers \"Lost key replacement\" and \"Lockouts.\"",
     withoutAddOn:
-      "\"we'll still arrange help for you — but the cost of these services may be billed to you.\"",
-    keys: "SIXT asks renters not to \"Call an external locksmith without speaking to SIXT first\" and not to \"Order a replacement key through a third party.\"",
+      "SIXT's protection article says \"we'll still arrange help for you — but the cost of these services may be billed to you.\" For keys locked inside, SIXT asks renters not to \"Call an external locksmith without speaking to SIXT first.\"",
+    keys: "SIXT asks renters not to \"Order a replacement key through a third party,\" and says damage from forcing the car open \"will be charged to you.\"",
     source: "sixtKey",
   },
   {
@@ -246,11 +246,11 @@ const rentalCompanies: RentalCompany[] = [
 const whenToCall = [
   {
     title: "You bought the rental company's roadside cover",
-    text: "Call the number in the table below or on your rental agreement. Hertz and Dollar say their Premium Emergency Roadside Service unlocks the car at no charge, and Enterprise, National, Alamo, Avis, Budget, Thrifty and SIXT list lockouts or locked-in keys in their add-ons.",
+    text: "Call the number in the table below or on your rental agreement. Hertz and Dollar say their Premium Emergency Roadside Service unlocks the car at no charge. Enterprise, National, Alamo, Avis, Budget, Thrifty and SIXT list lockouts or locked-in keys in their add-ons, and so does Fox at the Orlando airport.",
   },
   {
     title: "You did not buy it",
-    text: "The rental company still sends help, but you pay for it: Hertz names \"a fee of $98 or more,\" Dollar \"a maximum fee of $250,\" and Enterprise and National \"standard charges.\" Hertz and Dollar say you may use your own auto club. Or call RoadZone Plus at (407) 222-2739: we confirm the price on the call, before anyone is sent.",
+    text: "Hertz, Dollar, Enterprise, National and SIXT say they still help, but you pay: Hertz names \"a fee of $98 or more,\" Dollar \"a maximum fee of $250,\" Enterprise and National \"standard charges,\" and SIXT says the cost \"may be billed to you.\" Hertz and Dollar say you may use your own auto club. Alamo, Avis, Budget, Thrifty and Fox do not say on the pages read. Or call RoadZone Plus at (407) 222-2739: we confirm the price on the call, before anyone is sent.",
   },
   {
     title: "You rented from SIXT",
@@ -313,7 +313,7 @@ const faqs = [
   {
     question: "Should I call the rental company's roadside number or a local service?",
     answer:
-      "It depends on your rental agreement. If you bought the company's roadside add-on, call its roadside number first: Hertz and Dollar say their Premium Emergency Roadside Service unlocks the car at no charge. If you did not, the company still sends help but charges for it; Hertz says \"there may be a fee of $98 or more,\" and Hertz and Dollar say you may use your own auto club instead. RoadZone Plus is a direct local call with no membership, and we confirm the price on the call before anyone is sent. If you rented from SIXT, speak to SIXT first.",
+      "It depends on your rental agreement. If you bought the company's roadside add-on, call its roadside number first: Hertz and Dollar say their Premium Emergency Roadside Service unlocks the car at no charge. If you did not, Hertz, Dollar, Enterprise, National and SIXT say they still help but charge for it; Hertz says \"there may be a fee of $98 or more,\" and Hertz and Dollar say you may use your own auto club instead. RoadZone Plus is a direct local call with no membership, and we confirm the price on the call before anyone is sent. If you rented from SIXT, speak to SIXT first.",
   },
   {
     question: "Does Enterprise roadside assistance cover a lockout in Florida?",
@@ -323,7 +323,7 @@ const faqs = [
   {
     question: "Can I call my own locksmith or roadside service for a rental car?",
     answer:
-      "Check your agreement first. Hertz and Dollar both say \"You may use your own auto club to unlock the vehicle.\" SIXT asks renters not to \"Call an external locksmith without speaking to SIXT first.\" The Enterprise, National, Alamo, Avis and Budget pages read for this guide do not say either way. Whoever opens the car, keep the receipt and the technician's name.",
+      "Check your agreement first. Hertz says \"You may use your own auto club to unlock the vehicle,\" and Dollar lists \"Use your own auto club to unlock the vehicle\" as an option. For lost keys, Thrifty lists \"Use your own auto club to have new keys made for the vehicle\"; for keys locked inside, its page does not say. SIXT asks renters not to \"Call an external locksmith without speaking to SIXT first.\" The Enterprise, National, Alamo, Avis, Budget and Fox pages read for this guide do not say either way. Whoever opens the car, keep the receipt and the technician's name.",
   },
   {
     question: "Will opening a rental car cause damage I have to pay for?",
@@ -353,7 +353,7 @@ const faqs = [
   {
     question: "What if I lost the rental key entirely instead of locking it inside?",
     answer:
-      "Call the rental company first: a lost key is handled under its terms. With their roadside add-ons, Hertz offers \"the lost key service at no charge,\" and Enterprise, National and Alamo list replacement of lost keys. Without it, Dollar and Thrifty say \"there may be a maximum fee of $250 for this service,\" and both say you may use your own auto club to have new keys made. SIXT asks renters not to order a replacement key through a third party. If your bags are locked in the car while you sort out the key, RoadZone Plus can open it.",
+      "Call the rental company first: a lost key is handled under its terms. With their roadside add-ons, Hertz, Dollar and Thrifty offer \"the lost key service at no charge,\" and Enterprise, National, Alamo, Avis, Budget and SIXT list lost or replacement keys; Fox's add-on list does not include keys. Without the add-on, Dollar and Thrifty say \"there may be a maximum fee of $250 for this service,\" and both say you may use your own auto club to have new keys made. SIXT asks renters not to order a replacement key through a third party. If your bags are locked in the car while you sort out the key, RoadZone Plus can open it.",
   },
   {
     question: "How much does a rental car lockout cost in Orlando?",
@@ -484,10 +484,11 @@ export default function LockedKeysRentalCarPage() {
               Child or pet inside? Call 911. Otherwise, check your rental agreement for the
               roadside add-on. If you bought it, call the rental company&apos;s roadside
               number: Hertz and Dollar say their add-on unlocks the car at no charge. If
-              you did not, the company still sends help but charges for it (Hertz says
-              &quot;a fee of $98 or more&quot;), so you can call RoadZone Plus instead, 24
-              hours a day, with no membership and the price confirmed on the call. Renting
-              from SIXT, or lost the key? Call the rental company first.
+              you did not, Hertz, Dollar, Enterprise, National and SIXT say they still
+              help but charge for it (Hertz says &quot;a fee of $98 or more&quot;), so you
+              can call RoadZone Plus instead, 24 hours a day, with no membership and the
+              price confirmed on the call. Renting from SIXT, or lost the key? Call the
+              rental company first.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-white/52">
               Rental company terms below are quoted from each company&apos;s own website,
@@ -659,7 +660,7 @@ export default function LockedKeysRentalCarPage() {
             >
               Orlando airport roadside page
             </Link>{" "}
-            sets out where each company hands out cars at MCO.
+            lists the level where each on-airport rental company hands out cars at MCO.
           </p>
         </div>
       </section>
