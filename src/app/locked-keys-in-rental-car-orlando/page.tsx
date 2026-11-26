@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   AlertTriangle,
@@ -506,7 +507,17 @@ export default function LockedKeysRentalCarPage() {
             </div>
           </div>
 
-          <aside className="card bg-panel p-6">
+          <aside className="card overflow-hidden bg-panel">
+            <Image
+              src="/visuals/car-lockout-cost/hand-on-locked-car-door.webp"
+              alt="A hand pulling the handle of a dark car door that will not open"
+              width={1200}
+              height={800}
+              priority
+              sizes="(min-width: 1024px) 38vw, 100vw"
+              className="h-auto w-full"
+            />
+            <div className="p-6">
             <p className="text-sm font-black uppercase text-safety-yellow">
               Child or pet inside? Call 911 first
             </p>
@@ -526,6 +537,7 @@ export default function LockedKeysRentalCarPage() {
                 <PhoneCall aria-hidden="true" size={22} />
                 {site.phoneDisplay}
               </a>
+            </div>
             </div>
           </aside>
         </div>
@@ -728,6 +740,20 @@ export default function LockedKeysRentalCarPage() {
               inside. RoadZone Plus can still help with the lockout, but human and animal
               safety always comes before the vehicle.
             </p>
+            <figure className="mt-8">
+              <Image
+                src="/visuals/car-lockout-cost/sunlit-car-interior.webp"
+                alt="Sunlight across the dashboard and steering wheel inside a closed car"
+                width={1200}
+                height={800}
+                loading="lazy"
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/60">
+                Sun on the dashboard of a closed car.
+              </figcaption>
+            </figure>
           </div>
 
           <div className="grid gap-4">
@@ -809,6 +835,22 @@ export default function LockedKeysRentalCarPage() {
               </div>
             ))}
           </div>
+
+          <figure className="mt-8 max-w-3xl">
+            <Image
+              src="/visuals/car-lockout-cost/car-key-with-remote-head.webp"
+              alt="A hand holding out a car key with a black remote head and a metal blade"
+              width={1200}
+              height={800}
+              loading="lazy"
+              sizes="(min-width: 1024px) 48vw, 100vw"
+              className="h-auto w-full rounded-md border border-white/10"
+            />
+            <figcaption className="mt-3 text-sm leading-6 text-white/60">
+              A car key with a remote head. Tell dispatch where yours is: locked inside, or
+              lost.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
