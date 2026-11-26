@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CheckCircle2, MapPin, PhoneCall, Route, ShieldCheck } from "lucide-react";
 import { OrlandoRoadsideGuide } from "@/components/OrlandoRoadsideGuide";
-import { areas, getArea, services, site } from "@/data/site";
+import { getAreaPage } from "@/data/areaUpgrades";
+import { areas, services, site } from "@/data/site";
 import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
 
 type PageProps = {
@@ -16,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const area = getArea(slug);
+  const area = getAreaPage(slug);
 
   if (!area) {
     return {};
@@ -47,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function AreaPage({ params }: PageProps) {
   const { slug } = await params;
-  const area = getArea(slug);
+  const area = getAreaPage(slug);
 
   if (!area) {
     notFound();
