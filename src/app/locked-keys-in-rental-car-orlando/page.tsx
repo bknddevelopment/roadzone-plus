@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   AlertTriangle,
   CheckCircle2,
-  Clock3,
   KeyRound,
   MapPin,
   PhoneCall,
@@ -19,9 +19,14 @@ import {
   businessId,
 } from "@/lib/seo";
 
-const title = "Locked Keys in Rental Car Orlando";
+const title = "Locked Keys in Rental Car Orlando: Who to Call";
 const description =
-  "Locked keys in an Orlando rental car? RoadZone Plus brings damage-conscious lockout help to hotels, parking lots, and resort areas. Call (407) 222-2739.";
+  "Keys locked in a rental car in Orlando? What Hertz, Enterprise, Alamo, Avis, Dollar and SIXT say about lockout fees and lost keys, and who to call first.";
+
+// Rental company terms below were read on the companies' own pages on this date.
+// Quotations are word for word; a cell says "Not stated" where the page read is silent.
+const updatedLabel = "November 26, 2026";
+const updatedIso = "2026-11-26";
 
 export const metadata: Metadata = {
   title,
@@ -59,22 +64,202 @@ const rightNowSteps = [
   },
 ];
 
-const whyRentalLineSlow = [
+const sources = {
+  hertzLocked: {
+    label: "Hertz, \"What do I do if I have locked the keys in my rental car?\"",
+    href: "https://www.hertz.com/supporthub/article/What-do-I-do-if-I-have-locked-the-keys-in-my-rental-car",
+  },
+  hertzLost: {
+    label: "Hertz, \"What do I do if I lost the keys to my rental vehicle?\"",
+    href: "https://www.hertz.com/supporthub/article/What-do-I-do-if-I-lost-the-keys-to-my-rental-vehicle",
+  },
+  hertzPremium: {
+    label: "Hertz, Premium Emergency Roadside Service (United States)",
+    href: "https://www.hertz.com/us/en/products-and-services/value-added-services/united-states/premium-emergency-roadside-assistance",
+  },
+  enterprise: {
+    label: "Enterprise, Orlando International Airport location page (rental terms)",
+    href: "https://www.enterprise.com/en/car-rental-locations/us/fl/orlando-international-airport-07v1.html",
+  },
+  national: {
+    label: "National Car Rental, roadside assistance FAQ",
+    href: "https://www.nationalcar.com/en/support/car-rental-faqs/insurance-and-coverage-products/roadside-assistance.html",
+  },
+  alamo: {
+    label: "Alamo, roadside assistance FAQ",
+    href: "https://www.alamo.com/en/customer-support/car-rental-faqs/insurance-coverage-options/roadside-assistance.html",
+  },
+  avis: {
+    label: "Avis, Extended Roadside Assistance",
+    href: "https://www.avis.com/en/products-and-services/protections/extended-roadside-assistance",
+  },
+  budget: {
+    label: "Budget, Extended Roadside Assistance",
+    href: "https://www.budget.com/en/offers/us-offers/roadside-assistance",
+  },
+  budgetPhones: {
+    label: "Budget, worldwide telephone numbers",
+    href: "https://www.budget.com/en/customer-care/worldwide-telephone-numbers",
+  },
+  dollar: {
+    label: "Dollar, roadside assistance support page",
+    href: "https://www.dollar.com/us/en/support/during-your-rental/roadside-assistance",
+  },
+  thrifty: {
+    label: "Thrifty, roadside assistance support page",
+    href: "https://www.thrifty.com/us/en/support/during-your-rental/roadside-assistance",
+  },
+  sixtKey: {
+    label: "SIXT help center, \"What should I do if I've lost the key to my SIXT rental car?\"",
+    href: "https://www.sixt.com/help-center/articles/what-should-i-do-if-ive-lost-the-key-to-my-sixt-rental-car/",
+  },
+  sixtCover: {
+    label: "SIXT help center, \"What does my SIXT protection package actually cover?\"",
+    href: "https://www.sixt.com/help-center/articles/what-does-my-sixt-protection-package-actually-cover/",
+  },
+  fox: {
+    label: "Fox Rent A Car, Orlando airport rental policies",
+    href: "https://www.foxrentacar.com/en/locations/united-states/florida/orlando-airport/rental-policies.html",
+  },
+} as const;
+
+type SourceKey = keyof typeof sources;
+
+type RentalCompany = {
+  name: string;
+  phone: string;
+  phoneNote: string;
+  addOn: string;
+  withoutAddOn: string;
+  keys: string;
+  source: SourceKey;
+};
+
+const rentalCompanies: RentalCompany[] = [
   {
-    title: "It routes through a national call center, not a local truck",
-    text: "When you call the number on the rental contract or the key tag, you usually reach a national support line that then arranges a third-party vendor. That hand-off adds time before anyone is actually driving toward you in Orlando.",
+    name: "Hertz",
+    phone: "800-654-5060",
+    phoneNote: "Hertz Emergency Roadside Service",
+    addOn:
+      "Premium Emergency Roadside Service. With it, Hertz says you can request \"the unlock service at no charge.\" Its United States page lists its cover for Lock Out Service as \"Maximum $250.00 Per Rental.\"",
+    withoutAddOn:
+      "Hertz says \"there may be a fee of $98 or more for this service,\" and \"You may use your own auto club to unlock the vehicle.\"",
+    keys: "With the add-on, Hertz offers \"the lost key service at no charge\"; its United States page lists its cover for Lost Key Service as \"Maximum $500.00 Per Rental.\"",
+    source: "hertzLocked",
   },
   {
-    title: "It often carries its own service charge",
-    text: "Rental-company roadside and lockout assistance is frequently a paid add-on. Out of pocket, a rental lockout call routed this way commonly runs around $100 or more before any waiting even begins. RoadZone Plus is a direct, call-first local service with no membership — we confirm your exact price on the call instead of routing you through a national queue.",
+    name: "Enterprise",
+    phone: "1-800-307-6666",
+    phoneNote: "printed on Enterprise's Orlando airport page",
+    addOn:
+      "Roadside Assistance Protection (RAP). Its list includes \"lockout service (if the keys are locked inside the vehicle)\" and \"replacement of lost keys (including remote entry devices).\"",
+    withoutAddOn:
+      "\"roadside assistance will be available, but standard charges will apply.\" No price is printed on the page.",
+    keys: "The page says \"In CA, KS, MO, NV and NY, keys are not covered by RAP\"; Florida is not on that list.",
+    source: "enterprise",
   },
   {
-    title: "The vendor may be coming from far away",
-    text: "A dispatched vendor could be anywhere in the metro and may not know the resort corridor. RoadZone Plus is based in Orlando and works the Disney and Universal corridor every day, so we know the hotel lots, the Disney Springs decks, and the US 192 and I-4 access points.",
+    name: "National",
+    phone: "1-800-367-6767",
+    phoneNote: "printed on National's roadside FAQ",
+    addOn:
+      "Roadside Plus (RSP), which lists \"lockout service (if the keys are locked inside the vehicle)\" and replacement of lost keys.",
+    withoutAddOn:
+      "\"roadside assistance will be available, but standard charges will apply.\" No price is printed on the page.",
+    keys: "Replacement of lost keys, including remote entry devices, is on the Roadside Plus list.",
+    source: "national",
   },
   {
-    title: "You still lose vacation hours either way",
-    text: "Every minute spent on hold or waiting for a far-away vendor is a minute off a park day or a missed dinner reservation. Calling a local roadside service directly skips the middle layer.",
+    name: "Alamo",
+    phone: "1-800-803-4444",
+    phoneNote: "printed on Alamo's roadside FAQ",
+    addOn:
+      "Roadside Plus (RSP), which \"provides 24/7 roadside assistance without additional charge\" and includes \"Lockout service (if keys are locked inside the Vehicle).\"",
+    withoutAddOn: "Not stated on the page read.",
+    keys: "Replacement of lost keys is on the Roadside Plus list, except for rentals that start in California, Kansas, Nevada and New York.",
+    source: "alamo",
+  },
+  {
+    name: "Avis",
+    phone: "800-354-2847",
+    phoneNote: "\"In US/Canada,\" on the Avis roadside page",
+    addOn:
+      "Extended Roadside Assistance: \"Lockout Service - Gain entry when keys are locked inside the vehicle. Get replacement keys or locksmith assistance.\"",
+    withoutAddOn: "Not stated on the page read.",
+    keys: "Replacement keys are part of the same Lockout Service line.",
+    source: "avis",
+  },
+  {
+    name: "Budget",
+    phone: "800-354-2847",
+    phoneNote: "\"Roadside Assistance,\" on Budget's telephone list",
+    addOn:
+      "Extended Roadside Assistance, at what Budget calls \"a reasonable additional daily charge,\" with \"Lockout Service\" to \"Gain entry when keys are locked inside the vehicle.\"",
+    withoutAddOn: "Not stated on the page read; no daily price is printed.",
+    keys: "Key Replacement is on the same list: replacement keys or locksmith assistance.",
+    source: "budget",
+  },
+  {
+    name: "Dollar",
+    phone: "800-235-9393",
+    phoneNote: "Dollar Emergency Roadside Service",
+    addOn:
+      "Premium Emergency Roadside Service, which covers \"Lost, damaged, or locked-in keys\"; with it, Dollar offers \"the unlock service at no charge.\"",
+    withoutAddOn:
+      "Dollar says \"there may be a maximum fee of $250 for this service,\" and \"Use your own auto club to unlock the vehicle.\"",
+    keys: "With the add-on, Dollar offers \"the lost key service at no charge.\" Without it: \"Use your own auto club to have new keys made for the vehicle,\" or call Dollar, with the same $250 maximum fee.",
+    source: "dollar",
+  },
+  {
+    name: "Thrifty",
+    phone: "800-847-4389",
+    phoneNote: "Thrifty Emergency Roadside Service, U.S. or Canada",
+    addOn:
+      "Premium Emergency Roadside Service, which covers \"Lost, damaged, or locked-in keys.\"",
+    withoutAddOn:
+      "For lost keys, Thrifty says \"there may be a maximum fee of $250 for this service\"; the page does not state a fee for keys locked inside.",
+    keys: "With the add-on, Thrifty offers \"the lost key service at no charge\" on 800-435-7650, the number it gives for lost keys. Without it: \"Use your own auto club to have new keys made for the vehicle,\" or call that number.",
+    source: "thrifty",
+  },
+  {
+    name: "SIXT",
+    phone: "+1 888 7498543",
+    phoneNote: "SIXT Roadside Assistance, 24/7",
+    addOn:
+      "Roadside Assistance Protection, an optional add-on that covers \"Lost key replacement\" and \"Lockouts.\"",
+    withoutAddOn:
+      "SIXT's protection article says \"we'll still arrange help for you — but the cost of these services may be billed to you.\" For keys locked inside, SIXT asks renters not to \"Call an external locksmith without speaking to SIXT first.\"",
+    keys: "SIXT asks renters not to \"Order a replacement key through a third party,\" and says damage from forcing the car open \"will be charged to you.\"",
+    source: "sixtKey",
+  },
+  {
+    name: "Fox (Orlando airport)",
+    phone: "On your agreement",
+    phoneNote: "\"the emergency roadside service number located on your FOX Rental agreement holder\"",
+    addOn:
+      "Roadside Service Assistance (RSA) at \"USD/7.49 per rental day\": Fox will \"waive all or a portion of the cost of a roadside assistance service call up to the amount of USD/400.00 per incident,\" and lockout service is among the benefits.",
+    withoutAddOn: "Not stated on the page read.",
+    keys: "Lost keys are not on the RSA benefit list.",
+    source: "fox",
+  },
+];
+
+const whenToCall = [
+  {
+    title: "You bought the rental company's roadside cover",
+    text: "Call the number in the table below or on your rental agreement. Hertz and Dollar say their Premium Emergency Roadside Service unlocks the car at no charge. Enterprise, National, Alamo, Avis, Budget, Thrifty and SIXT list lockouts or locked-in keys in their add-ons, and so does Fox at the Orlando airport.",
+  },
+  {
+    title: "You did not buy it",
+    text: "Hertz, Dollar, Enterprise, National and SIXT say they still help, but you may pay: Hertz names \"a fee of $98 or more,\" Dollar \"a maximum fee of $250,\" Enterprise and National \"standard charges,\" and SIXT says the cost \"may be billed to you.\" Hertz and Dollar say you may use your own auto club. Alamo, Avis, Budget, Thrifty and Fox do not say on the pages read. Or call RoadZone Plus at (407) 222-2739: we confirm the price on the call, before anyone is sent.",
+  },
+  {
+    title: "You rented from SIXT",
+    text: "Speak to SIXT first. Its help center asks renters not to call an outside locksmith without speaking to SIXT, and says damage from forcing the car open is charged to the renter.",
+  },
+  {
+    title: "The key is lost, not locked inside",
+    text: "Call the rental company first. Its terms decide who may make a new key and what it costs; SIXT, for one, asks renters not to order a key through a third party. If your bags are locked in the car meanwhile, RoadZone Plus can open it.",
   },
 ];
 
@@ -129,7 +314,17 @@ const faqs = [
   {
     question: "Should I call the rental company's roadside number or a local service?",
     answer:
-      "The rental company's number usually routes through a national call center that then arranges a third-party vendor, which adds time, and that assistance is often a paid add-on that can run around $100 or more out of pocket. A local, call-first service like RoadZone Plus dispatches an Orlando-area technician directly with no membership, and confirms your price on the call.",
+      "It depends on your rental agreement. If you bought the company's roadside add-on, call its roadside number first: Hertz and Dollar say their Premium Emergency Roadside Service unlocks the car at no charge. If you did not, Hertz, Dollar, Enterprise, National and SIXT say they still help but may charge for it; Hertz says \"there may be a fee of $98 or more,\" and Hertz and Dollar say you may use your own auto club instead. RoadZone Plus is a direct local call with no membership, and we confirm the price on the call before anyone is sent. If you rented from SIXT, speak to SIXT first.",
+  },
+  {
+    question: "Does Enterprise roadside assistance cover a lockout in Florida?",
+    answer:
+      "Only with the add-on. Enterprise's Roadside Assistance Protection lists \"lockout service (if the keys are locked inside the vehicle)\" and replacement of lost keys, and the keys exclusion it prints applies in California, Kansas, Missouri, Nevada and New York, not Florida. Without it, Enterprise says \"roadside assistance will be available, but standard charges will apply.\" Its roadside number is 1-800-307-6666. National and Alamo call their versions Roadside Plus.",
+  },
+  {
+    question: "Can I call my own locksmith or roadside service for a rental car?",
+    answer:
+      "Check your agreement first. Hertz says \"You may use your own auto club to unlock the vehicle,\" and Dollar lists \"Use your own auto club to unlock the vehicle\" as an option. For lost keys, Thrifty lists \"Use your own auto club to have new keys made for the vehicle\"; for keys locked inside, its page does not say. SIXT asks renters not to \"Call an external locksmith without speaking to SIXT first.\" The Enterprise, National, Alamo, Avis, Budget and Fox pages read for this guide do not say either way. Whoever opens the car, keep the receipt and the technician's name.",
   },
   {
     question: "Will opening a rental car cause damage I have to pay for?",
@@ -154,17 +349,17 @@ const faqs = [
   {
     question: "How fast can you reach me near Disney or Universal?",
     answer:
-      "RoadZone Plus dispatches 24/7 across the resort corridor as soon as you call. We do not publish a guaranteed arrival time, but we are based in Orlando and work the Lake Buena Vista, Kissimmee, and Celebration areas daily, so share your exact hotel, lot section, or exit and we will route a technician as directly as possible.",
+      "RoadZone Plus takes calls 24/7. We do not publish an arrival time, because it depends on where you are and on traffic. Our calls come from Kissimmee, Lake Buena Vista, the Disney area, Orlando International Airport and Universal, so give your exact hotel, lot section or exit and we will route a technician as directly as possible.",
   },
   {
     question: "What if I lost the rental key entirely instead of locking it inside?",
     answer:
-      "Losing a rental key is different from a lockout. The rental company controls replacement keys for their fleet, so you will need to contact them for a true replacement. If you simply cannot get into the car, RoadZone Plus can help with the lockout; for key fob or smart key issues, see our smart key programming help, and we will tell you honestly when the rental company is the right next call.",
+      "Call the rental company first: a lost key is handled under its terms. With their roadside add-ons, Hertz, Dollar and Thrifty offer \"the lost key service at no charge,\" and Enterprise, National, Alamo, Avis, Budget and SIXT list lost or replacement keys; Fox's add-on list does not include keys. Without the add-on, Dollar and Thrifty say \"there may be a maximum fee of $250 for this service,\" and both say you may use your own auto club to have new keys made. SIXT asks renters not to order a replacement key through a third party. If your bags are locked in the car while you sort out the key, RoadZone Plus can open it.",
   },
   {
     question: "How much does a rental car lockout cost in Orlando?",
     answer:
-      "A car lockout is typically a mid-range roadside cost, with late nights and newer or luxury rentals tending toward the higher end. RoadZone Plus uses a damage-conscious approach, requires no membership, and confirms your exact price on the call before the technician heads out, rather than quoting a flat rate online.",
+      "With the rental company's roadside add-on, Hertz and Dollar say the unlock is at no charge. Without it, Hertz says \"there may be a fee of $98 or more for this service,\" Dollar names \"a maximum fee of $250,\" and Enterprise and National say \"standard charges will apply\" without printing a price. RoadZone Plus does not publish a lockout price; we confirm yours on the call, before anyone is sent, with no membership.",
   },
 ];
 
@@ -180,6 +375,11 @@ const dispatchDetails = [
     label: "Rental company and vehicle",
     detail:
       "Tell us whether it is Hertz, Enterprise, Avis, Budget, Turo, or another rental, then share the year, make, model, color, and license plate if you can see it.",
+  },
+  {
+    label: "Proof the rental is yours",
+    detail:
+      "Have your driver's license and the rental agreement or its confirmation email ready. The technician may confirm the vehicle is yours before opening it, and for a rental the agreement is what shows it.",
   },
   {
     label: "Where the key or fob is",
@@ -282,12 +482,19 @@ export default function LockedKeysRentalCarPage() {
               Locked Keys in Your Rental Car in Orlando?
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
-              Locked keys in a rental car in Orlando can stall a whole vacation day —
-              standing in the heat at a hotel lot, a theme-park parking deck, or a resort
-              exit while the rental company&apos;s national roadside line keeps you on hold.
-              RoadZone Plus brings 24/7, damage-conscious lockout help directly to you
-              across the Disney and Universal corridor, with no membership and one local
-              call to get a technician dispatched.
+              Child or pet inside? Call 911. Otherwise, check your rental agreement for the
+              roadside add-on. If you bought it, call the rental company&apos;s roadside
+              number: Hertz and Dollar say their add-on unlocks the car at no charge. If
+              you did not, Hertz, Dollar, Enterprise, National and SIXT say they still
+              help but may charge for it (Hertz says &quot;a fee of $98 or more&quot;), so you
+              can call RoadZone Plus instead, 24 hours a day, with no membership and the
+              price confirmed on the call. Renting from SIXT, or lost the key? Call the
+              rental company first.
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-white/52">
+              Rental company terms below are quoted from each company&apos;s own website,
+              read <time dateTime={updatedIso}>{updatedLabel}</time>. They change, and your
+              rental agreement is what applies to your car.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={site.phoneHref} className="btn btn-primary">
@@ -300,7 +507,17 @@ export default function LockedKeysRentalCarPage() {
             </div>
           </div>
 
-          <aside className="card bg-panel p-6">
+          <aside className="card overflow-hidden bg-panel">
+            <Image
+              src="/visuals/car-lockout-cost/hand-on-locked-car-door.webp"
+              alt="A hand pulling the handle of a dark car door that will not open"
+              width={1200}
+              height={800}
+              priority
+              sizes="(min-width: 1024px) 38vw, 100vw"
+              className="h-auto w-full"
+            />
+            <div className="p-6">
             <p className="text-sm font-black uppercase text-safety-yellow">
               Child or pet inside? Call 911 first
             </p>
@@ -321,7 +538,142 @@ export default function LockedKeysRentalCarPage() {
                 {site.phoneDisplay}
               </a>
             </div>
+            </div>
           </aside>
+        </div>
+      </section>
+
+      <section id="who-to-call" className="section border-b border-white/10 bg-panel">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <PhoneCall aria-hidden="true" size={16} />
+              Who to call
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Rental company first, or RoadZone Plus? It depends on your agreement.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              Each rental company in the table below sells a roadside add-on, and its
+              terms decide who you call and what you pay. Find your case among these four.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {whenToCall.map((item) => (
+              <div key={item.title} className="card-solid p-6">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2
+                    aria-hidden="true"
+                    className="shrink-0 text-route-green"
+                    size={20}
+                  />
+                  <h3 className="text-xl font-black text-white">{item.title}</h3>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-white/66">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <h3 className="mt-12 text-2xl font-black text-white">
+            What each rental company&apos;s own site says about lockouts and keys
+          </h3>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-white/60">
+            Quoted from each company&apos;s website, read {updatedLabel}. Where a page does
+            not say something, the table says so. None of the pages read prints a daily
+            price for the add-on except Fox&apos;s Orlando airport page.
+          </p>
+
+          <div className="mt-6 overflow-hidden rounded-md border border-white/10">
+            <table className="w-full border-collapse text-left">
+              <caption className="sr-only">
+                Rental companies&apos; roadside numbers and what each company&apos;s own
+                site says about lockouts with and without its roadside add-on, and about
+                lost keys
+              </caption>
+              <thead className="hidden bg-black/40 md:table-header-group">
+                <tr>
+                  <th scope="col" className="p-5 text-xs font-black uppercase text-white/48">
+                    Company and roadside number
+                  </th>
+                  <th scope="col" className="p-5 text-xs font-black uppercase text-white/48">
+                    With the roadside add-on
+                  </th>
+                  <th scope="col" className="p-5 text-xs font-black uppercase text-white/48">
+                    Without it
+                  </th>
+                  <th scope="col" className="p-5 text-xs font-black uppercase text-white/48">
+                    Lost keys
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {rentalCompanies.map((company, index) => (
+                  <tr
+                    key={company.name}
+                    className={`block bg-black/20 p-5 md:table-row md:p-0 ${
+                      index > 0 ? "border-t border-white/10" : ""
+                    }`}
+                  >
+                    <th scope="row" className="block align-top md:table-cell md:w-[20%] md:p-5">
+                      <a
+                        href={sources[company.source].href}
+                        className="inline-flex min-h-11 items-center text-lg font-black text-white underline decoration-white/30 underline-offset-2 hover:text-red-200 md:min-h-0"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        {company.name}
+                      </a>
+                      <span className="mt-1 block text-base font-black text-safety-yellow">
+                        {company.phone}
+                      </span>
+                      <span className="mt-1 block text-xs leading-5 text-white/52">
+                        {company.phoneNote}
+                      </span>
+                    </th>
+                    <td className="mt-3 block align-top text-sm leading-6 text-white/66 md:mt-0 md:table-cell md:w-[30%] md:p-5">
+                      <span className="block text-xs font-black uppercase text-white/42 md:hidden">
+                        With the roadside add-on
+                      </span>
+                      {company.addOn}
+                    </td>
+                    <td className="mt-3 block align-top text-sm leading-6 text-white/66 md:mt-0 md:table-cell md:w-[24%] md:p-5">
+                      <span className="block text-xs font-black uppercase text-white/42 md:hidden">
+                        Without it
+                      </span>
+                      {company.withoutAddOn}
+                    </td>
+                    <td className="mt-3 block align-top text-sm leading-6 text-white/66 md:mt-0 md:table-cell md:p-5">
+                      <span className="block text-xs font-black uppercase text-white/42 md:hidden">
+                        Lost keys
+                      </span>
+                      {company.keys}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mt-6 max-w-3xl text-sm leading-7 text-white/60">
+            RoadZone Plus does not publish a lockout price. We confirm your price on the
+            call, before a technician is sent, and no membership is required. For the
+            lockout prices that other sources publish, see the{" "}
+            <Link
+              href="/car-lockout-cost-orlando"
+              className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+            >
+              Orlando car lockout cost guide
+            </Link>
+            . Picking up or returning the car at the airport? The{" "}
+            <Link
+              href="/orlando-airport-roadside-assistance"
+              className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
+            >
+              Orlando airport roadside page
+            </Link>{" "}
+            lists the level where each on-airport rental company hands out cars at MCO.
+          </p>
         </div>
       </section>
 
@@ -388,6 +740,20 @@ export default function LockedKeysRentalCarPage() {
               inside. RoadZone Plus can still help with the lockout, but human and animal
               safety always comes before the vehicle.
             </p>
+            <figure className="mt-8">
+              <Image
+                src="/visuals/car-lockout-cost/sunlit-car-interior.webp"
+                alt="Sunlight across the dashboard and steering wheel inside a closed car"
+                width={1200}
+                height={800}
+                loading="lazy"
+                sizes="(min-width: 1024px) 34vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/60">
+                Sun on the dashboard of a closed car.
+              </figcaption>
+            </figure>
           </div>
 
           <div className="grid gap-4">
@@ -469,57 +835,22 @@ export default function LockedKeysRentalCarPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="section bg-road-black">
-        <div className="container">
-          <div className="max-w-3xl">
-            <div className="eyebrow">
-              <Clock3 aria-hidden="true" size={16} />
-              The rental roadside line
-            </div>
-            <h2 className="mt-5 text-4xl font-black text-white">
-              Why the number on your rental contract is the slow option.
-            </h2>
-            <p className="mt-5 text-base leading-8 text-white/66">
-              The instinct is to call the rental company first — but for a simple
-              lockout, that number is usually the long way around. Here is what tends to
-              happen, and why visitors near the parks often end up waiting far longer than
-              they need to.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {whyRentalLineSlow.map((item) => (
-              <div key={item.title} className="card-solid p-6">
-                <div className="flex items-center gap-3">
-                  <Clock3
-                    aria-hidden="true"
-                    className="shrink-0 text-safety-yellow"
-                    size={20}
-                  />
-                  <h3 className="text-xl font-black text-white">{item.title}</h3>
-                </div>
-                <p className="mt-3 text-sm leading-6 text-white/66">{item.text}</p>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-6 max-w-3xl text-sm leading-7 text-white/52">
-            The dollar figure above reflects the kind of out-of-pocket charge drivers
-            commonly see on rental-company and national roadside lockout assistance — it
-            is a general market reference, not a RoadZone Plus quote. We confirm your
-            exact price with you on the call. For a plain-English breakdown of what local
-            roadside services typically cost in Orlando, see our{" "}
-            <Link
-              href="/roadside-assistance-cost-orlando"
-              className="font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200"
-            >
-              Orlando roadside assistance cost guide
-            </Link>
-            .
-          </p>
+          <figure className="mt-8 max-w-3xl">
+            <Image
+              src="/visuals/car-lockout-cost/car-key-with-remote-head.webp"
+              alt="A hand holding out a car key with a black remote head and a metal blade"
+              width={1200}
+              height={800}
+              loading="lazy"
+              sizes="(min-width: 1024px) 48vw, 100vw"
+              className="h-auto w-full rounded-md border border-white/10"
+            />
+            <figcaption className="mt-3 text-sm leading-6 text-white/60">
+              A car key with a remote head. Tell dispatch where yours is: locked inside, or
+              lost.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -774,6 +1105,39 @@ export default function LockedKeysRentalCarPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="sources" className="section bg-road-black">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <ShieldCheck aria-hidden="true" size={16} />
+              Sources
+            </div>
+            <h2 className="mt-5 text-3xl font-black text-white">
+              Where the rental company terms on this page come from.
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-white/60">
+              Each page below is the rental company&apos;s own, read {updatedLabel}. Terms,
+              fees and numbers can change, and the agreement for your rental is what
+              applies.
+            </p>
+          </div>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            {Object.values(sources).map((item) => (
+              <li key={item.href} className="rounded-md bg-white/6 p-4 text-sm leading-6">
+                <a
+                  href={item.href}
+                  className="font-black text-white underline decoration-white/30 underline-offset-2 hover:text-red-200"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
