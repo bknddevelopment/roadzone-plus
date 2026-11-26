@@ -36,7 +36,7 @@ const areaUpgrades: Record<string, Partial<Area>> = {
       {
         heading: "Disney Springs, hotel lots and Apopka-Vineland Road: call RoadZone Plus",
         body:
-          "FDOT's map lists Road Ranger beats on I-4, the toll roads and a weekday pilot on a few Orlando arterials. Apopka-Vineland Road (SR 535), Hotel Plaza Boulevard, Palm Parkway and Daryl Carter Parkway are not on it, and parking garages and hotel lots are not roads it patrols. There, day or night, RoadZone Plus comes to the car.",
+          "FDOT's map for this district lists Road Ranger beats on I-4, I-75 and I-95, on the toll roads and on a weekday pilot of a few Orlando arterials. Apopka-Vineland Road (SR 535), Hotel Plaza Boulevard, Palm Parkway and Daryl Carter Parkway are not on it, and parking garages and hotel lots are not roads it patrols. There, day or night, RoadZone Plus comes to the car.",
       },
     ],
     freeAssistanceNotes: [
@@ -69,7 +69,7 @@ const areaUpgrades: Record<string, Partial<Area>> = {
       {
         question: "Do Road Rangers help at Disney Springs or at the Hotel Plaza Boulevard hotels?",
         answer:
-          "Not according to FDOT's coverage map: its Road Ranger beats are I-4, the toll roads and a weekday arterial pilot, and Hotel Plaza Boulevard, Apopka-Vineland Road, parking garages and hotel lots are not among them. Call RoadZone Plus there.",
+          "Not according to FDOT's coverage map: its Road Ranger beats for this district are I-4, I-75 and I-95, the toll roads and a weekday arterial pilot, and Hotel Plaza Boulevard, Apopka-Vineland Road, parking garages and hotel lots are not among them. Call RoadZone Plus there.",
       },
       {
         question: "Which I-4 exits serve Lake Buena Vista?",
