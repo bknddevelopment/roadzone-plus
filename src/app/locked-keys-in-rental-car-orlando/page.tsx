@@ -141,10 +141,10 @@ const rentalCompanies: RentalCompany[] = [
     phone: "800-654-5060",
     phoneNote: "Hertz Emergency Roadside Service",
     addOn:
-      "Premium Emergency Roadside Service. With it, Hertz says you can request \"the unlock service at no charge.\" Its United States page lists Lock Out Service at \"Maximum $250.00 Per Rental.\"",
+      "Premium Emergency Roadside Service. With it, Hertz says you can request \"the unlock service at no charge.\" Its United States page lists its cover for Lock Out Service as \"Maximum $250.00 Per Rental.\"",
     withoutAddOn:
       "Hertz says \"there may be a fee of $98 or more for this service,\" and \"You may use your own auto club to unlock the vehicle.\"",
-    keys: "With the add-on, Hertz offers \"the lost key service at no charge\"; its United States page lists Lost Key Service at \"Maximum $500.00 Per Rental.\"",
+    keys: "With the add-on, Hertz offers \"the lost key service at no charge\"; its United States page lists its cover for Lost Key Service as \"Maximum $500.00 Per Rental.\"",
     source: "hertzLocked",
   },
   {
@@ -251,7 +251,7 @@ const whenToCall = [
   },
   {
     title: "You did not buy it",
-    text: "Hertz, Dollar, Enterprise, National and SIXT say they still help, but you pay: Hertz names \"a fee of $98 or more,\" Dollar \"a maximum fee of $250,\" Enterprise and National \"standard charges,\" and SIXT says the cost \"may be billed to you.\" Hertz and Dollar say you may use your own auto club. Alamo, Avis, Budget, Thrifty and Fox do not say on the pages read. Or call RoadZone Plus at (407) 222-2739: we confirm the price on the call, before anyone is sent.",
+    text: "Hertz, Dollar, Enterprise, National and SIXT say they still help, but you may pay: Hertz names \"a fee of $98 or more,\" Dollar \"a maximum fee of $250,\" Enterprise and National \"standard charges,\" and SIXT says the cost \"may be billed to you.\" Hertz and Dollar say you may use your own auto club. Alamo, Avis, Budget, Thrifty and Fox do not say on the pages read. Or call RoadZone Plus at (407) 222-2739: we confirm the price on the call, before anyone is sent.",
   },
   {
     title: "You rented from SIXT",
@@ -314,7 +314,7 @@ const faqs = [
   {
     question: "Should I call the rental company's roadside number or a local service?",
     answer:
-      "It depends on your rental agreement. If you bought the company's roadside add-on, call its roadside number first: Hertz and Dollar say their Premium Emergency Roadside Service unlocks the car at no charge. If you did not, Hertz, Dollar, Enterprise, National and SIXT say they still help but charge for it; Hertz says \"there may be a fee of $98 or more,\" and Hertz and Dollar say you may use your own auto club instead. RoadZone Plus is a direct local call with no membership, and we confirm the price on the call before anyone is sent. If you rented from SIXT, speak to SIXT first.",
+      "It depends on your rental agreement. If you bought the company's roadside add-on, call its roadside number first: Hertz and Dollar say their Premium Emergency Roadside Service unlocks the car at no charge. If you did not, Hertz, Dollar, Enterprise, National and SIXT say they still help but may charge for it; Hertz says \"there may be a fee of $98 or more,\" and Hertz and Dollar say you may use your own auto club instead. RoadZone Plus is a direct local call with no membership, and we confirm the price on the call before anyone is sent. If you rented from SIXT, speak to SIXT first.",
   },
   {
     question: "Does Enterprise roadside assistance cover a lockout in Florida?",
@@ -486,7 +486,7 @@ export default function LockedKeysRentalCarPage() {
               roadside add-on. If you bought it, call the rental company&apos;s roadside
               number: Hertz and Dollar say their add-on unlocks the car at no charge. If
               you did not, Hertz, Dollar, Enterprise, National and SIXT say they still
-              help but charge for it (Hertz says &quot;a fee of $98 or more&quot;), so you
+              help but may charge for it (Hertz says &quot;a fee of $98 or more&quot;), so you
               can call RoadZone Plus instead, 24 hours a day, with no membership and the
               price confirmed on the call. Renting from SIXT, or lost the key? Call the
               rental company first.
