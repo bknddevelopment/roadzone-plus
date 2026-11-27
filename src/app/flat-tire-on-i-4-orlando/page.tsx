@@ -306,7 +306,7 @@ export default function FlatTireOnI4Page() {
       />
 
       <section className="section border-b border-white/10 bg-road-black">
-        <div className="container grid gap-10 lg:grid-cols-[1.05fr_0.75fr] lg:items-start">
+        <div className="container grid gap-10 lg:grid-cols-[0.95fr_0.65fr] lg:items-start">
           <div>
             <div className="eyebrow">
               <Route aria-hidden="true" size={16} />
@@ -360,7 +360,7 @@ export default function FlatTireOnI4Page() {
               sizes="(min-width: 1024px) 38vw, 100vw"
               className="h-auto w-full"
             />
-            <figcaption className="px-6 py-4 text-xs leading-5 text-white/56">
+            <figcaption className="px-6 py-3 text-xs leading-5 text-white/56">
               An entrance to the I-4 Express lanes in Orlando, May 2023. FDOT&apos;s I-4 project
               site lists I-4 Express among the roads Road Rangers patrol.
             </figcaption>
@@ -456,7 +456,7 @@ export default function FlatTireOnI4Page() {
                       index > 0 ? "border-t border-white/10" : ""
                     }`}
                   >
-                    <th scope="row" className="block align-top md:table-cell md:w-[14%] md:p-5">
+                    <th scope="row" className="block align-top md:table-cell md:w-[16%] md:p-5">
                       <span className="block text-lg font-black text-white">{row.miles}</span>
                     </th>
                     <td className="mt-3 block align-top text-sm leading-6 text-white/72 md:mt-0 md:table-cell md:w-[40%] md:p-5">
@@ -465,13 +465,13 @@ export default function FlatTireOnI4Page() {
                       </span>
                       {row.covers}
                     </td>
-                    <td className="mt-3 block align-top text-sm font-bold leading-6 text-white md:mt-0 md:table-cell md:w-[23%] md:p-5">
+                    <td className="mt-3 block align-top text-sm font-bold leading-6 text-white md:mt-0 md:table-cell md:w-[22%] md:p-5">
                       <span className="block text-xs font-black uppercase text-white/42 md:hidden">
                         Patrol hours
                       </span>
                       {row.hours}
                     </td>
-                    <td className="mt-3 block align-top text-sm leading-6 text-white/72 md:mt-0 md:table-cell md:w-[23%] md:p-5">
+                    <td className="mt-3 block align-top text-sm leading-6 text-white/72 md:mt-0 md:table-cell md:w-[22%] md:p-5">
                       <span className="block text-xs font-black uppercase text-white/42 md:hidden">
                         No patrol listed
                       </span>
@@ -506,7 +506,7 @@ export default function FlatTireOnI4Page() {
                 hotel, a gas station or a parking lot near Kissimmee or Lake Buena Vista, RoadZone
                 Plus takes the call at any hour.
               </p>
-              <div className="mt-2 flex flex-wrap gap-x-6">
+              <div className="mt-2 flex flex-wrap gap-4">
                 <Link href="/areas/kissimmee" className={linkClass}>
                   Roadside help in Kissimmee by road and hour
                 </Link>
@@ -559,7 +559,7 @@ export default function FlatTireOnI4Page() {
               April 2024. FDOT says Road Rangers have made more than 6.1 million service assists
               since the program began in 2000.
             </figcaption>
-            <div className="mt-6 rounded-md border border-road-red/40 bg-road-red/10 p-5">
+            <div className="mt-6 rounded-md border border-white/10 bg-road-red/16 p-5">
               <p className="flex items-center gap-2 text-sm font-black uppercase text-white">
                 <AlertTriangle aria-hidden="true" size={16} />
                 Not on the traffic side
@@ -642,7 +642,7 @@ export default function FlatTireOnI4Page() {
                 </span>
               </li>
             </ul>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-1">
+            <div className="mt-6 flex flex-wrap gap-4">
               <Link href="/how-long-can-you-drive-on-a-spare-tire-orlando" className={linkClass}>
                 How far you can drive on the spare
               </Link>
