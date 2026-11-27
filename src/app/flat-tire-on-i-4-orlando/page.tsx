@@ -241,7 +241,7 @@ const faqs = [
 ];
 
 const linkClass =
-  "inline-flex py-1.5 text-sm font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200";
+  "inline-flex py-3 text-sm font-black text-white underline decoration-road-red/60 underline-offset-2 hover:text-red-200";
 
 export default function FlatTireOnI4Page() {
   const faqSchema = {
