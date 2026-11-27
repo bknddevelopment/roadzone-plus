@@ -130,7 +130,7 @@ const whoToCall: WhoToCall[] = [
     situation: "A flat in a rental car",
     call: "Your rental company's roadside line, then a local company",
     detail:
-      "Check your rental agreement before anyone touches the wheel. Our rental guide lists the phone numbers and roadside terms of ten rental companies in Orlando.",
+      "Check your rental agreement before anyone touches the wheel. Our rental guide lists the roadside terms of ten rental companies in Orlando, with each one's number or where it is printed.",
     link: { href: "/locked-keys-in-rental-car-orlando", label: "Rental companies' roadside numbers" },
   },
   {
