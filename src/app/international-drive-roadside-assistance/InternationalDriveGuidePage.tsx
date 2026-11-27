@@ -1,6 +1,8 @@
 // Page-only copy of components/FocusedRoadsidePage.tsx for the International Drive page (2026-11-27).
 // The shared component is also used by protected pages, so it stays unchanged; this copy differs only in
-// the sources date, the guide's call tracking label and the table's column names.
+// the sources date, the guide's call tracking label, the table's column names and three images that are
+// already on the site with licence records (MIT job idrive-upgrade-2026-11-27, image-license.md).
+import Image from "next/image";
 import Link from "next/link";
 import {
   AlertTriangle,
@@ -108,7 +110,22 @@ export function InternationalDriveGuidePage({ page }: { page: FocusedRoadsidePag
           </div>
 
           <aside className="card bg-panel p-6">
-            <p className="text-sm font-black uppercase text-safety-yellow">
+            <figure>
+              <Image
+                src="/visuals/battery-cost/parking-garage-level.webp"
+                alt="An empty level of a multistory parking garage with painted parking lines and low afternoon light"
+                width={1200}
+                height={800}
+                priority
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/56">
+                A multistory garage level (a stock photo, not Universal&apos;s garage). Give the level
+                and row you parked on.
+              </figcaption>
+            </figure>
+            <p className="mt-6 text-sm font-black uppercase text-safety-yellow">
               {page.alertLabel}
             </p>
             <p className="mt-3 text-xl font-black leading-7 text-white">
@@ -163,6 +180,22 @@ export function InternationalDriveGuidePage({ page }: { page: FocusedRoadsidePag
               ))}
             </ol>
 
+            <figure className="mt-10 max-w-3xl">
+              <Image
+                src="/visuals/move-over/road-ranger-move-over-sign.webp"
+                alt="A Florida Road Ranger truck on the right shoulder of Interstate 10 with an amber sign on its roof reading MOVE OVER, with traffic in the lanes ahead"
+                width={1600}
+                height={1067}
+                loading="lazy"
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/56">
+                A Florida Road Ranger truck on the shoulder of Interstate 10 in Madison County, April
+                2024. On I-4 at the Universal exits, FDOT lists Road Rangers 24 hours a day.
+              </figcaption>
+            </figure>
+
             <div className="mt-10 max-w-3xl">
               <h3 className="text-2xl font-black text-white">{page.guide.table.heading}</h3>
               <p className="mt-3 text-sm leading-6 text-white/66">{page.guide.table.intro}</p>
@@ -194,6 +227,22 @@ export function InternationalDriveGuidePage({ page }: { page: FocusedRoadsidePag
             <p className="mt-4 max-w-3xl text-sm leading-6 text-white/60">
               {page.guide.table.note}
             </p>
+
+            <figure className="mt-8 max-w-3xl">
+              <Image
+                src="/visuals/spare-tire/i-4-express-orlando.webp"
+                alt="An entrance road to the I-4 Express lanes in Orlando, with XPRESS painted on the pavement, orange barrels and elevated interstate ramps overhead"
+                width={1600}
+                height={1200}
+                loading="lazy"
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/56">
+                An entrance to the I-4 Express lanes in Orlando, May 2023. The Universal exits, 74A to
+                75B, sit inside FDOT&apos;s 24-hour stretch of I-4, mile 72 to 98.
+              </figcaption>
+            </figure>
 
             <div className="mt-8 grid gap-4 lg:grid-cols-2">
               {page.guide.notes.map((note) => (
