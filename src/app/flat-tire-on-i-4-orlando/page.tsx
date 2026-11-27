@@ -20,7 +20,7 @@ const title = "Flat Tire on the Highway Near Orlando: What to Do on I-4";
 const description =
   "Flat tire on I-4 or another Orlando highway? Get out of the lane, hazards on, dial *347 for a free Road Ranger. Patrol hours by I-4 mile marker, and 24/7 help.";
 
-// Every patrol hour, rule and figure below was read on the source's own page on this date.
+// The patrol hours, rules and figures below were read on the sources' own pages on this date (New York time).
 const updatedLabel = "November 26, 2026";
 const updatedIso = "2026-11-26";
 
@@ -124,7 +124,7 @@ const whoToCall: WhoToCall[] = [
     call: "*347 as well",
     detail:
       "Florida's Turnpike lists free tire changes with the vehicle's own spare. On the toll roads around Orlando the patrol hours are set road by road.",
-    link: { href: "/road-rangers-orlando", label: "Road Ranger hours on every Orlando road" },
+    link: { href: "/road-rangers-orlando", label: "Road Ranger hours, road by road" },
   },
   {
     situation: "A flat in a rental car",
@@ -684,7 +684,7 @@ export default function FlatTireOnI4Page() {
               Sources
             </div>
             <h2 className="mt-5 text-4xl font-black text-white">
-              Where every hour and rule on this page comes from.
+              The sources for the hours, rules and figures on this page.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
               Each page below was read on {updatedLabel}. Patrol hours change; check FDOT&apos;s
