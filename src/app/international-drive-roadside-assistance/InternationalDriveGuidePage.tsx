@@ -1,0 +1,423 @@
+// Page-only copy of components/FocusedRoadsidePage.tsx for the International Drive page (2026-11-27).
+// The shared component is also used by protected pages, so it stays unchanged; this copy differs only in
+// the sources date, the guide's call tracking label, the table's column names and three images that are
+// already on the site with licence records (MIT job idrive-upgrade-2026-11-27, image-license.md).
+import Image from "next/image";
+import Link from "next/link";
+import {
+  AlertTriangle,
+  CheckCircle2,
+  Clock,
+  MapPin,
+  PhoneCall,
+  Route,
+  ShieldCheck,
+} from "lucide-react";
+import type { FocusedRoadsidePage as FocusedRoadsidePageData } from "@/data/focusedPages";
+import { site } from "@/data/site";
+import { absoluteUrl, breadcrumbSchema, businessId } from "@/lib/seo";
+
+export function InternationalDriveGuidePage({ page }: { page: FocusedRoadsidePageData }) {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: page.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: page.heading,
+    description: page.description,
+    totalTime: "PT5M",
+    step: page.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.title,
+      text: step.text,
+      url: `${absoluteUrl(page.href)}#step-${index + 1}`,
+    })),
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${absoluteUrl(page.href)}#service`,
+    name: page.title,
+    serviceType: page.serviceType,
+    description: page.description,
+    url: absoluteUrl(page.href),
+    provider: {
+      "@id": businessId,
+    },
+    areaServed: {
+      "@type": "Place",
+      name: page.areaServed,
+    },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: site.phoneE164,
+        contactType: "customer service",
+      },
+    },
+  };
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: page.heading, path: page.href },
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([faqSchema, howToSchema, serviceSchema, breadcrumbs]),
+        }}
+      />
+
+      <section className="section border-b border-white/10 bg-road-black">
+        <div className="container grid gap-10 lg:grid-cols-[0.95fr_0.65fr] lg:items-center">
+          <div>
+            <div className="eyebrow">
+              <Route aria-hidden="true" size={16} />
+              {page.eyebrow}
+            </div>
+            <h1 className="mt-5 text-5xl font-black leading-tight text-white sm:text-6xl">
+              {page.heading}
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-white/68">
+              {page.intro}
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href={site.phoneHref} className="btn btn-primary">
+                <PhoneCall aria-hidden="true" size={18} />
+                Call {site.phoneDisplay}
+              </a>
+              <Link href={page.primaryServiceHref} className="btn btn-secondary">
+                {page.primaryServiceLabel}
+              </Link>
+            </div>
+          </div>
+
+          <aside className="card bg-panel p-6">
+            <figure>
+              <Image
+                src="/visuals/battery-cost/parking-garage-level.webp"
+                alt="An empty level of a multistory parking garage with painted parking lines and low afternoon light"
+                width={1200}
+                height={800}
+                priority
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/56">
+                A multistory garage level (a stock photo, not Universal&apos;s garage). Give the level
+                and row you parked on.
+              </figcaption>
+            </figure>
+            <p className="mt-6 text-sm font-black uppercase text-safety-yellow">
+              {page.alertLabel}
+            </p>
+            <p className="mt-3 text-xl font-black leading-7 text-white">
+              {page.alertText}
+            </p>
+            <div className="mt-6 border-t border-white/10 pt-6">
+              <p className="text-sm font-black uppercase text-white/48">Call direct</p>
+              <a
+                href={site.phoneHref}
+                className="mt-3 flex items-center gap-3 text-2xl font-black text-white"
+              >
+                <PhoneCall aria-hidden="true" size={22} />
+                {site.phoneDisplay}
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {page.guide ? (
+        <section
+          className="section border-b border-white/10 bg-panel"
+          aria-labelledby="local-guide-heading"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <div className="eyebrow">
+                <Clock aria-hidden="true" size={16} />
+                {page.guide.eyebrow}
+              </div>
+              <h2 id="local-guide-heading" className="mt-5 text-4xl font-black text-white">
+                {page.guide.heading}
+              </h2>
+              <p className="mt-5 text-base leading-8 text-white/66">{page.guide.intro}</p>
+            </div>
+
+            <ol className="mt-8 grid gap-4 lg:grid-cols-2">
+              {page.guide.whoToCall.map((row) => (
+                <li key={row.situation} className="card-solid p-6">
+                  <p className="text-xs font-black uppercase text-safety-yellow">If</p>
+                  <h3 className="mt-2 text-lg font-black leading-7 text-white">{row.situation}</h3>
+                  <p className="mt-4 flex gap-3 text-base font-black leading-7 text-white">
+                    <CheckCircle2
+                      aria-hidden="true"
+                      className="mt-1 shrink-0 text-route-green"
+                      size={18}
+                    />
+                    <span>Call: {row.call}</span>
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-white/68">{row.detail}</p>
+                </li>
+              ))}
+            </ol>
+
+            <figure className="mt-10 max-w-3xl">
+              <Image
+                src="/visuals/move-over/road-ranger-move-over-sign.webp"
+                alt="A Florida Road Ranger truck on the right shoulder of Interstate 10 with an amber sign on its roof reading MOVE OVER, with traffic in the lanes ahead"
+                width={1600}
+                height={1067}
+                loading="lazy"
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/56">
+                A Florida Road Ranger truck on the shoulder of Interstate 10 in Madison County, April
+                2024. On I-4 at the Universal exits, FDOT lists Road Rangers 24 hours a day.
+              </figcaption>
+            </figure>
+
+            <div className="mt-10 max-w-3xl">
+              <h3 className="text-2xl font-black text-white">{page.guide.table.heading}</h3>
+              <p className="mt-3 text-sm leading-6 text-white/66">{page.guide.table.intro}</p>
+            </div>
+            <div className="mt-5 overflow-x-auto rounded-md border border-white/10">
+              <table className="w-full min-w-[20rem] text-left text-sm">
+                <thead className="bg-white/6 text-xs font-black uppercase text-white/60">
+                  <tr>
+                    {page.guide.table.columns.map((column) => (
+                      <th key={column} scope="col" className="px-4 py-3">
+                        {column}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {page.guide.table.rows.map(([road, hours, listedBy]) => (
+                    <tr key={road} className="border-t border-white/10 text-white/72">
+                      <th scope="row" className="px-4 py-3 font-black text-white">
+                        {road}
+                      </th>
+                      <td className="px-4 py-3">{hours}</td>
+                      <td className="px-4 py-3">{listedBy}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-white/60">
+              {page.guide.table.note}
+            </p>
+
+            <figure className="mt-8 max-w-3xl">
+              <Image
+                src="/visuals/spare-tire/i-4-express-orlando.webp"
+                alt="An entrance road to the I-4 Express lanes in Orlando, with XPRESS painted on the pavement, orange barrels and elevated interstate ramps overhead"
+                width={1600}
+                height={1200}
+                loading="lazy"
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-sm leading-6 text-white/56">
+                An entrance to the I-4 Express lanes in Orlando, May 2023. The Universal exits, 74A to
+                75B, sit inside FDOT&apos;s 24-hour stretch of I-4, mile 72 to 98.
+              </figcaption>
+            </figure>
+
+            <div className="mt-8 grid gap-4 lg:grid-cols-2">
+              {page.guide.notes.map((note) => (
+                <div key={note.heading} className="rounded-md bg-white/6 p-5">
+                  <h3 className="text-base font-black text-white">{note.heading}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/70">{note.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href={site.phoneHref} className="btn btn-primary" data-call-cta="idrive-guide">
+                <PhoneCall aria-hidden="true" size={18} />
+                Call {site.phoneDisplay}, 24 hours
+              </a>
+              <Link href={page.secondaryHref} className="btn btn-secondary">
+                {page.secondaryLabel}
+              </Link>
+            </div>
+
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <p className="text-xs font-black uppercase text-white/48">
+                Sources (read November 27, 2026)
+              </p>
+              <ol className="mt-3 grid gap-2 text-xs leading-5 text-white/56">
+                {page.guide.sources.map((source) => (
+                  <li key={source.href}>
+                    <a
+                      href={source.href}
+                      className="underline decoration-white/30 underline-offset-2 hover:text-white"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {source.name}
+                    </a>
+                    : {source.note}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="section bg-asphalt">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <AlertTriangle aria-hidden="true" size={16} />
+              What to do right now
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Work through these steps before the call.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              These steps are written for the first few minutes of a roadside problem:
+              stay safe, identify the issue, and give dispatch the right information.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {page.steps.map((step, index) => (
+              <div key={step.title} id={`step-${index + 1}`} className="card-solid p-6">
+                <p className="text-xs font-black uppercase text-safety-yellow">
+                  Step {index + 1}
+                </p>
+                <h3 className="mt-3 text-lg font-black text-white">{step.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/66">{step.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section border-y border-white/10 bg-panel">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <PhoneCall aria-hidden="true" size={16} />
+              What to tell dispatch
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              Give RoadZone Plus the details that shorten the call.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/66">
+              The right details help the technician bring the right equipment and reach
+              the correct entrance, shoulder, lot, or garage.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {page.dispatchDetails.map((item) => (
+              <div key={item.label} className="card-solid p-6">
+                <p className="text-xs font-black uppercase text-route-green">{item.label}</p>
+                <p className="mt-3 text-sm leading-6 text-white/68">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-road-black">
+        <div className="container">
+          <div className="max-w-3xl">
+            <div className="eyebrow">
+              <MapPin aria-hidden="true" size={16} />
+              Related help
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">
+              RoadZone pages that connect to this problem.
+            </h2>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {page.relatedLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="card-solid group p-6 transition hover:-translate-y-1 hover:border-road-red/70"
+              >
+                <h3 className="text-xl font-black text-white">{link.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/64">{link.text}</p>
+                <span className="mt-5 inline-flex text-sm font-black text-white group-hover:text-red-200">
+                  View page
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href={page.secondaryHref} className="btn btn-secondary">
+              {page.secondaryLabel}
+            </Link>
+            <Link href="/roadside-assistance-cost-orlando" className="btn btn-secondary">
+              Roadside Cost Guide
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section border-y border-white/10 bg-panel">
+        <div className="container grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <div className="eyebrow">
+              <ShieldCheck aria-hidden="true" size={16} />
+              FAQ
+            </div>
+            <h2 className="mt-5 text-4xl font-black text-white">Common questions.</h2>
+          </div>
+
+          <div className="grid gap-4">
+            {page.faqs.map((faq) => (
+              <div key={faq.question} className="card-solid p-6">
+                <h3 className="text-xl font-black text-white">{faq.question}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/66">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-road-red py-12 text-white">
+        <div className="container flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+          <div>
+            <p className="text-sm font-black uppercase text-white/72">{page.eyebrow}</p>
+            <h2 className="mt-2 text-3xl font-black sm:text-4xl">
+              Need help now? Call RoadZone Plus.
+            </h2>
+          </div>
+          <a href={site.phoneHref} className="btn border border-white bg-white text-road-black hover:bg-white/90">
+            <PhoneCall aria-hidden="true" size={20} />
+            {site.phoneDisplay}
+          </a>
+        </div>
+      </section>
+    </>
+  );
+}

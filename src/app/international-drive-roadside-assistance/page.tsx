@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { FocusedRoadsidePage } from "@/components/FocusedRoadsidePage";
-import { focusedPages } from "@/data/focusedPages";
+import { internationalDrivePage } from "./content";
+import { InternationalDriveGuidePage } from "./InternationalDriveGuidePage";
 
-const page = focusedPages.internationalDrive;
+const page = internationalDrivePage;
 
 export const metadata: Metadata = {
   title: page.title,
@@ -22,5 +22,5 @@ export const metadata: Metadata = {
 };
 
 export default function InternationalDriveRoadsidePage() {
-  return <FocusedRoadsidePage page={page} />;
+  return <InternationalDriveGuidePage page={page} />;
 }
