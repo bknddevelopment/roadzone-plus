@@ -26,6 +26,7 @@ const airportGuideLastModified = new Date("2026-11-19T00:00:00.000Z");
 const roadRangersLastModified = new Date("2026-11-23T00:00:00.000Z");
 const kissimmeeJumpStartLastModified = new Date("2026-11-24T00:00:00.000Z");
 const rentalLockoutLastModified = new Date("2026-11-26T00:00:00.000Z");
+const flatTireI4LastModified = new Date("2026-11-26T00:00:00.000Z");
 const areaLastModified: Record<string, Date> = {
   kissimmee: new Date("2026-11-22T00:00:00.000Z"),
   sanford: new Date("2026-11-22T00:00:00.000Z"),
@@ -91,7 +92,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
                                   ? kissimmeeJumpStartLastModified
                                   : path === "/locked-keys-in-rental-car-orlando"
                                     ? rentalLockoutLastModified
-                                    : undefined,
+                                    : path === "/flat-tire-on-i-4-orlando"
+                                      ? flatTireI4LastModified
+                                      : undefined,
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.8,
   }));
