@@ -214,11 +214,11 @@ export function KeyFobGuidePage() {
               Key not detected
             </div>
             <h2 id="not-detected-heading" className="mt-5 text-4xl font-black text-white">
-              Why a car stops reading a fob that still has a battery.
+              Why the car stops reading the fob.
             </h2>
             <p className="mt-5 text-base leading-8 text-white/66">
-              A weak battery is not the only cause. Hyundai&apos;s and Toyota&apos;s manuals name
-              these.
+              Start with the fob battery. If the battery is not the problem, Hyundai&apos;s and
+              Toyota&apos;s manuals name the other causes below.
             </p>
           </div>
 

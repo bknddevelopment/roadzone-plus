@@ -105,6 +105,10 @@ export const makerSteps: MakerStep[] = [
 
 export const detectionCauses = [
   {
+    heading: "First, the fob battery signs",
+    text: "RoadZone Plus checks the simplest fix first: a shorter remote range, weak button response or a low key battery message point to the fob battery. The manuals name these dash messages: Honda shows \"To start, touch start button with emblem side of remote\", Nissan shows [Key Battery Low], and the 2025 Chevrolet Trax shows NO REMOTE DETECTED, REPLACE BATTERY IN KEY.",
+  },
+  {
     heading: "Radio noise near an airport",
     text: "Hyundai's manual lists a radio transmitter \"such as radio station or airport\" among the things that can stop a smart key working. If your fob fails at an Orlando International Airport lot, use the backup start before you assume the fob is dead.",
   },
