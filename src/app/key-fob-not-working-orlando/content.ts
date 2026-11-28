@@ -9,7 +9,7 @@ export const keyFobPage = {
   description:
     "Key fob dead or 'key not detected'? The backup start Toyota, Honda, Nissan, Hyundai, Ford and Chevrolet give in their own manuals, and who to call in Orlando.",
   eyebrow: "Key fob help",
-  heading: "Key fob not working? Start the car first, then call.",
+  heading: "Key fob not working or key not detected? Start the car first, then call.",
   answer:
     "Each of the six makers below gives a way to start a push-button car with a weak or dead fob. If the doors will not unlock, open the driver's door with the mechanical key (Toyota's and Hyundai's manuals name it), then follow your maker's backup start: on Toyota, Honda and Nissan you touch the start button with the fob, and on Hyundai you press it with the smart key; on Ford and Chevrolet you put the fob in a backup slot or pocket, then start the engine. The steps for each maker are below, as their manuals and support pages give them. If the fob is locked inside, lost or broken, or the car still says the key is not detected, call RoadZone Plus at (407) 222-2739, 24 hours a day.",
   serviceType: "Smart key and key fob roadside assistance",
@@ -215,7 +215,7 @@ export const faqs = [
   {
     question: "Why does my car say key not detected?",
     answer:
-      "The car is not reading the fob. Hyundai's manual lists the causes: a radio transmitter such as a radio station or airport, a phone or two-way radio near the key, another car's smart key used close by, metallic window tint and a discharged car battery. Toyota also says to check that the smart key system is switched on and that the key's battery-saving mode is off.",
+      "The car is not reading the fob. Hyundai's manual lists these among the causes: a radio transmitter such as a radio station or airport, a phone or two-way radio near the key, another car's smart key used close by, metallic window tint and a discharged car battery. Toyota also says to check that the smart key system is switched on and that the key's battery-saving mode is off.",
   },
   {
     question: "How do I start my car with a dead key fob?",
