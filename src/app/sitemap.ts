@@ -32,6 +32,7 @@ const areaLastModified: Record<string, Date> = {
   kissimmee: new Date("2026-11-22T00:00:00.000Z"),
   sanford: new Date("2026-11-22T00:00:00.000Z"),
   "lake-buena-vista": new Date("2026-11-26T00:00:00.000Z"),
+  apopka: new Date("2026-11-28T00:00:00.000Z"),
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
