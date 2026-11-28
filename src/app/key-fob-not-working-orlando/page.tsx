@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
-import { FocusedRoadsidePage } from "@/components/FocusedRoadsidePage";
-import { focusedPages } from "@/data/focusedPages";
-
-const page = focusedPages.keyFob;
+import { KeyFobGuidePage } from "./KeyFobGuidePage";
+import { keyFobPage } from "./content";
 
 export const metadata: Metadata = {
-  title: page.title,
-  description: page.description,
+  title: keyFobPage.title,
+  description: keyFobPage.description,
   alternates: {
-    canonical: page.href,
+    canonical: keyFobPage.href,
   },
   openGraph: {
-    title: page.title,
-    description: page.description,
-    url: page.href,
+    title: keyFobPage.title,
+    description: keyFobPage.description,
+    url: keyFobPage.href,
   },
   twitter: {
-    title: page.title,
-    description: page.description,
+    title: keyFobPage.title,
+    description: keyFobPage.description,
   },
 };
 
 export default function KeyFobNotWorkingPage() {
-  return <FocusedRoadsidePage page={page} />;
+  return <KeyFobGuidePage />;
 }
