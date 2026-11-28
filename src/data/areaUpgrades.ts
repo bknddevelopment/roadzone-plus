@@ -185,7 +185,7 @@ const areaUpgrades: Record<string, Partial<Area>> = {
       {
         heading: "Downtown, US 441 and the parks: call RoadZone Plus",
         body:
-          "On FDOT's beat map, the only patrol that names US 441 is a weekday pilot in south and central Orlando, 6:00 a.m. to 10:00 p.m., not run on weekends. No beat covers downtown Apopka, US 441 where it meets SR 429, Kelly Park or Wekiwa Springs State Park, and the beats are roads, not parking lots. There, day or night, RoadZone Plus comes to the car.",
+          "On FDOT's beat map, the only Central Florida patrol that names US 441 is a weekday pilot in south and central Orlando, 6:00 a.m. to 10:00 p.m., not run on weekends. No beat covers downtown Apopka, US 441 where it meets SR 429, Kelly Park or Wekiwa Springs State Park, and the beats are roads, not parking lots. There, day or night, RoadZone Plus comes to the car.",
       },
     ],
     freeAssistanceNotes: [
@@ -218,7 +218,7 @@ const areaUpgrades: Record<string, Partial<Area>> = {
       {
         question: "Do Road Rangers patrol US 441 in Apopka?",
         answer:
-          "Not on FDOT's beat map. The only beat that names US 441 is a weekday pilot in south and central Orlando, 6:00 a.m. to 10:00 p.m., not run on weekends. In Apopka, call RoadZone Plus, or dial 911 in an emergency.",
+          "Not on FDOT's beat map. The only Central Florida beat that names US 441 is a weekday pilot in south and central Orlando, 6:00 a.m. to 10:00 p.m., not run on weekends. In Apopka, call RoadZone Plus, or dial 911 in an emergency.",
       },
       {
         question: "Who do I call on the Wekiva Parkway north of Apopka?",
