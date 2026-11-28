@@ -219,6 +219,11 @@ export const faqs = [
       "Use your maker's backup start. Toyota, Honda and Nissan: touch the start button or ignition switch with the fob (on Honda, press the button first), then press the brake pedal and the button. Hyundai: press the Engine Start/Stop button directly with the smart key, or, on at least one 2026 model, place it in the smart key slot first. Ford: put the key in the backup slot. Chevrolet: put the remote in the transmitter pocket, then press the brake pedal and ENGINE START/STOP. The exact steps from each manual are on this page.",
   },
   {
+    question: "Will a dead key fob battery stop the car from starting?",
+    answer:
+      "It can stop the normal start. Ford says that if the key has no charge, you cannot start the vehicle until the key is in the backup slot. Toyota, Honda, Nissan, Hyundai and Chevrolet each give a backup start for a weak or dead fob, listed on this page. If the dash lights are dim or dark as well, the car battery may be the problem instead.",
+  },
+  {
     question: "How do I get into the car if the fob is dead?",
     answer:
       "Use the mechanical key. Toyota's and Hyundai's manuals both say to use the mechanical key to open the door when the electronic key does not work. If the key blade is locked inside or missing, call RoadZone Plus for a lockout.",
